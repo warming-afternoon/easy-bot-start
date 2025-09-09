@@ -1,0 +1,43 @@
+site_name: Bot 开发感想
+site_url: https://warming-afternoon.github.io/easy-bot-start/
+use_directory_urls: false
+theme:
+  name: material
+  language: zh
+  palette:
+    primary: teal
+  features:
+    - content.code.copy # 为代码块添加一键复制按钮
+    - navigation.instant # 预加载页面
+    - navigation.tabs # 开启顶部导航标签
+    - navigation.top  # 返回顶部按钮
+    - navigation.sections # 侧边栏章节展开
+    - navigation.expand # 自动展开当前章节
+    - navigation.tracking # 页面目录高亮跟踪
+    - search.suggest  # 搜索建议
+
+markdown_extensions:
+  - attr_list
+  - admonition          # 启用 admonition
+  - pymdownx.details    # 启用可折叠功能
+  - pymdownx.superfences # 允许在块内嵌套代码块等复杂内容
+
+nav:
+  - '首页': 'index.md'
+  - 'BOT编写感想':
+    - '介绍': 'mySummary/index.md'
+    - '部署': 'mySummary/部署.md'
+    - '架构': 'mySummary/架构.md'
+  - 'discord 官方文档 (部分汉化)':
+    - '快速开始':
+      - 'Discord 应用概览': 'discordDocs/Chinese/Overview of Discord Apps_ch.md'
+      - '编写你的第一个 app': 'discordDocs/Chinese/Building your first Discord app_ch.md'
+    - '交互':
+      - '交互概览': 'discordDocs/Chinese/Overview of Interactions_ch.md'
+      - '接收及响应': 'discordDocs/Chinese/Interactions_ch.md'
+      - '指令': 'discordDocs/Chinese/Application Commands_ch.md'
+    
+    - '组件':
+      - '组件概览': 'discordDocs/Chinese/Components Overview_ch.md'
+      - 'API 参考': 'discordDocs/Chinese/API Reference_ch.md'
+      - '使用消息组件': 'discordDocs/Chinese/Using Message Components_ch.md'

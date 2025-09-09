@@ -1,0 +1,56 @@
+name: Deploy Docs to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        # mike需要完整的git历史记录来确定版本，所以设置 fetch-depth: 0
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v1
+
+      # 配置git的用户信息，mike在push时需要
+      - name: Configure Git User
+        run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com"
+
+      - name: Cache uv dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/uv
+          key: ${{ runner.os }}-python-${{ matrix.python-version }}-uv-${{ hashFiles('**/pyproject.toml') }}
+          restore-keys: |
+            ${{ runner.os }}-python-${{ matrix.python-version }}-uv-
+
+      - name: Install dependencies with uv
+        run: uv pip install --system ".[docs]"
+
+      # 根据分支名称进行条件部署
+      - name: Deploy docs (main branch)
+        if: github.ref_name == 'main'
+        run: |
+          mike deploy --push --update-aliases latest
+          mike set-default --push latest
+
+      - name: Deploy docs (dev branch)
+        if: github.ref_name == 'dev'
+        run: mike deploy --push dev
