@@ -1,0 +1,987 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://warming-afternoon.github.io/easy-bot-start/dev/discordDocs/Chinese/Interactions%20_%20Documentation%20_%20Discord%20Developer%20Portal_translated/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
+    
+    
+      
+        <title>Interactions Documentation Discord Developer Portal translated - Bot 开发感想</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="Bot 开发感想" class="md-header__button md-logo" aria-label="Bot 开发感想" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Bot 开发感想
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Interactions   Documentation   Discord Developer Portal translated
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  介绍
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../%E6%9E%B6%E6%9E%84/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  架构
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Bot 开发感想" class="md-nav__button md-logo" aria-label="Bot 开发感想" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Bot 开发感想
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    介绍
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%9E%B6%E6%9E%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    架构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      交互对象
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="交互对象">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      交互结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      交互类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      交互上下文类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      交互数据
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      应用命令数据结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      消息组件数据结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      模态提交数据结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      组件交互响应结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      解析数据结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      应用命令交互数据选项结构
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      消息交互对象
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="消息交互对象">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      消息交互结构
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      接收交互
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="接收交互">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      交互元数据
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      回应交互
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="回应交互">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      交互回应对象
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="交互回应对象">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      交互回应结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      交互回调类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      交互回调数据结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      消息
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      自动完成
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      模态框
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      交互回调
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="交互回调">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      交互回调响应对象
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      交互回调对象
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      交互回调资源对象
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      交互回调活动实例资源
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      后续消息
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="后续消息">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      端点
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      创建交互响应
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="创建交互响应">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      查询字符串参数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      获取原始交互响应
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      编辑原始交互响应
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      删除原始交互响应
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      创建后续消息
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    <span class="md-ellipsis">
+      获取后续消息
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    <span class="md-ellipsis">
+      编辑后续消息
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    <span class="md-ellipsis">
+      删除后续消息
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Interactions   Documentation   Discord Developer Portal translated</h1>
+
+<p><a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object">交互</a>是指当用户使用应用命令或消息组件时，您的应用接收到的消息。</p>
+<p>对于<a href="https://discord.com/developers/docs/interactions/application-commands#slash-commands">斜杠命令</a>，它包含用户提交的值。</p>
+<p>对于<a href="https://discord.com/developers/docs/interactions/application-commands#user-commands">用户命令</a>和<a href="https://discord.com/developers/docs/interactions/application-commands#message-commands">消息命令</a>，它包含执行操作时解析出的用户或消息。</p>
+<p>对于<a href="https://discord.com/developers/docs/components/reference">消息组件</a>，它包含已使用组件的标识信息。它还将包含有关交互触发方式的一些元数据：<code>guild_id</code>、<code>channel</code>、<code>member</code>和其他字段。您可以在下面的数据模型中找到所有值。</p>
+<h3 id="_1">交互对象<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object"></a></h3>
+<h6 id="_2">交互结构<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-interaction-structure"></a></h6>
+<table><thead><tr><th>字段</th><th>类型</th><th>描述</th></tr></thead><tbody><tr><td>id</td><td>雪花ID</td><td>交互的ID</td></tr><tr><td>application_id</td><td>雪花ID</td><td>此交互所属应用的ID</td></tr><tr><td>type</td><td><a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-interaction-type" data-discover="true">交互类型</a></td><td>交互的类型</td></tr><tr><td>data?*</td><td><a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-interaction-data" data-discover="true">交互数据</a></td><td>交互数据载荷</td></tr><tr><td>guild?</td><td><a href="https://discord.com/developers/docs/resources/guild#guild-object" data-discover="true">部分服务器</a>对象</td><td>交互发送来源的服务器</td></tr><tr><td>guild_id?</td><td>雪花ID</td><td>交互发送来源的服务器</td></tr><tr><td>channel?</td><td><a href="https://discord.com/developers/docs/resources/channel#channel-object" data-discover="true">部分频道</a>对象</td><td>交互发送来源的频道</td></tr><tr><td>channel_id?</td><td>雪花ID</td><td>交互发送来源的频道</td></tr><tr><td>member?**</td><td><a href="https://discord.com/developers/docs/resources/guild#guild-member-object" data-discover="true">服务器成员</a>对象</td><td>调用用户的服务器成员数据，包括权限</td></tr><tr><td>user?</td><td><a href="https://discord.com/developers/docs/resources/user#user-object" data-discover="true">用户</a>对象</td><td>调用用户的用户对象，如果在私信中被调用</td></tr><tr><td>token</td><td>字符串</td><td>用于响应交互的继续令牌</td></tr><tr><td>version</td><td>整数</td><td>只读属性，始终为<code>1</code></td></tr><tr><td>message?</td><td><a href="https://discord.com/developers/docs/resources/message#message-object" data-discover="true">消息</a>对象</td><td>对于由组件触发的组件或模态，它们所附着的消息</td></tr><tr><td>app_permissions***</td><td>字符串</td><td>应用在交互源位置拥有的权限位集合</td></tr><tr><td>locale?****</td><td>字符串</td><td>调用用户选择的<a href="https://discord.com/developers/docs/reference#locales" data-discover="true">语言</a></td></tr><tr><td>guild_locale?</td><td>字符串</td><td>服务器的<a href="https://discord.com/developers/docs/resources/guild#guild-object" data-discover="true">首选语言</a>，如果在服务器中被调用</td></tr><tr><td>entitlements</td><td><a href="https://discord.com/developers/docs/resources/entitlement#entitlement-object" data-discover="true">权益</a>对象数组</td><td>对于<a href="https://discord.com/developers/docs/monetization/overview" data-discover="true">商业化应用</a>，调用用户的任何权益，代表对高级<a href="https://discord.com/developers/docs/resources/sku" data-discover="true">SKU</a>的访问权限</td></tr><tr><td>authorizing_integration_owners</td><td>以<a href="https://discord.com/developers/docs/resources/application#application-object-application-integration-types" data-discover="true">应用集成类型</a>为键的字典</td><td>交互被授权安装的上下文映射到相关用户或服务器ID。详见<a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-authorizing-integration-owners-object" data-discover="true">授权集成所有者对象</a></td></tr><tr><td>context?</td><td><a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-interaction-context-types" data-discover="true">交互上下文类型</a></td><td>交互被触发的上下文</td></tr><tr><td>attachment_size_limit</td><td>整数</td><td>附件大小限制（字节）</td></tr></tbody></table>
+
+<ul>
+<li>对于应用命令、消息组件和模态提交交互类型，此字段始终存在。为适应未来可能新增的交互类型，此字段设为可选</li>
+</ul>
+<p>** 当交互在服务器中调用时发送<code>member</code>，在私信中调用时发送<code>user</code></p>
+<p>*** <code>app_permissions</code>包含与其他用户进行（群组）私信时的<code>ATTACH_FILES | EMBED_LINKS | MENTION_EVERYONE</code>权限，与机器人用户私信时额外包含<code>USE_EXTERNAL_EMOJIS</code>权限</p>
+<p>**** 除PING外的所有交互类型均支持此字段</p>
+<h6 id="_3">交互类型<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-interaction-type"></a></h6>
+<table><thead><tr><th>名称</th><th>数值</th></tr></thead><tbody><tr><td>PING</td><td>1</td></tr><tr><td>APPLICATION_COMMAND</td><td>2</td></tr><tr><td>MESSAGE_COMPONENT</td><td>3</td></tr><tr><td>APPLICATION_COMMAND_AUTOCOMPLETE</td><td>4</td></tr><tr><td>MODAL_SUBMIT</td><td>5</td></tr></tbody></table>
+
+<h6 id="_4">交互上下文类型<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-interaction-context-types"></a></h6>
+<p>交互在Discord中可使用或触发的上下文环境。关于应用命令使用交互上下文的详细信息请参阅<a href="https://discord.com/developers/docs/interactions/application-commands#interaction-contexts">命令上下文文档</a>。</p>
+<table><thead><tr><th>名称</th><th>类型</th><th>说明</th></tr></thead><tbody><tr><td>GUILD</td><td>0</td><td>交互可在服务器内使用</td></tr><tr><td>BOT_DM</td><td>1</td><td>交互可在与应用机器人用户的私信中使用</td></tr><tr><td>PRIVATE_CHANNEL</td><td>2</td><td>交互可在群组私信及非机器人用户私信中使用</td></tr></tbody></table>
+
+<p><code>authorizing_integration_owners</code>字段包含与交互相关的安装授权用户或服务器的详细信息。对于安装到用户的应用，可用于区分授权用户和触发交互的用户（如消息组件）。</p>
+<p>仅当满足以下条件时才会出现对应键名：</p>
+<ul>
+<li>应用已获得与键名对应的<a href="https://discord.com/developers/docs/resources/application#application-object-application-integration-types">安装上下文</a>授权（<code>GUILD_INSTALL</code>或<code>USER_INSTALL</code>）</li>
+<li>交互在键名对应安装上下文的源<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-interaction-context-types">交互上下文</a>（<code>GUILD</code>、<code>BOT_DM</code>或<code>PRIVATE_CHANNEL</code>）中受支持</li>
+<li>对于命令调用，该命令必须在安装上下文中受支持（使用<a href="https://discord.com/developers/docs/interactions/application-commands#contexts"><code>integration_types</code></a>）</li>
+</ul>
+<p><code>authorizing_integration_owners</code>中的取值取决于键名——</p>
+<ul>
+<li>若键名为<code>GUILD_INSTALL</code>（<code>"0"</code>），其值取决于交互来源：
+　　　　*   若交互从服务器触发，其值为服务器ID
+　　　　*   若交互从与应用机器人用户的私信触发，其值为<code>"0"</code></li>
+<li>若键名为<code>USER_INSTALL</code>（<code>"1"</code>），其值为授权用户的ID</li>
+</ul>
+<h6 id="_5">交互数据<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-interaction-data"></a></h6>
+<p>虽然除<code>PING</code>外所有<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-interaction-type">交互类型</a>都保证存在<code>data</code>字段，但其结构会有所不同。以下表格详细说明了每种交互类型的内嵌<code>data</code>载荷。</p>
+<table><thead><tr><th>交互类型</th><th>交互数据</th></tr></thead><tbody><tr><td>PING (<code>1</code>)</td><td>不适用</td></tr><tr><td>APPLICATION_COMMAND (<code>2</code>)</td><td><a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-application-command-data-structure" data-discover="true">应用命令数据结构</a></td></tr><tr><td>MESSAGE_COMPONENT (<code>3</code>)</td><td><a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-message-component-data-structure" data-discover="true">消息组件数据结构</a></td></tr><tr><td>APPLICATION_COMMAND_AUTOCOMPLETE (<code>4</code>)</td><td><a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-application-command-data-structure" data-discover="true">应用命令数据结构</a></td></tr><tr><td>MODAL_SUBMIT (<code>5</code>)</td><td><a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-modal-submit-data-structure" data-discover="true">模态提交数据结构</a></td></tr></tbody></table>
+
+<h6 id="_6">应用命令数据结构<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-application-command-data-structure"></a></h6>
+<p>在 <code>APPLICATION_COMMAND</code> 和 <code>APPLICATION_COMMAND_AUTOCOMPLETE</code> 交互中发送。</p>
+<table><thead><tr><th>字段</th><th>类型</th><th>描述</th></tr></thead><tbody><tr><td>id</td><td>雪花ID</td><td><a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-structure" data-discover="true"><code>ID</code></a> 被调用命令的ID</td></tr><tr><td>name</td><td>字符串</td><td><a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-structure" data-discover="true"><code>name</code></a> 被调用命令的名称</td></tr><tr><td>type</td><td>整数</td><td><a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-structure" data-discover="true"><code>type</code></a> 被调用命令的类型</td></tr><tr><td>resolved?</td><td><a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-resolved-data-structure" data-discover="true">解析数据</a></td><td>转换后的用户+角色+频道+附件</td></tr><tr><td>options?*</td><td>应用命令交互数据选项数组</td><td>来自用户的参数+值</td></tr><tr><td>guild_id?</td><td>雪花ID</td><td>命令注册到的服务器ID</td></tr><tr><td>target_id?</td><td>雪花ID</td><td><a href="https://discord.com/developers/docs/interactions/application-commands#user-commands" data-discover="true">用户</a>或<a href="https://discord.com/developers/docs/interactions/application-commands#message-commands" data-discover="true">消息</a>命令目标的用户或消息ID</td></tr></tbody></table>
+
+<ul>
+<li>在响应 <code>APPLICATION_COMMAND_AUTOCOMPLETE</code> 时，<a href="https://discord.com/developers/docs/interactions/application-commands#autocomplete">可能是部分的</a></li>
+</ul>
+<h6 id="_7">消息组件数据结构<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-message-component-data-structure"></a></h6>
+<table><thead><tr><th>字段</th><th>类型</th><th>描述</th></tr></thead><tbody><tr><td>custom_id</td><td>字符串</td><td>组件的<a href="https://discord.com/developers/docs/components/reference#anatomy-of-a-component-custom-id" data-discover="true"><code>custom_id</code></a></td></tr><tr><td>component_type</td><td>整数</td><td>组件的<a href="https://discord.com/developers/docs/components/reference#component-object-component-types" data-discover="true">类型</a></td></tr><tr><td>values?*</td><td><a href="https://discord.com/developers/docs/components/reference#string-select-select-option-structure" data-discover="true">选择选项值</a>数组</td><td>用户在<a href="https://discord.com/developers/docs/components/reference#string-select" data-discover="true">选择菜单</a>组件中选择的值</td></tr><tr><td>resolved?</td><td><a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-resolved-data-structure" data-discover="true">解析数据</a></td><td>从所选选项中解析出的实体</td></tr></tbody></table>
+
+<ul>
+<li>对于选择菜单组件，此字段始终存在</li>
+</ul>
+<h6 id="_8">模态提交数据结构<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-modal-submit-data-structure"></a></h6>
+<table><thead><tr><th>字段</th><th>类型</th><th>描述</th></tr></thead><tbody><tr><td>custom_id</td><td>字符串</td><td>模态提供的自定义ID</td></tr><tr><td>components</td><td><a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-component-interaction-response-structures" data-discover="true">组件交互响应</a>数组</td><td>用户提交的值</td></tr></tbody></table>
+
+<h6 id="_9">组件交互响应结构<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-component-interaction-response-structures"></a></h6>
+<table><thead><tr><th>组件</th></tr></thead><tbody><tr><td><a href="https://discord.com/developers/docs/components/reference#string-select-string-select-interaction-response-structure" data-discover="true">字符串选择</a></td></tr><tr><td><a href="https://discord.com/developers/docs/components/reference#text-input-text-input-interaction-response-structure" data-discover="true">文本输入</a></td></tr><tr><td><a href="https://discord.com/developers/docs/components/reference#user-select-user-select-interaction-response-structure" data-discover="true">用户选择</a></td></tr><tr><td><a href="https://discord.com/developers/docs/components/reference#role-select-role-select-interaction-response-structure" data-discover="true">角色选择</a></td></tr><tr><td><a href="https://discord.com/developers/docs/components/reference#mentionable-select-mentionable-select-interaction-response-structure" data-discover="true">可提及选择</a></td></tr><tr><td><a href="https://discord.com/developers/docs/components/reference#channel-select-channel-select-interaction-response-structure" data-discover="true">频道选择</a></td></tr><tr><td><a href="https://discord.com/developers/docs/components/reference#text-display-text-display-interaction-response-structure" data-discover="true">文本显示</a></td></tr><tr><td><a href="https://discord.com/developers/docs/components/reference#label-label-interaction-response-structure" data-discover="true">标签</a></td></tr></tbody></table>
+
+<h6 id="_10">解析数据结构<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-resolved-data-structure"></a></h6>
+<p>如果包含成员数据，则其相应用户的数据也将包含在内。</p>
+<table><thead><tr><th>字段</th><th>类型</th><th>描述</th></tr></thead><tbody><tr><td>用户?</td><td>Snowflake到<a href="https://discord.com/developers/docs/resources/user#user-object" data-discover="true">用户</a>对象的映射</td><td>ID和用户对象</td></tr><tr><td>成员?*</td><td>Snowflake到<a href="https://discord.com/developers/docs/resources/guild#guild-member-object" data-discover="true">部分成员</a>对象的映射</td><td>ID和部分成员对象</td></tr><tr><td>角色?</td><td>Snowflake到<a href="https://discord.com/developers/docs/topics/permissions#role-object" data-discover="true">角色</a>对象的映射</td><td>ID和角色对象</td></tr><tr><td>频道?**</td><td>Snowflake到<a href="https://discord.com/developers/docs/resources/channel#channel-object" data-discover="true">部分频道</a>对象的映射</td><td>ID和部分频道对象</td></tr><tr><td>消息?</td><td>Snowflake到<a href="https://discord.com/developers/docs/resources/message#message-object" data-discover="true">部分消息</a>对象的映射</td><td>ID和部分消息对象</td></tr><tr><td>附件?</td><td>Snowflake到<a href="https://discord.com/developers/docs/resources/message#attachment-object" data-discover="true">附件</a>对象的映射</td><td>ID和附件对象</td></tr></tbody></table>
+
+<ul>
+<li>部分<code>成员</code>对象缺少<code>用户</code>、<code>聋</code>和<code>静音</code>字段</li>
+</ul>
+<p>** 部分<code>频道</code>对象仅包含<code>ID</code>、<code>名称</code>、<code>类型</code>和<code>权限</code>字段。线程还将包含<code>线程元数据</code>和<code>父ID</code>字段。</p>
+<h6 id="_11">应用命令交互数据选项结构<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-application-command-interaction-data-option-structure"></a></h6>
+<p>所有选项都有名称，一个选项可以是参数和输入值——在这种情况下将设置<code>值</code>——或者它可以表示子命令或组——在这种情况下它将包含一个顶级键和另一个<code>选项</code>数组。</p>
+<p><code>值</code>和<code>选项</code>是互斥的。</p>
+<table><thead><tr><th>字段</th><th>类型</th><th>描述</th></tr></thead><tbody><tr><td>名称</td><td>字符串</td><td>参数的名称</td></tr><tr><td>类型</td><td>整数</td><td><a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-option-type" data-discover="true">应用命令选项类型</a>的值</td></tr><tr><td>值?</td><td>字符串、整数、双精度或布尔值</td><td>用户输入产生的选项值</td></tr><tr><td>选项?</td><td><a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-application-command-interaction-data-option-structure" data-discover="true">应用命令交互数据选项</a>数组</td><td>如果此选项是组或子命令则存在</td></tr><tr><td>聚焦?</td><td>布尔值</td><td>如果此选项是自动补全的当前聚焦选项则为<code>true</code></td></tr></tbody></table>
+
+<h3 id="_12">消息交互对象<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#message-interaction-object"></a></h3>
+<p>当消息是对没有现有消息的交互的响应时，此内容会在<a href="https://discord.com/developers/docs/resources/message#message-object">消息对象</a>上发送。</p>
+<h6 id="_13">消息交互结构<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#message-interaction-object-message-interaction-structure"></a></h6>
+<table><thead><tr><th>字段</th><th>类型</th><th>描述</th></tr></thead><tbody><tr><td>id</td><td>雪花ID</td><td>交互的ID</td></tr><tr><td>type</td><td><a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-interaction-type" data-discover="true">交互类型</a></td><td>交互的类型</td></tr><tr><td>name</td><td>字符串</td><td><a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-structure" data-discover="true">应用命令</a>的名称，包括子命令和子命令组</td></tr><tr><td>user</td><td><a href="https://discord.com/developers/docs/resources/user#user-object" data-discover="true">用户对象</a></td><td>发起交互的用户</td></tr><tr><td>member?</td><td><a href="https://discord.com/developers/docs/resources/guild#guild-member-object" data-discover="true">部分成员</a>对象</td><td>在服务器中发起交互的成员</td></tr></tbody></table>
+
+<h2 id="_14">接收交互<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#receiving-an-interaction"></a></h2>
+<p>当用户与您的应用交互时，您的应用将收到一个<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object">交互</a>。您的应用可以通过以下两种方式之一接收交互：</p>
+<ul>
+<li>通过<a href="https://discord.com/developers/docs/events/gateway-events#interaction-create">交互创建</a>网关事件</li>
+<li>通过出站webhook</li>
+</ul>
+<p>这两种方法是互斥的；您只能通过其中一种方式接收交互。<code>INTERACTION_CREATE</code><a href="https://discord.com/developers/docs/events/gateway-events#interaction-create">网关事件</a>可由连接的客户端处理，而下面详述的webhook方法不需要连接的客户端。</p>
+<p>如果您想通过基于HTTP的出站webhook接收交互，必须为您的应用配置交互端点URL。您可以在交互概览的<a href="https://discord.com/developers/docs/interactions/overview#preparing-for-interactions">准备交互</a>部分阅读有关准备和添加交互端点URL到您的应用的信息。</p>
+<h3 id="_15">交互元数据<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-metadata"></a></h3>
+<p>一个<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object">交互</a>包含元数据以帮助您的应用程序处理它，以及特定于交互类型的<code>data</code>。您可以在各自的页面上找到每种交互类型的示例：</p>
+<ul>
+<li><a href="https://discord.com/developers/docs/interactions/application-commands#slash-commands-example-interaction">斜杠命令</a></li>
+<li><a href="https://discord.com/developers/docs/interactions/application-commands#user-commands-example-interaction">用户命令</a></li>
+<li><a href="https://discord.com/developers/docs/interactions/application-commands#message-commands-example-interaction">消息命令</a></li>
+<li><a href="https://discord.com/developers/docs/components/using-message-components">消息组件</a></li>
+<li><a href="https://discord.com/developers/docs/components/using-modal-components">模态组件</a></li>
+</ul>
+<p>所有字段的解释可以在我们的<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object">数据模型</a>中找到。</p>
+<p>现在您已经从用户那里获取了数据，是时候回应他们了。</p>
+<h2 id="_16">回应交互<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#responding-to-an-interaction"></a></h2>
+<p>交互——无论是接收还是回应——本质上都是webhook。因此，回应交互就像发送webhook请求一样！</p>
+<p>交互回应具有与普通HTTP API请求相同的头部要求。有关更多信息，请参见<a href="https://discord.com/developers/docs/reference#http-api">此处</a>。</p>
+<p>您可以通过多种方式回应交互：</p>
+<h3 id="_17">交互回应对象<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object"></a></h3>
+<h6 id="_18">交互回应结构<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object-interaction-response-structure"></a></h6>
+<table><thead><tr><th>字段</th><th>类型</th><th>描述</th></tr></thead><tbody><tr><td>type</td><td><a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object-interaction-callback-type" data-discover="true">交互回调类型</a></td><td>响应类型</td></tr><tr><td>data?</td><td><a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object-interaction-callback-data-structure" data-discover="true">交互回调数据</a></td><td>可选的响应消息</td></tr></tbody></table>
+
+<h6 id="_19">交互回调类型<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object-interaction-callback-type"></a></h6>
+<table><thead><tr><th>名称</th><th>值</th><th>描述</th></tr></thead><tbody><tr><td>PONG</td><td>1</td><td>确认<code>Ping</code>请求</td></tr><tr><td>CHANNEL_MESSAGE_WITH_SOURCE</td><td>4</td><td>使用消息响应交互</td></tr><tr><td>DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE</td><td>5</td><td>确认交互并稍后编辑响应，用户会看到加载状态</td></tr><tr><td>DEFERRED_UPDATE_MESSAGE*</td><td>6</td><td>对于组件，确认交互并稍后编辑原始消息；用户不会看到加载状态</td></tr><tr><td>UPDATE_MESSAGE*</td><td>7</td><td>对于组件，编辑组件所附加的消息</td></tr><tr><td>APPLICATION_COMMAND_AUTOCOMPLETE_RESULT</td><td>8</td><td>使用建议选项响应自动补全交互</td></tr><tr><td>MODAL**</td><td>9</td><td>使用弹出模态框响应交互</td></tr><tr><td>PREMIUM_REQUIRED</td><td>10</td><td><a href="https://discord.com/developers/docs/change-log#premium-apps-new-premium-button-style-deep-linking-url-schemes" data-discover="true"><span>已弃用</span></a>；使用升级按钮响应交互，仅适用于启用了<a href="https://discord.com/developers/docs/monetization/overview" data-discover="true">变现功能</a>的应用</td></tr><tr><td>LAUNCH_ACTIVITY</td><td>12</td><td>启动与应用关联的活动。仅适用于启用了<a href="https://discord.com/developers/docs/activities/overview" data-discover="true">活动功能</a>的应用</td></tr></tbody></table>
+
+<ul>
+<li>仅对<a href="https://discord.com/developers/docs/components/reference">基于组件</a>的交互有效</li>
+</ul>
+<p>** 不适用于<code>MODAL_SUBMIT</code>和<code>PING</code>交互</p>
+<h6 id="_20">交互回调数据结构<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object-interaction-callback-data-structure"></a></h6>
+<h6 id="_21">消息<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object-messages"></a></h6>
+<p>目前并非所有消息字段都受支持</p>
+<table><thead><tr><th>字段</th><th>类型</th><th>说明</th></tr></thead><tbody><tr><td>tts?</td><td>布尔值</td><td>响应是否为TTS</td></tr><tr><td>content?</td><td>字符串</td><td>消息内容</td></tr><tr><td>embeds?</td><td><a href="https://discord.com/developers/docs/resources/message#embed-object" data-discover="true">嵌入对象</a>数组</td><td>最多支持10个嵌入</td></tr><tr><td>allowed_mentions?</td><td><a href="https://discord.com/developers/docs/resources/message#allowed-mentions-object" data-discover="true">允许提及对象</a></td><td><a href="https://discord.com/developers/docs/resources/message#allowed-mentions-object" data-discover="true">允许提及</a>对象</td></tr><tr><td>flags? *</td><td>整数</td><td>作为<a href="https://en.wikipedia.org/wiki/Bit_field" rel="noreferrer noopener" target="_blank" role="button" tabindex="0">位域</a>组合的<a href="https://discord.com/developers/docs/resources/message#message-object-message-flags" data-discover="true">消息标志</a>（只能设置<code>SUPPRESS_EMBEDS</code>、<code>EPHEMERAL</code>、<code>IS_COMPONENTS_V2</code>、<code>IS_VOICE_MESSAGE</code>和<code>SUPPRESS_NOTIFICATIONS</code>）</td></tr><tr><td>components?</td><td><a href="https://discord.com/developers/docs/components/reference#component-object" data-discover="true">组件</a>数组</td><td>消息组件</td></tr><tr><td>attachments? **</td><td>部分<a href="https://discord.com/developers/docs/resources/message#attachment-object" data-discover="true">附件</a>对象数组</td><td>包含文件名和描述的附件对象</td></tr><tr><td>poll?</td><td><a href="https://discord.com/developers/docs/resources/poll#poll-create-request-object" data-discover="true">投票</a>请求对象</td><td>关于投票的详细信息</td></tr></tbody></table>
+
+<ul>
+<li>如果您使用<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object-interaction-callback-type">类型</a> <code>DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE</code> 创建回调，唯一有效的<a href="https://discord.com/developers/docs/resources/message#message-object-message-flags">消息标志</a>是 <code>EPHEMERAL</code>。如果您想创建带有 <code>IS_COMPONENTS_V2</code> 的基于组件的消息，必须通过<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#followup-messages">后续</a>消息进行，而不是这条消息。</li>
+</ul>
+<p>** 详情请参见<a href="https://discord.com/developers/docs/reference#uploading-files">文件上传</a>。</p>
+<h6 id="_22">自动完成<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object-autocomplete"></a></h6>
+<table><thead><tr><th>字段</th><th>类型</th><th>说明</th></tr></thead><tbody><tr><td>choices</td><td><a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-option-choice-structure" data-discover="true">选项</a>数组</td><td>自动完成选项（最多25个选项）</td></tr></tbody></table>
+
+<h6 id="_23">模态框<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object-modal"></a></h6>
+<table><thead><tr><th>字段</th><th>类型</th><th>说明</th></tr></thead><tbody><tr><td>custom_id</td><td>字符串</td><td>开发者定义的模态框标识符，最多100个字符</td></tr><tr><td>title</td><td>字符串</td><td>弹出模态框的标题，最多45个字符</td></tr><tr><td>components</td><td><a href="https://discord.com/developers/docs/components/reference#component-object" data-discover="true">组件</a>数组</td><td>构成模态框的1到5个（含）组件</td></tr></tbody></table>
+
+<p>如果您的应用程序返回用户数据，应使用<a href="https://discord.com/developers/docs/resources/message#allowed-mentions-object"><code>allowed_mentions</code></a>来过滤内容中实际会触发提醒的提及。</p>
+<h2 id="_24">交互回调<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-callback"></a></h2>
+<p>当响应接收到的交互时，您可以向<code>/interactions/&lt;interaction_id&gt;/&lt;interaction_token&gt;/callback</code>发送<code>POST</code>请求。<code>interaction_id</code>是接收到的负载中该特定交互的唯一ID。<code>interaction_token</code>是接收到的负载中该交互的唯一令牌。</p>
+<p>如果您通过网关接收交互，必须通过HTTP进行响应。对交互的响应不会作为命令通过网关发送。</p>
+<p>如果您对通过HTTP接收的交互发送此请求，请用202状态码和无正文响应原始HTTP请求。</p>
+<pre><code>导入请求
+
+网址 = &quot;https://discord.com/api/v10/interactions/&lt;交互ID&gt;/&lt;交互令牌&gt;/callback&quot;
+
+JSON = {
+　　　　&quot;类型&quot;: 4,
+　　　　&quot;数据&quot;: {
+　　　　　　　　&quot;内容&quot;: &quot;恭喜发送命令！&quot;
+　　　　}
+}
+r = requests.post(网址, json=json)
+</code></pre>
+<p>交互<code>令牌</code>有效期为15分钟，可用于发送后续消息，但必须在接收事件后3秒内发送初始响应。如果超过3秒期限，令牌将失效。</p>
+<p>内联HTTP响应行为</p>
+<h6 id="_25">交互回调响应对象<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-callback-interaction-callback-response-object"></a></h6>
+<table><thead><tr><th>字段</th><th>类型</th><th>描述</th></tr></thead><tbody><tr><td>交互</td><td><a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-callback-interaction-callback-object" data-discover="true">交互回调对象</a></td><td>与交互响应关联的交互对象</td></tr><tr><td>资源?</td><td><a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-callback-interaction-callback-resource-object" data-discover="true">交互资源对象</a></td><td>由交互响应创建的资源</td></tr></tbody></table>
+
+<h6 id="_26">交互回调对象<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-callback-interaction-callback-object"></a></h6>
+<table><thead><tr><th>字段</th><th>类型</th><th>描述</th></tr></thead><tbody><tr><td>ID</td><td>雪花ID</td><td>交互的ID</td></tr><tr><td>类型</td><td>整数</td><td><a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-interaction-type" data-discover="true">交互类型</a></td></tr><tr><td>活动实例ID?</td><td>字符串</td><td>如果启动或加入了活动，则为活动的实例ID</td></tr><tr><td>响应消息ID?</td><td>雪花ID</td><td>由交互创建的消息ID</td></tr><tr><td>响应消息加载中?</td><td>布尔值</td><td>消息是否处于加载状态</td></tr><tr><td>响应消息临时?</td><td>布尔值</td><td>响应消息是否为临时消息</td></tr></tbody></table>
+
+<h6 id="_27">交互回调资源对象<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-callback-interaction-callback-resource-object"></a></h6>
+<table><thead><tr><th>字段</th><th>类型</th><th>描述</th></tr></thead><tbody><tr><td>type</td><td>integer</td><td><a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object-interaction-callback-type" data-discover="true">交互回调类型</a></td></tr><tr><td>activity_instance?*</td><td><a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-callback-interaction-callback-activity-instance-resource" data-discover="true">活动实例资源</a></td><td>表示该交互启动的活动。</td></tr><tr><td>message?**</td><td><a href="https://discord.com/developers/docs/resources/message#message-object" data-discover="true">消息对象</a></td><td>由交互创建的消息。</td></tr></tbody></table>
+
+<ul>
+<li>仅当类型为 <code>LAUNCH_ACTIVITY</code> 时存在。</li>
+</ul>
+<p>** 仅当类型为 <code>CHANNEL_MESSAGE_WITH_SOURCE</code> 或 <code>UPDATE_MESSAGE</code> 时存在。</p>
+<h6 id="_28">交互回调活动实例资源<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-callback-interaction-callback-activity-instance-resource"></a></h6>
+<table><thead><tr><th>字段</th><th>类型</th><th>描述</th></tr></thead><tbody><tr><td>id</td><td>string</td><td>如果启动或加入活动，则为活动的实例ID。</td></tr></tbody></table>
+
+<h2 id="_29">后续消息<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#followup-messages"></a></h2>
+<p>有时，您的机器人在响应交互后希望向用户发送后续消息。或者，您可能想要编辑原始响应。无论您是通过网关接收交互还是通过出站webhook，都可以使用以下端点来编辑初始响应或发送后续消息：</p>
+<ul>
+<li><a href="https://discord.com/developers/docs/interactions/receiving-and-responding#edit-original-interaction-response"><code>PATCH /webhooks/&lt;application_id&gt;/&lt;interaction_token&gt;/messages/@original</code></a> 用于编辑对交互的初始响应</li>
+<li><a href="https://discord.com/developers/docs/interactions/receiving-and-responding#delete-original-interaction-response"><code>DELETE /webhooks/&lt;application_id&gt;/&lt;interaction_token&gt;/messages/@original</code></a> 用于删除对交互的初始响应</li>
+<li><a href="https://discord.com/developers/docs/interactions/receiving-and-responding#create-followup-message"><code>POST /webhooks/&lt;application_id&gt;/&lt;interaction_token&gt;</code></a> 用于发送新的后续消息</li>
+<li><a href="https://discord.com/developers/docs/interactions/receiving-and-responding#edit-followup-message"><code>PATCH /webhooks/&lt;application_id&gt;/&lt;interaction_token&gt;/messages/&lt;message_id&gt;</code></a> 用于编辑使用该 <code>token</code> 发送的消息</li>
+</ul>
+<p>交互webhook与普通webhook共享相同的速率限制属性。</p>
+<p>交互令牌有效期为15分钟，这意味着您可以在该时间段内响应交互。</p>
+<h3 id="_30">端点<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#endpoints"></a></h3>
+<h2 id="_31">创建交互响应<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#create-interaction-response"></a></h2>
+<p>创建对交互的响应。请求体是一个<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object">交互响应</a>。除非 <code>with_response</code> 设置为 <code>true</code>（此时返回 <code>200</code> 且响应体为<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-callback-interaction-callback-response-object">交互回调响应</a>），否则返回 <code>204</code>。</p>
+<p>此端点还支持类似于webhook端点的文件附件。有关上传文件和 <code>multipart/form-data</code> 请求的详细信息，请参阅<a href="https://discord.com/developers/docs/reference#uploading-files">上传文件</a>。</p>
+<h6 id="_32">查询字符串参数<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#create-interaction-response-query-string-params"></a></h6>
+<table><thead><tr><th>字段</th><th>类型</th><th>描述</th></tr></thead><tbody><tr><td>with_response?</td><td><a href="https://discord.com/developers/docs/reference#boolean-query-strings" data-discover="true">布尔值</a></td><td>是否包含<a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-callback-interaction-callback-response-object" data-discover="true">交互回调对象</a>作为响应</td></tr></tbody></table>
+
+<h2 id="_33">获取原始交互响应<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#get-original-interaction-response"></a></h2>
+<p>返回初始交互响应。功能与<a href="https://discord.com/developers/docs/resources/webhook#get-webhook-message">获取Webhook消息</a>相同。</p>
+<h2 id="_34">编辑原始交互响应<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#edit-original-interaction-response"></a></h2>
+<p>编辑初始交互响应。功能与<a href="https://discord.com/developers/docs/resources/webhook#edit-webhook-message">编辑Webhook消息</a>相同。</p>
+<h2 id="_35">删除原始交互响应<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#delete-original-interaction-response"></a></h2>
+<p>删除初始交互响应。成功时返回<code>204 No Content</code>。</p>
+<h2 id="_36">创建后续消息<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#create-followup-message"></a></h2>
+<p>如果交互是由用户安装的应用发起且未在服务器中安装（即<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-authorizing-integration-owners-object">授权集成所有者对象</a>仅包含<code>USER_INSTALL</code>），则每个交互的应用限制为5条后续消息。</p>
+<p>为交互创建后续消息。功能与<a href="https://discord.com/developers/docs/resources/webhook#execute-webhook">执行Webhook</a>相同，但<code>wait</code>始终为true。使用此端点进行交互后续操作时，不支持<code>thread_id</code>、<code>avatar_url</code>和<code>username</code>参数。可以使用<code>EPHEMERAL</code><a href="https://discord.com/developers/docs/resources/message#message-object-message-flags">消息标志</a><code>1 &lt;&lt; 6</code>（64）发送仅用户可见的消息。也可以使用<code>IS_COMPONENTS_V2</code><a href="https://discord.com/developers/docs/resources/message#message-object-message-flags">消息标志</a><code>1 &lt;&lt; 15</code>（32768）发送基于<a href="https://discord.com/developers/docs/components/reference">组件</a>的消息。</p>
+<p>在使用<code>DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE</code>响应交互后直接使用此端点时，出于向后兼容性考虑，此端点将作为<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#edit-original-interaction-response">编辑原始交互响应</a>功能。在这种情况下，不会创建新消息，而是编辑加载消息。临时标志将被忽略，初始延迟响应中提供的值将被保留，因为现有消息的临时状态无法更改。此行为已弃用，在这种情况下应使用编辑原始交互响应端点。</p>
+<h2 id="_37">获取后续消息<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#get-followup-message"></a></h2>
+<p>返回交互的后续消息。功能与<a href="https://discord.com/developers/docs/resources/webhook#get-webhook-message">获取Webhook消息</a>相同。</p>
+<h2 id="_38">编辑后续消息<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#edit-followup-message"></a></h2>
+<p>编辑交互的后续消息。功能与<a href="https://discord.com/developers/docs/resources/webhook#edit-webhook-message">编辑Webhook消息</a>相同。</p>
+<h2 id="_39">删除后续消息<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#delete-followup-message"></a></h2>
+<p>删除交互的后续消息。成功时返回<code>204 No Content</code>。</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "navigation.instant", "navigation.tabs", "navigation.top", "navigation.sections", "navigation.expand", "navigation.tracking", "search.suggest"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>

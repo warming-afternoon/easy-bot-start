@@ -1,0 +1,2071 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://warming-afternoon.github.io/easy-bot-start/dev/discordDocs/English/Application%20Commands%20_%20Documentation%20_%20Discord%20Developer%20Portal/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
+    
+    
+      
+        <title>Application Commands - Bot 开发感想</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#application-commands" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="Bot 开发感想" class="md-header__button md-logo" aria-label="Bot 开发感想" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Bot 开发感想
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Application Commands
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  介绍
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../%E6%9E%B6%E6%9E%84/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  架构
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Bot 开发感想" class="md-nav__button md-logo" aria-label="Bot 开发感想" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Bot 开发感想
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    介绍
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%9E%B6%E6%9E%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    架构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#application-command-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application Command Object
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Application Command Object">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-command-naming" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application Command Naming
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-command-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application Command Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-command-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application Command Types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-command-option-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application Command Option Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-command-option-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application Command Option Type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-command-option-choice-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application Command Option Choice Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entry-point-command-handler-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entry Point Command Handler Types
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authorizing-your-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authorizing Your Application
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#registering-a-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Registering a Command
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Registering a Command">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#making-a-global-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Making a Global Command
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#making-a-guild-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Making a Guild Command
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updating-and-deleting-a-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Updating and Deleting a Command
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contexts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Contexts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation Context
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interaction-contexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interaction Contexts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permissions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Permissions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syncing-and-unsyncing-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syncing and Unsyncing Permissions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-command-permissions-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application Command Permissions Object
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Application Command Permissions Object">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#guild-application-command-permissions-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Guild Application Command Permissions Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-command-permissions-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application Command Permissions Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-command-permissions-constants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application Command Permissions Constants
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-command-permission-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application Command Permission Type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-default-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Default Permissions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-of-editing-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example of editing permissions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slash-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slash Commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Slash Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-slash-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Slash Command
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-interaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Interaction
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subcommands-and-subcommand-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subcommands and Subcommand Groups
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Subcommands and Subcommand Groups">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-walkthrough" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Walkthrough
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-user-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example User Command
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-interaction_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Interaction
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Message Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-message-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Message Command
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-interaction_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Interaction
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entry-point-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entry Point Commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Entry Point Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-entry-point-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Entry Point Command
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entry-point-handlers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entry Point handlers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default-entry-point-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Default Entry Point command
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autocomplete" class="md-nav__link">
+    <span class="md-ellipsis">
+      Autocomplete
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#localization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Localization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Localization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#locale-fallbacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Locale fallbacks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieving-localized-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retrieving localized commands
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#age-restricted-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Age-Restricted Commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Age-Restricted Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-age-restricted-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Age-Restricted Commands
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Endpoints
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-global-application-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Global Application Commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Get Global Application Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#query-string-params" class="md-nav__link">
+    <span class="md-ellipsis">
+      Query String Params
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-global-application-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create Global Application Command
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create Global Application Command">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#json-params" class="md-nav__link">
+    <span class="md-ellipsis">
+      JSON Params
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-global-application-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Global Application Command
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edit-global-application-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edit Global Application Command
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Edit Global Application Command">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#json-params_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      JSON Params
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-global-application-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delete Global Application Command
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bulk-overwrite-global-application-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bulk Overwrite Global Application Commands
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-guild-application-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Guild Application Commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Get Guild Application Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#query-string-params_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Query String Params
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-guild-application-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create Guild Application Command
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create Guild Application Command">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#json-params_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      JSON Params
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-guild-application-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Guild Application Command
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edit-guild-application-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edit Guild Application Command
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Edit Guild Application Command">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#json-params_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      JSON Params
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-guild-application-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delete Guild Application Command
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bulk-overwrite-guild-application-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bulk Overwrite Guild Application Commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bulk Overwrite Guild Application Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#json-params_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      JSON Params
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-guild-application-command-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Guild Application Command Permissions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-application-command-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Application Command Permissions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edit-application-command-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edit Application Command Permissions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Edit Application Command Permissions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#json-params_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      JSON Params
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#batch-edit-application-command-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Batch Edit Application Command Permissions
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="application-commands">Application Commands<a href="https://discord.com/developers/docs/interactions/application-commands#application-commands"></a></h1>
+<p>Application commands are native ways to interact with apps in the Discord client. There are 3 types of commands accessible in different interfaces: the chat input, a message's context menu (top-right menu or right-clicking in a message), and a user's context menu (right-clicking on a user).</p>
+<p><img alt="" src="../img/command_introduce.webp" /></p>
+<h2 id="application-command-object">Application Command Object<a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object"></a></h2>
+<h6 id="application-command-naming">Application Command Naming<a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-naming"></a></h6>
+<p><code>CHAT_INPUT</code> command names and command option names must match the following regex <code>^[-_'\p{L}\p{N}\p{sc=Deva}\p{sc=Thai}]{1,32}$</code> with the unicode flag set. If there is a lowercase variant of any letters used, you must use those. Characters with no lowercase variants and/or uncased letters are still allowed. <code>USER</code> and <code>MESSAGE</code> commands may be mixed case and can include spaces.</p>
+<h6 id="application-command-structure">Application Command Structure<a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-structure"></a></h6>
+<table><thead><tr><th>Field</th><th>Type</th><th>Description</th><th>Valid Types</th></tr></thead><tbody><tr><td>id</td><td>snowflake</td><td>Unique ID of command</td><td>all</td></tr><tr><td>type?</td><td>one of <a aria-current="page" class="link-3m0lUT" href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-types" data-discover="true">command types</a></td><td><a aria-current="page" class="link-3m0lUT" href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-types" data-discover="true">Type of command</a>, defaults to <code>1</code></td><td>all</td></tr><tr><td>application_id</td><td>snowflake</td><td>ID of the parent application</td><td>all</td></tr><tr><td>guild_id?</td><td>snowflake</td><td>Guild ID of the command, if not global</td><td>all</td></tr><tr><td>name</td><td>string</td><td><a aria-current="page" class="link-3m0lUT" href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-naming" data-discover="true">Name of command</a>, 1-32 characters</td><td>all</td></tr><tr><td>name_localizations?</td><td>?dictionary with keys in <a class="link-3m0lUT" href="https://discord.com/developers/docs/reference#locales" data-discover="true">available locales</a></td><td>Localization dictionary for <code>name</code> field. Values follow the same restrictions as <code>name</code></td><td>all</td></tr><tr><td>description</td><td>string</td><td>Description for <code>CHAT_INPUT</code> commands, 1-100 characters. Empty string for <code>USER</code> and <code>MESSAGE</code> commands</td><td>all</td></tr><tr><td>description_localizations?</td><td>?dictionary with keys in <a class="link-3m0lUT" href="https://discord.com/developers/docs/reference#locales" data-discover="true">available locales</a></td><td>Localization dictionary for <code>description</code> field. Values follow the same restrictions as <code>description</code></td><td>all</td></tr><tr><td>options? *</td><td>array of <a aria-current="page" class="link-3m0lUT" href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-option-structure" data-discover="true">command options</a></td><td>Parameters for the command, max of 25</td><td>CHAT_INPUT</td></tr><tr><td>default_member_permissions</td><td>?string</td><td>Set of <a class="link-3m0lUT" href="https://discord.com/developers/docs/topics/permissions" data-discover="true">permissions</a> represented as a bit set</td><td>all</td></tr><tr><td>dm_permission?</td><td>boolean</td><td>Deprecated (use <code>contexts</code> instead); Indicates whether the command is available in DMs with the app, only for globally-scoped commands. By default, commands are visible.</td><td>all</td></tr><tr><td>default_permission?</td><td>?boolean</td><td>Not recommended for use as field will soon be deprecated. Indicates whether the command is enabled by default when the app is added to a guild, defaults to <code>true</code></td><td>all</td></tr><tr><td>nsfw?</td><td>boolean</td><td>Indicates whether the command is <a aria-current="page" class="link-3m0lUT" href="https://discord.com/developers/docs/interactions/application-commands#agerestricted-commands" data-discover="true">age-restricted</a>, defaults to <code>false</code></td><td>all</td></tr><tr><td>integration_types?</td><td>list of <a class="link-3m0lUT" href="https://discord.com/developers/docs/resources/application#application-object-application-integration-types" data-discover="true">integration types</a></td><td><a class="link-3m0lUT" href="https://discord.com/developers/docs/resources/application#installation-context" data-discover="true">Installation contexts</a> where the command is available, only for globally-scoped commands. Defaults to your app's <a class="link-3m0lUT" href="https://discord.com/developers/docs/resources/application#setting-supported-installation-contexts" data-discover="true">configured contexts</a></td><td>all</td></tr><tr><td>contexts?</td><td>?list of <a class="link-3m0lUT" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-interaction-context-types" data-discover="true">interaction context types</a></td><td><a class="link-3m0lUT" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-interaction-context-types" data-discover="true">Interaction context(s)</a> where the command can be used, only for globally-scoped commands.</td><td>all</td></tr><tr><td>version</td><td>snowflake</td><td>Autoincrementing version identifier updated during substantial record changes</td><td>all</td></tr><tr><td>handler?</td><td>one of <a aria-current="page" class="link-3m0lUT" href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-entry-point-command-handler-types" data-discover="true">command handler types</a></td><td>Determines whether the interaction is handled by the app's interactions handler or by Discord</td><td>PRIMARY_ENTRY_POINT</td></tr></tbody></table>
+
+<ul>
+<li>
+<p><code>options</code> can only be set for application commands of type <code>CHAT_INPUT</code>.</p>
+</li>
+<li>
+<p><code>handler</code> can only be set for application commands of type <code>PRIMARY_ENTRY_POINT</code> for applications with the <code>EMBEDDED</code> flag (i.e. applications that have an Activity).</p>
+</li>
+</ul>
+<p><code>default_permission</code> will soon be deprecated. You can instead set <code>default_member_permissions</code> to <code>"0"</code> to disable the command for everyone except admins by default, and/or use <code>contexts</code> to disable globally-scoped commands inside of DMs with your app</p>
+<h6 id="application-command-types">Application Command Types<a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-types"></a></h6>
+<table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>CHAT_INPUT</td><td>1</td><td>Slash commands; a text-based command that shows up when a user types <code>/</code></td></tr><tr><td>USER</td><td>2</td><td>A UI-based command that shows up when you right click or tap on a user</td></tr><tr><td>MESSAGE</td><td>3</td><td>A UI-based command that shows up when you right click or tap on a message</td></tr><tr><td>PRIMARY_ENTRY_POINT</td><td>4</td><td>A UI-based command that represents the primary way to invoke an app's <a class="link-3m0lUT" href="https://discord.com/developers/docs/activities/overview" data-discover="true">Activity</a></td></tr></tbody></table>
+
+<h6 id="application-command-option-structure">Application Command Option Structure<a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-option-structure"></a></h6>
+<p>Required <code>options</code> must be listed before optional options<table><thead><tr><th>Field</th><th>Type</th><th>Description</th><th>Valid Option Types</th></tr></thead><tbody><tr><td>type</td><td>one of <a aria-current="page" class="link-3m0lUT" href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-option-type" data-discover="true">application command option type</a></td><td>Type of option</td><td>all</td></tr><tr><td>name <em></td><td>string</td><td><a aria-current="page" class="link-3m0lUT" href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-naming" data-discover="true">1-32 character name</a></td><td>all</td></tr><tr><td>name_localizations?</td><td>?dictionary with keys in <a class="link-3m0lUT" href="https://discord.com/developers/docs/reference#locales" data-discover="true">available locales</a></td><td>Localization dictionary for the <code>name</code> field. Values follow the same restrictions as <code>name</code></td><td>all</td></tr><tr><td>description</td><td>string</td><td>1-100 character description</td><td>all</td></tr><tr><td>description_localizations?</td><td>?dictionary with keys in <a class="link-3m0lUT" href="https://discord.com/developers/docs/reference#locales" data-discover="true">available locales</a></td><td>Localization dictionary for the <code>description</code> field. Values follow the same restrictions as <code>description</code></td><td>all</td></tr><tr><td>required?</td><td>boolean</td><td>Whether the parameter is required or optional, default <code>false</code></td><td>all but <code>SUB_COMMAND</code> and <code>SUB_COMMAND_GROUP</code></td></tr><tr><td>choices?</td><td>array of <a aria-current="page" class="link-3m0lUT" href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-option-choice-structure" data-discover="true">application command option choice</a></td><td>Choices for the user to pick from, max 25</td><td><code>STRING</code>, <code>INTEGER</code>, <code>NUMBER</code></td></tr><tr><td>options?</td><td>array of <a aria-current="page" class="link-3m0lUT" href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-option-structure" data-discover="true">application command option</a></td><td>If the option is a subcommand or subcommand group type, these nested options will be the parameters or subcommands respectively; up to 25</td><td><code>SUB_COMMAND</code> , <code>SUB_COMMAND_GROUP</code></td></tr><tr><td>channel_types?</td><td>array of <a class="link-3m0lUT" href="https://discord.com/developers/docs/resources/channel#channel-object-channel-types" data-discover="true">channel types</a></td><td>The channels shown will be restricted to these types</td><td><code>CHANNEL</code></td></tr><tr><td>min_value?</td><td>integer for <code>INTEGER</code> options, double for <code>NUMBER</code> options</td><td>The minimum value permitted</td><td><code>INTEGER</code> , <code>NUMBER</code></td></tr><tr><td>max_value?</td><td>integer for <code>INTEGER</code> options, double for <code>NUMBER</code> options</td><td>The maximum value permitted</td><td><code>INTEGER</code> , <code>NUMBER</code></td></tr><tr><td>min_length?</td><td>integer</td><td>The minimum allowed length (minimum of <code>0</code>, maximum of <code>6000</code>)</td><td><code>STRING</code></td></tr><tr><td>max_length?</td><td>integer</td><td>The maximum allowed length (minimum of <code>1</code>, maximum of <code>6000</code>)</td><td><code>STRING</code></td></tr><tr><td>autocomplete? </em>*</td><td>boolean</td><td>If autocomplete interactions are enabled for this option</td><td><code>STRING</code>, <code>INTEGER</code>, <code>NUMBER</code></td></tr></tbody></table></p>
+<ul>
+<li><code>name</code> must be unique within an array of <a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-option-structure">application command options</a>.</li>
+</ul>
+<p>** <code>autocomplete</code> may not be set to true if <code>choices</code> are present.</p>
+<p>Options using <code>autocomplete</code> are not confined to only use choices given by the application.</p>
+<h6 id="application-command-option-type">Application Command Option Type<a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-option-type"></a></h6>
+<table><thead><tr><th>Name</th><th>Value</th><th>Note</th></tr></thead><tbody><tr><td>SUB_COMMAND</td><td>1</td><td></td></tr><tr><td>SUB_COMMAND_GROUP</td><td>2</td><td></td></tr><tr><td>STRING</td><td>3</td><td></td></tr><tr><td>INTEGER</td><td>4</td><td>Any integer between -2^53 and 2^53</td></tr><tr><td>BOOLEAN</td><td>5</td><td></td></tr><tr><td>USER</td><td>6</td><td></td></tr><tr><td>CHANNEL</td><td>7</td><td>Includes all channel types + categories</td></tr><tr><td>ROLE</td><td>8</td><td></td></tr><tr><td>MENTIONABLE</td><td>9</td><td>Includes users and roles</td></tr><tr><td>NUMBER</td><td>10</td><td>Any double between -2^53 and 2^53</td></tr><tr><td>ATTACHMENT</td><td>11</td><td><a class="link-3m0lUT" href="https://discord.com/developers/docs/resources/message#attachment-object" data-discover="true">attachment</a> object</td></tr></tbody></table>
+
+<h6 id="application-command-option-choice-structure">Application Command Option Choice Structure<a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-option-choice-structure"></a></h6>
+<p>If you specify <code>choices</code> for an option, they are the only valid values for a user to pick<table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>string</td><td>1-100 character choice name</td></tr><tr><td>name_localizations?</td><td>?dictionary with keys in <a class="link-3m0lUT" href="https://discord.com/developers/docs/reference#locales" data-discover="true">available locales</a></td><td>Localization dictionary for the <code>name</code> field. Values follow the same restrictions as <code>name</code></td></tr><tr><td>value</td><td>string, integer, or double *</td><td>Value for the choice, up to 100 characters if string</td></tr></tbody></table></p>
+<ul>
+<li>Type of <code>value</code> depends on the <a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-option-type">option type</a> that the choice belongs to.</li>
+</ul>
+<h6 id="entry-point-command-handler-types">Entry Point Command Handler Types<a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-entry-point-command-handler-types"></a></h6>
+<table><thead><tr><th>Name</th><th>Value</th><th>Note</th></tr></thead><tbody><tr><td>APP_HANDLER</td><td>1</td><td>The app handles the interaction using an interaction token</td></tr><tr><td>DISCORD_LAUNCH_ACTIVITY</td><td>2</td><td>Discord handles the interaction by launching an Activity and sending a follow-up message without coordinating with the app</td></tr></tbody></table>
+
+<p>Details about Entry Point command handler types are in the <a href="https://discord.com/developers/docs/interactions/application-commands#entry-point-handlers">Entry Point handlers</a> section.</p>
+<h2 id="authorizing-your-application">Authorizing Your Application<a href="https://discord.com/developers/docs/interactions/application-commands#authorizing-your-application"></a></h2>
+<p>Application commands do not depend on a bot user in the guild; they use the <a href="https://discord.com/developers/docs/interactions/receiving-and-responding">interactions</a> model. To create commands in a guild, your app must be authorized with the <code>applications.commands</code> scope which can be used independently, but is also automatically included with the <code>bot</code> scope.</p>
+<p>When requesting this scope, we "shortcut" the OAuth2 flow similar to adding a bot. You don't need to complete the flow, exchange for a token, or any of that.</p>
+<p>If your application does not require a bot user in the guild for its commands to work, you don't need to add the bot scope or a permission bitfield to the URL.</p>
+<h2 id="registering-a-command">Registering a Command<a href="https://discord.com/developers/docs/interactions/application-commands#registering-a-command"></a></h2>
+<p>Commands can only be registered via HTTP endpoint.</p>
+<p>Commands can be scoped either globally or to a specific guild. Global commands are available for every guild that adds your app. An individual app's global commands are also available in DMs if that app has a bot that shares a mutual guild with the user.</p>
+<p>Guild commands are specific to the guild you specify when making them. Guild commands are not available in DMs. Command names are unique per application, per type, within each scope (global and guild). That means:</p>
+<ul>
+<li>Your app cannot have two global <code>CHAT_INPUT</code> commands with the same name</li>
+<li>Your app cannot have two guild <code>CHAT_INPUT</code> commands within the same name on the same guild</li>
+<li>Your app cannot have two global <code>USER</code> commands with the same name</li>
+<li>Your app can have a global and guild <code>CHAT_INPUT</code> command with the same name</li>
+<li>Your app can have a global <code>CHAT_INPUT</code> and <code>USER</code> command with the same name</li>
+<li>Your app cannot have a <code>PRIMARY_ENTRY_POINT</code> guild command</li>
+<li>Multiple apps can have commands with the same names</li>
+</ul>
+<p>This list is non-exhaustive. In general, remember that command names must be unique per application, per type, and within each scope (global and guild).</p>
+<p>An app can have the following number of commands:</p>
+<ul>
+<li>100 global <code>CHAT_INPUT</code> commands</li>
+<li>5 global <code>USER</code> commands</li>
+<li>5 global <code>MESSAGE</code> commands</li>
+<li>1 global <code>PRIMARY_ENTRY_POINT</code> command</li>
+</ul>
+<p>For all command types except <code>PRIMARY_ENTRY_POINT</code>, you can have the same amount of guild-specific commands per guild.</p>
+<p>There is a global rate limit of 200 application command creates per day, per guild</p>
+<h3 id="making-a-global-command">Making a Global Command<a href="https://discord.com/developers/docs/interactions/application-commands#making-a-global-command"></a></h3>
+<p>Global commands are available on all your app's guilds.</p>
+<p>Global commands have inherent read-repair functionality. That means that if you make an update to a global command, and a user tries to use that command before it has updated for them, Discord will do an internal version check and reject the command, and trigger a reload for that command.</p>
+<p>To make a global command, make an HTTP POST call like this:</p>
+<pre><code>import requests
+
+
+url = &quot;https://discord.com/api/v10/applications/&lt;my_application_id&gt;/commands&quot;
+
+# This is an example CHAT_INPUT or Slash Command, with a type of 1
+json = {
+    &quot;name&quot;: &quot;blep&quot;,
+    &quot;type&quot;: 1,
+    &quot;description&quot;: &quot;Send a random adorable animal photo&quot;,
+    &quot;options&quot;: [
+        {
+            &quot;name&quot;: &quot;animal&quot;,
+            &quot;description&quot;: &quot;The type of animal&quot;,
+            &quot;type&quot;: 3,
+            &quot;required&quot;: True,
+            &quot;choices&quot;: [
+                {
+                    &quot;name&quot;: &quot;Dog&quot;,
+                    &quot;value&quot;: &quot;animal_dog&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;Cat&quot;,
+                    &quot;value&quot;: &quot;animal_cat&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;Penguin&quot;,
+                    &quot;value&quot;: &quot;animal_penguin&quot;
+                }
+            ]
+        },
+        {
+            &quot;name&quot;: &quot;only_smol&quot;,
+            &quot;description&quot;: &quot;Whether to show only baby animals&quot;,
+            &quot;type&quot;: 5,
+            &quot;required&quot;: False
+        }
+    ]
+}
+
+# For authorization, you can use either your bot token
+headers = {
+    &quot;Authorization&quot;: &quot;Bot &lt;my_bot_token&gt;&quot;
+}
+
+# or a client credentials token for your app with the applications.commands.update scope
+headers = {
+    &quot;Authorization&quot;: &quot;Bearer &lt;my_credentials_token&gt;&quot;
+}
+
+r = requests.post(url, headers=headers, json=json)
+</code></pre>
+<h3 id="making-a-guild-command">Making a Guild Command<a href="https://discord.com/developers/docs/interactions/application-commands#making-a-guild-command"></a></h3>
+<p>Guild commands are available only within the guild specified on creation. Guild commands update instantly. We recommend you use guild commands for quick testing, and global commands when they're ready for public use.</p>
+<p>To make a guild command, make a similar HTTP POST call, but scope it to a specific <code>guild_id</code>:</p>
+<pre><code>import requests
+
+
+url = &quot;https://discord.com/api/v10/applications/&lt;my_application_id&gt;/guilds/&lt;guild_id&gt;/commands&quot;
+
+# This is an example USER command, with a type of 2
+json = {
+    &quot;name&quot;: &quot;High Five&quot;,
+    &quot;type&quot;: 2
+}
+
+# For authorization, you can use either your bot token
+headers = {
+    &quot;Authorization&quot;: &quot;Bot &lt;my_bot_token&gt;&quot;
+}
+
+# or a client credentials token for your app with the applications.commands.update scope
+headers = {
+    &quot;Authorization&quot;: &quot;Bearer &lt;my_credentials_token&gt;&quot;
+}
+
+r = requests.post(url, headers=headers, json=json)
+</code></pre>
+<h2 id="updating-and-deleting-a-command">Updating and Deleting a Command<a href="https://discord.com/developers/docs/interactions/application-commands#updating-and-deleting-a-command"></a></h2>
+<p>Commands can be deleted and updated by making <code>DELETE</code> and <code>PATCH</code> calls to the command endpoint. Those endpoints are</p>
+<ul>
+<li><code>applications/&lt;my_application_id&gt;/commands/&lt;command_id&gt;</code> for global commands, or</li>
+<li><code>applications/&lt;my_application_id&gt;/guilds/&lt;guild_id&gt;/commands/&lt;command_id&gt;</code> for guild commands</li>
+</ul>
+<p>Because commands have unique names within a type and scope, we treat <code>POST</code> requests for new commands as upserts. That means making a new command with an already-used name for your application will update the existing command.</p>
+<p>Detailed documentation about application command endpoints and their parameters are <a href="https://discord.com/developers/docs/interactions/application-commands#endpoints">in the endpoints section</a>.</p>
+<h2 id="contexts">Contexts<a href="https://discord.com/developers/docs/interactions/application-commands#contexts"></a></h2>
+<p>Commands have two sets of contexts on the <a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object">application command object</a> that let you to configure when and where it can be used:</p>
+<ul>
+<li><code>integration_types</code> defines the <a href="https://discord.com/developers/docs/interactions/application-commands#installation-context">installation contexts</a> that a command supports</li>
+<li><code>contexts</code> defines the <a href="https://discord.com/developers/docs/interactions/application-commands#interaction-contexts">interaction contexts</a> where a command can be used</li>
+</ul>
+<p>Details for both types of command contexts are in the sections below.</p>
+<p>Contexts are distinct from, and do not affect, any <a href="https://discord.com/developers/docs/interactions/application-commands#permissions">command permissions</a> for apps installed to a server.</p>
+<h3 id="installation-context">Installation Context<a href="https://discord.com/developers/docs/interactions/application-commands#installation-context"></a></h3>
+<p>The <a href="https://discord.com/developers/docs/resources/application#installation-context">installation context</a> is where your app was installed—to a server, a user, or both. If your app supports both installation contexts, there may be cases where you want some of your app's commands to only be available for one or the other. For example, maybe your app has a <code>/profile</code> command that is only relevant when it's installed to a user.</p>
+<p>A command's supported installation context(s) can be set using the <a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-structure"><code>integration_types</code> field</a> when creating or updating a command as long as any included contexts are already <a href="https://discord.com/developers/docs/resources/application#setting-supported-installation-contexts">supported on the application-level</a>.</p>
+<p>A command's value for <code>integration_types</code> may affect which <a href="https://discord.com/developers/docs/interactions/application-commands#interaction-contexts">interaction contexts</a> a command is visible in.</p>
+<h3 id="interaction-contexts">Interaction Contexts<a href="https://discord.com/developers/docs/interactions/application-commands#interaction-contexts"></a></h3>
+<p>The interaction contexts for a command determines where in the Discord client it can be used, and can be configured by setting the <a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-structure"><code>contexts</code> field</a> when creating or updating a command.</p>
+<p>There are three <a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-interaction-context-types">interaction context types</a> that correspond to different surfaces: <code>GUILD</code> (<code>0</code>), <code>BOT_DM</code> (<code>1</code>), and <code>PRIVATE_CHANNEL</code> (<code>2</code>). However, the <code>PRIVATE_CHANNEL</code> interaction context is only meaningful for commands installed to a user (when the command's <code>integration_types</code> includes <code>USER_INSTALL</code>).</p>
+<h2 id="permissions">Permissions<a href="https://discord.com/developers/docs/interactions/application-commands#permissions"></a></h2>
+<p>Application command permissions allow your app to enable or disable commands for up to 100 users, roles, and channels within a guild. Command permissions can also be updated by users in the client if they have the necessary permissions.</p>
+<p>Command permissions can only be updated using a <a href="https://discord.com/developers/docs/topics/oauth2#client-credentials-grant">Bearer token</a>. Authenticating with a bot token will result in an error.</p>
+<p>A command's current permissions can be retrieved using the <a href="https://discord.com/developers/docs/interactions/application-commands#get-application-command-permissions"><code>GET /applications/{application.id}/guilds/{guild.id}/commands/{command.id}/permissions</code></a> endpoint. The response will include an array called <code>permissions</code> with associated IDs and permission types.</p>
+<p>Command permissions can be updated with the <a href="https://discord.com/developers/docs/interactions/application-commands#edit-application-command-permissions"><code>PUT /applications/{application.id}/guilds/{guild.id}/commands/{command.id}/permissions</code></a> endpoint. To call the endpoint, apps must use a Bearer token that's authorized with the <a href="https://discord.com/developers/docs/topics/oauth2#shared-resources-oauth2-scopes"><code>applications.commands.permissions.update</code></a> scope from a user with sufficient permissions. For their permissions to be considered sufficient, all of the following must be true for the authenticating user (not your app or bot user):</p>
+<ul>
+<li>Has <a href="https://discord.com/developers/docs/topics/permissions">permission to Manage Guild and Manage Roles</a> in the guild where the command is being edited</li>
+<li>Has the ability to run the command being edited</li>
+<li>Has permission to manage the resources that will be affected (roles, users, and/or channels depending on the <a href="https://discord.com/developers/docs/interactions/application-commands#application-command-permissions-object-application-command-permission-type">permission types</a>)</li>
+</ul>
+<h3 id="syncing-and-unsyncing-permissions">Syncing and Unsyncing Permissions<a href="https://discord.com/developers/docs/interactions/application-commands#syncing-and-unsyncing-permissions"></a></h3>
+<p>The command permissions interface can be accessed in the client by navigating to <code>Server Settings</code> &gt; <code>Integrations</code>, then clicking <code>Manage</code> to the right of an installed app. At the top of the interface, users can edit permissions for a specific user, role, or channel. By default, these top-level permissions will apply to all of an app's commands. However, each permission can also be unsynced and customized for individual commands to provide more granular control.</p>
+<p>When the permissions for a specific command are unsynced, meaning it doesn't align with the top-level permissions, the interface will display"Not Synced" to users.</p>
+<h3 id="application-command-permissions-object">Application Command Permissions Object<a href="https://discord.com/developers/docs/interactions/application-commands#application-command-permissions-object"></a></h3>
+<h6 id="guild-application-command-permissions-structure">Guild Application Command Permissions Structure<a href="https://discord.com/developers/docs/interactions/application-commands#application-command-permissions-object-guild-application-command-permissions-structure"></a></h6>
+<p>Returned when fetching the permissions for an app's command(s) in a guild.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>snowflake</td><td>ID of the command or the application ID</td></tr><tr><td>application_id</td><td>snowflake</td><td>ID of the application the command belongs to</td></tr><tr><td>guild_id</td><td>snowflake</td><td>ID of the guild</td></tr><tr><td>permissions</td><td>array of <a aria-current="page" class="link-3m0lUT" href="https://discord.com/developers/docs/interactions/application-commands#application-command-permissions-object-application-command-permissions-structure" data-discover="true">application command permissions</a></td><td>Permissions for the command in the guild, max of 100</td></tr></tbody></table>
+
+<p>When the <code>id</code> field is the application ID instead of a command ID, the permissions apply to all commands that do not contain explicit overwrites.</p>
+<h6 id="application-command-permissions-structure">Application Command Permissions Structure<a href="https://discord.com/developers/docs/interactions/application-commands#application-command-permissions-object-application-command-permissions-structure"></a></h6>
+<p>Application command permissions allow you to enable or disable commands for specific users, roles, or channels within a guild.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>snowflake</td><td>ID of the role, user, or channel. It can also be a <a aria-current="page" class="link-3m0lUT" href="https://discord.com/developers/docs/interactions/application-commands#application-command-permissions-object-application-command-permissions-constants" data-discover="true">permission constant</a></td></tr><tr><td>type</td><td><a aria-current="page" class="link-3m0lUT" href="https://discord.com/developers/docs/interactions/application-commands#application-command-permissions-object-application-command-permission-type" data-discover="true">application command permission type</a></td><td>role (<code>1</code>), user (<code>2</code>), or channel (<code>3</code>)</td></tr><tr><td>permission</td><td>boolean</td><td><code>true</code> to allow, <code>false</code>, to disallow</td></tr></tbody></table>
+
+<h6 id="application-command-permissions-constants">Application Command Permissions Constants<a href="https://discord.com/developers/docs/interactions/application-commands#application-command-permissions-object-application-command-permissions-constants"></a></h6>
+<p>The following constants can be used in the <code>id</code> field for command permissions payloads.</p>
+<table><thead><tr><th>Permission</th><th>Value</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>@everyone</code></td><td><code>guild_id</code></td><td>snowflake</td><td>All members in a guild</td></tr><tr><td>All Channels</td><td><code>guild_id - 1</code></td><td>snowflake</td><td>All channels in a guild</td></tr></tbody></table>
+
+<h6 id="application-command-permission-type">Application Command Permission Type<a href="https://discord.com/developers/docs/interactions/application-commands#application-command-permissions-object-application-command-permission-type"></a></h6>
+<table><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>ROLE</td><td>1</td></tr><tr><td>USER</td><td>2</td></tr><tr><td>CHANNEL</td><td>3</td></tr></tbody></table>
+
+<p>To allow for fine-tuned access to commands, application command permissions are supported for guild and global commands of all types. Guild members and apps with the <a href="https://discord.com/developers/docs/interactions/application-commands#permissions">necessary permissions</a> can allow or deny specific users and roles from using a command, or toggle commands for entire channels.</p>
+<p>Similar to how threads <a href="https://discord.com/developers/docs/topics/threads#permissions">inherit user and role permissions from the parent channel</a>, any command permissions for a channel will apply to the threads it contains.</p>
+<p>If you don't have permission to use a command, it will not show up in the command picker. Members with the Administrator permission can use all commands.</p>
+<h6 id="using-default-permissions">Using Default Permissions<a href="https://discord.com/developers/docs/interactions/application-commands#application-command-permissions-object-using-default-permissions"></a></h6>
+<p>Default permissions can be added to a command during creation using the <code>default_member_permissions</code> and <code>context</code> fields. Adding default permissions doesn't require any Bearer token since it's configured during command creation and isn't targeting specific roles, users, or channels.</p>
+<p>The <code>default_member_permissions</code> field can be used when creating a command to set the permissions a user must have to use it. The value for <code>default_member_permissions</code> is a bitwise OR-ed set of <a href="https://discord.com/developers/docs/topics/permissions#permissions-bitwise-permission-flags">permissions</a>, serialized as a string. Setting it to <code>"0"</code> will prohibit anyone in a guild from using the command unless a specific overwrite is configured or the user has admin permissions.</p>
+<p>You can also include <code>BOT_DM</code> (<code>1</code>) in <code>contexts</code> when setting a global command's <a href="https://discord.com/developers/docs/interactions/application-commands#interaction-contexts">interaction contexts</a> to control whether it can be run in DMs with your app. Guild commands don't support the <code>BOT_DM</code> interaction context.</p>
+<h6 id="example-of-editing-permissions">Example of editing permissions<a href="https://discord.com/developers/docs/interactions/application-commands#application-command-permissions-object-example-of-editing-permissions"></a></h6>
+<p>As an example, the following command would not be usable by anyone except admins in any guilds by default:</p>
+<pre><code>{
+    &quot;name&quot;: &quot;permissions_test&quot;,
+    &quot;description&quot;: &quot;A test of default permissions&quot;,
+    &quot;type&quot;: 1,
+    &quot;default_member_permissions&quot;: &quot;0&quot;
+}
+</code></pre>
+<p>Or this would enable it just for users that have the <code>MANAGE_GUILD</code> permission:</p>
+<pre><code>permissions = str(1 &lt;&lt; 5)
+
+command = {
+    &quot;name&quot;: &quot;permissions_test&quot;,
+    &quot;description&quot;: &quot;A test of default permissions&quot;,
+    &quot;type&quot;: 1,
+    &quot;default_member_permissions&quot;: permissions
+}
+</code></pre>
+<p>And the following would disable a command for a specific channel:</p>
+<pre><code>A_SPECIFIC_CHANNEL = &quot;&lt;channel_id&gt;&quot;
+url = &quot;https://discord.com/api/v10/applications/&lt;application_id&gt;/guilds/&lt;my_guild_id&gt;/commands/&lt;my_command_id&gt;/permissions&quot;
+
+json = {
+    &quot;permissions&quot;: [
+        {
+            &quot;id&quot;: A_SPECIFIC_CHANNEL,
+            &quot;type&quot;: 3,
+            &quot;permission&quot;: False
+        }
+    ]
+}
+
+headers = {
+    &quot;Authorization&quot;: &quot;Bearer &lt;my_bearer_token&gt;&quot;
+}
+
+r = requests.put(url, headers=headers, json=json)
+</code></pre>
+<h2 id="slash-commands">Slash Commands<a href="https://discord.com/developers/docs/interactions/application-commands#slash-commands"></a></h2>
+<p>Slash commands—the <code>CHAT_INPUT</code> type—are a type of application command. They're made up of a name, description, and a block of <code>options</code>, which you can think of like arguments to a function. The name and description help users find your command among many others, and the <code>options</code> validate user input as they fill out your command.</p>
+<p>Slash commands can also have groups and subcommands to further organize commands. More on those later.</p>
+<p>Slash commands can have a maximum of 8000 characters for combined name, description, and value properties for each command, its options (including subcommands and groups), and choices. When <a href="https://discord.com/developers/docs/interactions/application-commands#localization">localization fields</a> are present, only the longest localization for each field (including the default value) is counted towards the size limit.</p>
+<h6 id="example-slash-command">Example Slash Command<a href="https://discord.com/developers/docs/interactions/application-commands#slash-commands-example-slash-command"></a></h6>
+<pre><code>{
+    &quot;name&quot;: &quot;blep&quot;,
+    &quot;type&quot;: 1,
+    &quot;description&quot;: &quot;Send a random adorable animal photo&quot;,
+    &quot;options&quot;: [
+        {
+            &quot;name&quot;: &quot;animal&quot;,
+            &quot;description&quot;: &quot;The type of animal&quot;,
+            &quot;type&quot;: 3,
+            &quot;required&quot;: true,
+            &quot;choices&quot;: [
+                {
+                    &quot;name&quot;: &quot;Dog&quot;,
+                    &quot;value&quot;: &quot;animal_dog&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;Cat&quot;,
+                    &quot;value&quot;: &quot;animal_cat&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;Penguin&quot;,
+                    &quot;value&quot;: &quot;animal_penguin&quot;
+                }
+            ]
+        },
+        {
+            &quot;name&quot;: &quot;only_smol&quot;,
+            &quot;description&quot;: &quot;Whether to show only baby animals&quot;,
+            &quot;type&quot;: 5,
+            &quot;required&quot;: false
+        }
+    ]
+}
+</code></pre>
+<p>When someone uses a slash command, your application will receive an interaction:</p>
+<h6 id="example-interaction">Example Interaction<a href="https://discord.com/developers/docs/interactions/application-commands#slash-commands-example-interaction"></a></h6>
+<p>Slash Command InteractionView sample payload for Slash Command interactions</p>
+<pre><code>{
+    &quot;type&quot;: 2,
+    &quot;token&quot;: &quot;A_UNIQUE_TOKEN&quot;,
+    &quot;member&quot;: {
+        &quot;user&quot;: {
+            &quot;id&quot;: &quot;53908232506183680&quot;,
+            &quot;username&quot;: &quot;Mason&quot;,
+            &quot;avatar&quot;: &quot;a_d5efa99b3eeaa7dd43acca82f5692432&quot;,
+            &quot;discriminator&quot;: &quot;1337&quot;,
+            &quot;public_flags&quot;: 131141
+        },
+        &quot;roles&quot;: [&quot;539082325061836999&quot;],
+        &quot;premium_since&quot;: null,
+        &quot;permissions&quot;: &quot;2147483647&quot;,
+        &quot;pending&quot;: false,
+        &quot;nick&quot;: null,
+        &quot;mute&quot;: false,
+        &quot;joined_at&quot;: &quot;2017-03-13T19:19:14.040000+00:00&quot;,
+        &quot;is_pending&quot;: false,
+        &quot;deaf&quot;: false
+    },
+    &quot;id&quot;: &quot;786008729715212338&quot;,
+    &quot;guild_id&quot;: &quot;290926798626357999&quot;,
+    &quot;app_permissions&quot;: &quot;442368&quot;,
+    &quot;guild_locale&quot;: &quot;en-US&quot;,
+    &quot;locale&quot;: &quot;en-US&quot;,
+    &quot;data&quot;: {
+        &quot;options&quot;: [{
+            &quot;type&quot;: 3,
+            &quot;name&quot;: &quot;cardname&quot;,
+            &quot;value&quot;: &quot;The Gitrog Monster&quot;
+        }],
+        &quot;type&quot;: 1,
+        &quot;name&quot;: &quot;cardsearch&quot;,
+        &quot;id&quot;: &quot;771825006014889984&quot;
+    },
+    &quot;channel_id&quot;: &quot;645027906669510667&quot;
+}
+</code></pre>
+<h2 id="subcommands-and-subcommand-groups">Subcommands and Subcommand Groups<a href="https://discord.com/developers/docs/interactions/application-commands#subcommands-and-subcommand-groups"></a></h2>
+<p>Currently, subcommands and subcommand groups all appear at the top level in the command explorer. This may change in the future to include them as nested autocomplete options.</p>
+<p>For those developers looking to make more organized and complex groups of commands, look no further than subcommands and groups.</p>
+<p>Subcommands organize your commands by specifying actions within a command or group.</p>
+<p>Subcommand Groups organize your subcommands by grouping subcommands by similar action or resource within a command.</p>
+<p>These are not enforced rules. You are free to use subcommands and groups however you'd like; it's just how we think about them.</p>
+<p>Using subcommands or subcommand groups will make your base command unusable. You can't send the base <code>/permissions</code> command as a valid command if you also have <code>/permissions add | remove</code> as subcommands or subcommand groups</p>
+<p>We support nesting one level deep within a group, meaning your top level command can contain subcommand groups, and those groups can contain subcommands. That is the only kind of nesting supported. Here's some visual examples:</p>
+<pre><code>VALID
+
+command
+|
+|__ subcommand
+|
+|__ subcommand
+
+----
+
+VALID
+
+command
+|
+|__ subcommand-group
+    |
+    |__ subcommand
+|
+|__ subcommand-group
+    |
+    |__ subcommand
+
+----
+
+VALID
+
+command
+|
+|__ subcommand-group
+    |
+    |__ subcommand
+|
+|__ subcommand
+
+-------
+
+INVALID
+
+command
+|
+|__ subcommand-group
+    |
+    |__ subcommand-group
+|
+|__ subcommand-group
+    |
+    |__ subcommand-group
+
+----
+
+INVALID
+
+command
+|
+|__ subcommand
+    |
+    |__ subcommand-group
+|
+|__ subcommand
+    |
+    |__ subcommand-group
+</code></pre>
+<h3 id="example-walkthrough">Example Walkthrough<a href="https://discord.com/developers/docs/interactions/application-commands#example-walkthrough"></a></h3>
+<p>Let's look at an example. Let's imagine you run a moderation bot. You want to make a <code>/permissions</code> command that can do the following:</p>
+<ul>
+<li>Get the guild permissions for a user or a role</li>
+<li>Get the permissions for a user or a role on a specific channel</li>
+<li>Change the guild permissions for a user or a role</li>
+<li>Change the permissions for a user or a role on a specific channel</li>
+</ul>
+<p>We'll start by defining the top-level information for <code>/permissions</code>:</p>
+<pre><code>{
+    &quot;name&quot;: &quot;permissions&quot;,
+    &quot;description&quot;: &quot;Get or edit permissions for a user or a role&quot;,
+    &quot;options&quot;: []
+}
+</code></pre>
+<p><img alt="" src="../img/permissions_command.webp" /></p>
+<p>Now we have a command named <code>permissions</code>. We want this command to be able to affect users and roles. Rather than making two separate commands, we can use subcommand groups. We want to use subcommand groups here because we are grouping commands on a similar resource: <code>user</code> or <code>role</code>.</p>
+<pre><code>{
+    &quot;name&quot;: &quot;permissions&quot;,
+    &quot;description&quot;: &quot;Get or edit permissions for a user or a role&quot;,
+    &quot;options&quot;: [
+        {
+            &quot;name&quot;: &quot;user&quot;,
+            &quot;description&quot;: &quot;Get or edit permissions for a user&quot;,
+            &quot;type&quot;: 2 // 2 is type SUB_COMMAND_GROUP
+        },
+        {
+            &quot;name&quot;: &quot;role&quot;,
+            &quot;description&quot;: &quot;Get or edit permissions for a role&quot;,
+            &quot;type&quot;: 2
+        }
+    ]
+}
+</code></pre>
+<p>You'll notice that a command like this will not show up in the command explorer. That's because groups are effectively"folders"for commands, and we've made two empty folders. So let's continue.</p>
+<p>Now that we've effectively made <code>user</code> and <code>role</code> "folders", we want to be able to either <code>get</code> and <code>edit</code> permissions. Within the subcommand groups, we can make subcommands for <code>get</code> and <code>edit</code>:</p>
+<pre><code>{
+    &quot;name&quot;: &quot;permissions&quot;,
+    &quot;description&quot;: &quot;Get or edit permissions for a user or a role&quot;,
+    &quot;options&quot;: [
+        {
+            &quot;name&quot;: &quot;user&quot;,
+            &quot;description&quot;: &quot;Get or edit permissions for a user&quot;,
+            &quot;type&quot;: 2, // 2 is type SUB_COMMAND_GROUP
+            &quot;options&quot;: [
+                {
+                    &quot;name&quot;: &quot;get&quot;,
+                    &quot;description&quot;: &quot;Get permissions for a user&quot;,
+                    &quot;type&quot;: 1 // 1 is type SUB_COMMAND
+                },
+                {
+                    &quot;name&quot;: &quot;edit&quot;,
+                    &quot;description&quot;: &quot;Edit permissions for a user&quot;,
+                    &quot;type&quot;: 1
+                }
+            ]
+        },
+        {
+            &quot;name&quot;: &quot;role&quot;,
+            &quot;description&quot;: &quot;Get or edit permissions for a role&quot;,
+            &quot;type&quot;: 2,
+            &quot;options&quot;: [
+                {
+                    &quot;name&quot;: &quot;get&quot;,
+                    &quot;description&quot;: &quot;Get permissions for a role&quot;,
+                    &quot;type&quot;: 1
+                },
+                {
+                    &quot;name&quot;: &quot;edit&quot;,
+                    &quot;description&quot;: &quot;Edit permissions for a role&quot;,
+                    &quot;type&quot;: 1
+                }
+            ]
+        }
+    ]
+}
+</code></pre>
+<p><img alt="" src="../img/command_introduce_group.webp" /></p>
+<p>Now, we need some arguments! If we chose <code>user</code>, we need to be able to pick a user; if we chose <code>role</code>, we need to be able to pick a role. We also want to be able to pick between guild-level permissions and channel-specific permissions. For that, we can use optional arguments:</p>
+<pre><code>{
+    &quot;name&quot;: &quot;permissions&quot;,
+    &quot;description&quot;: &quot;Get or edit permissions for a user or a role&quot;,
+    &quot;options&quot;: [
+        {
+            &quot;name&quot;: &quot;user&quot;,
+            &quot;description&quot;: &quot;Get or edit permissions for a user&quot;,
+            &quot;type&quot;: 2, // 2 is type SUB_COMMAND_GROUP
+            &quot;options&quot;: [
+                {
+                    &quot;name&quot;: &quot;get&quot;,
+                    &quot;description&quot;: &quot;Get permissions for a user&quot;,
+                    &quot;type&quot;: 1, // 1 is type SUB_COMMAND
+                    &quot;options&quot;: [
+                        {
+                            &quot;name&quot;: &quot;user&quot;,
+                            &quot;description&quot;: &quot;The user to get&quot;,
+                            &quot;type&quot;: 6, // 6 is type USER
+                            &quot;required&quot;: true
+                        },
+                        {
+                            &quot;name&quot;: &quot;channel&quot;,
+                            &quot;description&quot;: &quot;The channel permissions to get. If omitted, the guild permissions will be returned&quot;,
+                            &quot;type&quot;: 7, // 7 is type CHANNEL
+                            &quot;required&quot;: false
+                        }
+                    ]
+                },
+                {
+                    &quot;name&quot;: &quot;edit&quot;,
+                    &quot;description&quot;: &quot;Edit permissions for a user&quot;,
+                    &quot;type&quot;: 1,
+                    &quot;options&quot;: [
+                        {
+                            &quot;name&quot;: &quot;user&quot;,
+                            &quot;description&quot;: &quot;The user to edit&quot;,
+                            &quot;type&quot;: 6,
+                            &quot;required&quot;: true
+                        },
+                        {
+                            &quot;name&quot;: &quot;channel&quot;,
+                            &quot;description&quot;: &quot;The channel permissions to edit. If omitted, the guild permissions will be edited&quot;,
+                            &quot;type&quot;: 7,
+                            &quot;required&quot;: false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            &quot;name&quot;: &quot;role&quot;,
+            &quot;description&quot;: &quot;Get or edit permissions for a role&quot;,
+            &quot;type&quot;: 2,
+            &quot;options&quot;: [
+                {
+                    &quot;name&quot;: &quot;get&quot;,
+                    &quot;description&quot;: &quot;Get permissions for a role&quot;,
+                    &quot;type&quot;: 1,
+                    &quot;options&quot;: [
+                        {
+                            &quot;name&quot;: &quot;role&quot;,
+                            &quot;description&quot;: &quot;The role to get&quot;,
+                            &quot;type&quot;: 8, // 8 is type ROLE
+                            &quot;required&quot;: true
+                        },
+                        {
+                            &quot;name&quot;: &quot;channel&quot;,
+                            &quot;description&quot;: &quot;The channel permissions to get. If omitted, the guild permissions will be returned&quot;,
+                            &quot;type&quot;: 7,
+                            &quot;required&quot;: false
+                        }
+                    ]
+                },
+                {
+                    &quot;name&quot;: &quot;edit&quot;,
+                    &quot;description&quot;: &quot;Edit permissions for a role&quot;,
+                    &quot;type&quot;: 1,
+                    &quot;options&quot;: [
+                        {
+                            &quot;name&quot;: &quot;role&quot;,
+                            &quot;description&quot;: &quot;The role to edit&quot;,
+                            &quot;type&quot;: 8,
+                            &quot;required&quot;: true
+                        },
+                        {
+                            &quot;name&quot;: &quot;channel&quot;,
+                            &quot;description&quot;: &quot;The channel permissions to edit. If omitted, the guild permissions will be edited&quot;,
+                            &quot;type&quot;: 7,
+                            &quot;required&quot;: false
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+</code></pre>
+<p>And, done! The JSON looks a bit complicated, but what we've ended up with is a single command that can be scoped to multiple actions, and then further scoped to a particular resource, and then even further scope with optional arguments. Here's what it looks like all put together.</p>
+<p><img alt="" src="../img/command_introduce_action.webp" /></p>
+<h2 id="user-commands">User Commands<a href="https://discord.com/developers/docs/interactions/application-commands#user-commands"></a></h2>
+<p>User commands are application commands that appear on the context menu (right click or tap) of users. They're a great way to surface quick actions for your app that target users. They don't take any arguments, and will return the user on whom you clicked or tapped in the interaction response.</p>
+<p>A user must have permission to send text messages in the channel they invoke a user command in. If they don't have this permission, they will receive a'Permission Denied' error from the interaction. The <code>description</code> field is not allowed when creating user commands. However, to avoid breaking changes to data models, <code>description</code> will be an empty string (instead of <code>null</code>) when fetching commands.</p>
+<h6 id="example-user-command">Example User Command<a href="https://discord.com/developers/docs/interactions/application-commands#user-commands-example-user-command"></a></h6>
+<pre><code>{
+    &quot;name&quot;: &quot;High Five&quot;,
+    &quot;type&quot;: 2
+}
+</code></pre>
+<p><img alt="" src="../img/user_command.webp" /></p>
+<p>When someone uses a user command, your application will receive an interaction:</p>
+<h6 id="example-interaction_1">Example Interaction<a href="https://discord.com/developers/docs/interactions/application-commands#user-commands-example-interaction"></a></h6>
+<p>User Command InteractionView sample payload for User Command interactions</p>
+<pre><code>{
+    &quot;application_id&quot;: &quot;775799577604522054&quot;,
+    &quot;channel_id&quot;: &quot;772908445358620702&quot;,
+    &quot;data&quot;: {
+        &quot;id&quot;: &quot;866818195033292850&quot;,
+        &quot;name&quot;: &quot;context-menu-user-2&quot;,
+        &quot;resolved&quot;: {
+            &quot;members&quot;: {
+                &quot;809850198683418695&quot;: {
+                    &quot;avatar&quot;: null,
+                    &quot;is_pending&quot;: false,
+                    &quot;joined_at&quot;: &quot;2021-02-12T18:25:07.972000+00:00&quot;,
+                    &quot;nick&quot;: null,
+                    &quot;pending&quot;: false,
+                    &quot;permissions&quot;: &quot;246997699136&quot;,
+                    &quot;premium_since&quot;: null,
+                    &quot;roles&quot;: []
+                }
+            },
+            &quot;users&quot;: {
+                &quot;809850198683418695&quot;: {
+                    &quot;avatar&quot;: &quot;afc428077119df8aabbbd84b0dc90c74&quot;,
+                    &quot;bot&quot;: true,
+                    &quot;discriminator&quot;: &quot;7302&quot;,
+                    &quot;id&quot;: &quot;809850198683418695&quot;,
+                    &quot;public_flags&quot;: 0,
+                    &quot;username&quot;: &quot;VoltyDemo&quot;
+                }
+            }
+        },
+        &quot;target_id&quot;: &quot;809850198683418695&quot;,
+        &quot;type&quot;: 2
+    },
+    &quot;guild_id&quot;: &quot;772904309264089089&quot;,
+    &quot;guild_locale&quot;: &quot;en-US&quot;,
+    &quot;app_permissions&quot;: &quot;442368&quot;,
+    &quot;id&quot;: &quot;867794291820986368&quot;,
+    &quot;locale&quot;: &quot;en-US&quot;,
+    &quot;member&quot;: {
+        &quot;avatar&quot;: null,
+        &quot;deaf&quot;: false,
+        &quot;is_pending&quot;: false,
+        &quot;joined_at&quot;: &quot;2020-11-02T20:46:57.364000+00:00&quot;,
+        &quot;mute&quot;: false,
+        &quot;nick&quot;: null,
+        &quot;pending&quot;: false,
+        &quot;permissions&quot;: &quot;274877906943&quot;,
+        &quot;premium_since&quot;: null,
+        &quot;roles&quot;: [&quot;785609923542777878&quot;],
+        &quot;user&quot;: {
+            &quot;avatar&quot;: &quot;a_f03401914fb4f3caa9037578ab980920&quot;,
+            &quot;discriminator&quot;: &quot;6538&quot;,
+            &quot;id&quot;: &quot;167348773423415296&quot;,
+            &quot;public_flags&quot;: 1,
+            &quot;username&quot;: &quot;ian&quot;
+        }
+    },
+    &quot;token&quot;: &quot;UNIQUE_TOKEN&quot;,
+    &quot;type&quot;: 2,
+    &quot;version&quot;: 1
+}
+</code></pre>
+<h2 id="message-commands">Message Commands<a href="https://discord.com/developers/docs/interactions/application-commands#message-commands"></a></h2>
+<p>Message commands are application commands that appear on the context menu (right click or tap) of messages. They're a great way to surface quick actions for your app that target messages. They don't take any arguments, and will return the message on whom you clicked or tapped in the interaction response.</p>
+<p>The <code>description</code> field is not allowed when creating message commands. However, to avoid breaking changes to data models, <code>description</code> will be an empty string (instead of <code>null</code>) when fetching commands.</p>
+<h6 id="example-message-command">Example Message Command<a href="https://discord.com/developers/docs/interactions/application-commands#message-commands-example-message-command"></a></h6>
+<pre><code>{
+    &quot;name&quot;: &quot;Bookmark&quot;,
+    &quot;type&quot;: 3
+}
+</code></pre>
+<p><img alt="" src="../img/message_command.webp" /></p>
+<p>When someone uses a message command, your application will receive an interaction:</p>
+<h6 id="example-interaction_2">Example Interaction<a href="https://discord.com/developers/docs/interactions/application-commands#message-commands-example-interaction"></a></h6>
+<p>Message Command InteractionView sample payload for Message Command interactions</p>
+<pre><code>{
+    &quot;application_id&quot;: &quot;775799577604522054&quot;,
+    &quot;channel_id&quot;: &quot;772908445358620702&quot;,
+    &quot;data&quot;: {
+        &quot;id&quot;: &quot;866818195033292851&quot;,
+        &quot;name&quot;: &quot;context-menu-message-2&quot;,
+        &quot;resolved&quot;: {
+            &quot;messages&quot;: {
+                &quot;867793854505943041&quot;: {
+                    &quot;attachments&quot;: [],
+                    &quot;author&quot;: {
+                        &quot;avatar&quot;: &quot;a_f03401914fb4f3caa9037578ab980920&quot;,
+                        &quot;discriminator&quot;: &quot;6538&quot;,
+                        &quot;id&quot;: &quot;167348773423415296&quot;,
+                        &quot;public_flags&quot;: 1,
+                        &quot;username&quot;: &quot;ian&quot;
+                    },
+                    &quot;channel_id&quot;: &quot;772908445358620702&quot;,
+                    &quot;components&quot;: [],
+                    &quot;content&quot;: &quot;some message&quot;,
+                    &quot;edited_timestamp&quot;: null,
+                    &quot;embeds&quot;: [],
+                    &quot;flags&quot;: 0,
+                    &quot;id&quot;: &quot;867793854505943041&quot;,
+                    &quot;mention_everyone&quot;: false,
+                    &quot;mention_roles&quot;: [],
+                    &quot;mentions&quot;: [],
+                    &quot;pinned&quot;: false,
+                    &quot;timestamp&quot;: &quot;2021-07-22T15:42:57.744000+00:00&quot;,
+                    &quot;tts&quot;: false,
+                    &quot;type&quot;: 0
+                }
+            }
+        },
+        &quot;target_id&quot;: &quot;867793854505943041&quot;,
+        &quot;type&quot;: 3
+    },
+    &quot;guild_id&quot;: &quot;772904309264089089&quot;,
+    &quot;guild_locale&quot;: &quot;en-US&quot;,
+    &quot;app_permissions&quot;: &quot;442368&quot;,
+    &quot;id&quot;: &quot;867793873336926249&quot;,
+    &quot;locale&quot;: &quot;en-US&quot;,
+    &quot;member&quot;: {
+        &quot;avatar&quot;: null,
+        &quot;deaf&quot;: false,
+        &quot;is_pending&quot;: false,
+        &quot;joined_at&quot;: &quot;2020-11-02T20:46:57.364000+00:00&quot;,
+        &quot;mute&quot;: false,
+        &quot;nick&quot;: null,
+        &quot;pending&quot;: false,
+        &quot;permissions&quot;: &quot;274877906943&quot;,
+        &quot;premium_since&quot;: null,
+        &quot;roles&quot;: [&quot;785609923542777878&quot;],
+        &quot;user&quot;: {
+            &quot;avatar&quot;: &quot;a_f03401914fb4f3caa9037578ab980920&quot;,
+            &quot;discriminator&quot;: &quot;6538&quot;,
+            &quot;id&quot;: &quot;167348773423415296&quot;,
+            &quot;public_flags&quot;: 1,
+            &quot;username&quot;: &quot;ian&quot;
+        }
+    },
+    &quot;token&quot;: &quot;UNIQUE_TOKEN&quot;,
+    &quot;type&quot;: 2,
+    &quot;version&quot;: 1
+}
+</code></pre>
+<h2 id="entry-point-commands">Entry Point Commands<a href="https://discord.com/developers/docs/interactions/application-commands#entry-point-commands"></a></h2>
+<p>An Entry Point command serves as the primary way for users to open an app's <a href="https://discord.com/developers/docs/activities/overview">Activity</a> from the <a href="https://support.discord.com/hc/articles/21334461140375-Using-Apps-on-Discord#h_01HRQSA6C8TRHS722P1H3HW1TV">App Launcher</a>.</p>
+<p>For the Entry Point command to be visible to users, an app must have <a href="https://discord.com/developers/docs/activities/overview">Activities</a> enabled.</p>
+<p><img alt="" src="../img/entry_point_command.webp" /></p>
+<h6 id="example-entry-point-command">Example Entry Point Command<a href="https://discord.com/developers/docs/interactions/application-commands#entry-point-commands-example-entry-point-command"></a></h6>
+<pre><code>{
+    &quot;name&quot;: &quot;launch&quot;,
+    &quot;description&quot;: &quot;Launch Racing with Friends&quot;,
+    &quot;type&quot;: 4,
+    &quot;handler&quot;: 2
+}
+</code></pre>
+<h3 id="entry-point-handlers">Entry Point handlers<a href="https://discord.com/developers/docs/interactions/application-commands#entry-point-handlers"></a></h3>
+<p>When a user invokes an app's Entry Point command, the value of <a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-structure"><code>handler</code></a> will determine how the interaction is handled:</p>
+<ul>
+<li>For <code>APP_HANDLER</code> (<code>1</code>), the app is responsible for <a href="https://discord.com/developers/docs/interactions/receiving-and-responding#responding-to-an-interaction">responding to the interaction</a>. It can respond by launching the app's associated Activity using the <code>LAUNCH_ACTIVITY</code> (type <code>12</code>) <a href="https://discord.com/developers/docs/interactions/receiving-and-responding">interaction callback type</a>, or take another action (like sending a follow-up message in channel).</li>
+<li>For <code>DISCORD_LAUNCH_ACTIVITY</code> (<code>2</code>), Discord will handle the interaction automatically by launching the associated Activity and sending a message to the channel where it was launched.</li>
+</ul>
+<h3 id="default-entry-point-command">Default Entry Point command<a href="https://discord.com/developers/docs/interactions/application-commands#default-entry-point-command"></a></h3>
+<p>When you enable Activities, an Entry Point command (named "Launch") is automatically created for your app with <code>DISCORD_LAUNCH_ACTIVITY</code> (<code>2</code>) set as the <a href="https://discord.com/developers/docs/interactions/application-commands#entry-point-handlers">Entry Point handler</a>. You can retrieve details for the automatically-created command, like its ID, by calling the <a href="https://discord.com/developers/docs/interactions/application-commands">Get Global Application Commands</a> endpoint and looking for the "Launch" command.</p>
+<p>Details about updating or replacing the default Entry Point command is in the <a href="https://discord.com/developers/docs/activities/development-guides/user-actions#setting-up-an-entry-point-command">Setting Up an Entry Point Command guide</a>.</p>
+<h2 id="autocomplete">Autocomplete<a href="https://discord.com/developers/docs/interactions/application-commands#autocomplete"></a></h2>
+<p>Autocomplete interactions allow your application to dynamically return option suggestions to a user as they type.</p>
+<p>An autocomplete interaction can return partial data for option values. Your application will receive partial data for any existing user input, as long as that input passes client-side validation. For example, you may receive partial strings, but not invalid numbers. The option the user is currently typing will be sent with a <code>focused: true</code> boolean field and options the user has already filled will also be sent but without the <code>focused</code> field. This is a special case where options that are otherwise required might not be present, due to the user not having filled them yet.</p>
+<p>This validation is client-side only.</p>
+<pre><code>{
+  &quot;type&quot;: 4,
+  &quot;data&quot;: {
+    &quot;id&quot;: &quot;816437322781949972&quot;,
+    &quot;name&quot;: &quot;airhorn&quot;,
+    &quot;type&quot;: 1,
+    &quot;version&quot;: &quot;847194950382780532&quot;,
+    &quot;options&quot;: [
+      {
+        &quot;type&quot;: 3,
+        &quot;name&quot;: &quot;variant&quot;,
+        &quot;value&quot;: &quot;data a user is typ&quot;,
+        &quot;focused&quot;: true
+      }
+    ]
+  }
+}
+</code></pre>
+<h2 id="localization">Localization<a href="https://discord.com/developers/docs/interactions/application-commands#localization"></a></h2>
+<p>Application commands can be localized, which will cause them to use localized names and descriptions depending on the client's selected language. This is entirely optional. Localization is available for names and descriptions of commands, subcommands, and options, as well as the names of choices, by submitting the appropriate <code>name_localizations</code> and <code>description_localizations</code> fields when creating or updating the application command.</p>
+<p>Application commands may be partially localized - not all <a href="https://discord.com/developers/docs/reference#locales">available locales</a> are required, nor do different fields within a command need to support the same set of locales. If a locale is not present in a localizations dictionary for a field, users in that locale will see the default value for that field. It's not necessary to fill out all locales with the default value. Any localized values that are identical to the default will be ignored.</p>
+<p>Localized option names are subject to an additional constraint, which is that they must be distinct from all other default option names of that command, as well as all other option names within that locale on that command.</p>
+<p>When taking advantage of command localization, the interaction payload received by your client will still use default command, subcommand, and option names. To localize your interaction response, you can determine the client's selected language by using the <code>locale</code> key in the interaction payload.</p>
+<p>An application command furnished with localizations might look like this:</p>
+<pre><code>{
+  &quot;name&quot;: &quot;birthday&quot;,
+  &quot;type&quot;: 1,
+  &quot;description&quot;: &quot;Wish a friend a happy birthday&quot;,
+  &quot;name_localizations&quot;: {
+    &quot;zh-CN&quot;: &quot;生日&quot;,
+    &quot;el&quot;: &quot;γενέθλια&quot;
+  },
+  &quot;description_localizations&quot;: {
+    &quot;zh-CN&quot;: &quot;祝你朋友生日快乐&quot;
+  },
+  &quot;options&quot;: [
+    {
+      &quot;name&quot;: &quot;age&quot;,
+      &quot;type&quot;: 4,
+      &quot;description&quot;: &quot;Your friend's age&quot;,
+      &quot;name_localizations&quot;: {
+        &quot;zh-CN&quot;: &quot;岁数&quot;
+      },
+      &quot;description_localizations&quot;: {
+        &quot;zh-CN&quot;: &quot;你朋友的岁数&quot;
+      }
+    }
+  ]
+}
+</code></pre>
+<h3 id="locale-fallbacks">Locale fallbacks<a href="https://discord.com/developers/docs/interactions/application-commands#locale-fallbacks"></a></h3>
+<p>For application commands, there are built-in fallbacks in case a user's locale isn't present in the localizations. If the fallback locale is also missing, it will use the default.</p>
+<p>You should make sure to include your default value in its proper locale key, otherwise it may use a fallback value unexpectedly. For example, if your default value is <code>en-US</code>, but you don't specify the <code>en-US</code> value in your localizations, users with <code>en-US</code> selected will see the <code>en-GB</code> value if it's specified. For example, if you have a command with the default name"color", and your localizations specify only the <code>en-GB</code> value as "colour", users in the <code>en-US</code> locale will see "colour" because the <code>en-US</code> key is missing.<table><thead><tr><th>Locale</th><th>Fallback</th></tr></thead><tbody><tr><td>en-US</td><td>en-GB</td></tr><tr><td>en-GB</td><td>en-US</td></tr><tr><td>es-419</td><td>es-ES</td></tr></tbody></table></p>
+<h3 id="retrieving-localized-commands">Retrieving localized commands<a href="https://discord.com/developers/docs/interactions/application-commands#retrieving-localized-commands"></a></h3>
+<p>While most endpoints that return application command objects will return the <code>name_localizations</code> and <code>description_localizations</code> fields, some will not by default. This includes <code>GET</code> endpoints that return all of an application's guild or global commands. Instead, those endpoints will supply additional <code>name_localized</code> or <code>description_localized</code> fields, which only contain the localization relevant to the requester's locale. (The full dictionaries can still be obtained by supplying the appropriate query argument).</p>
+<p>For example, if a batch <code>GET</code> request were made with locale <code>zh-CN</code>, including the above command, the returned object would look as follows:</p>
+<pre><code>{
+  &quot;name&quot;: &quot;birthday&quot;,
+  &quot;type&quot;: 1,
+  &quot;description&quot;: &quot;Wish a friend a happy birthday&quot;,
+  &quot;name_localized&quot;: &quot;生日&quot;,
+  &quot;description_localized&quot;: &quot;祝你朋友生日快乐&quot;,
+  &quot;options&quot;: [
+    {
+      &quot;name&quot;: &quot;age&quot;,
+      &quot;type&quot;: 4,
+      &quot;description&quot;: &quot;Your friend's age&quot;,
+      &quot;name_localized&quot;: &quot;岁数&quot;,
+      &quot;description_localized&quot;: &quot;你朋友的岁数&quot;,
+    }
+  ]
+}
+</code></pre>
+<p>If the requester's locale is not found in a localizations dictionary, then the corresponding <code>name_localization</code> or <code>description_localization</code> for that field will also not be present.</p>
+<p>Locale is determined by looking at the <code>X-Discord-Locale</code> header, then the <code>Accept-Language</code> header if not present, then lastly the user settings locale.</p>
+<h2 id="age-restricted-commands">Age-Restricted Commands<a href="https://discord.com/developers/docs/interactions/application-commands#agerestricted-commands"></a></h2>
+<p>A command that contains age-restricted content should have the <a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-structure"><code>nsfw</code> field</a> set to <code>true</code> upon creation or update. Marking a command as age-restricted will limit who can see and access the command, and from which channels.</p>
+<p>Apps with <a href="https://support-dev.discord.com/hc/en-us/articles/9489299950487">discovery enabled</a> (which is required to appear in the App Directory) cannot contain any age-restricted commands or content.</p>
+<h3 id="using-age-restricted-commands">Using Age-Restricted Commands<a href="https://discord.com/developers/docs/interactions/application-commands#using-agerestricted-commands"></a></h3>
+<p>To use an age-restricted command, a user must be 18 years or older and access the command from either:</p>
+<ul>
+<li>an <a href="https://support.discord.com/hc/articles/115000084051-Age-Restricted-Channels-and-Content">age-restricted channel</a> or</li>
+<li>a DM with the app after <a href="https://support.discord.com/hc/en-us/articles/10123937946007">enabling age-restricted commands</a> within their User Settings.</li>
+</ul>
+<p>Details about accessing and using age-restricted commands is in <a href="https://support.discord.com/hc/en-us/articles/10123937946007">the Help Center</a>.</p>
+<h3 id="endpoints">Endpoints<a href="https://discord.com/developers/docs/interactions/application-commands#endpoints"></a></h3>
+<p>For authorization, all endpoints take either a <a href="https://discord.com/developers/docs/reference#authentication">bot token</a> or <a href="https://discord.com/developers/docs/topics/oauth2#client-credentials-grant">client credentials token</a> for your application</p>
+<h2 id="get-global-application-commands">Get Global Application Commands<a href="https://discord.com/developers/docs/interactions/application-commands#get-global-application-commands"></a></h2>
+<p>GET/applications/<a href="https://discord.com/developers/docs/resources/application#application-object">{application.id}</a>/commands The objects returned by this endpoint may be augmented with <a href="https://discord.com/developers/docs/interactions/application-commands#retrieving-localized-commands">additional fields if localization is active</a>.</p>
+<p>Fetch all of the global commands for your application. Returns an array of <a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object">application command</a> objects.</p>
+<h6 id="query-string-params">Query String Params<a href="https://discord.com/developers/docs/interactions/application-commands#get-global-application-commands-query-string-params"></a></h6>
+<table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>with_localizations?</td><td><a class="link-3m0lUT" href="https://discord.com/developers/docs/reference#boolean-query-strings" data-discover="true">boolean</a></td><td>Whether to include full localization dictionaries (<code>name_localizations</code> and <code>description_localizations</code>) in the returned objects, instead of the <code>name_localized</code> and <code>description_localized</code> fields. Default <code>false</code>.</td></tr></tbody></table>
+
+<h2 id="create-global-application-command">Create Global Application Command<a href="https://discord.com/developers/docs/interactions/application-commands#create-global-application-command"></a></h2>
+<p>POST/applications/<a href="https://discord.com/developers/docs/resources/application#application-object">{application.id}</a>/commands Creating a command with the same name as an existing command for your application will overwrite the old command.</p>
+<p>Create a new global command. Returns <code>201</code> if a command with the same name does not already exist, or a <code>200</code> if it does (in which case the previous command will be overwritten). Both responses include an <a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object">application command</a> object.</p>
+<h6 id="json-params">JSON Params<a href="https://discord.com/developers/docs/interactions/application-commands#create-global-application-command-json-params"></a></h6>
+<table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>string</td><td><a aria-current="page" class="link-3m0lUT" href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-naming" data-discover="true">Name of command</a>, 1-32 characters</td></tr><tr><td>name_localizations?</td><td>?dictionary with keys in <a class="link-3m0lUT" href="https://discord.com/developers/docs/reference#locales" data-discover="true">available locales</a></td><td>Localization dictionary for the <code>name</code> field. Values follow the same restrictions as <code>name</code></td></tr><tr><td>description?</td><td>string</td><td>1-100 character description for <code>CHAT_INPUT</code> commands</td></tr><tr><td>description_localizations?</td><td>?dictionary with keys in <a class="link-3m0lUT" href="https://discord.com/developers/docs/reference#locales" data-discover="true">available locales</a></td><td>Localization dictionary for the <code>description</code> field. Values follow the same restrictions as <code>description</code></td></tr><tr><td>options?</td><td>array of <a aria-current="page" class="link-3m0lUT" href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-option-structure" data-discover="true">application command option</a></td><td>the parameters for the command, max of 25</td></tr><tr><td>default_member_permissions?</td><td>?string</td><td>Set of <a class="link-3m0lUT" href="https://discord.com/developers/docs/topics/permissions" data-discover="true">permissions</a> represented as a bit set</td></tr><tr><td>dm_permission?</td><td>?boolean</td><td>Deprecated (use <code>contexts</code> instead); Indicates whether the command is available in DMs with the app, only for globally-scoped commands. By default, commands are visible.</td></tr><tr><td>default_permission?</td><td>boolean</td><td>Replaced by <code>default_member_permissions</code> and will be deprecated in the future. Indicates whether the command is enabled by default when the app is added to a guild. Defaults to <code>true</code></td></tr><tr><td>integration_types?</td><td>list of <a class="link-3m0lUT" href="https://discord.com/developers/docs/resources/application#application-object-application-integration-types" data-discover="true">integration types</a></td><td><a class="link-3m0lUT" href="https://discord.com/developers/docs/resources/application#installation-context" data-discover="true">Installation context(s)</a> where the command is available</td></tr><tr><td>contexts?</td><td>list of <a class="link-3m0lUT" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-interaction-context-types" data-discover="true">interaction context types</a></td><td><a class="link-3m0lUT" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-interaction-context-types" data-discover="true">Interaction context(s)</a> where the command can be used</td></tr><tr><td>type?</td><td>one of <a aria-current="page" class="link-3m0lUT" href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-types" data-discover="true">application command type</a></td><td>Type of command, defaults <code>1</code> if not set</td></tr><tr><td>nsfw?</td><td>boolean</td><td>Indicates whether the command is <a aria-current="page" class="link-3m0lUT" href="https://discord.com/developers/docs/interactions/application-commands#agerestricted-commands" data-discover="true">age-restricted</a></td></tr></tbody></table>
+
+<h2 id="get-global-application-command">Get Global Application Command<a href="https://discord.com/developers/docs/interactions/application-commands#get-global-application-command"></a></h2>
+<p>GET/applications/<a href="https://discord.com/developers/docs/resources/application#application-object">{application.id}</a>/commands/<a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object">{command.id}</a></p>
+<p>Fetch a global command for your application. Returns an <a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object">application command</a> object.</p>
+<h2 id="edit-global-application-command">Edit Global Application Command<a href="https://discord.com/developers/docs/interactions/application-commands#edit-global-application-command"></a></h2>
+<p>PATCH/applications/<a href="https://discord.com/developers/docs/resources/application#application-object">{application.id}</a>/commands/<a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object">{command.id}</a> All parameters for this endpoint are optional.</p>
+<p>Edit a global command. Returns <code>200</code> and an <a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object">application command</a> object. All fields are optional, but any fields provided will entirely overwrite the existing values of those fields.</p>
+<h6 id="json-params_1">JSON Params<a href="https://discord.com/developers/docs/interactions/application-commands#edit-global-application-command-json-params"></a></h6>
+<table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>name?</td><td>string</td><td><a aria-current="page" class="link-3m0lUT" href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-naming" data-discover="true">Name of command</a>, 1-32 characters</td></tr><tr><td>name_localizations?</td><td>?dictionary with keys in <a class="link-3m0lUT" href="https://discord.com/developers/docs/reference#locales" data-discover="true">available locales</a></td><td>Localization dictionary for the <code>name</code> field. Values follow the same restrictions as <code>name</code></td></tr><tr><td>description?</td><td>string</td><td>1-100 character description</td></tr><tr><td>description_localizations?</td><td>?dictionary with keys in <a class="link-3m0lUT" href="https://discord.com/developers/docs/reference#locales" data-discover="true">available locales</a></td><td>Localization dictionary for the <code>description</code> field. Values follow the same restrictions as <code>description</code></td></tr><tr><td>options?</td><td>array of <a aria-current="page" class="link-3m0lUT" href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-option-structure" data-discover="true">application command option</a></td><td>the parameters for the command</td></tr><tr><td>default_member_permissions?</td><td>?string</td><td>Set of <a class="link-3m0lUT" href="https://discord.com/developers/docs/topics/permissions" data-discover="true">permissions</a> represented as a bit set</td></tr><tr><td>dm_permission?</td><td>?boolean</td><td>Deprecated (use <code>contexts</code> instead); Indicates whether the command is available in DMs with the app, only for globally-scoped commands. By default, commands are visible.</td></tr><tr><td>default_permission?</td><td>boolean</td><td>Replaced by <code>default_member_permissions</code> and will be deprecated in the future. Indicates whether the command is enabled by default when the app is added to a guild. Defaults to <code>true</code></td></tr><tr><td>integration_types?</td><td>list of <a class="link-3m0lUT" href="https://discord.com/developers/docs/resources/application#application-object-application-integration-types" data-discover="true">integration types</a></td><td><a class="link-3m0lUT" href="https://discord.com/developers/docs/resources/application#installation-context" data-discover="true">Installation context(s)</a> where the command is available</td></tr><tr><td>contexts?</td><td>list of <a class="link-3m0lUT" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-interaction-context-types" data-discover="true">interaction context types</a></td><td><a class="link-3m0lUT" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-interaction-context-types" data-discover="true">Interaction context(s)</a> where the command can be used</td></tr><tr><td>nsfw?</td><td>boolean</td><td>Indicates whether the command is <a aria-current="page" class="link-3m0lUT" href="https://discord.com/developers/docs/interactions/application-commands#agerestricted-commands" data-discover="true">age-restricted</a></td></tr></tbody></table>
+
+<h2 id="delete-global-application-command">Delete Global Application Command<a href="https://discord.com/developers/docs/interactions/application-commands#delete-global-application-command"></a></h2>
+<p>DELETE/applications/<a href="https://discord.com/developers/docs/resources/application#application-object">{application.id}</a>/commands/<a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object">{command.id}</a></p>
+<p>Deletes a global command. Returns <code>204 No Content</code> on success.</p>
+<h2 id="bulk-overwrite-global-application-commands">Bulk Overwrite Global Application Commands<a href="https://discord.com/developers/docs/interactions/application-commands#bulk-overwrite-global-application-commands"></a></h2>
+<p>PUT/applications/<a href="https://discord.com/developers/docs/resources/application#application-object">{application.id}</a>/commands</p>
+<p>Takes a list of application commands, overwriting the existing global command list for this application. Returns <code>200</code> and a list of <a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object">application command</a> objects. Commands that do not already exist will count toward daily application command create limits.</p>
+<p>This will overwrite all types of application commands: slash commands, user commands, and message commands.</p>
+<h2 id="get-guild-application-commands">Get Guild Application Commands<a href="https://discord.com/developers/docs/interactions/application-commands#get-guild-application-commands"></a></h2>
+<p>GET/applications/<a href="https://discord.com/developers/docs/resources/application#application-object">{application.id}</a>/guilds/<a href="https://discord.com/developers/docs/resources/guild#guild-object">{guild.id}</a>/commands The objects returned by this endpoint may be augmented with <a href="https://discord.com/developers/docs/interactions/application-commands#retrieving-localized-commands">additional fields if localization is active</a>.</p>
+<p>Fetch all of the guild commands for your application for a specific guild. Returns an array of <a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object">application command</a> objects.</p>
+<h6 id="query-string-params_1">Query String Params<a href="https://discord.com/developers/docs/interactions/application-commands#get-guild-application-commands-query-string-params"></a></h6>
+<table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>with_localizations?</td><td><a class="link-3m0lUT" href="https://discord.com/developers/docs/reference#boolean-query-strings" data-discover="true">boolean</a></td><td>Whether to include full localization dictionaries (<code>name_localizations</code> and <code>description_localizations</code>) in the returned objects, instead of the <code>name_localized</code> and <code>description_localized</code> fields. Default <code>false</code>.</td></tr></tbody></table>
+
+<h2 id="create-guild-application-command">Create Guild Application Command<a href="https://discord.com/developers/docs/interactions/application-commands#create-guild-application-command"></a></h2>
+<p>POST/applications/<a href="https://discord.com/developers/docs/resources/application#application-object">{application.id}</a>/guilds/<a href="https://discord.com/developers/docs/resources/guild#guild-object">{guild.id}</a>/commands </p>
+<p>Creating a command with the same name as an existing command for your application will overwrite the old command.</p>
+<p>Create a new guild command. New guild commands will be available in the guild immediately. Returns <code>201</code> if a command with the same name does not already exist, or a <code>200</code> if it does (in which case the previous command will be overwritten). Both responses include an <a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object">application command</a> object.</p>
+<h6 id="json-params_2">JSON Params<a href="https://discord.com/developers/docs/interactions/application-commands#create-guild-application-command-json-params"></a></h6>
+<table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>string</td><td><a aria-current="page" class="link-3m0lUT" href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-naming" data-discover="true">Name of command</a>, 1-32 characters</td></tr><tr><td>name_localizations?</td><td>?dictionary with keys in <a class="link-3m0lUT" href="https://discord.com/developers/docs/reference#locales" data-discover="true">available locales</a></td><td>Localization dictionary for the <code>name</code> field. Values follow the same restrictions as <code>name</code></td></tr><tr><td>description?</td><td>string</td><td>1-100 character description for <code>CHAT_INPUT</code> commands</td></tr><tr><td>description_localizations?</td><td>?dictionary with keys in <a class="link-3m0lUT" href="https://discord.com/developers/docs/reference#locales" data-discover="true">available locales</a></td><td>Localization dictionary for the <code>description</code> field. Values follow the same restrictions as <code>description</code></td></tr><tr><td>options?</td><td>array of <a aria-current="page" class="link-3m0lUT" href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-option-structure" data-discover="true">application command option</a></td><td>Parameters for the command, max of 25</td></tr><tr><td>default_member_permissions?</td><td>?string</td><td>Set of <a class="link-3m0lUT" href="https://discord.com/developers/docs/topics/permissions" data-discover="true">permissions</a> represented as a bit set</td></tr><tr><td>default_permission?</td><td>boolean</td><td>Replaced by <code>default_member_permissions</code> and will be deprecated in the future. Indicates whether the command is enabled by default when the app is added to a guild. Defaults to <code>true</code></td></tr><tr><td>type?</td><td>one of <a aria-current="page" class="link-3m0lUT" href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-types" data-discover="true">application command type</a></td><td>Type of command, defaults <code>1</code> if not set</td></tr><tr><td>nsfw?</td><td>boolean</td><td>Indicates whether the command is <a aria-current="page" class="link-3m0lUT" href="https://discord.com/developers/docs/interactions/application-commands#agerestricted-commands" data-discover="true">age-restricted</a></td></tr></tbody></table>
+
+<h2 id="get-guild-application-command">Get Guild Application Command<a href="https://discord.com/developers/docs/interactions/application-commands#get-guild-application-command"></a></h2>
+<p>GET/applications/<a href="https://discord.com/developers/docs/resources/application#application-object">{application.id}</a>/guilds/<a href="https://discord.com/developers/docs/resources/guild#guild-object">{guild.id}</a>/commands/<a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object">{command.id}</a></p>
+<p>Fetch a guild command for your application. Returns an <a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object">application command</a> object.</p>
+<h2 id="edit-guild-application-command">Edit Guild Application Command<a href="https://discord.com/developers/docs/interactions/application-commands#edit-guild-application-command"></a></h2>
+<p>PATCH/applications/<a href="https://discord.com/developers/docs/resources/application#application-object">{application.id}</a>/guilds/<a href="https://discord.com/developers/docs/resources/guild#guild-object">{guild.id}</a>/commands/<a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object">{command.id}</a> </p>
+<p>All parameters for this endpoint are optional.</p>
+<p>Edit a guild command. Updates for guild commands will be available immediately. Returns <code>200</code> and an <a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object">application command</a> object. All fields are optional, but any fields provided will entirely overwrite the existing values of those fields.</p>
+<h6 id="json-params_3">JSON Params<a href="https://discord.com/developers/docs/interactions/application-commands#edit-guild-application-command-json-params"></a></h6>
+<table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>name?</td><td>string</td><td><a aria-current="page" class="link-3m0lUT" href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-naming" data-discover="true">Name of command</a>, 1-32 characters</td></tr><tr><td>name_localizations?</td><td>?dictionary with keys in <a class="link-3m0lUT" href="https://discord.com/developers/docs/reference#locales" data-discover="true">available locales</a></td><td>Localization dictionary for the <code>name</code> field. Values follow the same restrictions as <code>name</code></td></tr><tr><td>description?</td><td>string</td><td>1-100 character description</td></tr><tr><td>description_localizations?</td><td>?dictionary with keys in <a class="link-3m0lUT" href="https://discord.com/developers/docs/reference#locales" data-discover="true">available locales</a></td><td>Localization dictionary for the <code>description</code> field. Values follow the same restrictions as <code>description</code></td></tr><tr><td>options?</td><td>array of <a aria-current="page" class="link-3m0lUT" href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-option-structure" data-discover="true">application command option</a></td><td>Parameters for the command, max of 25</td></tr><tr><td>default_member_permissions?</td><td>?string</td><td>Set of <a class="link-3m0lUT" href="https://discord.com/developers/docs/topics/permissions" data-discover="true">permissions</a> represented as a bit set</td></tr><tr><td>default_permission?</td><td>boolean</td><td>Replaced by <code>default_member_permissions</code> and will be deprecated in the future. Indicates whether the command is enabled by default when the app is added to a guild. Defaults to <code>true</code></td></tr><tr><td>nsfw?</td><td>boolean</td><td>Indicates whether the command is <a aria-current="page" class="link-3m0lUT" href="https://discord.com/developers/docs/interactions/application-commands#agerestricted-commands" data-discover="true">age-restricted</a></td></tr></tbody></table>
+
+<h2 id="delete-guild-application-command">Delete Guild Application Command<a href="https://discord.com/developers/docs/interactions/application-commands#delete-guild-application-command"></a></h2>
+<p>DELETE/applications/<a href="https://discord.com/developers/docs/resources/application#application-object">{application.id}</a>/guilds/<a href="https://discord.com/developers/docs/resources/guild#guild-object">{guild.id}</a>/commands/<a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object">{command.id}</a></p>
+<p>Delete a guild command. Returns <code>204 No Content</code> on success.</p>
+<h2 id="bulk-overwrite-guild-application-commands">Bulk Overwrite Guild Application Commands<a href="https://discord.com/developers/docs/interactions/application-commands#bulk-overwrite-guild-application-commands"></a></h2>
+<p>PUT/applications/<a href="https://discord.com/developers/docs/resources/application#application-object">{application.id}</a>/guilds/<a href="https://discord.com/developers/docs/resources/guild#guild-object">{guild.id}</a>/commands</p>
+<p>Takes a list of application commands, overwriting the existing command list for this application for the targeted guild. Returns <code>200</code> and a list of <a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object">application command</a> objects.</p>
+<p>This will overwrite all types of application commands: slash commands, user commands, and message commands.</p>
+<h6 id="json-params_4">JSON Params<a href="https://discord.com/developers/docs/interactions/application-commands#bulk-overwrite-guild-application-commands-json-params"></a></h6>
+<table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>id?</td><td>snowflake</td><td>ID of the command, if known</td></tr><tr><td>name</td><td>string</td><td><a aria-current="page" class="link-3m0lUT" href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-naming" data-discover="true">Name of command</a>, 1-32 characters</td></tr><tr><td>name_localizations?</td><td>?dictionary with keys in <a class="link-3m0lUT" href="https://discord.com/developers/docs/reference#locales" data-discover="true">available locales</a></td><td>Localization dictionary for the <code>name</code> field. Values follow the same restrictions as <code>name</code></td></tr><tr><td>description</td><td>string</td><td>1-100 character description</td></tr><tr><td>description_localizations?</td><td>?dictionary with keys in <a class="link-3m0lUT" href="https://discord.com/developers/docs/reference#locales" data-discover="true">available locales</a></td><td>Localization dictionary for the <code>description</code> field. Values follow the same restrictions as <code>description</code></td></tr><tr><td>options?</td><td>array of <a aria-current="page" class="link-3m0lUT" href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-option-structure" data-discover="true">application command option</a></td><td>Parameters for the command</td></tr><tr><td>default_member_permissions?</td><td>?string</td><td>Set of <a class="link-3m0lUT" href="https://discord.com/developers/docs/topics/permissions" data-discover="true">permissions</a> represented as a bit set</td></tr><tr><td>dm_permission?</td><td>?boolean</td><td>Deprecated (use <code>contexts</code> instead); Indicates whether the command is available in DMs with the app, only for globally-scoped commands. By default, commands are visible.</td></tr><tr><td>default_permission?</td><td>boolean</td><td>Replaced by <code>default_member_permissions</code> and will be deprecated in the future. Indicates whether the command is enabled by default when the app is added to a guild. Defaults to <code>true</code></td></tr><tr><td>integration_types</td><td>list of <a class="link-3m0lUT" href="https://discord.com/developers/docs/resources/application#application-object-application-integration-types" data-discover="true">integration types</a></td><td><a class="link-3m0lUT" href="https://discord.com/developers/docs/resources/application#installation-context" data-discover="true">Installation context(s)</a> where the command is available, defaults to <code>GUILD_INSTALL</code> (<code>[0]</code>)</td></tr><tr><td>contexts</td><td>list of <a class="link-3m0lUT" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-interaction-context-types" data-discover="true">interaction context types</a></td><td><a class="link-3m0lUT" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-interaction-context-types" data-discover="true">Interaction context(s)</a> where the command can be used, defaults to all contexts <code>[0,1,2]</code></td></tr><tr><td>type?</td><td>one of <a aria-current="page" class="link-3m0lUT" href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-types" data-discover="true">application command type</a></td><td>Type of command, defaults <code>1</code> if not set</td></tr><tr><td>nsfw?</td><td>boolean</td><td>Indicates whether the command is <a aria-current="page" class="link-3m0lUT" href="https://discord.com/developers/docs/interactions/application-commands#agerestricted-commands" data-discover="true">age-restricted</a></td></tr></tbody></table>
+
+<h2 id="get-guild-application-command-permissions">Get Guild Application Command Permissions<a href="https://discord.com/developers/docs/interactions/application-commands#get-guild-application-command-permissions"></a></h2>
+<p>GET/applications/<a href="https://discord.com/developers/docs/resources/application#application-object">{application.id}</a>/guilds/<a href="https://discord.com/developers/docs/resources/guild#guild-object">{guild.id}</a>/commands/permissions</p>
+<p>Fetches permissions for all commands for your application in a guild. Returns an array of <a href="https://discord.com/developers/docs/interactions/application-commands#application-command-permissions-object-guild-application-command-permissions-structure">guild application command permissions</a> objects.</p>
+<h2 id="get-application-command-permissions">Get Application Command Permissions<a href="https://discord.com/developers/docs/interactions/application-commands#get-application-command-permissions"></a></h2>
+<p>GET/applications/<a href="https://discord.com/developers/docs/resources/application#application-object">{application.id}</a>/guilds/<a href="https://discord.com/developers/docs/resources/guild#guild-object">{guild.id}</a>/commands/<a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object">{command.id}</a>/permissions</p>
+<p>Fetches permissions for a specific command for your application in a guild. Returns a <a href="https://discord.com/developers/docs/interactions/application-commands#application-command-permissions-object-guild-application-command-permissions-structure">guild application command permissions</a> object.</p>
+<h2 id="edit-application-command-permissions">Edit Application Command Permissions<a href="https://discord.com/developers/docs/interactions/application-commands#edit-application-command-permissions"></a></h2>
+<p>PUT/applications/<a href="https://discord.com/developers/docs/resources/application#application-object">{application.id}</a>/guilds/<a href="https://discord.com/developers/docs/resources/guild#guild-object">{guild.id}</a>/commands/<a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object">{command.id}</a>/permissions This endpoint will overwrite existing permissions for the command in that guild</p>
+<p>Edits command permissions for a specific command for your application in a guild and returns a <a href="https://discord.com/developers/docs/interactions/application-commands#application-command-permissions-object-guild-application-command-permissions-structure">guild application command permissions</a> object. Fires an <a href="https://discord.com/developers/docs/events/gateway-events#application-command-permissions-update">Application Command Permissions Update</a> Gateway event.</p>
+<p>You can add up to 100 permission overwrites for a command.</p>
+<p>This endpoint requires authentication with a Bearer token that has permission to manage the guild and its roles. For more information, read above about <a href="https://discord.com/developers/docs/interactions/application-commands#permissions">application command permissions</a>. Deleting or renaming a command will permanently delete all permissions for the command</p>
+<h6 id="json-params_5">JSON Params<a href="https://discord.com/developers/docs/interactions/application-commands#edit-application-command-permissions-json-params"></a></h6>
+<table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>permissions</td><td>array of <a aria-current="page" class="link-3m0lUT" href="https://discord.com/developers/docs/interactions/application-commands#application-command-permissions-object-application-command-permissions-structure" data-discover="true">application command permissions</a></td><td>Permissions for the command in the guild</td></tr></tbody></table>
+
+<h2 id="batch-edit-application-command-permissions">Batch Edit Application Command Permissions<a href="https://discord.com/developers/docs/interactions/application-commands#batch-edit-application-command-permissions"></a></h2>
+<p>PUT/applications/<a href="https://discord.com/developers/docs/resources/application#application-object">{application.id}</a>/guilds/<a href="https://discord.com/developers/docs/resources/guild#guild-object">{guild.id}</a>/commands/permissions This endpoint has been disabled with <a href="https://discord.com/developers/docs/change-log#updated-command-permissions">updates to command permissions (Permissions v2)</a>. Instead, you can <a href="https://discord.com/developers/docs/interactions/application-commands#edit-application-command-permissions">edit each application command permissions</a> (though you should be careful to handle any potential <a href="https://discord.com/developers/docs/topics/rate-limits">rate limits</a>).</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "navigation.instant", "navigation.tabs", "navigation.top", "navigation.sections", "navigation.expand", "navigation.tracking", "search.suggest"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>

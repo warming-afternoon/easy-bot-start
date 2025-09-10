@@ -1,0 +1,632 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://warming-afternoon.github.io/easy-bot-start/dev/discordDocs/Chinese/Overview%20of%20Interactions%20_%20Documentation%20_%20Discord%20Developer%20Portal_translated/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
+    
+    
+      
+        <title>交互功能概述 - Bot 开发感想</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="Bot 开发感想" class="md-header__button md-logo" aria-label="Bot 开发感想" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Bot 开发感想
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              交互功能概述
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  介绍
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../%E6%9E%B6%E6%9E%84/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  架构
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Bot 开发感想" class="md-nav__button md-logo" aria-label="Bot 开发感想" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Bot 开发感想
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    介绍
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%9E%B6%E6%9E%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    架构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      交互类型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="交互类型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      命令
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      消息组件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      模态框
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      交互准备
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="交互准备">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#url" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置交互端点URL
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="配置交互端点URL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      设置端点
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="设置端点">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ping" class="md-nav__link">
+    <span class="md-ellipsis">
+      确认PING请求
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      验证安全请求头
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      添加交互端点URL
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      处理交互
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1"><a href="https://discord.com/developers/docs/interactions/overview#overview-of-interactions">交互功能概述</a></h1>
+<p>诸如命令和消息组件等交互功能允许用户在Discord内原生调用应用程序。当用户使用您应用的交互功能时，您的应用将收到一个<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object">交互对象</a>。</p>
+<p>本概述包括主要交互类型的概述，以及为您准备应用使用和接收交互的步骤。关于处理交互的参考文档和详细信息请参见<a href="https://discord.com/developers/docs/interactions/receiving-and-responding">接收与响应</a>。</p>
+<hr />
+<h2 id="_2"><a href="https://discord.com/developers/docs/interactions/overview#types-of-interactions">交互类型</a></h2>
+<p>您的应用工具箱中有不同类型的交互功能，可以选择使用这些功能在Discord中构建引人入胜的交互体验。</p>
+<h3 id="_3"><a href="https://discord.com/developers/docs/interactions/overview#commands">命令</a></h3>
+<p><a href="https://discord.com/developers/docs/interactions/application-commands">应用命令</a>为用户提供在Discord中调用应用的原生方式。它们通常映射到应用的核心功能。</p>
+<p><img alt="" src="img/command.webp" /></p>
+<p>当应用创建命令时，可以选择命令的类型，这决定了它在Discord客户端中出现的位置以及调用命令时应用将接收的元数据。应用命令有三种类型：</p>
+<ul>
+<li>斜杠命令是最常见的命令类型，通过在聊天输入框中输入<code>/</code>或打开命令选择器来访问。</li>
+<li>消息命令是与消息或消息内容相关的命令。通过点击消息右上角的上下文菜单（三个点）（或右键单击消息），然后导航到"应用"部分来访问。</li>
+<li>用户命令是与Discord中用户相关的命令。通过右键单击用户个人资料，然后导航到"应用"部分来访问。</li>
+<li>入口点命令是作为从应用启动器启动<a href="https://discord.com/developers/docs/activities/overview">活动</a>的主要方式使用的命令。</li>
+</ul>
+<p>关于创建命令和处理命令交互的详细信息请参见<a href="https://discord.com/developers/docs/interactions/application-commands">应用命令</a>文档。</p>
+<h3 id="_4"><a href="https://discord.com/developers/docs/interactions/overview#message-components">消息组件</a></h3>
+<p><a href="https://discord.com/developers/docs/components/reference">消息组件</a>是交互式元素，可以包含在您的应用在Discord中发送的消息内容中。</p>
+<p><img alt="" src="img/MessageComponents.webp" /></p>
+<p>应用可以在消息中发送的主要交互组件包括：</p>
+<ul>
+<li><a href="https://discord.com/developers/docs/components/reference#button">按钮</a>是可点击的组件，可以使用不同的样式、文本和表情符号进行自定义。</li>
+<li><a href="https://discord.com/developers/docs/components/reference#string-select">静态选择菜单</a>是用户可以打开的组件，显示开发者定义的选择选项列表，包含自定义标签和描述。</li>
+<li><a href="https://discord.com/developers/docs/components/reference#string-select">自动填充选择菜单</a>是一组四种不同的选择组件，使用上下文相关的Discord资源（如服务器中的用户或频道列表）进行填充。</li>
+</ul>
+<p>所有消息组件的列表以及发送和接收组件交互的详细信息请参见<a href="https://discord.com/developers/docs/components/reference">消息组件</a>文档。</p>
+<h3 id="_5"><a href="https://discord.com/developers/docs/interactions/overview#modals">模态框</a></h3>
+<p><a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object-modal">模态框</a>是单用户弹出式界面，允许应用收集类似表单的数据。模态框只能在用户调用您应用的命令或消息组件时打开。</p>
+<p><img alt="" src="img/modals.webp" /></p>
+<p>模态框可以包含的组件可在<a href="https://discord.com/developers/docs/components/reference">组件参考</a>中找到。模态框提交后接收的数据可在<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object-modal">每个组件的交互响应结构</a>中找到。</p>
+<p>关于创建和使用模态框的详细信息请参见<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object-modal">接收与响应</a>文档。</p>
+<hr />
+<h2 id="_6"><a href="https://discord.com/developers/docs/interactions/overview#preparing-for-interactions">交互准备</a></h2>
+<p>当用户与您的应用交互时，您可以选择让应用通过两种互斥的方式接收交互：</p>
+<ul>
+<li>基于WebSocket的网关连接</li>
+<li>通过出站webhook的HTTP方式</li>
+</ul>
+<p>默认情况下，您的应用将通过网关连接接收交互，但您可以通过在应用设置中添加交互端点URL来选择基于HTTP的交互。有关处理交互的技术细节，请参阅<a href="https://discord.com/developers/docs/interactions/receiving-and-responding">接收与响应</a>文档。</p>
+<h3 id="url"><a href="https://discord.com/developers/docs/interactions/overview#configuring-an-interactions-endpoint-url">配置交互端点URL</a></h3>
+<p>交互端点URL是您应用的公共端点，Discord可以向该端点发送基于HTTP的交互。如果您的应用使用基于<a href="https://discord.com/developers/docs/events/gateway">网关</a>的交互，则无需配置交互端点URL。</p>
+<h4 id="_7"><a href="https://discord.com/developers/docs/interactions/overview#setting-up-an-endpoint">设置端点</a></h4>
+<p>在将交互端点URL添加到您的应用之前，您的端点必须提前准备好两件事：</p>
+<p>1.确认来自Discord的<code>PING</code>请求
+2.验证与安全相关的请求头（<code>X-Signature-Ed25519</code>和<code>X-Signature-Timestamp</code>）</p>
+<p>如果这两项中的任何一项未完成，您的交互端点URL将无法通过验证。有关确认PING请求和验证安全相关头的详细信息，请参阅以下部分。</p>
+<h6 id="ping"><a href="https://discord.com/developers/docs/interactions/overview#setting-up-an-endpoint-acknowledging-ping-requests">确认PING请求</a></h6>
+<p>在添加交互端点URL时，Discord将向您的端点发送一个带有<code>PING</code>负载（<code>type: 1</code>）的<code>POST</code>请求。您的应用需要通过返回带有<code>PONG</code>负载（同样具有<code>type: 1</code>）的<code>200</code>响应来确认该请求。有关交互响应的详细信息，请参阅<a href="https://discord.com/developers/docs/interactions/receiving-and-responding">接收与响应文档</a>。</p>
+<p>在响应<code>PING</code>时，您必须提供有效的<code>Content-Type</code>。更多信息请参见<a href="https://discord.com/developers/docs/reference#http-api">此处</a>。</p>
+<p>响应PING请求</p>
+<p>确认PING交互的代码示例</p>
+<p>要正确确认<code>PING</code>负载，请返回带有<code>type: 1</code>负载的<code>200</code>响应：</p>
+<pre><code>@app.route('/', methods=['POST'])
+def my_command():
+　　　　if request.json[&quot;type&quot;] == 1:
+　　　　　　　　return jsonify({
+　　　　　　　　　　　　&quot;type&quot;: 1
+　　　　　　　　})
+</code></pre>
+<h6 id="_8"><a href="https://discord.com/developers/docs/interactions/overview#setting-up-an-endpoint-validating-security-request-headers">验证安全请求头</a></h6>
+<p>互联网是一个危险的地方，尤其是对于托管公共、未经身份验证的端点的人来说。要通过HTTP接收交互，在您的应用有资格接收请求之前，必须采取一些安全步骤。</p>
+<p>每个交互都附带以下头信息：</p>
+<ul>
+<li><code>X-Signature-E d 2 5 5 1 9</code>作为签名</li>
+<li><code>X-Signature-Timestamp</code>作为时间戳</li>
+</ul>
+<p>使用您喜欢的安全库，每次收到<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object">交互</a>时都必须验证请求。如果签名验证失败，您的应用应返回<code>401</code>错误代码。</p>
+<p>验证安全头</p>
+<p>验证与安全相关的请求头的代码示例</p>
+<p>以下是一些代码示例，展示了如何验证交互请求中发送的头信息。</p>
+<p>JavaScript</p>
+<pre><code>const nacl = require(&quot;tweetnacl&quot;);
+
+// 您的公钥可以在开发者门户中的应用中找到
+const PUBLIC_KEY = &quot;APPLICATION_PUBLIC_KEY&quot;;
+
+const signature = req.get(&quot;X-Signature-Ed 2 5 5 1 9&quot;);
+const timestamp = req.get(&quot;X-Signature-Timestamp&quot;);
+const body = req.rawBody; // rawBody应为字符串，而非原始字节
+
+const isVerified = nacl.sign.detached.verify(
+　　　　Buffer.from(timestamp + body),
+　　　　Buffer.from(signature, &quot;hex&quot;),
+　　　　Buffer.from(PUBLIC_KEY, &quot;hex&quot;)
+);
+
+if (!isVerified) {
+　　　　return res.status(401).end(&quot;invalid request signature&quot;);
+}
+</code></pre>
+<p>Python</p>
+<pre><code>from nacl.signing import VerifyKey
+from nacl.exceptions import BadSignatureError
+
+# 您的公钥可以在开发者门户中的应用中找到
+PUBLIC_KEY = 'APPLICATION_PUBLIC_KEY'
+
+verify_key = VerifyKey(bytes.fromhex(PUBLIC_KEY))
+
+signature = request.headers[&quot;X-Signature-Ed 2 5 5 1 9&quot;]
+timestamp = request.headers[&quot;X-Signature-Timestamp&quot;]
+body = request.data.decode(&quot;utf-8&quot;)
+
+try:
+　　　　verify_key.verify(f'{timestamp}{body}'.encode(), bytes.fromhex(signature))
+except BadSignatureError:
+　　　　abort(401, 'invalid request signature')
+</code></pre>
+<p>除了确保您的应用在保存端点时验证与安全相关的请求头之外，Discord还会对您的端点执行自动化的常规安全检查，包括故意向您发送无效签名。如果验证失败，我们将移除您的交互URL，并通过电子邮件和系统DM提醒您。</p>
+<p>我们强烈建议查看我们的<a href="https://discord.com/developers/docs/developer-tools/community-resources#interactions">社区资源</a>及其中提供的库。它们不仅为交互数据模型提供类型支持，还包含适用于Flask和Express等API框架的装饰器，使验证变得简单。</p>
+<h4 id="url_1">添加交互端点URL<a href="https://discord.com/developers/docs/interactions/overview#adding-an-interactions-endpoint-url"></a></h4>
+<p>当您拥有一个公共端点作为应用的交互端点URL后，您可以前往<a href="https://discord.com/developers/applications">应用设置</a>将其添加到您的应用中。</p>
+<p>在概览页面中，找到交互端点URL字段。粘贴您已设置好的公共URL，该URL需能够确认<code>PING</code>消息并正确处理与安全相关的签名头。</p>
+<hr />
+<h2 id="_9"><a href="https://discord.com/developers/docs/interactions/overview#handling-interactions">处理交互</a></h2>
+<p>当您的应用准备好处理交互后，您可以查阅<a href="https://discord.com/developers/docs/interactions/receiving-and-responding">接收与响应</a>文档，该文档详细介绍了在应用中处理交互请求的技术细节。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "navigation.instant", "navigation.tabs", "navigation.top", "navigation.sections", "navigation.expand", "navigation.tracking", "search.suggest"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>

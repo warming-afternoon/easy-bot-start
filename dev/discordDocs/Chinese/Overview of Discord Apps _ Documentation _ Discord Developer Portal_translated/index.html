@@ -1,0 +1,591 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://warming-afternoon.github.io/easy-bot-start/dev/discordDocs/Chinese/Overview%20of%20Discord%20Apps%20_%20Documentation%20_%20Discord%20Developer%20Portal_translated/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
+    
+    
+      
+        <title>Overview of Discord Apps Documentation Discord Developer Portal translated - Bot 开发感想</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#discord" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="Bot 开发感想" class="md-header__button md-logo" aria-label="Bot 开发感想" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Bot 开发感想
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Overview of Discord Apps   Documentation   Discord Developer Portal translated
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  介绍
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../%E6%9E%B6%E6%9E%84/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  架构
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Bot 开发感想" class="md-nav__button md-logo" aria-label="Bot 开发感想" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Bot 开发感想
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    介绍
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%9E%B6%E6%9E%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    架构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      应用能做什么？
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="应用能做什么？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      发送和管理消息
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      与用户互动
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      构建嵌入式游戏和体验
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      自定义服务器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      更新用户元数据和状态
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      添加高级功能
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      ...以及更多
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      应用安装在哪里？
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      应用可以使用哪些API？
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="应用可以使用哪些API？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#http-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP API
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      网关API
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      开始构建
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<hr />
+<p>网址：https://discord.com/developers/docs/quick-start/overview-of-apps
+时间：2025-09-10T22:06:16
+标签： </p>
+<hr />
+<h1 id="discord"><a href="https://discord.com/developers/docs/quick-start/overview-of-apps#overview-of-discord-apps">Discord应用概览</a></h1>
+<p><img alt="" src="https://discord.com/assets/a2b0db3a19d4540cbbb46d99ce17b45e.webp" /> </p>
+<p>Discord应用为数百万用户定制、扩展和增强Discord体验。无论您是想要构建活动、自定义服务器还是集成游戏的开发者，应用都是将您的想法变为现实的容器。</p>
+<p>本页将回答以下问题：</p>
+<ul>
+<li><a href="https://discord.com/developers/docs/quick-start/overview-of-apps#what-can-apps-do">应用能做什么？</a> </li>
+<li><a href="https://discord.com/developers/docs/quick-start/overview-of-apps#where-are-apps-installed">应用安装在哪里？</a> </li>
+<li><a href="https://discord.com/developers/docs/quick-start/overview-of-apps#what-apis-can-apps-use">应用可以使用哪些API？</a> </li>
+</ul>
+<hr />
+<h2 id="_1">应用能做什么？</h2>
+<p><a href="https://discord.com/developers/docs/quick-start/overview-of-apps#what-can-apps-do"></a> </p>
+<p>当您探索文档并开始构建时，您会发现应用的全部可能性，但现在让我们先了解一下在开发应用时可以构建和集成的一些功能。</p>
+<h3 id="_2">发送和管理消息<a href="https://discord.com/developers/docs/quick-start/overview-of-apps#send-and-manage-messages"></a></h3>
+<p>消息是Discord的核心部分，对应用也是如此。应用可以通过几种方式发送消息——可以调用<a href="https://discord.com/developers/docs/resources/message#create-message">创建消息端点</a>、创建和执行<a href="https://discord.com/developers/docs/resources/webhook">webhooks</a>，或在响应<a href="https://discord.com/developers/docs/interactions/overview">交互</a>时回复消息。 </p>
+<p>如果具有适当的权限，应用还可以管理消息，这在<a href="https://discord.com/developers/docs/resources/message">消息文档</a>中有更详细的介绍。 </p>
+<h3 id="_3">与用户互动<a href="https://discord.com/developers/docs/quick-start/overview-of-apps#interact-with-users"></a></h3>
+<p>应用可以使用<a href="https://discord.com/developers/docs/interactions/overview">交互</a>为用户创造更具吸引力和直观的体验。在发送消息时，应用可以在<code>components</code>字段中发送交互式组件，如<a href="https://discord.com/developers/docs/components/reference#button">按钮</a>和<a href="https://discord.com/developers/docs/components/reference#string-select">选择菜单</a>。应用还可以打开类似表单的模态框或启动活动<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object-modal">以响应交互</a>。 </p>
+<h3 id="_4">构建嵌入式游戏和体验<a href="https://discord.com/developers/docs/quick-start/overview-of-apps#build-embedded-games-and-experiences"></a></h3>
+<p>使用<a href="https://discord.com/developers/docs/developer-tools/embedded-app-sdk">嵌入式应用SDK</a>，应用可以创建<a href="https://discord.com/developers/docs/activities/overview">活动</a>，这些是在Discord中的跨平台互动游戏和社交体验。它们在Discord的iframe中运行，玩家们已经在那里聚集。</p>
+<h3 id="_5">自定义服务器<a href="https://discord.com/developers/docs/quick-start/overview-of-apps#customize-servers"></a></h3>
+<p>通过正确的API端点和适当的<a href="https://discord.com/developers/docs/topics/permissions">权限</a>，应用可以通过访问和自定义Discord核心的各种资源来定制使用和管理服务器的体验——包括<a href="https://discord.com/developers/docs/resources/user">用户</a>、<a href="https://discord.com/developers/docs/resources/channel">频道</a>和<a href="https://discord.com/developers/docs/resources/auto-moderation">AutoMod</a>等。探索资源文档类别，了解不同的Discord资源以及应用如何使用它们。</p>
+<h3 id="_6">更新用户元数据和状态<a href="https://discord.com/developers/docs/quick-start/overview-of-apps#update-user-metadata-and-presence"></a></h3>
+<p>应用可以通过几种方式使用来自派对游戏或应用的数据更新Discord用户的元数据。应用还可以通过集成<a href="https://discord.com/developers/docs/rich-presence/overview">Rich Presence</a>使用来自游戏或应用的可操作数据更新用户的个人资料。 </p>
+<p>应用还可以使用<a href="https://discord.com/developers/docs/resources/application-role-connection-metadata">角色连接元数据</a>将第三方元数据（如统计数据或账户类型）与Discord用户关联，服务器管理员可以基于此设置角色。您可以在<a href="https://discord.com/developers/docs/tutorials/configuring-app-metadata-for-linked-roles">为链接角色配置元数据</a>教程中了解更多信息。</p>
+<h3 id="_7">添加高级功能<a href="https://discord.com/developers/docs/quick-start/overview-of-apps#add-premium-features"></a></h3>
+<p><a href="https://discord.com/developers/docs/monetization/implementing-app-subscriptions">应用订阅</a>允许应用直接在Discord内向用户和/或服务器定期收取高级功能费用。您可以在<a href="https://discord.com/developers/docs/monetization/overview">变现</a>文档中阅读更多关于资格要求和为应用添加变现功能的信息。</p>
+<h3 id="_8">...以及更多<a href="https://discord.com/developers/docs/quick-start/overview-of-apps#and-more"></a></h3>
+<p>这份开发者文档充满了各种可供探索的功能角落。通过浏览更多文档或<a href="https://discord.com/developers/applications">构建您自己的应用</a>来发现更多可能性。 </p>
+<hr />
+<h2 id="_9">应用安装在哪里？</h2>
+<p><a href="https://discord.com/developers/docs/quick-start/overview-of-apps#where-are-apps-installed"></a> </p>
+<p>Discord应用可以在两种不同的上下文中安装：</p>
+<p>1.由具有管理服务器(<a href="https://discord.com/developers/docs/topics/permissions#permissions-bitwise-permission-flags"><code>MANAGE_GUILD</code></a>)权限的用户安装到服务器（在API中称为<a href="https://discord.com/developers/docs/resources/guild">公会</a>）。安装到服务器的应用只能在该服务器内以及与应用的机器人用户私信中使用，并且对所有服务器成员可见。
+2.安装到用户账户的应用。默认情况下，安装到用户的应用仅对该用户在所有服务器、私信和群组私信中可见。</p>
+<p>开发者在<a href="https://discord.com/developers/docs/resources/application#setting-supported-installation-contexts">设置应用</a>时可以限制应用支持的安装上下文。 </p>
+<p>有关安装上下文的详细信息请参阅<a href="https://discord.com/developers/docs/resources/application#installation-context">应用资源文档</a> </p>
+<hr />
+<h2 id="api">应用可以使用哪些API？</h2>
+<p><a href="https://discord.com/developers/docs/quick-start/overview-of-apps#what-apis-can-apps-use"></a> </p>
+<p>有几种不同的API可供您根据应用的功能和想要访问的Discord功能进行选择。以下是Discord开发者平台上主要API的快速概述，您可以在<a href="https://discord.com/developers/docs/reference">API参考</a>中阅读更多关于API使用的详细信息。 </p>
+<h3 id="http-api">HTTP API<a href="https://discord.com/developers/docs/quick-start/overview-of-apps#http-api"></a></h3>
+<p>HTTP API是一个REST API，允许您交互和修改核心Discord资源，如<a href="https://discord.com/developers/docs/resources/channel">频道</a>、<a href="https://discord.com/developers/docs/resources/guild">服务器（或公会）</a>、<a href="https://discord.com/developers/docs/resources/user">用户</a>和<a href="https://discord.com/developers/docs/resources/message#message-object">消息</a> </p>
+<p>使用HTTP API可以：</p>
+<ul>
+<li>检索资源信息</li>
+<li>创建、更新或删除资源</li>
+</ul>
+<p>在<a href="https://discord.com/developers/docs/reference#http-api">API参考</a>中阅读有关使用HTTP API的详细信息 </p>
+<h3 id="api_1">网关API<a href="https://discord.com/developers/docs/quick-start/overview-of-apps#gateway-api"></a></h3>
+<p>网关API允许您通过WebSocket在安装应用的服务器中发生<a href="https://discord.com/developers/docs/events/gateway-events">事件</a>时接收事件数据。</p>
+<p>使用网关API可以：</p>
+<ul>
+<li>接收Discord中发生的事件</li>
+</ul>
+<p>在<a href="https://discord.com/developers/docs/reference#gateway-websocket-api">API参考</a>中阅读有关使用网关API的详细信息 </p>
+<hr />
+<h2 id="_10">开始构建<a href="https://discord.com/developers/docs/quick-start/overview-of-apps#start-building"></a></h2>
+<p>好吧，看看时间？基础知识已经了解完毕，是时候开始构建您的Discord应用了！您可以浏览其余文档，前往您的<a href="https://discord.com/developers/applications">应用</a>，或探索下面的初学者资源。</p>
+<p>开发您的第一个应用</p>
+<p><a href="https://discord.com/developers/docs/quick-start/getting-started">使用交互式组件开发第一个Discord应用的教程</a> </p>
+<p>在Discord上构建活动</p>
+<p><a href="https://discord.com/developers/docs/activities/building-an-activity">使用嵌入式应用SDK开发活动的教程</a> </p>
+<p>探索开发者工具</p>
+<p><a href="https://discord.com/developers/docs/developer-tools/community-resources">探索社区构建的库和工具以加速和简化开发</a> </p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "navigation.instant", "navigation.tabs", "navigation.top", "navigation.sections", "navigation.expand", "navigation.tracking", "search.suggest"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>

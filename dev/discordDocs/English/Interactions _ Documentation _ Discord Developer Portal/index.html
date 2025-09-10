@@ -1,0 +1,989 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://warming-afternoon.github.io/easy-bot-start/dev/discordDocs/English/Interactions%20_%20Documentation%20_%20Discord%20Developer%20Portal/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
+    
+    
+      
+        <title>Interactions Documentation Discord Developer Portal - Bot 开发感想</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#interaction-object" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="Bot 开发感想" class="md-header__button md-logo" aria-label="Bot 开发感想" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Bot 开发感想
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Interactions   Documentation   Discord Developer Portal
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  介绍
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../%E6%9E%B6%E6%9E%84/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  架构
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Bot 开发感想" class="md-nav__button md-logo" aria-label="Bot 开发感想" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Bot 开发感想
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    介绍
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%9E%B6%E6%9E%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    架构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#interaction-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interaction Object
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interaction Object">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interaction-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interaction Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interaction-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interaction Type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interaction-context-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interaction Context Types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interaction-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interaction Data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-command-data-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application Command Data Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-component-data-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Component Data Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modal-submit-data-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modal Submit Data Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#component-interaction-response-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component Interaction Response Structures
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resolved-data-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resolved Data Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-command-interaction-data-option-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application Command Interaction Data Option Structure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-interaction-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Interaction Object
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Message Interaction Object">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#message-interaction-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Interaction Structure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#receiving-an-interaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Receiving an Interaction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Receiving an Interaction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interaction-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interaction Metadata
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#responding-to-an-interaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Responding to an Interaction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Responding to an Interaction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interaction-response-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interaction Response Object
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interaction Response Object">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interaction-response-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interaction Response Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interaction-callback-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interaction Callback Type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interaction-callback-data-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interaction Callback Data Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Messages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autocomplete" class="md-nav__link">
+    <span class="md-ellipsis">
+      Autocomplete
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modal
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interaction-callback" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interaction Callback
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interaction Callback">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interaction-callback-response-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interaction Callback Response Object
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interaction-callback-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interaction Callback Object
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interaction-callback-resource-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interaction Callback Resource Object
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interaction-callback-activity-instance-resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interaction Callback Activity Instance Resource
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#followup-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Followup Messages
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Followup Messages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Endpoints
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-interaction-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create Interaction Response
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create Interaction Response">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#query-string-params" class="md-nav__link">
+    <span class="md-ellipsis">
+      Query String Params
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-original-interaction-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Original Interaction Response
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edit-original-interaction-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edit Original Interaction Response
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-original-interaction-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delete Original Interaction Response
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-followup-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create Followup Message
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-followup-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Followup Message
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edit-followup-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edit Followup Message
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-followup-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delete Followup Message
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Interactions   Documentation   Discord Developer Portal</h1>
+
+<p>An <a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object">Interaction</a> is the message that your application receives when a user uses an application command or a message component.</p>
+<p>For <a href="https://discord.com/developers/docs/interactions/application-commands#slash-commands">Slash Commands</a>, it includes the values that the user submitted.</p>
+<p>For <a href="https://discord.com/developers/docs/interactions/application-commands#user-commands">User Commands</a> and <a href="https://discord.com/developers/docs/interactions/application-commands#message-commands">Message Commands</a>, it includes the resolved user or message on which the action was taken.</p>
+<p>For <a href="https://discord.com/developers/docs/components/reference">Message Components</a> it includes identifying information about the component that was used. It will also include some metadata about how the interaction was triggered: the <code>guild_id</code>, <code>channel</code>, <code>member</code> and other fields. You can find all the values in our data models below.</p>
+<h3 id="interaction-object">Interaction Object<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object"></a></h3>
+<h6 id="interaction-structure">Interaction Structure<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-interaction-structure"></a></h6>
+<table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>snowflake</td><td>ID of the interaction</td></tr><tr><td>application_id</td><td>snowflake</td><td>ID of the application this interaction is for</td></tr><tr><td>type</td><td><a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-interaction-type" data-discover="true">interaction type</a></td><td>Type of interaction</td></tr><tr><td>data?*</td><td><a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-interaction-data" data-discover="true">interaction data</a></td><td>Interaction data payload</td></tr><tr><td>guild?</td><td><a href="https://discord.com/developers/docs/resources/guild#guild-object" data-discover="true">partial guild</a> object</td><td>Guild that the interaction was sent from</td></tr><tr><td>guild_id?</td><td>snowflake</td><td>Guild that the interaction was sent from</td></tr><tr><td>channel?</td><td><a href="https://discord.com/developers/docs/resources/channel#channel-object" data-discover="true">partial channel</a> object</td><td>Channel that the interaction was sent from</td></tr><tr><td>channel_id?</td><td>snowflake</td><td>Channel that the interaction was sent from</td></tr><tr><td>member?**</td><td><a href="https://discord.com/developers/docs/resources/guild#guild-member-object" data-discover="true">guild member</a> object</td><td>Guild member data for the invoking user, including permissions</td></tr><tr><td>user?</td><td><a href="https://discord.com/developers/docs/resources/user#user-object" data-discover="true">user</a> object</td><td>User object for the invoking user, if invoked in a DM</td></tr><tr><td>token</td><td>string</td><td>Continuation token for responding to the interaction</td></tr><tr><td>version</td><td>integer</td><td>Read-only property, always <code>1</code></td></tr><tr><td>message?</td><td><a href="https://discord.com/developers/docs/resources/message#message-object" data-discover="true">message</a> object</td><td>For components or modals triggered by components, the message they were attached to</td></tr><tr><td>app_permissions***</td><td>string</td><td>Bitwise set of permissions the app has in the source location of the interaction</td></tr><tr><td>locale?****</td><td>string</td><td>Selected <a href="https://discord.com/developers/docs/reference#locales" data-discover="true">language</a> of the invoking user</td></tr><tr><td>guild_locale?</td><td>string</td><td><a href="https://discord.com/developers/docs/resources/guild#guild-object" data-discover="true">Guild's preferred locale</a>, if invoked in a guild</td></tr><tr><td>entitlements</td><td>array of <a href="https://discord.com/developers/docs/resources/entitlement#entitlement-object" data-discover="true">entitlement</a> objects</td><td>For <a href="https://discord.com/developers/docs/monetization/overview" data-discover="true">monetized apps</a>, any entitlements for the invoking user, representing access to premium <a href="https://discord.com/developers/docs/resources/sku" data-discover="true">SKUs</a></td></tr><tr><td>authorizing_integration_owners</td><td>dictionary with keys of <a href="https://discord.com/developers/docs/resources/application#application-object-application-integration-types" data-discover="true">application integration types</a></td><td>Mapping of installation contexts that the interaction was authorized for to related user or guild IDs. See <a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-authorizing-integration-owners-object" data-discover="true">Authorizing Integration Owners Object</a> for details</td></tr><tr><td>context?</td><td><a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-interaction-context-types" data-discover="true">interaction context type</a></td><td>Context where the interaction was triggered from</td></tr><tr><td>attachment_size_limit</td><td>integer</td><td>Attachment size limit in bytes</td></tr></tbody></table>
+
+<ul>
+<li>This is always present on application command, message component, and modal submit interaction types. It is optional for future-proofing against new interaction types</li>
+</ul>
+<p>** <code>member</code> is sent when the interaction is invoked in a guild, and <code>user</code> is sent when invoked in a DM</p>
+<p>*** <code>app_permissions</code> includes <code>ATTACH_FILES | EMBED_LINKS | MENTION_EVERYONE</code> permissions for (G)DMs with other users, and additionally includes <code>USE_EXTERNAL_EMOJIS</code> for DMs with the app's bot user</p>
+<p>**** This is available on all interaction types except PING</p>
+<h6 id="interaction-type">Interaction Type<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-interaction-type"></a></h6>
+<table><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>PING</td><td>1</td></tr><tr><td>APPLICATION_COMMAND</td><td>2</td></tr><tr><td>MESSAGE_COMPONENT</td><td>3</td></tr><tr><td>APPLICATION_COMMAND_AUTOCOMPLETE</td><td>4</td></tr><tr><td>MODAL_SUBMIT</td><td>5</td></tr></tbody></table>
+
+<h6 id="interaction-context-types">Interaction Context Types<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-interaction-context-types"></a></h6>
+<p>Context in Discord where an interaction can be used, or where it was triggered from. Details about using interaction contexts for application commands is in the <a href="https://discord.com/developers/docs/interactions/application-commands#interaction-contexts">commands context documentation</a>.</p>
+<table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>GUILD</td><td>0</td><td>Interaction can be used within servers</td></tr><tr><td>BOT_DM</td><td>1</td><td>Interaction can be used within DMs with the app's bot user</td></tr><tr><td>PRIVATE_CHANNEL</td><td>2</td><td>Interaction can be used within Group DMs and DMs other than the app's bot user</td></tr></tbody></table>
+
+<p>The <code>authorizing_integration_owners</code> field includes details about the authorizing user or server for the installation(s) relevant to the interaction. For apps installed to a user, it can be used to tell the difference between the authorizing user and the user that triggered an interaction (like a message component).</p>
+<p>A key will only be present if the following are true:</p>
+<ul>
+<li>The app has been authorized to the <a href="https://discord.com/developers/docs/resources/application#application-object-application-integration-types">installation context</a> corresponding to the key (<code>GUILD_INSTALL</code> or <code>USER_INSTALL</code>)</li>
+<li>The interaction is supported in the source <a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-interaction-context-types">interaction context</a> (<code>GUILD</code>, <code>BOT_DM</code>, or <code>PRIVATE_CHANNEL</code>) for the installation context corresponding to the key</li>
+<li>And for command invocations, the command must be supported in the installation context (using <a href="https://discord.com/developers/docs/interactions/application-commands#contexts"><code>integration_types</code></a>)</li>
+</ul>
+<p>The values in <code>authorizing_integration_owners</code> depend on the key—</p>
+<ul>
+<li>If the key is <code>GUILD_INSTALL</code> (<code>"0"</code>), the value depends on the source of the interaction:<ul>
+<li>The value will be the guild ID if the interaction is triggered from a server</li>
+<li>The value will be <code>"0"</code> if the interaction is triggered from a DM with the app's bot user</li>
+</ul>
+</li>
+<li>If the key is <code>USER_INSTALL</code> (<code>"1"</code>), the value will be the ID of the authorizing user</li>
+</ul>
+<h6 id="interaction-data">Interaction Data<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-interaction-data"></a></h6>
+<p>While the <code>data</code> field is guaranteed to be present for all <a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-interaction-type">interaction types</a> besides <code>PING</code>, its structure will vary. The following tables detail the inner <code>data</code> payload for each interaction type.</p>
+<table><thead><tr><th>Interaction Type</th><th>Interaction Data</th></tr></thead><tbody><tr><td>PING (<code>1</code>)</td><td>N / A</td></tr><tr><td>APPLICATION_COMMAND (<code>2</code>)</td><td><a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-application-command-data-structure" data-discover="true">Application Command Data Structure</a></td></tr><tr><td>MESSAGE_COMPONENT (<code>3</code>)</td><td><a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-message-component-data-structure" data-discover="true">Message Component Data Structure</a></td></tr><tr><td>APPLICATION_COMMAND_AUTOCOMPLETE (<code>4</code>)</td><td><a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-application-command-data-structure" data-discover="true">Application Command Data Structure</a></td></tr><tr><td>MODAL_SUBMIT (<code>5</code>)</td><td><a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-modal-submit-data-structure" data-discover="true">Modal Submit Data Structure</a></td></tr></tbody></table>
+
+<h6 id="application-command-data-structure">Application Command Data Structure<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-application-command-data-structure"></a></h6>
+<p>Sent in <code>APPLICATION_COMMAND</code> and <code>APPLICATION_COMMAND_AUTOCOMPLETE</code> interactions.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>snowflake</td><td><a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-structure" data-discover="true"><code>ID</code></a> of the invoked command</td></tr><tr><td>name</td><td>string</td><td><a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-structure" data-discover="true"><code>name</code></a> of the invoked command</td></tr><tr><td>type</td><td>integer</td><td><a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-structure" data-discover="true"><code>type</code></a> of the invoked command</td></tr><tr><td>resolved?</td><td><a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-resolved-data-structure" data-discover="true">resolved data</a></td><td>Converted users + roles + channels + attachments</td></tr><tr><td>options?*</td><td>array of <a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-application-command-interaction-data-option-structure" data-discover="true">application command interaction data option</a></td><td>Params + values from the user</td></tr><tr><td>guild_id?</td><td>snowflake</td><td>ID of the guild the command is registered to</td></tr><tr><td>target_id?</td><td>snowflake</td><td>ID of the user or message targeted by a <a href="https://discord.com/developers/docs/interactions/application-commands#user-commands" data-discover="true">user</a> or <a href="https://discord.com/developers/docs/interactions/application-commands#message-commands" data-discover="true">message</a> command</td></tr></tbody></table>
+
+<ul>
+<li>This <a href="https://discord.com/developers/docs/interactions/application-commands#autocomplete">can be partial</a> when in response to <code>APPLICATION_COMMAND_AUTOCOMPLETE</code></li>
+</ul>
+<h6 id="message-component-data-structure">Message Component Data Structure<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-message-component-data-structure"></a></h6>
+<table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>custom_id</td><td>string</td><td><a href="https://discord.com/developers/docs/components/reference#anatomy-of-a-component-custom-id" data-discover="true"><code>custom_id</code></a> of the component</td></tr><tr><td>component_type</td><td>integer</td><td><a href="https://discord.com/developers/docs/components/reference#component-object-component-types" data-discover="true">type</a> of the component</td></tr><tr><td>values?*</td><td>array of <a href="https://discord.com/developers/docs/components/reference#string-select-select-option-structure" data-discover="true">select option values</a></td><td>Values the user selected in a <a href="https://discord.com/developers/docs/components/reference#string-select" data-discover="true">select menu</a> component</td></tr><tr><td>resolved?</td><td><a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-resolved-data-structure" data-discover="true">resolved data</a></td><td>Resolved entities from selected options</td></tr></tbody></table>
+
+<ul>
+<li>This is always present for select menu components</li>
+</ul>
+<h6 id="modal-submit-data-structure">Modal Submit Data Structure<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-modal-submit-data-structure"></a></h6>
+<table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>custom_id</td><td>string</td><td>The custom ID provided for the modal</td></tr><tr><td>components</td><td>array of <a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-component-interaction-response-structures" data-discover="true">component interaction response</a></td><td>Values submitted by the user</td></tr></tbody></table>
+
+<h6 id="component-interaction-response-structures">Component Interaction Response Structures<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-component-interaction-response-structures"></a></h6>
+<table><thead><tr><th>Component</th></tr></thead><tbody><tr><td><a href="https://discord.com/developers/docs/components/reference#string-select-string-select-interaction-response-structure" data-discover="true">String Select</a></td></tr><tr><td><a href="https://discord.com/developers/docs/components/reference#text-input-text-input-interaction-response-structure" data-discover="true">Text Input</a></td></tr><tr><td><a href="https://discord.com/developers/docs/components/reference#user-select-user-select-interaction-response-structure" data-discover="true">User Select</a></td></tr><tr><td><a href="https://discord.com/developers/docs/components/reference#role-select-role-select-interaction-response-structure" data-discover="true">Role Select</a></td></tr><tr><td><a href="https://discord.com/developers/docs/components/reference#mentionable-select-mentionable-select-interaction-response-structure" data-discover="true">Mentionable Select</a></td></tr><tr><td><a href="https://discord.com/developers/docs/components/reference#channel-select-channel-select-interaction-response-structure" data-discover="true">Channel Select</a></td></tr><tr><td><a href="https://discord.com/developers/docs/components/reference#text-display-text-display-interaction-response-structure" data-discover="true">Text Display</a></td></tr><tr><td><a href="https://discord.com/developers/docs/components/reference#label-label-interaction-response-structure" data-discover="true">Label</a></td></tr></tbody></table>
+
+<h6 id="resolved-data-structure">Resolved Data Structure<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-resolved-data-structure"></a></h6>
+<p>If data for a Member is included, data for its corresponding User will also be included.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>users?</td><td>Map of Snowflakes to <a href="https://discord.com/developers/docs/resources/user#user-object" data-discover="true">user</a> objects</td><td>IDs and User objects</td></tr><tr><td>members?*</td><td>Map of Snowflakes to <a href="https://discord.com/developers/docs/resources/guild#guild-member-object" data-discover="true">partial member</a> objects</td><td>IDs and partial Member objects</td></tr><tr><td>roles?</td><td>Map of Snowflakes to <a href="https://discord.com/developers/docs/topics/permissions#role-object" data-discover="true">role</a> objects</td><td>IDs and Role objects</td></tr><tr><td>channels?**</td><td>Map of Snowflakes to <a href="https://discord.com/developers/docs/resources/channel#channel-object" data-discover="true">partial channel</a> objects</td><td>IDs and partial Channel objects</td></tr><tr><td>messages?</td><td>Map of Snowflakes to <a href="https://discord.com/developers/docs/resources/message#message-object" data-discover="true">partial messages</a> objects</td><td>IDs and partial Message objects</td></tr><tr><td>attachments?</td><td>Map of Snowflakes to <a href="https://discord.com/developers/docs/resources/message#attachment-object" data-discover="true">attachment</a> objects</td><td>IDs and attachment objects</td></tr></tbody></table>
+
+<ul>
+<li>Partial <code>Member</code> objects are missing <code>user</code>, <code>deaf</code> and <code>mute</code> fields</li>
+</ul>
+<p>** Partial <code>Channel</code> objects only have <code>id</code>, <code>name</code>, <code>type</code> and <code>permissions</code> fields. Threads will also have <code>thread_metadata</code> and <code>parent_id</code> fields.</p>
+<h6 id="application-command-interaction-data-option-structure">Application Command Interaction Data Option Structure<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-application-command-interaction-data-option-structure"></a></h6>
+<p>All options have names, and an option can either be a parameter and input value--in which case <code>value</code> will be set--or it can denote a subcommand or group--in which case it will contain a top-level key and another array of <code>options</code>.</p>
+<p><code>value</code> and <code>options</code> are mutually exclusive.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>string</td><td>Name of the parameter</td></tr><tr><td>type</td><td>integer</td><td>Value of <a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-option-type" data-discover="true">application command option type</a></td></tr><tr><td>value?</td><td>string, integer, double, or boolean</td><td>Value of the option resulting from user input</td></tr><tr><td>options?</td><td>array of <a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-application-command-interaction-data-option-structure" data-discover="true">application command interaction data option</a></td><td>Present if this option is a group or subcommand</td></tr><tr><td>focused?</td><td>boolean</td><td><code>true</code> if this option is the currently focused option for autocomplete</td></tr></tbody></table>
+
+<h3 id="message-interaction-object">Message Interaction Object<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#message-interaction-object"></a></h3>
+<p>This is sent on the <a href="https://discord.com/developers/docs/resources/message#message-object">message object</a> when the message is a response to an Interaction without an existing message.</p>
+<h6 id="message-interaction-structure">Message Interaction Structure<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#message-interaction-object-message-interaction-structure"></a></h6>
+<table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>snowflake</td><td>ID of the interaction</td></tr><tr><td>type</td><td><a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-interaction-type" data-discover="true">interaction type</a></td><td>Type of interaction</td></tr><tr><td>name</td><td>string</td><td>Name of the <a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-structure" data-discover="true">application command</a>, including subcommands and subcommand groups</td></tr><tr><td>user</td><td><a href="https://discord.com/developers/docs/resources/user#user-object" data-discover="true">user object</a></td><td>User who invoked the interaction</td></tr><tr><td>member?</td><td><a href="https://discord.com/developers/docs/resources/guild#guild-member-object" data-discover="true">partial member</a> object</td><td>Member who invoked the interaction in the guild</td></tr></tbody></table>
+
+<h2 id="receiving-an-interaction">Receiving an Interaction<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#receiving-an-interaction"></a></h2>
+<p>When a user interacts with your app, your app will receive an <a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object">Interaction</a>. Your app can receive an interaction in one of two ways:</p>
+<ul>
+<li>Via <a href="https://discord.com/developers/docs/events/gateway-events#interaction-create">Interaction Create</a> gateway event</li>
+<li>Via outgoing webhook</li>
+</ul>
+<p>These two methods are mutually exclusive; you can only receive Interactions one of the two ways. The <code>INTERACTION_CREATE</code> <a href="https://discord.com/developers/docs/events/gateway-events#interaction-create">Gateway Event</a> may be handled by connected clients, while the webhook method detailed below does not require a connected client.</p>
+<p>If you want to receive interactions via HTTP-based outgoing webhooks, you must configure an Interactions Endpoint URL for your app. You can read about preparing and adding an Interactions Endpoint URL to your app in the <a href="https://discord.com/developers/docs/interactions/overview#preparing-for-interactions">Preparing for Interactions</a> section in Interactions Overview.</p>
+<h3 id="interaction-metadata">Interaction Metadata<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-metadata"></a></h3>
+<p>An <a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object">Interaction</a> includes metadata to aid your application in handling it as well as <code>data</code> specific to the interaction type. You can find samples for each interaction type on their respective pages:</p>
+<ul>
+<li><a href="https://discord.com/developers/docs/interactions/application-commands#slash-commands-example-interaction">Slash Commands</a></li>
+<li><a href="https://discord.com/developers/docs/interactions/application-commands#user-commands-example-interaction">User Commands</a></li>
+<li><a href="https://discord.com/developers/docs/interactions/application-commands#message-commands-example-interaction">Message Commands</a></li>
+<li><a href="https://discord.com/developers/docs/components/using-message-components">Message Components</a></li>
+<li><a href="https://discord.com/developers/docs/components/using-modal-components">Modal Components</a></li>
+</ul>
+<p>An explanation of all the fields can be found in our <a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object">data models</a>.</p>
+<p>Now that you've gotten the data from the user, it's time to respond to them.</p>
+<h2 id="responding-to-an-interaction">Responding to an Interaction<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#responding-to-an-interaction"></a></h2>
+<p>Interactions--both receiving and responding--are webhooks under the hood. So responding to an Interaction is just like sending a webhook request!</p>
+<p>Interaction responses have the same header requirements as normal HTTP API requests. See <a href="https://discord.com/developers/docs/reference#http-api">here</a> for further information.</p>
+<p>There are a number of ways you can respond to an interaction:</p>
+<h3 id="interaction-response-object">Interaction Response Object<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object"></a></h3>
+<h6 id="interaction-response-structure">Interaction Response Structure<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object-interaction-response-structure"></a></h6>
+<table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>type</td><td><a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object-interaction-callback-type" data-discover="true">interaction callback type</a></td><td>Type of response</td></tr><tr><td>data?</td><td><a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object-interaction-callback-data-structure" data-discover="true">interaction callback data</a></td><td>An optional response message</td></tr></tbody></table>
+
+<h6 id="interaction-callback-type">Interaction Callback Type<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object-interaction-callback-type"></a></h6>
+<table><thead><tr><th>Name</th><th>Value</th><th>Description</th></tr></thead><tbody><tr><td>PONG</td><td>1</td><td>ACK a <code>Ping</code></td></tr><tr><td>CHANNEL_MESSAGE_WITH_SOURCE</td><td>4</td><td>Respond to an interaction with a message</td></tr><tr><td>DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE</td><td>5</td><td>ACK an interaction and edit a response later, the user sees a loading state</td></tr><tr><td>DEFERRED_UPDATE_MESSAGE*</td><td>6</td><td>For components, ACK an interaction and edit the original message later; the user does not see a loading state</td></tr><tr><td>UPDATE_MESSAGE*</td><td>7</td><td>For components, edit the message the component was attached to</td></tr><tr><td>APPLICATION_COMMAND_AUTOCOMPLETE_RESULT</td><td>8</td><td>Respond to an autocomplete interaction with suggested choices</td></tr><tr><td>MODAL**</td><td>9</td><td>Respond to an interaction with a popup modal</td></tr><tr><td>PREMIUM_REQUIRED</td><td>10</td><td><a href="https://discord.com/developers/docs/change-log#premium-apps-new-premium-button-style-deep-linking-url-schemes" data-discover="true"><span>Deprecated</span></a>; respond to an interaction with an upgrade button, only available for apps with <a href="https://discord.com/developers/docs/monetization/overview" data-discover="true">monetization</a> enabled</td></tr><tr><td>LAUNCH_ACTIVITY</td><td>12</td><td>Launch the Activity associated with the app. Only available for apps with <a href="https://discord.com/developers/docs/activities/overview" data-discover="true">Activities</a> enabled</td></tr></tbody></table>
+
+<ul>
+<li>Only valid for <a href="https://discord.com/developers/docs/components/reference">component-based</a> interactions</li>
+</ul>
+<p>** Not available for <code>MODAL_SUBMIT</code> and <code>PING</code> interactions.</p>
+<h6 id="interaction-callback-data-structure">Interaction Callback Data Structure<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object-interaction-callback-data-structure"></a></h6>
+<h6 id="messages">Messages<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object-messages"></a></h6>
+<p>Not all message fields are currently supported.</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>tts?</td><td>boolean</td><td>Whether the response is TTS</td></tr><tr><td>content?</td><td>string</td><td>Message content</td></tr><tr><td>embeds?</td><td>array of <a href="https://discord.com/developers/docs/resources/message#embed-object" data-discover="true">embeds</a></td><td>Supports up to 10 embeds</td></tr><tr><td>allowed_mentions?</td><td><a href="https://discord.com/developers/docs/resources/message#allowed-mentions-object" data-discover="true">allowed mentions</a></td><td><a href="https://discord.com/developers/docs/resources/message#allowed-mentions-object" data-discover="true">Allowed mentions</a> object</td></tr><tr><td>flags? *</td><td>integer</td><td><a href="https://discord.com/developers/docs/resources/message#message-object-message-flags" data-discover="true">Message flags</a> combined as a <a href="https://en.wikipedia.org/wiki/Bit_field" rel="noreferrer noopener" target="_blank" role="button" tabindex="0">bitfield</a> (only <code>SUPPRESS_EMBEDS</code>, <code>EPHEMERAL</code>, <code>IS_COMPONENTS_V2</code>, <code>IS_VOICE_MESSAGE</code>, and <code>SUPPRESS_NOTIFICATIONS</code> can be set)</td></tr><tr><td>components?</td><td>array of <a href="https://discord.com/developers/docs/components/reference#component-object" data-discover="true">components</a></td><td>Message components</td></tr><tr><td>attachments? **</td><td>array of partial <a href="https://discord.com/developers/docs/resources/message#attachment-object" data-discover="true">attachment</a> objects</td><td>Attachment objects with filename and description</td></tr><tr><td>poll?</td><td><a href="https://discord.com/developers/docs/resources/poll#poll-create-request-object" data-discover="true">poll</a> request object</td><td>Details about the poll</td></tr></tbody></table>
+
+<ul>
+<li>If you create a callback with the <a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object-interaction-callback-type">type</a> <code>DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE</code> the only valid <a href="https://discord.com/developers/docs/resources/message#message-object-message-flags">message flag</a> you may use is <code>EPHEMERAL</code>. If you'd like to create a component based message with <code>IS_COMPONENTS_V2</code> you must do that with the <a href="https://discord.com/developers/docs/interactions/receiving-and-responding#followup-messages">followup</a> message, not this one.</li>
+</ul>
+<p>** See <a href="https://discord.com/developers/docs/reference#uploading-files">Uploading Files</a> for details.</p>
+<h6 id="autocomplete">Autocomplete<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object-autocomplete"></a></h6>
+<table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>choices</td><td>array of <a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-option-choice-structure" data-discover="true">choices</a></td><td>autocomplete choices (max of 25 choices)</td></tr></tbody></table>
+
+<h6 id="modal">Modal<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object-modal"></a></h6>
+<table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>custom_id</td><td>string</td><td>Developer-defined identifier for the modal, max 100 characters</td></tr><tr><td>title</td><td>string</td><td>Title of the popup modal, max 45 characters</td></tr><tr><td>components</td><td>array of <a href="https://discord.com/developers/docs/components/reference#component-object" data-discover="true">components</a></td><td>Between 1 and 5 (inclusive) components that make up the modal</td></tr></tbody></table>
+
+<p>If your application responds with user data, you should use <a href="https://discord.com/developers/docs/resources/message#allowed-mentions-object"><code>allowed_mentions</code></a> to filter which mentions in the content actually ping.</p>
+<h2 id="interaction-callback">Interaction Callback<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-callback"></a></h2>
+<p>When responding to an interaction received, you can make a <code>POST</code> request to <code>/interactions/&lt;interaction_id&gt;/&lt;interaction_token&gt;/callback</code>. <code>interaction_id</code> is the unique id of that individual Interaction from the received payload. <code>interaction_token</code> is the unique token for that interaction from the received payload.</p>
+<p>If you are receiving Interactions over the gateway, you have to respond via HTTP. Responses to Interactions are not sent as commands over the gateway.</p>
+<p>If you send this request for an interaction received over HTTP, respond to the original HTTP request with a 202 and no body.</p>
+<pre><code>import requests
+
+url = &quot;https://discord.com/api/v10/interactions/&lt;interaction_id&gt;/&lt;interaction_token&gt;/callback&quot;
+
+json = {
+    &quot;type&quot;: 4,
+    &quot;data&quot;: {
+        &quot;content&quot;: &quot;Congrats on sending your command!&quot;
+    }
+}
+r = requests.post(url, json=json)
+</code></pre>
+<p>Interaction <code>tokens</code> are valid for 15 minutes and can be used to send followup messages but you must send an initial response within 3 seconds of receiving the event. If the 3 second deadline is exceeded, the token will be invalidated.</p>
+<p>Inline HTTP Response Behavior</p>
+<h6 id="interaction-callback-response-object">Interaction Callback Response Object<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-callback-interaction-callback-response-object"></a></h6>
+<table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>interaction</td><td><a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-callback-interaction-callback-object" data-discover="true">interaction callback object</a></td><td>The interaction object associated with the interaction response.</td></tr><tr><td>resource?</td><td><a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-callback-interaction-callback-resource-object" data-discover="true">interaction resource object</a></td><td>The resource that was created by the interaction response.</td></tr></tbody></table>
+
+<h6 id="interaction-callback-object">Interaction Callback Object<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-callback-interaction-callback-object"></a></h6>
+<table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>snowflake</td><td>ID of the interaction</td></tr><tr><td>type</td><td>integer</td><td><a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-interaction-type" data-discover="true">Interaction type</a></td></tr><tr><td>activity_instance_id?</td><td>string</td><td>Instance ID of the Activity if one was launched or joined</td></tr><tr><td>response_message_id?</td><td>snowflake</td><td>ID of the message that was created by the interaction</td></tr><tr><td>response_message_loading?</td><td>boolean</td><td>Whether or not the message is in a loading state</td></tr><tr><td>response_message_ephemeral?</td><td>boolean</td><td>Whether or not the response message was ephemeral</td></tr></tbody></table>
+
+<h6 id="interaction-callback-resource-object">Interaction Callback Resource Object<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-callback-interaction-callback-resource-object"></a></h6>
+<table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>type</td><td>integer</td><td><a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object-interaction-callback-type" data-discover="true">Interaction callback type</a></td></tr><tr><td>activity_instance?*</td><td><a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-callback-interaction-callback-activity-instance-resource" data-discover="true">Activity instance resource</a></td><td>Represents the Activity launched by this interaction.</td></tr><tr><td>message?**</td><td><a href="https://discord.com/developers/docs/resources/message#message-object" data-discover="true">message object</a></td><td>Message created by the interaction.</td></tr></tbody></table>
+
+<ul>
+<li>Only present if type is <code>LAUNCH_ACTIVITY</code>.</li>
+</ul>
+<p>** Only present if type is either <code>CHANNEL_MESSAGE_WITH_SOURCE</code> or <code>UPDATE_MESSAGE</code>.</p>
+<h6 id="interaction-callback-activity-instance-resource">Interaction Callback Activity Instance Resource<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-callback-interaction-callback-activity-instance-resource"></a></h6>
+<table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>string</td><td>Instance ID of the Activity if one was launched or joined.</td></tr></tbody></table>
+
+<h2 id="followup-messages">Followup Messages<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#followup-messages"></a></h2>
+<p>Sometimes, your bot will want to send followup messages to a user after responding to an interaction. Or, you may want to edit your original response. Whether you receive Interactions over the gateway or by outgoing webhook, you can use the following endpoints to edit your initial response or send followup messages:</p>
+<ul>
+<li><a href="https://discord.com/developers/docs/interactions/receiving-and-responding#edit-original-interaction-response"><code>PATCH /webhooks/&lt;application_id&gt;/&lt;interaction_token&gt;/messages/@original</code></a> to edit your initial response to an Interaction</li>
+<li><a href="https://discord.com/developers/docs/interactions/receiving-and-responding#delete-original-interaction-response"><code>DELETE /webhooks/&lt;application_id&gt;/&lt;interaction_token&gt;/messages/@original</code></a> to delete your initial response to an Interaction</li>
+<li><a href="https://discord.com/developers/docs/interactions/receiving-and-responding#create-followup-message"><code>POST /webhooks/&lt;application_id&gt;/&lt;interaction_token&gt;</code></a> to send a new followup message</li>
+<li><a href="https://discord.com/developers/docs/interactions/receiving-and-responding#edit-followup-message"><code>PATCH /webhooks/&lt;application_id&gt;/&lt;interaction_token&gt;/messages/&lt;message_id&gt;</code></a> to edit a message sent with that <code>token</code></li>
+</ul>
+<p>Interactions webhooks share the same rate limit properties as normal webhooks.</p>
+<p>Interaction tokens are valid for 15 minutes, meaning you can respond to an interaction within that amount of time.</p>
+<h3 id="endpoints">Endpoints<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#endpoints"></a></h3>
+<h2 id="create-interaction-response">Create Interaction Response<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#create-interaction-response"></a></h2>
+<p>Create a response to an Interaction. Body is an <a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object">interaction response</a>. Returns <code>204</code> unless <code>with_response</code> is set to <code>true</code> which returns <code>200</code> with the body as <a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-callback-interaction-callback-response-object">interaction callback response</a>.</p>
+<p>This endpoint also supports file attachments similar to the webhook endpoints. Refer to <a href="https://discord.com/developers/docs/reference#uploading-files">Uploading Files</a> for details on uploading files and <code>multipart/form-data</code> requests.</p>
+<h6 id="query-string-params">Query String Params<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#create-interaction-response-query-string-params"></a></h6>
+<table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>with_response?</td><td><a href="https://discord.com/developers/docs/reference#boolean-query-strings" data-discover="true">boolean</a></td><td>Whether to include an <a aria-current="page" href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-callback-interaction-callback-response-object" data-discover="true">interaction callback object</a> as the response</td></tr></tbody></table>
+
+<h2 id="get-original-interaction-response">Get Original Interaction Response<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#get-original-interaction-response"></a></h2>
+<p>Returns the initial Interaction response. Functions the same as <a href="https://discord.com/developers/docs/resources/webhook#get-webhook-message">Get Webhook Message</a>.</p>
+<h2 id="edit-original-interaction-response">Edit Original Interaction Response<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#edit-original-interaction-response"></a></h2>
+<p>Edits the initial Interaction response. Functions the same as <a href="https://discord.com/developers/docs/resources/webhook#edit-webhook-message">Edit Webhook Message</a>.</p>
+<h2 id="delete-original-interaction-response">Delete Original Interaction Response<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#delete-original-interaction-response"></a></h2>
+<p>Deletes the initial Interaction response. Returns <code>204 No Content</code> on success.</p>
+<h2 id="create-followup-message">Create Followup Message<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#create-followup-message"></a></h2>
+<p>Apps are limited to 5 followup messages per interaction if it was initiated from a user-installed app and isn't installed in the server (meaning the <a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object-authorizing-integration-owners-object">authorizing integration owners object</a> only contains <code>USER_INSTALL</code>)</p>
+<p>Create a followup message for an Interaction. Functions the same as <a href="https://discord.com/developers/docs/resources/webhook#execute-webhook">Execute Webhook</a>, but <code>wait</code> is always true. The <code>thread_id</code>, <code>avatar_url</code>, and <code>username</code> parameters are not supported when using this endpoint for interaction followups. You can use the <code>EPHEMERAL</code> <a href="https://discord.com/developers/docs/resources/message#message-object-message-flags">message flag</a> <code>1 &lt;&lt; 6</code> (64) to send a message that only the user can see. You can also use the <code>IS_COMPONENTS_V2</code> <a href="https://discord.com/developers/docs/resources/message#message-object-message-flags">message flag</a> <code>1 &lt;&lt; 15</code> (32768) to send a <a href="https://discord.com/developers/docs/components/reference">component</a>-based message.</p>
+<p>When using this endpoint directly after responding to an interaction with <code>DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE</code>, this endpoint will function as <a href="https://discord.com/developers/docs/interactions/receiving-and-responding#edit-original-interaction-response">Edit Original Interaction Response</a> for backwards compatibility. In this case, no new message will be created, and the loading message will be edited instead. The ephemeral flag will be ignored, and the value you provided in the initial defer response will be preserved, as an existing message's ephemeral state cannot be changed. This behavior is deprecated, and you should use the Edit Original Interaction Response endpoint in this case instead.</p>
+<h2 id="get-followup-message">Get Followup Message<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#get-followup-message"></a></h2>
+<p>Returns a followup message for an Interaction. Functions the same as <a href="https://discord.com/developers/docs/resources/webhook#get-webhook-message">Get Webhook Message</a>.</p>
+<h2 id="edit-followup-message">Edit Followup Message<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#edit-followup-message"></a></h2>
+<p>Edits a followup message for an Interaction. Functions the same as <a href="https://discord.com/developers/docs/resources/webhook#edit-webhook-message">Edit Webhook Message</a>.</p>
+<h2 id="delete-followup-message">Delete Followup Message<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#delete-followup-message"></a></h2>
+<p>Deletes a followup message for an Interaction. Returns <code>204 No Content</code> on success.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "navigation.instant", "navigation.tabs", "navigation.top", "navigation.sections", "navigation.expand", "navigation.tracking", "search.suggest"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>

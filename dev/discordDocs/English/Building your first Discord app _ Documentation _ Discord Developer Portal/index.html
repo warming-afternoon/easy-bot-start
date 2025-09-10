@@ -1,0 +1,756 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://warming-afternoon.github.io/easy-bot-start/dev/discordDocs/English/Building%20your%20first%20Discord%20app%20_%20Documentation%20_%20Discord%20Developer%20Portal/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
+    
+    
+      
+        <title>Building your first Discord app Documentation Discord Developer Portal - Bot 开发感想</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#step-0-project-setup" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="Bot 开发感想" class="md-header__button md-logo" aria-label="Bot 开发感想" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Bot 开发感想
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Building your first Discord app   Documentation   Discord Developer Portal
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  介绍
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../%E6%9E%B6%E6%9E%84/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  架构
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Bot 开发感想" class="md-nav__button md-logo" aria-label="Bot 开发感想" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Bot 开发感想
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    介绍
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%9E%B6%E6%9E%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    架构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step-0-project-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 0: Project Setup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-creating-an-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Creating an app
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1: Creating an app">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fetching-your-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fetching your credentials
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-your-bot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring your bot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choosing-installation-contexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choosing installation contexts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-an-install-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting up an install link
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-scopes-and-bot-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding scopes and bot permissions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-your-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing your app
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing your app">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-to-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install to server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-to-user-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install to user account
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-running-your-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Running your app
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: Running your app">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-slash-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing slash commands
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-handling-interactivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Handling interactivity
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: Handling interactivity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-up-a-public-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set up a public endpoint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-an-interaction-endpoint-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding an interaction endpoint URL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#handling-slash-command-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Handling slash command requests
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-adding-message-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Adding message components
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 4: Adding message components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-a-command-with-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding a command with options
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next steps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Building your first Discord app   Documentation   Discord Developer Portal</h1>
+
+<p><a href="https://discord.com/developers/docs/quick-start/overview-of-apps">Discord apps</a> let you customize and extend Discord using a collection of APIs and interactive features. This guide will walk you through building your first Discord app using JavaScript and by the end you'll have an app that uses slash commands, sends messages, and responds to component interactions.</p>
+<p>If you're interested in building a game or social experience in an iframe, you can follow the tutorial for <a href="https://discord.com/developers/docs/activities/building-an-activity">building an Activity</a></p>
+<p>We'll be building a Discord app that lets users play rock-paper-scissors (with 7 choices instead of 3). This guide is beginner-focused, but it assumes a basic understanding of <a href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics">JavaScript</a>.</p>
+<p>Resources used in this guide</p>
+<p>Overview of the tools and technologies we'll use</p>
+<hr />
+<h2 id="step-0-project-setup">Step 0: Project Setup<a href="https://discord.com/developers/docs/quick-start/getting-started#step-0-project-setup"></a></h2>
+<p>Before we get started, you'll need to set up your local environment and get the project code from the <a href="https://github.com/discord/discord-example-app">sample app repository</a>.</p>
+<p>We'll be developing our app locally with a little help from <a href="https://ngrok.com/">ngrok</a>, but you can use your preferred development environment.</p>
+<p>If you don't have <a href="https://nodejs.org/en/download/">NodeJS</a> installed, install that first.</p>
+<p>After NodeJS is installed, open your command line and clone the project code:</p>
+<pre><code>git clone https://github.com/discord/discord-example-app.git
+</code></pre>
+<p>Then navigate to the directory and install the project's dependencies:</p>
+<pre><code># navigate to directory
+cd discord-example-app
+ # install dependencies
+npm install
+</code></pre>
+<p>Overview of the project structure for the sample app used in this tutorial</p>
+<p>With that out of the way, open your new project in the code editor of your choice, and we'll move ahead to setting up your Discord app.</p>
+<h2 id="step-1-creating-an-app">Step 1: Creating an app<a href="https://discord.com/developers/docs/quick-start/getting-started#step-1-creating-an-app"></a></h2>
+<p>First, you'll need to create an app in the developer portal if you don't have one already:</p>
+<p><a href="https://discord.com/developers/applications?new_application=true">Create App</a></p>
+<p>Enter a name for your app, then press Create.</p>
+<p>After you create your app, you'll land on the General Information page of the app's settings where you can update basic information about your app like its description and icon. You'll also see an Application ID and Interactions Endpoint URL, which we'll use a bit later in the guide.</p>
+<h3 id="fetching-your-credentials">Fetching your credentials<a href="https://discord.com/developers/docs/quick-start/getting-started#fetching-your-credentials"></a></h3>
+<p>We'll need to set up and fetch a few sensitive values for your app, like its token and ID.</p>
+<p>Your token is used to authorize API requests and carry your app's permissions, so they are highly sensitive. Make sure to never share your token or check it into any kind of version control.</p>
+<p>Back in your project folder, rename the <code>.env.sample</code> file to <code>.env</code>. This is where we'll store all of your app's credentials.</p>
+<p>We'll need three values from your app's settings for your <code>.env</code> file:</p>
+<ul>
+<li>On the General Information page, copy the value for Application ID. In <code>.env</code>, replace <code>&lt;YOUR_APP_ID&gt;</code> with the ID you copied.</li>
+<li>Back on the General Information page, copy the value for Public Key, which is used to ensure HTTP requests are coming from Discord. In <code>.env</code>, replace <code>&lt;YOUR_PUBLIC_KEY&gt;</code> with the value you copied.</li>
+<li>On the Bot page under Token, click "Reset Token" to generate a new bot token. In <code>.env</code>, replace <code>&lt;YOUR_BOT_TOKEN&gt;</code> with your new token.</li>
+</ul>
+<p>You won't be able to view your token again unless you regenerate it, so make sure to keep it somewhere safe (like in a password manager).</p>
+<p>Now that you have the credentials you need, lets configure your bot user and installation settings.</p>
+<h3 id="configuring-your-bot">Configuring your bot<a href="https://discord.com/developers/docs/quick-start/getting-started#configuring-your-bot"></a></h3>
+<p>Newly-created apps have a bot user enabled by default. Bot users allow your app to appear and behave similarly to other server members when it's <a href="https://discord.com/developers/docs/quick-start/overview-of-apps#where-are-apps-installed">installed to a server</a>.</p>
+<p>On the left hand sidebar in your app's settings, there's a Bot page (where we fetched the token from). On this page, you can also configure settings like its <a href="https://discord.com/developers/docs/events/gateway#privileged-intents">privileged intents</a> or whether it can be installed by other users.</p>
+<p>Introduction to standard and privileged intents</p>
+<p>For now, we don't need to configure anything additional here, but you may need to in the future depending on your app's use case. Let's go ahead and get our app ready for installation.</p>
+<h3 id="choosing-installation-contexts">Choosing installation contexts<a href="https://discord.com/developers/docs/quick-start/getting-started#choosing-installation-contexts"></a></h3>
+<p>Now we'll select where your app can be installed in Discord, which is determined by the <a href="https://discord.com/developers/docs/resources/application#installation-context">installation contexts</a> that your app supports.</p>
+<p>What are installation contexts?</p>
+<p>Overview of where apps can be installed</p>
+<p>Click on Installation in the left sidebar, then under Installation Contexts make sure both "User Install" and "Guild Install" are selected.</p>
+<p>Some apps may only want to support one installation context—for example, a moderation app may only support a server context. However, by default, we recommend supporting both installation contexts. For detailed information about supporting user-installed apps, you can read the <a href="https://discord.com/developers/docs/tutorials/developing-a-user-installable-app">user-installable app tutorial</a>.</p>
+<h3 id="setting-up-an-install-link">Setting up an install link<a href="https://discord.com/developers/docs/quick-start/getting-started#setting-up-an-install-link"></a></h3>
+<p><a href="https://discord.com/developers/docs/resources/application#install-links">Install links</a> provide an easy way for users to install your app in Discord. We'll set up the default <a href="https://discord.com/developers/docs/resources/application#discord-provided-link">Discord Provided Link</a>, but you can read more about the different type of install links in the <a href="https://discord.com/developers/docs/resources/application#types-of-install-links">Application documentation</a>.</p>
+<p>On the Installation page, go to the Install Link section and select "Discord Provided Link" if it's not already selected.</p>
+<p>When Discorded Provided Link is selected, a new Default Install Settings section will appear, which we'll configure next.</p>
+<h3 id="adding-scopes-and-bot-permissions">Adding scopes and bot permissions<a href="https://discord.com/developers/docs/quick-start/getting-started#adding-scopes-and-bot-permissions"></a></h3>
+<p>Apps need approval from installing users to perform actions in Discord (like creating a slash command or fetching a list of server members). Let's add scopes and permissions before installing the app.</p>
+<p>What are scopes and permissions?</p>
+<p>Introduction to scopes and bot permissions</p>
+<p>On the Installation page in the Default Install Settings section:</p>
+<ul>
+<li>For User Install, add the <code>applications.commands</code> scope</li>
+<li>For Guild Install, add the <code>applications.commands</code> scope and <code>bot</code> scope. When you select <code>bot</code>, a new Permissions menu will appear to select the bot user's permissions. Select any permissions that you may want for your app—for now, I'll just select <code>Send Messages</code>.</li>
+</ul>
+<p><img alt="" src="https://discord.com/assets/4b14d5df50fb934c24a55895b6e67341.webp" /></p>
+<p>See a list of all <a href="https://discord.com/developers/docs/topics/oauth2#shared-resources-oauth2-scopes">OAuth2 scopes</a>, or read more on <a href="https://discord.com/developers/docs/topics/permissions">permissions</a> in the documentation.</p>
+<h3 id="installing-your-app">Installing your app<a href="https://discord.com/developers/docs/quick-start/getting-started#installing-your-app"></a></h3>
+<p>When developing apps, you should build and test on your user account (for user-installable apps) and in a server that isn't actively used by others (for server-installable apps). If you don't have your own server already, you can <a href="https://support.discord.com/hc/en-us/articles/204849977-How-do-I-create-a-server-">create one for free</a>.</p>
+<p>Once you add scopes, copy the URL from the Install Link section from before.</p>
+<p>Since our app is supporting both installation contexts, we'll install your new app to both a test server and your user account so that we can test in both <a href="https://discord.com/developers/docs/resources/application#installation-context">installation contexts</a>.</p>
+<h6 id="install-to-server">Install to server<a href="https://discord.com/developers/docs/quick-start/getting-started#installing-your-app-install-to-server"></a></h6>
+<p>To install your app to your test server, copy the default Install Link for your app from the Installation page. Paste the link in your browser and hit enter, then select "Add to server" in the installation prompt.</p>
+<p>Select your test server, and follow the installation prompt. Once your app is added to your test server, you should see it appear in the member list.</p>
+<h6 id="install-to-user-account">Install to user account<a href="https://discord.com/developers/docs/quick-start/getting-started#installing-your-app-install-to-user-account"></a></h6>
+<p>Next, install your app to your user account. Paste the same Install Link in your browser and hit enter. This time, select "Add to my apps" in the installation prompt.</p>
+<p>Follow the installation prompt to install your app to your user account. Once it's installed you can open a DM with it.</p>
+<hr />
+<h2 id="step-2-running-your-app">Step 2: Running your app<a href="https://discord.com/developers/docs/quick-start/getting-started#step-2-running-your-app"></a></h2>
+<p>With your app configured and installed to your test server and account, let's take a look at the code.</p>
+<p>To make development a bit simpler, the app uses <a href="https://github.com/discord/discord-interactions-js">discord-interactions</a>, which provides types and helper functions. If you prefer to use other languages or libraries, check out the <a href="https://discord.com/developers/docs/developer-tools/community-resources">Community Resources</a> documentation.</p>
+<h3 id="installing-slash-commands">Installing slash commands<a href="https://discord.com/developers/docs/quick-start/getting-started#installing-slash-commands"></a></h3>
+<p>To install slash commands, the app is using <a href="https://github.com/node-fetch/node-fetch"><code>node-fetch</code></a>. You can see the implementation for the installation in <code>utils.js</code> within the <code>DiscordRequest()</code> function.</p>
+<p>The project contains a <code>register</code> script you can use to install the commands in <code>ALL_COMMANDS</code>, which is defined at the bottom of <code>commands.js</code>. It installs the commands as global commands by calling the HTTP API's <a href="https://discord.com/developers/docs/interactions/application-commands#bulk-overwrite-global-application-commands"><code>PUT /applications/&lt;APP_ID&gt;/commands</code></a> endpoint.</p>
+<p>If you want to customize your commands or add additional ones, you can reference the command structure in the <a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-structure">commands documentation</a>.</p>
+<p>In your terminal within the project folder, run the following command:</p>
+<pre><code>├── examples    -&gt; short, feature-specific sample apps
+│   ├── app.js  -&gt; finished app.js code
+│   ├── button.js
+│   ├── command.js
+│   ├── modal.js
+│   ├── selectMenu.js
+├── .env        -&gt; your credentials and IDs
+├── app.js      -&gt; main entrypoint for app
+├── commands.js -&gt; slash command payloads + helpers
+├── game.js     -&gt; logic specific to Rock, Paper, Scissors
+├── utils.js    -&gt; utility functions and constants
+├── package.json
+├── README.md
+└── .gitignore
+</code></pre>
+<p>If you navigate back to your server, you should see the slash commands appear. But if you try to run them, nothing will happen since your app isn't receiving or handling any requests from Discord.</p>
+<p>Overview of Discord's HTTP and Gateway APIs</p>
+<hr />
+<h2 id="step-3-handling-interactivity">Step 3: Handling interactivity<a href="https://discord.com/developers/docs/quick-start/getting-started#step-3-handling-interactivity"></a></h2>
+<p>To enable your app to receive slash command and other interactions requests, Discord needs a public URL to send them. This URL can be configured in your app's settings as Interaction Endpoint URL.</p>
+<h3 id="set-up-a-public-endpoint">Set up a public endpoint<a href="https://discord.com/developers/docs/quick-start/getting-started#set-up-a-public-endpoint"></a></h3>
+<p>To set up a public endpoint, we'll start our app which runs an <a href="https://expressjs.com/">Express</a> server, then use <a href="https://ngrok.com/">ngrok</a> to expose our server publicly.</p>
+<p>First, go to your project's folder and run the following to start your app:</p>
+<pre><code>npm run register
+</code></pre>
+<p>There should be output indicating your app is running on port <code>3000</code>. Behind the scenes, our app is ready to handle interactions from Discord, which includes verifying security request headers and responding to <code>PING</code> requests. We're skipping over a lot of the details in this tutorial, but details about preparing apps for interactions is in the <a href="https://discord.com/developers/docs/interactions/overview#preparing-for-interactions">Interactions Overview</a> documentation.</p>
+<p>By default, the server will listen to requests sent to port 3000, but if you want to change the port, you can specify a <code>PORT</code> variable in your <code>.env</code> file.</p>
+<p>Next, we'll start our ngrok tunnel. If you don't have ngrok installed locally, you can install it by following the instructions on the <a href="https://ngrok.com/download">ngrok download page</a>.</p>
+<p>After ngrok is installed, open a new terminal and create a public endpoint that will forward requests to your Express server:</p>
+<pre><code>npm run start
+</code></pre>
+<p>You should see your connection open with output similar to the following:</p>
+<pre><code>ngrok http 3000
+</code></pre>
+<p>We'll use Forwarding URL as the publicly-accessible URL where Discord will send interactions requests in the next step.</p>
+<h3 id="adding-an-interaction-endpoint-url">Adding an interaction endpoint URL<a href="https://discord.com/developers/docs/quick-start/getting-started#adding-an-interaction-endpoint-url"></a></h3>
+<p>Go to your <a href="https://discord.com/developers/applications">app's settings</a> and on the General Information page under Interaction Endpoint URL, paste your new ngrok forwarding URL and append <code>/interactions</code>.</p>
+<p><img alt="" src="https://discord.com/assets/c227708d810abb94da4e8668565c05c4.webp" /></p>
+<p>Click Save Changes and ensure your endpoint is successfully verified.</p>
+<p>If you have troubles verifying your endpoint, make sure both ngrok and your app are running on the same port, and that you've copied the ngrok URL correctly</p>
+<p>The verification is handled automatically by the sample app in two ways:</p>
+<ul>
+<li>It uses the <code>PUBLIC_KEY</code> and <a href="https://github.com/discord/discord-interactions-js#usage">discord-interactions package</a> with a wrapper function (imported from <code>utils.js</code>) that makes it conform to <a href="http://expressjs.com/en/5x/api.html#express.json">Express's <code>verify</code> interface</a>. This is run on every incoming request to your app.</li>
+<li>It responds to incoming <code>PING</code> requests.</li>
+</ul>
+<p>You can learn more about preparing your app to receive interactions in <a href="https://discord.com/developers/docs/interactions/overview#preparing-for-interactions">the interactions documentation</a>.</p>
+<h3 id="handling-slash-command-requests">Handling slash command requests<a href="https://discord.com/developers/docs/quick-start/getting-started#handling-slash-command-requests"></a></h3>
+<p>With the endpoint verified, navigate to your project's <code>app.js</code> file and find the code block that handles the <code>/test</code> command:</p>
+<pre><code>Tunnel Status                 online
+Version                       2.0/2.0
+Web Interface                 http://127.0.0.1:4040
+Forwarding                    https://1234-someurl.ngrok.io -&gt; localhost:3000
+
+Connections                  ttl     opn     rt1     rt5     p50     p90
+                              0       0       0.00    0.00    0.00    0.00
+</code></pre>
+<p>The code above is responding to the interaction with a message in the channel, DM, or Group DM it originated from. You can see all available response types, like responding with a modal, <a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object-interaction-callback-type">in the documentation</a>.</p>
+<p>Go to your server and make sure your app's <code>/test</code> slash command works. When you trigger it, your app should send a message that contains “hello world” followed by a random emoji.</p>
+<p>In the following section, we'll add an additional command that uses slash command options, buttons, and select menus to build the rock-paper-scissors game.</p>
+<hr />
+<h2 id="step-4-adding-message-components">Step 4: Adding message components<a href="https://discord.com/developers/docs/quick-start/getting-started#step-4-adding-message-components"></a></h2>
+<p>The <code>/challenge</code> command will be how our rock-paper-scissors-style game is initiated. When the command is triggered, the app will send message components to the channel, which will guide the users to complete the game.</p>
+<h3 id="adding-a-command-with-options">Adding a command with options<a href="https://discord.com/developers/docs/quick-start/getting-started#adding-a-command-with-options"></a></h3>
+<p>The <code>/challenge</code> command, called <code>CHALLENGE_COMMAND</code> in <code>commands.js</code>, has an array of <code>options</code>. In our app, the options are objects representing different things that a user can select while playing rock-paper-scissors, generated using keys of <code>RPSChoices</code> in <code>game.js</code>.</p>
+<p>You can read more about command options and their structure <a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-option-structure">in the documentation</a>.</p>
+<p>While this guide won't touch much on the <code>game.js</code> file, feel free to poke around and change commands or the options in the commands.</p>
+<p>Handling the command interaction</p>
+<p>Code for handling the challenge command and responding with a message containing a button</p>
+<p>Handling button interactions</p>
+<p>Code for handling button clicks and responding with an ephemeral message</p>
+<p>Handling select menu interactions</p>
+<p>Code for responding to select menu interactions and updating the game state</p>
+<p>....and that's it 🎊 Go ahead and test your app and make sure everything works.</p>
+<hr />
+<h2 id="next-steps">Next steps<a href="https://discord.com/developers/docs/quick-start/getting-started#next-steps"></a></h2>
+<p>Congrats on building your first Discord app! 🤖</p>
+<p>Hopefully you learned a bit about Discord apps, how to configure them, and how to make them interactive. From here, you can continue building out your app or explore what else is possible.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "navigation.instant", "navigation.tabs", "navigation.top", "navigation.sections", "navigation.expand", "navigation.tracking", "search.suggest"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>
