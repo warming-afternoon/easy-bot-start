@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://warming-afternoon.github.io/easy-bot-start/dev/discordDocs/Chinese/Overview%20of%20Interactions%20_%20Documentation%20_%20Discord%20Developer%20Portal_translated/">
+        <link rel="canonical" href="https://warming-afternoon.github.io/easy-bot-start/dev/discordDocs/Chinese/Overview%20of%20Interactions_ch/">
       
       
       
@@ -357,11 +357,11 @@
         <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
-      交互准备
+      为交互做准备
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="交互准备">
+    <nav class="md-nav" aria-label="为交互做准备">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -410,7 +410,7 @@
           <li class="md-nav__item">
   <a href="#url_1" class="md-nav__link">
     <span class="md-ellipsis">
-      添加交互端点URL
+      添加交互终端点 URL
     </span>
   </a>
   
@@ -452,54 +452,56 @@
 
 
 <h1 id="_1"><a href="https://discord.com/developers/docs/interactions/overview#overview-of-interactions">交互功能概述</a></h1>
-<p>诸如命令和消息组件等交互功能允许用户在Discord内原生调用应用程序。当用户使用您应用的交互功能时，您的应用将收到一个<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object">交互对象</a>。</p>
-<p>本概述包括主要交互类型的概述，以及为您准备应用使用和接收交互的步骤。关于处理交互的参考文档和详细信息请参见<a href="https://discord.com/developers/docs/interactions/receiving-and-responding">接收与响应</a>。</p>
+<p>诸如命令和消息组件之类的交互功能允许用户在Discord内原生调用应用程序。当用户与您应用的交互功能互动时，您的应用将收到一个<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object">交互对象</a>。</p>
+<p>本概述包括主要交互类型的概览，以及为您准备应用使用和接收交互的步骤。有关处理交互的参考文档和详细信息，请参阅<a href="https://discord.com/developers/docs/interactions/receiving-and-responding">接收与响应</a>。</p>
 <hr />
 <h2 id="_2"><a href="https://discord.com/developers/docs/interactions/overview#types-of-interactions">交互类型</a></h2>
-<p>您的应用工具箱中有不同类型的交互功能，可以选择使用这些功能在Discord中构建引人入胜的交互体验。</p>
+<p>您应用的工具箱中有多种交互类型，可以选择并组合使用，以在Discord中构建引人入胜的交互体验。</p>
 <h3 id="_3"><a href="https://discord.com/developers/docs/interactions/overview#commands">命令</a></h3>
-<p><a href="https://discord.com/developers/docs/interactions/application-commands">应用命令</a>为用户提供在Discord中调用应用的原生方式。它们通常映射到应用的核心功能。</p>
-<p><img alt="" src="img/command.webp" /></p>
-<p>当应用创建命令时，可以选择命令的类型，这决定了它在Discord客户端中出现的位置以及调用命令时应用将接收的元数据。应用命令有三种类型：</p>
+<p><a href="https://discord.com/developers/docs/interactions/application-commands">应用程序命令</a>为用户提供在Discord中调用应用的原生方式。它们通常映射到应用的核心功能或特性。</p>
+<p><img alt="" src="../../img/command.webp" /></p>
+<p>当应用创建命令时，可以选择命令的类型，这决定了它在Discord客户端中的显示位置以及调用命令时应用将接收的元数据。应用程序命令有三种类型：</p>
 <ul>
 <li>斜杠命令是最常见的命令类型，通过在聊天输入框中输入<code>/</code>或打开命令选择器来访问。</li>
-<li>消息命令是与消息或消息内容相关的命令。通过点击消息右上角的上下文菜单（三个点）（或右键单击消息），然后导航到"应用"部分来访问。</li>
-<li>用户命令是与Discord中用户相关的命令。通过右键单击用户个人资料，然后导航到"应用"部分来访问。</li>
+<li>消息命令是与消息或消息内容相关的命令。通过点击消息右上角的上下文菜单（三个点）（或右键点击消息），然后导航至"应用"部分来访问。</li>
+<li>用户命令是与Discord中用户相关的命令。通过右键点击用户个人资料，然后导航至"应用"部分来访问。</li>
 <li>入口点命令是作为从应用启动器启动<a href="https://discord.com/developers/docs/activities/overview">活动</a>的主要方式使用的命令。</li>
 </ul>
-<p>关于创建命令和处理命令交互的详细信息请参见<a href="https://discord.com/developers/docs/interactions/application-commands">应用命令</a>文档。</p>
+<p>有关创建命令和处理命令交互的详细信息，请参阅<a href="https://discord.com/developers/docs/interactions/application-commands">应用程序命令</a>文档。</p>
 <h3 id="_4"><a href="https://discord.com/developers/docs/interactions/overview#message-components">消息组件</a></h3>
-<p><a href="https://discord.com/developers/docs/components/reference">消息组件</a>是交互式元素，可以包含在您的应用在Discord中发送的消息内容中。</p>
-<p><img alt="" src="img/MessageComponents.webp" /></p>
+<p><a href="https://discord.com/developers/docs/components/reference">消息组件</a>是可以在您的应用在Discord中发送的消息内容中包含的交互元素。</p>
+<p><img alt="" src="../../img/MessageComponents.webp" /></p>
 <p>应用可以在消息中发送的主要交互组件包括：</p>
 <ul>
 <li><a href="https://discord.com/developers/docs/components/reference#button">按钮</a>是可点击的组件，可以使用不同的样式、文本和表情符号进行自定义。</li>
-<li><a href="https://discord.com/developers/docs/components/reference#string-select">静态选择菜单</a>是用户可以打开的组件，显示开发者定义的选择选项列表，包含自定义标签和描述。</li>
-<li><a href="https://discord.com/developers/docs/components/reference#string-select">自动填充选择菜单</a>是一组四种不同的选择组件，使用上下文相关的Discord资源（如服务器中的用户或频道列表）进行填充。</li>
+<li><a href="https://discord.com/developers/docs/components/reference#string-select">静态选择菜单</a>是用户可以打开以查看开发者定义的选择选项列表的组件，这些选项具有自定义标签和描述。</li>
+<li><a href="https://discord.com/developers/docs/components/reference#string-select">自动填充选择菜单</a>是一组四种不同的选择组件，它们会填充上下文相关的Discord资源，如服务器中的用户列表或频道列表。</li>
 </ul>
-<p>所有消息组件的列表以及发送和接收组件交互的详细信息请参见<a href="https://discord.com/developers/docs/components/reference">消息组件</a>文档。</p>
+<p>所有消息组件的列表以及发送和接收组件交互的详细信息，请参阅<a href="https://discord.com/developers/docs/components/reference">消息组件</a>文档。</p>
 <h3 id="_5"><a href="https://discord.com/developers/docs/interactions/overview#modals">模态框</a></h3>
-<p><a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object-modal">模态框</a>是单用户弹出式界面，允许应用收集类似表单的数据。模态框只能在用户调用您应用的命令或消息组件时打开。</p>
-<p><img alt="" src="img/modals.webp" /></p>
+<p><a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object-modal">模态框</a>是单用户弹出界面，允许应用收集类似表单的数据。模态框只能在用户调用您应用的命令或消息组件时作为响应打开。</p>
+<p><img alt="" src="../../img/modals.webp" /></p>
 <p>模态框可以包含的组件可在<a href="https://discord.com/developers/docs/components/reference">组件参考</a>中找到。模态框提交后接收的数据可在<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object-modal">每个组件的交互响应结构</a>中找到。</p>
-<p>关于创建和使用模态框的详细信息请参见<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object-modal">接收与响应</a>文档。</p>
+<p>有关创建和使用模态框的详细信息，请参阅<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object-modal">接收与响应</a>文档。</p>
 <hr />
-<h2 id="_6"><a href="https://discord.com/developers/docs/interactions/overview#preparing-for-interactions">交互准备</a></h2>
-<p>当用户与您的应用交互时，您可以选择让应用通过两种互斥的方式接收交互：</p>
+<h2 id="_6"><a href="https://discord.com/developers/docs/interactions/overview#preparing-for-interactions">为交互做准备</a></h2>
+<p>当用户与您的应用交互时，您可以选择让您的应用以两种互斥的方式接收交互：</p>
 <ul>
 <li>基于WebSocket的网关连接</li>
-<li>通过出站webhook的HTTP方式</li>
+<li>通过传出Webhook的HTTP</li>
 </ul>
-<p>默认情况下，您的应用将通过网关连接接收交互，但您可以通过在应用设置中添加交互端点URL来选择基于HTTP的交互。有关处理交互的技术细节，请参阅<a href="https://discord.com/developers/docs/interactions/receiving-and-responding">接收与响应</a>文档。</p>
+<p>默认情况下，您的应用程序将通过网关连接接收交互，但您可以通过在应用程序设置中添加交互端点URL来选择基于HTTP的交互。有关处理交互的技术细节，请参阅<a href="https://discord.com/developers/docs/interactions/receiving-and-responding">接收和响应</a>文档。</p>
 <h3 id="url"><a href="https://discord.com/developers/docs/interactions/overview#configuring-an-interactions-endpoint-url">配置交互端点URL</a></h3>
-<p>交互端点URL是您应用的公共端点，Discord可以向该端点发送基于HTTP的交互。如果您的应用使用基于<a href="https://discord.com/developers/docs/events/gateway">网关</a>的交互，则无需配置交互端点URL。</p>
+<p>交互端点URL是您应用程序的公共端点，Discord可以在此向您的应用程序发送基于HTTP的交互。如果您的应用程序使用基于<a href="https://discord.com/developers/docs/events/gateway">网关</a>的交互，则无需配置交互端点URL。</p>
 <h4 id="_7"><a href="https://discord.com/developers/docs/interactions/overview#setting-up-an-endpoint">设置端点</a></h4>
-<p>在将交互端点URL添加到您的应用之前，您的端点必须提前准备好两件事：</p>
-<p>1.确认来自Discord的<code>PING</code>请求
-2.验证与安全相关的请求头（<code>X-Signature-Ed25519</code>和<code>X-Signature-Timestamp</code>）</p>
-<p>如果这两项中的任何一项未完成，您的交互端点URL将无法通过验证。有关确认PING请求和验证安全相关头的详细信息，请参阅以下部分。</p>
+<p>在将交互端点URL添加到您的应用程序之前，您的端点必须提前准备好两件事：</p>
+<ol>
+<li>确认来自Discord的<code>PING</code>请求</li>
+<li>验证与安全相关的请求头（<code>X-Signature-Ed25519</code>和<code>X-Signature-Timestamp</code>）</li>
+</ol>
+<p>如果其中任何一项未完成，您的交互端点URL将无法通过验证。有关确认PING请求和验证安全相关标头的详细信息，请参阅以下部分。</p>
 <h6 id="ping"><a href="https://discord.com/developers/docs/interactions/overview#setting-up-an-endpoint-acknowledging-ping-requests">确认PING请求</a></h6>
-<p>在添加交互端点URL时，Discord将向您的端点发送一个带有<code>PING</code>负载（<code>type: 1</code>）的<code>POST</code>请求。您的应用需要通过返回带有<code>PONG</code>负载（同样具有<code>type: 1</code>）的<code>200</code>响应来确认该请求。有关交互响应的详细信息，请参阅<a href="https://discord.com/developers/docs/interactions/receiving-and-responding">接收与响应文档</a>。</p>
+<p>在添加交互端点URL时，Discord将向您的端点发送带有<code>PING</code>负载（类型为<code>type: 1</code>）的<code>POST</code>请求。您的应用程序需要通过返回带有<code>PONG</code>负载（同样具有<code>type: 1</code>）的<code>200</code>响应来确认请求。有关交互响应的详细信息，请参阅<a href="https://discord.com/developers/docs/interactions/receiving-and-responding">接收和响应文档</a>。</p>
 <p>在响应<code>PING</code>时，您必须提供有效的<code>Content-Type</code>。更多信息请参见<a href="https://discord.com/developers/docs/reference#http-api">此处</a>。</p>
 <p>响应PING请求</p>
 <p>确认PING交互的代码示例</p>
@@ -512,23 +514,23 @@ def my_command():
 　　　　　　　　})
 </code></pre>
 <h6 id="_8"><a href="https://discord.com/developers/docs/interactions/overview#setting-up-an-endpoint-validating-security-request-headers">验证安全请求头</a></h6>
-<p>互联网是一个危险的地方，尤其是对于托管公共、未经身份验证的端点的人来说。要通过HTTP接收交互，在您的应用有资格接收请求之前，必须采取一些安全步骤。</p>
-<p>每个交互都附带以下头信息：</p>
+<p>互联网是一个危险的地方，特别是对于托管公共、未经身份验证的端点的人来说。要通过HTTP接收交互，在您的应用程序有资格接收请求之前，必须采取一些安全步骤。</p>
+<p>每个交互都附带以下标头：</p>
 <ul>
-<li><code>X-Signature-E d 2 5 5 1 9</code>作为签名</li>
+<li><code>X-Signature-Ed25519</code>作为签名</li>
 <li><code>X-Signature-Timestamp</code>作为时间戳</li>
 </ul>
-<p>使用您喜欢的安全库，每次收到<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object">交互</a>时都必须验证请求。如果签名验证失败，您的应用应返回<code>401</code>错误代码。</p>
+<p>使用您喜欢的安全库，每次收到<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object">交互</a>时都必须验证请求。如果签名验证失败，您的应用程序应返回<code>401</code>错误代码。</p>
 <p>验证安全头</p>
-<p>验证与安全相关的请求头的代码示例</p>
-<p>以下是一些代码示例，展示了如何验证交互请求中发送的头信息。</p>
+<p>验证安全相关请求头的代码示例</p>
+<p>以下是一些代码示例，展示了如何验证交互请求中发送的标头。</p>
 <p>JavaScript</p>
 <pre><code>const nacl = require(&quot;tweetnacl&quot;);
 
-// 您的公钥可以在开发者门户中的应用中找到
+// 您的公钥可以在开发者门户中的应用程序上找到
 const PUBLIC_KEY = &quot;APPLICATION_PUBLIC_KEY&quot;;
 
-const signature = req.get(&quot;X-Signature-Ed 2 5 5 1 9&quot;);
+const signature = req.get(&quot;X-Signature-Ed25519&quot;);
 const timestamp = req.get(&quot;X-Signature-Timestamp&quot;);
 const body = req.rawBody; // rawBody应为字符串，而非原始字节
 
@@ -546,12 +548,12 @@ if (!isVerified) {
 <pre><code>from nacl.signing import VerifyKey
 from nacl.exceptions import BadSignatureError
 
-# 您的公钥可以在开发者门户中的应用中找到
+# 您的公钥可以在开发者门户中的应用程序上找到
 PUBLIC_KEY = 'APPLICATION_PUBLIC_KEY'
 
 verify_key = VerifyKey(bytes.fromhex(PUBLIC_KEY))
 
-signature = request.headers[&quot;X-Signature-Ed 2 5 5 1 9&quot;]
+signature = request.headers[&quot;X-Signature-Ed25519&quot;]
 timestamp = request.headers[&quot;X-Signature-Timestamp&quot;]
 body = request.data.decode(&quot;utf-8&quot;)
 
@@ -560,14 +562,14 @@ try:
 except BadSignatureError:
 　　　　abort(401, 'invalid request signature')
 </code></pre>
-<p>除了确保您的应用在保存端点时验证与安全相关的请求头之外，Discord还会对您的端点执行自动化的常规安全检查，包括故意向您发送无效签名。如果验证失败，我们将移除您的交互URL，并通过电子邮件和系统DM提醒您。</p>
-<p>我们强烈建议查看我们的<a href="https://discord.com/developers/docs/developer-tools/community-resources#interactions">社区资源</a>及其中提供的库。它们不仅为交互数据模型提供类型支持，还包含适用于Flask和Express等API框架的装饰器，使验证变得简单。</p>
-<h4 id="url_1">添加交互端点URL<a href="https://discord.com/developers/docs/interactions/overview#adding-an-interactions-endpoint-url"></a></h4>
-<p>当您拥有一个公共端点作为应用的交互端点URL后，您可以前往<a href="https://discord.com/developers/applications">应用设置</a>将其添加到您的应用中。</p>
-<p>在概览页面中，找到交互端点URL字段。粘贴您已设置好的公共URL，该URL需能够确认<code>PING</code>消息并正确处理与安全相关的签名头。</p>
+<p>除了确保您的应用在保存终端点时验证与安全相关的请求头外，Discord 还会对您的终端点执行自动化的例行安全检查，包括故意向您发送无效签名。如果验证失败，我们将移除您的交互 URL，并通过电子邮件和系统 DM 提醒您。</p>
+<p>我们强烈建议查看我们的 <a href="https://discord.com/developers/docs/developer-tools/community-resources#interactions">社区资源</a> 以及其中提供的库。它们不仅为交互数据模型提供类型支持，还包括适用于 Flask 和 Express 等 API 框架的装饰器，使验证变得简单。</p>
+<h4 id="url_1">添加交互终端点 URL<a href="https://discord.com/developers/docs/interactions/overview#adding-an-interactions-endpoint-url"></a></h4>
+<p>当您拥有一个公共终端点作为应用的交互终端点 URL 后，您可以通过访问 <a href="https://discord.com/developers/applications">应用设置</a> 将其添加到您的应用中。</p>
+<p>在常规概览页面中，找到交互终端点 URL 字段。粘贴您已设置为确认 <code>PING</code> 消息并正确处理与安全相关的签名头的公共 URL。</p>
 <hr />
 <h2 id="_9"><a href="https://discord.com/developers/docs/interactions/overview#handling-interactions">处理交互</a></h2>
-<p>当您的应用准备好处理交互后，您可以查阅<a href="https://discord.com/developers/docs/interactions/receiving-and-responding">接收与响应</a>文档，该文档详细介绍了在应用中处理交互请求的技术细节。</p>
+<p>一旦您的应用准备好处理交互，您可以查阅 <a href="https://discord.com/developers/docs/interactions/receiving-and-responding">接收与响应</a> 文档，其中详细介绍了在应用中处理交互请求的技术细节。</p>
 
 
 
