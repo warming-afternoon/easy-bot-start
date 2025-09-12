@@ -564,7 +564,7 @@ except BadSignatureError:
 </code></pre>
 <p>除了确保您的应用在保存终端点时验证与安全相关的请求头外，Discord 还会对您的终端点执行自动化的例行安全检查，包括故意向您发送无效签名。如果验证失败，我们将移除您的交互 URL，并通过电子邮件和系统 DM 提醒您。</p>
 <p>我们强烈建议查看我们的 <a href="https://discord.com/developers/docs/developer-tools/community-resources#interactions">社区资源</a> 以及其中提供的库。它们不仅为交互数据模型提供类型支持，还包括适用于 Flask 和 Express 等 API 框架的装饰器，使验证变得简单。</p>
-<h4 id="url_1">添加交互终端点 URL<a href="https://discord.com/developers/docs/interactions/overview#adding-an-interactions-endpoint-url"></a></h4>
+<h4 id="url_1"><a href="https://discord.com/developers/docs/interactions/overview#adding-an-interactions-endpoint-url">添加交互终端点 URL</a></h4>
 <p>当您拥有一个公共终端点作为应用的交互终端点 URL 后，您可以通过访问 <a href="https://discord.com/developers/applications">应用设置</a> 将其添加到您的应用中。</p>
 <p>在常规概览页面中，找到交互终端点 URL 字段。粘贴您已设置为确认 <code>PING</code> 消息并正确处理与安全相关的签名头的公共 URL。</p>
 <hr />
