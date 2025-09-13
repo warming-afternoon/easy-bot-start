@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://warming-afternoon.github.io/easy-bot-start/dev/</loc>
-         <lastmod>2025-09-13</lastmod>
-    </url>
-    <url>
-         <loc>https://warming-afternoon.github.io/easy-bot-start/dev/%E6%9E%B6%E6%9E%84/</loc>
-         <lastmod>2025-09-13</lastmod>
-    </url>
-    <url>
-         <loc>https://warming-afternoon.github.io/easy-bot-start/dev/%E9%83%A8%E7%BD%B2/</loc>
-         <lastmod>2025-09-13</lastmod>
-    </url>
-    <url>
          <loc>https://warming-afternoon.github.io/easy-bot-start/dev/discordDocs/Chinese/API%20Reference_ch/</loc>
          <lastmod>2025-09-13</lastmod>
     </url>
@@ -74,6 +62,18 @@
     </url>
     <url>
          <loc>https://warming-afternoon.github.io/easy-bot-start/dev/discordDocs/English/Using%20Message%20Components/</loc>
+         <lastmod>2025-09-13</lastmod>
+    </url>
+    <url>
+         <loc>https://warming-afternoon.github.io/easy-bot-start/dev/mySummary/</loc>
+         <lastmod>2025-09-13</lastmod>
+    </url>
+    <url>
+         <loc>https://warming-afternoon.github.io/easy-bot-start/dev/mySummary/%E6%9E%B6%E6%9E%84/</loc>
+         <lastmod>2025-09-13</lastmod>
+    </url>
+    <url>
+         <loc>https://warming-afternoon.github.io/easy-bot-start/dev/mySummary/%E9%83%A8%E7%BD%B2/</loc>
          <lastmod>2025-09-13</lastmod>
     </url>
 </urlset>
