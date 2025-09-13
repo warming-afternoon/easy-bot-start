@@ -714,20 +714,14 @@
 <p>这样，即可确保 bot 正常运行并不占用额外身份组</p>
 <p>原理请查看 <a href="../../discordDocs/Chinese/Building%20your%20first%20Discord%20app_ch/#add-scopes-permissions">这里</a></p>
 <p>具体实现方法如下：</p>
-<ol>
-<li>设置 Scope</li>
-</ol>
+<p>1.设置 Scope</p>
 <p><img alt="" src="../img/scope.png" /></p>
 <p>如上，在 OAuth2 界面邀请链接生成器的 Scope 部分，必须勾选 applications.commands 和 bot，否则 bot 无法运行</p>
 <p>至于 Scope 部分其他选项，勾不勾看你的bot有没有特殊需求。正常来说上面两个就够了。不过多勾选几个也无所谓，不会占用身份组</p>
-<ol>
-<li>设置权限</li>
-</ol>
+<p>2.设置权限</p>
 <p><img alt="" src="../img/pemission.png" /></p>
 <p>这里，一个都不要勾选。</p>
-<ol>
-<li>生成邀请链接</li>
-</ol>
+<p>3.生成邀请链接</p>
 <p><img alt="" src="../img/bot_invite.png" /></p>
 <p>选择服务器安装，然后复制下方的邀请链接</p>
 <p>这就是我们需要的零权限要求的邀请链接</p>
