@@ -1,0 +1,1094 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://warming-afternoon.github.io/easy-bot-start/dev/discordPyDocs/English/discord_ext_tasks%20%E2%80%93%20asyncio_Task%20helpers/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>discord ext tasks – asyncio Task helpers - Bot 开发感想</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#recipes" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="Bot 开发感想" class="md-header__button md-logo" aria-label="Bot 开发感想" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Bot 开发感想
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              discord ext tasks – asyncio Task helpers
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../mySummary/" class="md-tabs__link">
+          
+  
+  
+  BOT编写感想
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../discordDocs/Chinese/API%20Reference_ch/" class="md-tabs__link">
+          
+  
+  
+  discord 官方文档 (部分汉化)
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Bot 开发感想" class="md-nav__button md-logo" aria-label="Bot 开发感想" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Bot 开发感想
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    BOT编写感想
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            BOT编写感想
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mySummary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    介绍
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mySummary/%E9%83%A8%E7%BD%B2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    部署
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    discord 官方文档 (部分汉化)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            discord 官方文档 (部分汉化)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discordDocs/Chinese/API%20Reference_ch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discordDocs/Chinese/Application%20Commands_ch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Application Commands
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discordDocs/Chinese/Building%20your%20first%20Discord%20app_ch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Building your first Discord app
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discordDocs/Chinese/Components%20Overview_ch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Components Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discordDocs/Chinese/Interactions_ch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Interactions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discordDocs/Chinese/Overview%20of%20Discord%20Apps_ch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview of Discord Apps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discordDocs/Chinese/Overview%20of%20Interactions_ch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview of Interactions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../discordDocs/Chinese/Using%20Message%20Components_ch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Using Message Components
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#recipes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recipes¶
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Reference¶
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>discord ext tasks – asyncio Task helpers</h1>
+
+<p>New in version 1.1.0.</p>
+<p>One of the most common operations when making a bot is having a loop run in the background at a specified interval. This pattern is very common but has a lot of things you need to look out for:</p>
+<ul>
+<li>
+<p>How do I handle <a href="https://docs.python.org/3/library/asyncio-exceptions.html#asyncio.CancelledError" title="(in Python v3.13)"><code>asyncio.CancelledError</code></a>?</p>
+</li>
+<li>
+<p>What do I do if the internet goes out?</p>
+</li>
+<li>
+<p>What is the maximum number of seconds I can sleep anyway?</p>
+</li>
+</ul>
+<p>The goal of this discord.py extension is to abstract all these worries away from you.</p>
+<h2 id="recipes">Recipes<a href="https://discordpy.readthedocs.io/en/stable/ext/tasks/index.html#recipes" title="Permalink to this headline">¶</a></h2>
+<p>A simple background task in a <a href="https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.ext.commands.Cog" title="discord.ext.commands.Cog"><code>Cog</code></a>:</p>
+<p>content_copy</p>
+<pre><code>from discord.ext import tasks, commands
+
+class MyCog(commands.Cog):
+    def __init__(self):
+        self.index = 0
+        self.printer.start()
+
+    def cog_unload(self):
+        self.printer.cancel()
+
+    @tasks.loop(seconds=5.0)
+    async def printer(self):
+        print(self.index)
+        self.index += 1
+</code></pre>
+<p>Adding an exception to handle during reconnect:</p>
+<p>content_copy</p>
+<pre><code>import asyncpg
+from discord.ext import tasks, commands
+
+class MyCog(commands.Cog):
+    def __init__(self, bot):
+        self.bot = bot
+        self.data = []
+        self.batch_update.add_exception_type(asyncpg.PostgresConnectionError)
+        self.batch_update.start()
+
+    def cog_unload(self):
+        self.batch_update.cancel()
+
+ @tasks.loop(minutes=5.0)
+    async def batch_update(self):
+        async with self.bot.pool.acquire() as con:
+            # batch update here...
+            pass
+</code></pre>
+<p>Looping a certain amount of times before exiting:</p>
+<p>content_copy</p>
+<pre><code>from discord.ext import tasks
+import discord
+
+@tasks.loop(seconds=5.0, count=5)
+async def slow_count():
+    print(slow_count.current_loop)
+
+@slow_count.after_loop
+async def after_slow_count():
+    print('done!')
+
+class MyClient(discord.Client):
+    async def setup_hook(self):
+        slow_count.start()
+</code></pre>
+<p>Waiting until the bot is ready before the loop starts:</p>
+<p>content_copy</p>
+<pre><code>from discord.ext import tasks, commands
+
+class MyCog(commands.Cog):
+    def __init__(self, bot):
+        self.index = 0
+        self.bot = bot
+        self.printer.start()
+
+    def cog_unload(self):
+        self.printer.cancel()
+
+    @tasks.loop(seconds=5.0)
+    async def printer(self):
+        print(self.index)
+        self.index += 1
+
+    @printer.before_loop
+    async def before_printer(self):
+        print('waiting...')
+        await self.bot.wait_until_ready()
+</code></pre>
+<p>Doing something during cancellation:</p>
+<p>content_copy</p>
+<pre><code>from discord.ext import tasks, commands
+import asyncio
+
+class MyCog(commands.Cog):
+    def __init__(self, bot):
+        self.bot = bot
+        self._batch = []
+        self.lock = asyncio.Lock()
+        self.bulker.start()
+
+    async def cog_unload(self):
+        self.bulker.cancel()
+
+    async def do_bulk(self):
+        # bulk insert data here
+        ...
+
+    @tasks.loop(seconds=10.0)
+    async def bulker(self):
+        async with self.lock:
+            await self.do_bulk()
+
+    @bulker.after_loop
+    async def on_bulker_cancel(self):
+        if self.bulker.is_being_cancelled() and len(self._batch) != 0:
+            # if we're cancelled and we have some data left...
+            # let's insert it to our database
+            await self.do_bulk()
+</code></pre>
+<p>Doing something at a specific time each day:</p>
+<p>content_copy</p>
+<pre><code>import datetime
+from discord.ext import commands, tasks
+
+utc = datetime.timezone.utc
+
+# If no tzinfo is given then UTC is assumed.
+time = datetime.time(hour=8, minute=30, tzinfo=utc)
+
+class MyCog(commands.Cog):
+    def __init__(self, bot):
+        self.bot = bot
+        self.my_task.start()
+
+    def cog_unload(self):
+        self.my_task.cancel()
+
+ @tasks.loop(time=time)
+    async def my_task(self):
+        print(&quot;My task is running!&quot;)
+</code></pre>
+<p>Doing something at multiple specific times each day:</p>
+<p>content_copy</p>
+<pre><code>import datetime
+from discord.ext import commands, tasks
+
+utc = datetime.timezone.utc
+
+# If no tzinfo is given then UTC is assumed.
+times = [
+    datetime.time(hour=8, tzinfo=utc),
+    datetime.time(hour=12, minute=30, tzinfo=utc),
+    datetime.time(hour=16, minute=40, second=30, tzinfo=utc)
+]
+
+class MyCog(commands.Cog):
+    def __init__(self, bot):
+        self.bot = bot
+        self.my_task.start()
+
+    def cog_unload(self):
+        self.my_task.cancel()
+
+ @tasks.loop(time=times)
+    async def my_task(self):
+        print(&quot;My task is running!&quot;)
+</code></pre>
+<h2 id="api-reference">API Reference<a href="https://discordpy.readthedocs.io/en/stable/ext/tasks/index.html#api-reference" title="Permalink to this headline">¶</a></h2>
+<p><em>class</em> discord.ext.tasks.Loop<a href="https://discordpy.readthedocs.io/en/stable/ext/tasks/index.html#discord.ext.tasks.Loop" title="Permalink to this definition">¶</a></p>
+<p>A background task helper that abstracts the loop and reconnection logic for you.</p>
+<p>The main interface to create this is through <a href="https://discordpy.readthedocs.io/en/stable/ext/tasks/index.html#discord.ext.tasks.loop" title="discord.ext.tasks.loop"><code>loop()</code></a>.</p>
+<p>@after_loop<a href="https://discordpy.readthedocs.io/en/stable/ext/tasks/index.html#discord.ext.tasks.Loop.after_loop" title="Permalink to this definition">¶</a></p>
+<p>A decorator that registers a coroutine to be called after the loop finishes running.</p>
+<p>The coroutine must take no arguments (except <code>self</code> in a class context).</p>
+<p>Note</p>
+<p>This coroutine is called even during cancellation. If it is desirable to tell apart whether something was cancelled or not, check to see whether <a href="https://discordpy.readthedocs.io/en/stable/ext/tasks/index.html#discord.ext.tasks.Loop.is_being_cancelled" title="discord.ext.tasks.Loop.is_being_cancelled"><code>is_being_cancelled()</code></a> is <code>True</code> or not.</p>
+<p>Parameters</p>
+<p><strong>coro</strong> (<a href="https://docs.python.org/3/library/asyncio-task.html#coroutine" title="(in Python v3.13)">coroutine</a>) – The coroutine to register after the loop finishes.</p>
+<p>Raises</p>
+<p><a href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.13)"><strong>TypeError</strong></a> – The function was not a coroutine.</p>
+<p>@before_loop<a href="https://discordpy.readthedocs.io/en/stable/ext/tasks/index.html#discord.ext.tasks.Loop.before_loop" title="Permalink to this definition">¶</a></p>
+<p>A decorator that registers a coroutine to be called before the loop starts running.</p>
+<p>This is useful if you want to wait for some bot state before the loop starts, such as <a href="https://discordpy.readthedocs.io/en/stable/api.html#discord.Client.wait_until_ready" title="discord.Client.wait_until_ready"><code>discord.Client.wait_until_ready()</code></a>.</p>
+<p>The coroutine must take no arguments (except <code>self</code> in a class context).</p>
+<p>Changed in version 2.0: Calling <a href="https://discordpy.readthedocs.io/en/stable/ext/tasks/index.html#discord.ext.tasks.Loop.stop" title="discord.ext.tasks.Loop.stop"><code>stop()</code></a> in this coroutine will stop the loop before the initial iteration is run.</p>
+<p>Parameters</p>
+<p><strong>coro</strong> (<a href="https://docs.python.org/3/library/asyncio-task.html#coroutine" title="(in Python v3.13)">coroutine</a>) – The coroutine to register before the loop runs.</p>
+<p>Raises</p>
+<p><a href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.13)"><strong>TypeError</strong></a> – The function was not a coroutine.</p>
+<p>@error<a href="https://discordpy.readthedocs.io/en/stable/ext/tasks/index.html#discord.ext.tasks.Loop.error" title="Permalink to this definition">¶</a></p>
+<p>A decorator that registers a coroutine to be called if the task encounters an unhandled exception.</p>
+<p>The coroutine must take only one argument the exception raised (except <code>self</code> in a class context).</p>
+<p>By default this logs to the library logger however it could be overridden to have a different implementation.</p>
+<p>New in version 1.4.</p>
+<p>Changed in version 2.0: Instead of writing to <code>sys.stderr</code>, the library’s logger is used.</p>
+<p>Parameters</p>
+<p><strong>coro</strong> (<a href="https://docs.python.org/3/library/asyncio-task.html#coroutine" title="(in Python v3.13)">coroutine</a>) – The coroutine to register in the event of an unhandled exception.</p>
+<p>Raises</p>
+<p><a href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.13)"><strong>TypeError</strong></a> – The function was not a coroutine.</p>
+<p><em>property</em> seconds<a href="https://discordpy.readthedocs.io/en/stable/ext/tasks/index.html#discord.ext.tasks.Loop.seconds" title="Permalink to this definition">¶</a></p>
+<p>Read-only value for the number of seconds between each iteration. <code>None</code> if an explicit <code>time</code> value was passed instead.</p>
+<p>New in version 2.0.</p>
+<p>Type</p>
+<p>Optional[<a href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code>float</code></a>]</p>
+<p><em>property</em> minutes<a href="https://discordpy.readthedocs.io/en/stable/ext/tasks/index.html#discord.ext.tasks.Loop.minutes" title="Permalink to this definition">¶</a></p>
+<p>Read-only value for the number of minutes between each iteration. <code>None</code> if an explicit <code>time</code> value was passed instead.</p>
+<p>New in version 2.0.</p>
+<p>Type</p>
+<p>Optional[<a href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code>float</code></a>]</p>
+<p><em>property</em> hours<a href="https://discordpy.readthedocs.io/en/stable/ext/tasks/index.html#discord.ext.tasks.Loop.hours" title="Permalink to this definition">¶</a></p>
+<p>Read-only value for the number of hours between each iteration. <code>None</code> if an explicit <code>time</code> value was passed instead.</p>
+<p>New in version 2.0.</p>
+<p>Type</p>
+<p>Optional[<a href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code>float</code></a>]</p>
+<p><em>property</em> time<a href="https://discordpy.readthedocs.io/en/stable/ext/tasks/index.html#discord.ext.tasks.Loop.time" title="Permalink to this definition">¶</a></p>
+<p>Read-only list for the exact times this loop runs at. <code>None</code> if relative times were passed instead.</p>
+<p>New in version 2.0.</p>
+<p>Type</p>
+<p>Optional[List[<a href="https://docs.python.org/3/library/datetime.html#datetime.time" title="(in Python v3.13)"><code>datetime.time</code></a>]]</p>
+<p><em>property</em> current_loop<a href="https://discordpy.readthedocs.io/en/stable/ext/tasks/index.html#discord.ext.tasks.Loop.current_loop" title="Permalink to this definition">¶</a></p>
+<p>The current iteration of the loop.</p>
+<p>Type</p>
+<p><a href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code>int</code></a></p>
+<p><em>property</em> next_iteration<a href="https://discordpy.readthedocs.io/en/stable/ext/tasks/index.html#discord.ext.tasks.Loop.next_iteration" title="Permalink to this definition">¶</a></p>
+<p>When the next iteration of the loop will occur.</p>
+<p>New in version 1.3.</p>
+<p>Type</p>
+<p>Optional[<a href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.13)"><code>datetime.datetime</code></a>]</p>
+<p><em>await</em> <strong>call</strong>(<em><em>args_, _</em>*kwargs</em>)<a href="https://discordpy.readthedocs.io/en/stable/ext/tasks/index.html#discord.ext.tasks.Loop.__call__" title="Permalink to this definition">¶</a></p>
+<p>This function is a <a href="https://docs.python.org/3/library/asyncio-task.html#coroutine"><em>coroutine</em></a>.</p>
+<p>Calls the internal callback that the task holds.</p>
+<p>New in version 1.6.</p>
+<p>Parameters</p>
+<ul>
+<li>
+<p><strong>*args</strong> – The arguments to use.</p>
+</li>
+<li>
+<p><strong>**kwargs</strong> – The keyword arguments to use.</p>
+</li>
+</ul>
+<p>start(<em><em>args_, _</em>*kwargs</em>)<a href="https://discordpy.readthedocs.io/en/stable/ext/tasks/index.html#discord.ext.tasks.Loop.start" title="Permalink to this definition">¶</a></p>
+<p>Starts the internal task in the event loop.</p>
+<p>Parameters</p>
+<ul>
+<li>
+<p><strong>*args</strong> – The arguments to use.</p>
+</li>
+<li>
+<p><strong>**kwargs</strong> – The keyword arguments to use.</p>
+</li>
+</ul>
+<p>Raises</p>
+<p><a href="https://docs.python.org/3/library/exceptions.html#RuntimeError" title="(in Python v3.13)"><strong>RuntimeError</strong></a> – A task has already been launched and is running.</p>
+<p>Returns</p>
+<p>The task that has been created.</p>
+<p>Return type</p>
+<p><a href="https://docs.python.org/3/library/asyncio-task.html#asyncio.Task" title="(in Python v3.13)"><code>asyncio.Task</code></a></p>
+<p>stop()<a href="https://discordpy.readthedocs.io/en/stable/ext/tasks/index.html#discord.ext.tasks.Loop.stop" title="Permalink to this definition">¶</a></p>
+<p>Gracefully stops the task from running.</p>
+<p>Unlike <a href="https://discordpy.readthedocs.io/en/stable/ext/tasks/index.html#discord.ext.tasks.Loop.cancel" title="discord.ext.tasks.Loop.cancel"><code>cancel()</code></a>, this allows the task to finish its current iteration before gracefully exiting.</p>
+<p>Note</p>
+<p>If the internal function raises an error that can be handled before finishing then it will retry until it succeeds.</p>
+<p>If this is undesirable, either remove the error handling before stopping via <a href="https://discordpy.readthedocs.io/en/stable/ext/tasks/index.html#discord.ext.tasks.Loop.clear_exception_types" title="discord.ext.tasks.Loop.clear_exception_types"><code>clear_exception_types()</code></a> or use <a href="https://discordpy.readthedocs.io/en/stable/ext/tasks/index.html#discord.ext.tasks.Loop.cancel" title="discord.ext.tasks.Loop.cancel"><code>cancel()</code></a> instead.</p>
+<p>Changed in version 2.0: Calling this method in <a href="https://discordpy.readthedocs.io/en/stable/ext/tasks/index.html#discord.ext.tasks.Loop.before_loop" title="discord.ext.tasks.Loop.before_loop"><code>before_loop()</code></a> will stop the loop before the initial iteration is run.</p>
+<p>New in version 1.2.</p>
+<p>cancel()<a href="https://discordpy.readthedocs.io/en/stable/ext/tasks/index.html#discord.ext.tasks.Loop.cancel" title="Permalink to this definition">¶</a></p>
+<p>Cancels the internal task, if it is running.</p>
+<p>restart(<em><em>args_, _</em>*kwargs</em>)<a href="https://discordpy.readthedocs.io/en/stable/ext/tasks/index.html#discord.ext.tasks.Loop.restart" title="Permalink to this definition">¶</a></p>
+<p>A convenience method to restart the internal task.</p>
+<p>Note</p>
+<p>Due to the way this function works, the task is not returned like <a href="https://discordpy.readthedocs.io/en/stable/ext/tasks/index.html#discord.ext.tasks.Loop.start" title="discord.ext.tasks.Loop.start"><code>start()</code></a>.</p>
+<p>Parameters</p>
+<ul>
+<li>
+<p><strong>*args</strong> – The arguments to use.</p>
+</li>
+<li>
+<p><strong>**kwargs</strong> – The keyword arguments to use.</p>
+</li>
+</ul>
+<p>add_exception_type(<em>*exceptions</em>)<a href="https://discordpy.readthedocs.io/en/stable/ext/tasks/index.html#discord.ext.tasks.Loop.add_exception_type" title="Permalink to this definition">¶</a></p>
+<p>Adds exception types to be handled during the reconnect logic.</p>
+<p>By default the exception types handled are those handled by <a href="https://discordpy.readthedocs.io/en/stable/api.html#discord.Client.connect" title="discord.Client.connect"><code>discord.Client.connect()</code></a>, which includes a lot of internet disconnection errors.</p>
+<p>This function is useful if you’re interacting with a 3rd party library that raises its own set of exceptions.</p>
+<p>Parameters</p>
+<p><strong>*exceptions</strong> (Type[<a href="https://docs.python.org/3/library/exceptions.html#BaseException" title="(in Python v3.13)"><code>BaseException</code></a>]) – An argument list of exception classes to handle.</p>
+<p>Raises</p>
+<p><a href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.13)"><strong>TypeError</strong></a> – An exception passed is either not a class or not inherited from <a href="https://docs.python.org/3/library/exceptions.html#BaseException" title="(in Python v3.13)"><code>BaseException</code></a>.</p>
+<p>clear_exception_types()<a href="https://discordpy.readthedocs.io/en/stable/ext/tasks/index.html#discord.ext.tasks.Loop.clear_exception_types" title="Permalink to this definition">¶</a></p>
+<p>Removes all exception types that are handled.</p>
+<p>Note</p>
+<p>This operation obviously cannot be undone!</p>
+<p>remove_exception_type(<em>*exceptions</em>)<a href="https://discordpy.readthedocs.io/en/stable/ext/tasks/index.html#discord.ext.tasks.Loop.remove_exception_type" title="Permalink to this definition">¶</a></p>
+<p>Removes exception types from being handled during the reconnect logic.</p>
+<p>Parameters</p>
+<p><strong>*exceptions</strong> (Type[<a href="https://docs.python.org/3/library/exceptions.html#BaseException" title="(in Python v3.13)"><code>BaseException</code></a>]) – An argument list of exception classes to handle.</p>
+<p>Returns</p>
+<p>Whether all exceptions were successfully removed.</p>
+<p>Return type</p>
+<p><a href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code>bool</code></a></p>
+<p>get_task()<a href="https://discordpy.readthedocs.io/en/stable/ext/tasks/index.html#discord.ext.tasks.Loop.get_task" title="Permalink to this definition">¶</a></p>
+<p>Optional[<a href="https://docs.python.org/3/library/asyncio-task.html#asyncio.Task" title="(in Python v3.13)"><code>asyncio.Task</code></a>]: Fetches the internal task or <code>None</code> if there isn’t one running.</p>
+<p>is_being_cancelled()<a href="https://discordpy.readthedocs.io/en/stable/ext/tasks/index.html#discord.ext.tasks.Loop.is_being_cancelled" title="Permalink to this definition">¶</a></p>
+<p>Whether the task is being cancelled.</p>
+<p>failed()<a href="https://discordpy.readthedocs.io/en/stable/ext/tasks/index.html#discord.ext.tasks.Loop.failed" title="Permalink to this definition">¶</a></p>
+<p><a href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code>bool</code></a>: Whether the internal task has failed.</p>
+<p>New in version 1.2.</p>
+<p>is_running()<a href="https://discordpy.readthedocs.io/en/stable/ext/tasks/index.html#discord.ext.tasks.Loop.is_running" title="Permalink to this definition">¶</a></p>
+<p><a href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code>bool</code></a>: Check if the task is currently running.</p>
+<p>New in version 1.4.</p>
+<p>change_interval(<em>*</em>, <em>seconds=0</em>, <em>minutes=0</em>, <em>hours=0</em>, <em>time=...</em>)<a href="https://discordpy.readthedocs.io/en/stable/ext/tasks/index.html#discord.ext.tasks.Loop.change_interval" title="Permalink to this definition">¶</a></p>
+<p>Changes the interval for the sleep time.</p>
+<p>New in version 1.2.</p>
+<p>Parameters</p>
+<ul>
+<li>
+<p><strong>seconds</strong> (<a href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code>float</code></a>) – The number of seconds between every iteration.</p>
+</li>
+<li>
+<p><strong>minutes</strong> (<a href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code>float</code></a>) – The number of minutes between every iteration.</p>
+</li>
+<li>
+<p><strong>hours</strong> (<a href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code>float</code></a>) – The number of hours between every iteration.</p>
+</li>
+<li>
+<p><strong>time</strong> (Union[<a href="https://docs.python.org/3/library/datetime.html#datetime.time" title="(in Python v3.13)"><code>datetime.time</code></a>, Sequence[<a href="https://docs.python.org/3/library/datetime.html#datetime.time" title="(in Python v3.13)"><code>datetime.time</code></a>]]) –</p>
+<p>The exact times to run this loop at. Either a non-empty list or a single value of <a href="https://docs.python.org/3/library/datetime.html#datetime.time" title="(in Python v3.13)"><code>datetime.time</code></a> should be passed. This cannot be used in conjunction with the relative time parameters.</p>
+<p>New in version 2.0.</p>
+<p>Note</p>
+<p>Duplicate times will be ignored, and only run once.</p>
+</li>
+</ul>
+<p>Raises</p>
+<ul>
+<li>
+<p><a href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.13)"><strong>ValueError</strong></a> – An invalid value was given.</p>
+</li>
+<li>
+<p><a href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.13)"><strong>TypeError</strong></a> – An invalid value for the <code>time</code> parameter was passed, or the <code>time</code> parameter was passed in conjunction with relative time parameters.</p>
+</li>
+</ul>
+<p>@discord.ext.tasks.loop(<em>*</em>, <em>seconds=...</em>, <em>minutes=...</em>, <em>hours=...</em>, <em>time=...</em>, <em>count=None</em>, <em>reconnect=True</em>, <em>name=None</em>)<a href="https://discordpy.readthedocs.io/en/stable/ext/tasks/index.html#discord.ext.tasks.loop" title="Permalink to this definition">¶</a></p>
+<p>A decorator that schedules a task in the background for you with optional reconnect logic. The decorator returns a <a href="https://discordpy.readthedocs.io/en/stable/ext/tasks/index.html#discord.ext.tasks.Loop" title="discord.ext.tasks.Loop"><code>Loop</code></a>.</p>
+<p>Parameters</p>
+<ul>
+<li>
+<p><strong>seconds</strong> (<a href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code>float</code></a>) – The number of seconds between every iteration.</p>
+</li>
+<li>
+<p><strong>minutes</strong> (<a href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code>float</code></a>) – The number of minutes between every iteration.</p>
+</li>
+<li>
+<p><strong>hours</strong> (<a href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><code>float</code></a>) – The number of hours between every iteration.</p>
+</li>
+<li>
+<p><strong>time</strong> (Union[<a href="https://docs.python.org/3/library/datetime.html#datetime.time" title="(in Python v3.13)"><code>datetime.time</code></a>, Sequence[<a href="https://docs.python.org/3/library/datetime.html#datetime.time" title="(in Python v3.13)"><code>datetime.time</code></a>]]) –</p>
+<p>The exact times to run this loop at. Either a non-empty list or a single value of <a href="https://docs.python.org/3/library/datetime.html#datetime.time" title="(in Python v3.13)"><code>datetime.time</code></a> should be passed. Timezones are supported. If no timezone is given for the times, it is assumed to represent UTC time.</p>
+<p>This cannot be used in conjunction with the relative time parameters.</p>
+<p>Note</p>
+<p>Duplicate times will be ignored, and only run once.</p>
+<p>New in version 2.0.</p>
+</li>
+<li>
+<p><strong>count</strong> (Optional[<a href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code>int</code></a>]) – The number of loops to do, <code>None</code> if it should be an infinite loop.</p>
+</li>
+<li>
+<p><strong>reconnect</strong> (<a href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code>bool</code></a>) – Whether to handle errors and restart the task using an exponential back-off algorithm similar to the one used in <a href="https://discordpy.readthedocs.io/en/stable/api.html#discord.Client.connect" title="discord.Client.connect"><code>discord.Client.connect()</code></a>.</p>
+</li>
+<li>
+<p><strong>name</strong> (Optional[<a href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code>str</code></a>]) –</p>
+<p>The name to assign to the internal task. By default it is assigned a name based off of the callable name such as <code>discord-ext-tasks: function_name</code>.</p>
+<p>New in version 2.4.</p>
+</li>
+</ul>
+<p>Raises</p>
+<ul>
+<li>
+<p><a href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.13)"><strong>ValueError</strong></a> – An invalid value was given.</p>
+</li>
+<li>
+<p><a href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.13)"><strong>TypeError</strong></a> – The function was not a coroutine, an invalid value for the <code>time</code> parameter was passed, or <code>time</code> parameter was passed in conjunction with relative time parameters.</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "navigation.instant", "navigation.tabs", "navigation.top", "navigation.sections", "navigation.expand", "navigation.tracking", "search.suggest"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
