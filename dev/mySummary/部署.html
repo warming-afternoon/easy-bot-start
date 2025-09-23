@@ -8,24 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://warming-afternoon.github.io/easy-bot-start/dev/discordDocs/English/Using%20Message%20Components/">
+        <link rel="canonical" href="https://warming-afternoon.github.io/easy-bot-start/dev/mySummary/%E9%83%A8%E7%BD%B2.html">
       
       
+        <link rel="prev" href="index.html">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+        <link rel="next" href="%E6%9E%B6%E6%9E%84.html">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
     
     
       
-        <title>Using Message Components - Bot 开发感想</title>
+        <title>部署 - Bot 开发感想</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.e53b48f4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.e53b48f4.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -44,7 +48,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -68,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#overview" class="md-skip">
+        <a href="#bot" class="md-skip">
           跳转至
         </a>
       
@@ -82,7 +86,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../.." title="Bot 开发感想" class="md-header__button md-logo" aria-label="Bot 开发感想" data-md-component="logo">
+    <a href="../index.html" title="Bot 开发感想" class="md-header__button md-logo" aria-label="Bot 开发感想" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -102,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Using Message Components
+              部署
             
           </span>
         </div>
@@ -176,10 +180,31 @@
   
   
   
+    <li class="md-tabs__item">
+      <a href="../index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
     
     
-      <li class="md-tabs__item">
-        <a href="../../../mySummary/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="index.html" class="md-tabs__link">
           
   
   
@@ -198,8 +223,15 @@
   
     
     
+      
+  
+  
+  
+  
+    
+    
       <li class="md-tabs__item">
-        <a href="../../Chinese/API%20Reference_ch/" class="md-tabs__link">
+        <a href="../discordDocs/Chinese/Overview%20of%20Discord%20Apps_ch.html" class="md-tabs__link">
           
   
   
@@ -207,6 +239,9 @@
 
         </a>
       </li>
+    
+  
+
     
   
 
@@ -233,7 +268,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Bot 开发感想" class="md-nav__button md-logo" aria-label="Bot 开发感想" data-md-component="logo">
+    <a href="../index.html" title="Bot 开发感想" class="md-nav__button md-logo" aria-label="Bot 开发感想" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -250,26 +285,51 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    首页
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -282,8 +342,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_1">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             BOT编写感想
           </label>
@@ -296,7 +356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mySummary/" class="md-nav__link">
+      <a href="index.html" class="md-nav__link">
         
   
   
@@ -316,15 +376,94 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../mySummary/%E9%83%A8%E7%BD%B2/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    部署
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="%E9%83%A8%E7%BD%B2.html" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     部署
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bot" class="md-nav__link">
+    <span class="md-ellipsis">
+      关于 BOT 的作用域、权限配置
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      创建一个零权限要求的邀请链接
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E6%9E%B6%E6%9E%84.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    架构
     
   </span>
   
@@ -364,10 +503,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
@@ -380,8 +519,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             discord 官方文档 (部分汉化)
           </label>
@@ -393,13 +532,58 @@
   
   
   
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    快速开始
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            快速开始
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../Chinese/API%20Reference_ch/" class="md-nav__link">
+      <a href="../discordDocs/Chinese/Overview%20of%20Discord%20Apps_ch.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    API Reference
+    Discord 应用概览
     
   </span>
   
@@ -417,12 +601,88 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Chinese/Application%20Commands_ch/" class="md-nav__link">
+      <a href="../discordDocs/Chinese/Building%20your%20first%20Discord%20app_ch.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Application Commands
+    编写你的第一个 app
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    交互
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            交互
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../discordDocs/Chinese/Overview%20of%20Interactions_ch.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    交互概览
     
   </span>
   
@@ -440,12 +700,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Chinese/Building%20your%20first%20Discord%20app_ch/" class="md-nav__link">
+      <a href="../discordDocs/Chinese/Interactions_ch.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Building your first Discord app
+    接收及响应
     
   </span>
   
@@ -463,12 +723,88 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Chinese/Components%20Overview_ch/" class="md-nav__link">
+      <a href="../discordDocs/Chinese/Application%20Commands_ch.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Components Overview
+    指令
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    组件
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            组件
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../discordDocs/Chinese/Components%20Overview_ch.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    组件概览
     
   </span>
   
@@ -486,12 +822,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Chinese/Interactions_ch/" class="md-nav__link">
+      <a href="../discordDocs/Chinese/API%20Reference_ch.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Interactions
+    API 参考
     
   </span>
   
@@ -509,12 +845,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Chinese/Overview%20of%20Discord%20Apps_ch/" class="md-nav__link">
+      <a href="../discordDocs/Chinese/Using%20Message%20Components_ch.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Overview of Discord Apps
+    使用消息组件
     
   </span>
   
@@ -525,47 +861,9 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Chinese/Overview%20of%20Interactions_ch/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Overview of Interactions
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Chinese/Using%20Message%20Components_ch/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Using Message Components
-    
-  </span>
-  
-
-      </a>
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -603,60 +901,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#bot" class="md-nav__link">
     <span class="md-ellipsis">
-      Overview
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Overview">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prerequisites
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sending-a-message-with-a-component" class="md-nav__link">
-    <span class="md-ellipsis">
-      Sending a Message with a Component
+      关于 BOT 的作用域、权限配置
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#sending-a-message-with-multiple-components" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Sending a Message with Multiple Components
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nesting-components-with-layout-components" class="md-nav__link">
-    <span class="md-ellipsis">
-      Nesting Components with Layout Components
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-message-components-with-interactions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Using Message Components with Interactions
+      创建一个零权限要求的邀请链接
     </span>
   </a>
   
@@ -678,83 +934,30 @@
 
 
 
-  <h1>Using Message Components</h1>
+  <h1>部署</h1>
 
-<h2 id="overview">Overview<a href="https://discord.com/developers/docs/components/using-message-components#overview"></a></h2>
-<p>Message components are a powerful way to add interactivity to your messages. They allow you to create rich, interactive experiences for your users, making it easier for them to engage with your content.</p>
-<h3 id="prerequisites">Prerequisites<a href="https://discord.com/developers/docs/components/using-message-components#prerequisites"></a></h3>
-<ul>
-<li>You must have a Discord account and be a member of the Discord Developer Portal.</li>
-<li>You must have a Discord application created in the Discord Developer Portal.</li>
-<li>You must have the necessary permissions to send messages in the channel where you want to use components.</li>
-</ul>
-<hr />
-<h2 id="sending-a-message-with-a-component">Sending a Message with a Component<a href="https://discord.com/developers/docs/components/using-message-components#sending-a-message-with-a-component"></a></h2>
-<p>To send a message with a component, you need to set the <code>IS_COMPONENTS_V2</code> flag (<code>1&lt;&lt;15</code>) in your message's <code>flags</code> field. This can be done when using <a href="https://discord.com/developers/docs/resources/message#create-message">Message Create</a>, <a href="https://discord.com/developers/docs/resources/webhook#execute-webhook">Execute Webhook</a>, or <a href="https://discord.com/developers/docs/interactions/receiving-and-responding#create-followup-message">responding to an interaction</a>.</p>
-<p>Setting the <code>IS_COMPONENTS_V2</code> message flag cannot be reverted: once the message has been sent, the flag cannot be removed from the message when editing the message.</p>
-<p>This flag indicates that the message contains components and disables traditional content and embeds.</p>
-<p>All content must be sent as components instead of using the standard message format.</p>
-<pre><code>{
-  &quot;flags&quot;: 32768,
-  &quot;components&quot;: [
-    {
-      &quot;type&quot;: 10,
-      &quot;content&quot;: &quot;This is a message using the Text Display component&quot;
-    }
-  ]
-}
-</code></pre>
-<h2 id="sending-a-message-with-multiple-components">Sending a Message with Multiple Components<a href="https://discord.com/developers/docs/components/using-message-components#sending-a-message-with-multiple-components"></a></h2>
-<p>To send a message with multiple components, you can include multiple component objects in your message's <code>components</code> field. This field allows you to specify an array of components that will be included in the message.</p>
-<pre><code>{
-  &quot;flags&quot;: 32768,
-  &quot;components&quot;: [
-    {
-      &quot;type&quot;: 10,
-      &quot;content&quot;: &quot;This is a Text Display component.&quot;
-    },
-    {
-      &quot;type&quot;: 10,
-      &quot;content&quot;: &quot;This is another Text Display component!&quot;
-    }
-  ]
-}
-</code></pre>
-<h2 id="nesting-components-with-layout-components">Nesting Components with Layout Components<a href="https://discord.com/developers/docs/components/using-message-components#nesting-components-with-layout-components"></a></h2>
-<p>You can also nest components within layout components. This gives you more flexibility in displaying information, images, and interactive components to your users. Check out the <a href="https://discord.com/developers/docs/components/reference#component-object-component-types">list of components</a> for a complete list of available layout components.</p>
-<p>For example, you can create a message with an Action Row component that contains multiple Button components.</p>
-<pre><code>{
-  &quot;flags&quot;: 32768,
-  &quot;components&quot;: [
-    {
-      &quot;type&quot;: 10,
-      &quot;content&quot;: &quot;This is a message with v2 components&quot;
-    },
-    {
-      &quot;type&quot;: 1,
-      &quot;components&quot;: [
-        {
-          &quot;type&quot;: 2,
-          &quot;style&quot;: 1,
-          &quot;label&quot;: &quot;Click Me&quot;,
-          &quot;custom_id&quot;: &quot;click_me_1&quot;
-        },
-        {
-          &quot;type&quot;: 2,
-          &quot;style&quot;: 2,
-          &quot;label&quot;: &quot;Click Me Too&quot;,
-          &quot;custom_id&quot;: &quot;click_me_2&quot;
-        }
-      ]
-    }
-  ]
-}
-</code></pre>
-<h2 id="using-message-components-with-interactions">Using Message Components with Interactions<a href="https://discord.com/developers/docs/components/using-message-components#using-message-components-with-interactions"></a></h2>
-<p>When a user interacts with an interactive message component, your app will <a href="https://discord.com/developers/docs/interactions/overview">receive an interaction event</a>. This event contains information about the interaction, including the type of interaction and the component that was interacted with.</p>
-<p>See the <a href="https://discord.com/developers/docs/components/reference#component-object-component-types">list of supported component types</a> for a list of interactive message components and their interaction event payloads.</p>
-<p>You can use this information to respond to the interaction, update the message, or perform other actions, such as displaying a modal based on the user's input.</p>
-<p>Check out the <a href="https://discord.com/developers/docs/interactions/overview">Interactions documentation</a> for more information on handling interactions and responding to user input from interactive components.</p>
+<h4 id="bot">关于 BOT 的作用域、权限配置</h4>
+<p>没写完，先看 <a href="../discordDocs/Chinese/Building%20your%20first%20Discord%20app_ch.html#set-bot">这里</a></p>
+<h4 id="_1">创建一个零权限要求的邀请链接</h4>
+<p>为什么要通过零权限要求的邀请链接部署应用到服务器中？</p>
+<p>嗯，总所周知，discord 服务器身份组数量上限仅有 250 个。在大型服务器中有点不太够用。</p>
+<p>而通过有权限要求的邀请链接部署 BOT 到服务器中，会导致该 BOT 占据一个特殊的身份组。当 BOT 数量增多时，它们就会占用一部分的身份组数量。</p>
+<p>那么，有没有办法解决这个问题呢？</p>
+<p>答案是，通过零权限要求的邀请链接部署 BOT，这就不会占据身份组了。然后在服务器中通过身份组拼凑权限，或者设置 BOT 用户的特殊权限</p>
+<p>这样，即可确保 bot 正常运行并不占用额外身份组</p>
+<p>原理请查看 <a href="../discordDocs/Chinese/Building%20your%20first%20Discord%20app_ch.html#add-scopes-permissions">这里</a></p>
+<p>具体实现方法如下：</p>
+<p>1.设置 Scope</p>
+<p><img alt="" src="img/scope.png" /></p>
+<p>如上，在 OAuth2 界面邀请链接生成器的 Scope 部分，必须勾选 applications.commands 和 bot，否则 bot 无法运行</p>
+<p>至于 Scope 部分其他选项，勾不勾看你的bot有没有特殊需求。正常来说上面两个就够了。不过多勾选几个也无所谓，不会占用身份组</p>
+<p>2.设置权限</p>
+<p><img alt="" src="img/pemission.png" /></p>
+<p>这里，一个都不要勾选。</p>
+<p>3.生成邀请链接</p>
+<p><img alt="" src="img/bot_invite.png" /></p>
+<p>选择服务器安装，然后复制下方的邀请链接</p>
+<p>这就是我们需要的零权限要求的邀请链接</p>
 
 
 
@@ -809,10 +1012,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "navigation.instant", "navigation.tabs", "navigation.top", "navigation.sections", "navigation.expand", "navigation.tracking", "search.suggest"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.instant", "navigation.tabs", "navigation.top", "navigation.sections", "navigation.expand", "navigation.tracking", "search.suggest"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>

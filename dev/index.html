@@ -8,24 +8,26 @@
       
       
       
-        <link rel="canonical" href="https://warming-afternoon.github.io/easy-bot-start/dev/mySummary/%E6%9E%B6%E6%9E%84/">
+        <link rel="canonical" href="https://warming-afternoon.github.io/easy-bot-start/dev/index.html">
       
       
       
+        <link rel="next" href="mySummary/index.html">
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      
+      <link rel="icon" href="assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
     
     
       
-        <title>架构 - Bot 开发感想</title>
+        <title>Bot 开发感想</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.e53b48f4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -44,7 +46,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -68,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#bot" class="md-skip">
           跳转至
         </a>
       
@@ -82,7 +84,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../.." title="Bot 开发感想" class="md-header__button md-logo" aria-label="Bot 开发感想" data-md-component="logo">
+    <a href="index.html" title="Bot 开发感想" class="md-header__button md-logo" aria-label="Bot 开发感想" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -102,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              架构
+              首页
             
           </span>
         </div>
@@ -175,11 +177,32 @@
   
   
   
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
   
     
     
       <li class="md-tabs__item">
-        <a href="../" class="md-tabs__link">
+        <a href="mySummary/index.html" class="md-tabs__link">
           
   
   
@@ -198,8 +221,15 @@
   
     
     
+      
+  
+  
+  
+  
+    
+    
       <li class="md-tabs__item">
-        <a href="../../discordDocs/Chinese/API%20Reference_ch/" class="md-tabs__link">
+        <a href="discordDocs/Chinese/Overview%20of%20Discord%20Apps_ch.html" class="md-tabs__link">
           
   
   
@@ -207,6 +237,9 @@
 
         </a>
       </li>
+    
+  
+
     
   
 
@@ -233,7 +266,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Bot 开发感想" class="md-nav__button md-logo" aria-label="Bot 开发感想" data-md-component="logo">
+    <a href="index.html" title="Bot 开发感想" class="md-nav__button md-logo" aria-label="Bot 开发感想" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -248,95 +281,29 @@
       
   
   
+    
   
   
-    
-    
-    
-    
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
         
       
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    BOT编写感想
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_1">
-            <span class="md-nav__icon md-icon"></span>
-            BOT编写感想
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="index.html" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    介绍
+    首页
     
   </span>
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../%E9%83%A8%E7%BD%B2/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    部署
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -372,7 +339,7 @@
   
   
   <span class="md-ellipsis">
-    discord 官方文档 (部分汉化)
+    BOT编写感想
     
   </span>
   
@@ -382,6 +349,127 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            BOT编写感想
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mySummary/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    介绍
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mySummary/%E9%83%A8%E7%BD%B2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    部署
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mySummary/%E6%9E%B6%E6%9E%84.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    架构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    discord 官方文档 (部分汉化)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             discord 官方文档 (部分汉化)
           </label>
@@ -393,13 +481,58 @@
   
   
   
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    快速开始
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            快速开始
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../discordDocs/Chinese/API%20Reference_ch/" class="md-nav__link">
+      <a href="discordDocs/Chinese/Overview%20of%20Discord%20Apps_ch.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    API Reference
+    Discord 应用概览
     
   </span>
   
@@ -417,12 +550,88 @@
   
   
     <li class="md-nav__item">
-      <a href="../../discordDocs/Chinese/Application%20Commands_ch/" class="md-nav__link">
+      <a href="discordDocs/Chinese/Building%20your%20first%20Discord%20app_ch.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Application Commands
+    编写你的第一个 app
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    交互
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            交互
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="discordDocs/Chinese/Overview%20of%20Interactions_ch.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    交互概览
     
   </span>
   
@@ -440,12 +649,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../discordDocs/Chinese/Building%20your%20first%20Discord%20app_ch/" class="md-nav__link">
+      <a href="discordDocs/Chinese/Interactions_ch.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Building your first Discord app
+    接收及响应
     
   </span>
   
@@ -463,12 +672,88 @@
   
   
     <li class="md-nav__item">
-      <a href="../../discordDocs/Chinese/Components%20Overview_ch/" class="md-nav__link">
+      <a href="discordDocs/Chinese/Application%20Commands_ch.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Components Overview
+    指令
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    组件
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            组件
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="discordDocs/Chinese/Components%20Overview_ch.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    组件概览
     
   </span>
   
@@ -486,12 +771,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../discordDocs/Chinese/Interactions_ch/" class="md-nav__link">
+      <a href="discordDocs/Chinese/API%20Reference_ch.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Interactions
+    API 参考
     
   </span>
   
@@ -509,12 +794,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../discordDocs/Chinese/Overview%20of%20Discord%20Apps_ch/" class="md-nav__link">
+      <a href="discordDocs/Chinese/Using%20Message%20Components_ch.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Overview of Discord Apps
+    使用消息组件
     
   </span>
   
@@ -525,47 +810,9 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../discordDocs/Chinese/Overview%20of%20Interactions_ch/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Overview of Interactions
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../discordDocs/Chinese/Using%20Message%20Components_ch/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Using Message Components
-    
-  </span>
-  
-
-      </a>
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -595,23 +842,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      模块化
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -627,25 +859,8 @@
 
 
 
-  <h1>架构</h1>
-
-<h4 id="_1">模块化</h4>
-<p>什么是模块化？</p>
-<p>字面意思，模块化就是把项目拆分成一个一个的模块，然后像拼积木一样把它们拼装成一个完整的项目</p>
-<hr />
-<p>为什么我们需要模块化？</p>
-<p>为了方便维护，降低新增、修改、删除功能的难度</p>
-<p>没有模块化的项目，就像一整块巨大的木头雕塑。<br />
-想给这个雕塑加一顶帽子 (新增一个功能)，就得把整块木头从坐垫上拿下来，小心翼翼地开始雕刻。万一手滑了把雕塑的鼻子给削掉了一块，那整个雕塑可能就都毁了。<br />
-为了新增一个功能，需要查看那个包含全部代码的冗长文件，在里面费劲地寻找相关部分。修改一个地方，却可能不小心影响到完全不相干的另一个地方。<br />
-这实在太笨重，也太危险了。</p>
-<p>而模块化，就是我们一开始就不去雕刻一整块木头。我们用积木来拼这个机器人。它的头部、身体、手臂、腿都是独立的积木块。<br />
-想加一顶帽子？简单，找一个帽子形状的积木，直接扣在头顶上就行了。觉得手臂不好看？把手臂这块积木拔下来，换一个新的。<br />
-这个过程完全不会碰到头部和腿部。每一块积木只负责自己的部分，清清楚楚，你想修改或者添加的时候，也只需要关心你手里的那一块积木，非常安心。</p>
-<hr />
-<p>怎么进行模块化？</p>
-<p>嗯，虽然 BOT 本身很简单，基本不会出现太离谱的代码长度，但模块化还是非常重要的。
-不然堆到后面就太令人头疼了</p>
+<h1 id="bot">欢迎来到 Bot 开发感想</h1>
+<p>请从导航栏中选择一个页面开始。</p>
 
 
 
@@ -700,10 +915,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.instant", "navigation.tabs", "navigation.top", "navigation.sections", "navigation.expand", "navigation.tracking", "search.suggest"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": ".", "features": ["content.code.copy", "navigation.instant", "navigation.tabs", "navigation.top", "navigation.sections", "navigation.expand", "navigation.tracking", "search.suggest"], "search": "assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>
