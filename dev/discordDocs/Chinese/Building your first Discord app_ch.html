@@ -704,21 +704,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="第二步：运行您的应用">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      安装斜杠命令
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -732,7 +717,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       设置公共端点
     </span>
@@ -750,7 +735,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       处理斜杠命令请求
     </span>
@@ -774,7 +759,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
       添加带选项的命令
     </span>
@@ -788,7 +773,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     <span class="md-ellipsis">
       后续步骤
     </span>
@@ -1203,21 +1188,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="第二步：运行您的应用">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      安装斜杠命令
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -1231,7 +1201,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       设置公共端点
     </span>
@@ -1249,7 +1219,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       处理斜杠命令请求
     </span>
@@ -1273,7 +1243,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
       添加带选项的命令
     </span>
@@ -1287,7 +1257,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     <span class="md-ellipsis">
       后续步骤
     </span>
@@ -1316,19 +1286,26 @@
 <p><a href="https://discord.com/developers/docs/quick-start/overview-of-apps">Discord 应用</a>让您能够通过一系列 API 和交互功能来自定义和扩展 Discord。本指南将带您使用 JavaScript 构建您的第一个 Discord 应用，最终您将打造出一个能够使用斜杠命令、发送消息并响应组件交互的应用。</p>
 <p>如果您有兴趣在 iframe 中构建游戏或社交体验，可以参考<a href="https://discord.com/developers/docs/activities/building-an-activity">构建活动</a>的教程。</p>
 <p>我们将构建一个 Discord 应用，让用户可以玩石头剪刀布（但包含 7 种选择，而非传统的 3 种）。本指南面向初学者，但假设您已具备一定的 <a href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics">JavaScript</a> 基础知识。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+</div>
+<p>译注: 本节中所有与示例项目相关的内容将默认折叠，以便阅读</p>
 <h2 id="0"><a href="https://discord.com/developers/docs/quick-start/getting-started#step-0-project-setup">步骤 0：项目设置</a></h2>
+<details class="note">
+<summary>代码内容，可无视</summary>
+</details>
 <p>开始之前，您需要配置本地环境，并从<a href="https://github.com/discord/discord-example-app">示例应用仓库</a>获取项目代码。</p>
 <p>我们将借助 <a href="https://ngrok.com/">ngrok</a> 在本地进行开发，当然您也可以使用自己偏好的开发环境。</p>
 <p>如果您尚未安装 <a href="https://nodejs.org/en/download/">NodeJS</a>，请先完成安装。</p>
 <p>安装 NodeJS 后，打开命令行并克隆项目代码：</p>
-<pre><code>git clone https://github.com/discord/discord-example-app.git
-</code></pre>
+<div class="highlight"><pre><span></span><code>git clone https://github.com/discord/discord-example-app.git
+</code></pre></div>
 <p>接着进入目录并安装项目依赖：</p>
-<pre><code># 进入目录
+<div class="highlight"><pre><span></span><code># 进入目录
 cd discord-example-app
 # 安装依赖
 npm install
-</code></pre>
+</code></pre></div>
 <p>本教程所用示例应用的项目结构概览</p>
 <p>完成以上步骤后，在您喜欢的代码编辑器中打开新项目，接下来我们将着手设置您的 Discord 应用。</p>
 <h2 id="1"><a href="https://discord.com/developers/docs/quick-start/getting-started#step-1-creating-an-app">步骤 1：创建应用</a></h2>
@@ -1339,6 +1316,9 @@ npm install
 <h3 id="_1"><a href="https://discord.com/developers/docs/quick-start/getting-started#fetching-your-credentials">获取凭据</a></h3>
 <p>我们需要设置并获取一些敏感信息，例如应用的令牌和 ID。</p>
 <p>令牌用于授权 API 请求并承载应用的权限，因此极为敏感。请务必不要共享令牌或将其提交到任何版本控制系统。</p>
+<details class="note">
+<summary>示例项目配置，可无视</summary>
+</details>
 <p>回到项目文件夹，将 <code>.env.sample</code> 文件重命名为 <code>.env</code>。我们将在此存储所有应用的凭据。</p>
 <p>您需要从应用设置中获取三个值并填入 <code>.env</code> 文件：</p>
 <ul>
@@ -1351,21 +1331,23 @@ npm install
 <h3 id="set-bot"><a href="https://discord.com/developers/docs/quick-start/getting-started#configuring-your-bot">配置机器人</a></h3>
 <p>新创建的应用默认启用了机器人用户。机器人用户使您的应用在<a href="https://discord.com/developers/docs/quick-start/overview-of-apps#where-are-apps-installed">安装到服务器</a>时，能够像其他服务器成员一样出现和运作。</p>
 <p>在应用设置的左侧边栏中，有一个“机器人”页面（我们之前在此获取了令牌）。在此页面，您还可以配置诸如<a href="https://discord.com/developers/docs/events/gateway#privileged-intents">特权意图</a>或是否允许其他用户安装等设置。</p>
-<blockquote>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+</div>
 <p>意图 (intent) 决定了当你的应用创建网关 API 连接时，Discord 将向其发送哪些事件。例如，如果你希望你的应用在用户给消息添加反应时执行某个操作，你可以传入 GUILD_MESSAGE_REACTIONS (1 &lt;&lt; 10) 意图。<br />
-某些意图是特权意图，这意味着它们允许你的应用访问可能被视为敏感的数据（例如消息内容）。<br />
-特权意图可以在应用设置的“BOT”页面配置，但它们必须在你的应用通过验证之前获得批准。标准的非特权意图不需要任何额外的权限或配置。</p>
-</blockquote>
-<p>关于意图的更多信息以及可用意图的完整列表（及其相关联的事件）可在网关文档中找到。</p>
+  某些意图是特权意图，这意味着它们允许你的应用访问可能被视为敏感的数据（例如消息内容）。<br />
+  特权意图可以在应用设置的“BOT”页面配置，但它们必须在你的应用通过验证之前获得批准。标准的非特权意图不需要任何额外的权限或配置。</p>
+<p>关于意图的更多信息，以及可用意图的完整列表（及其相关联的事件）可在网关文档中找到。</p>
 <p>目前我们无需在此进行额外配置，但根据您的应用使用场景，未来可能需要调整。现在让我们着手准备应用的安装设置。</p>
 <h3 id="_2"><a href="https://discord.com/developers/docs/quick-start/getting-started#choosing-installation-contexts">选择安装上下文</a></h3>
 <p>接下来，我们将确定您的应用在 Discord 中的安装位置，这取决于您的应用所支持的<a href="https://discord.com/developers/docs/resources/application#installation-context">安装上下文</a>。</p>
 <p>什么是安装上下文？</p>
-<blockquote>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+</div>
 <p>安装上下文决定了您的应用可以安装在哪里：安装至服务器、安装至用户，或两者兼可。<br />
-安装在服务器环境中的应用必须由拥有 MANAGE_GUILD 权限的服务器成员授权，并对服务器的所有成员可见。<br />
-安装在用户环境中的应用仅对授权用户可见，因此不需要任何服务器特定的权限。它在用户的所有服务器、私信（DMs）和群组私信（GDMs）中都可见——但是，它们仅限于使用命令。</p>
-</blockquote>
+  安装在服务器环境中的应用必须由拥有 MANAGE_GUILD 权限的服务器成员授权，并对服务器的所有成员可见。<br />
+  安装在用户环境中的应用仅对授权用户可见，因此不需要任何服务器特定的权限。它在用户的所有服务器、私信（DMs）和群组私信（GDMs）中都可见——但是，它们仅限于使用命令。</p>
 <p>点击左侧边栏中的“安装”选项，然后在“安装上下文”部分确保同时勾选“用户安装”和“服务器安装”。</p>
 <p>某些应用可能仅支持一种安装上下文——例如，审核类应用可能仅适用于服务器环境。但默认情况下，我们建议同时支持两种安装上下文。如需了解更多关于用户可安装应用的详细信息，请参阅<a href="https://discord.com/developers/docs/tutorials/developing-a-user-installable-app">用户可安装应用教程</a>。</p>
 <h3 id="_3"><a href="https://discord.com/developers/docs/quick-start/getting-started#setting-up-an-install-link">设置安装链接</a></h3>
@@ -1374,12 +1356,10 @@ npm install
 <p>选择 Discord 提供链接后，将出现一个新的“默认安装设置”部分，接下来我们将对其进行配置。</p>
 <h3 id="add-scopes-permissions"><a href="https://discord.com/developers/docs/quick-start/getting-started#adding-scopes-and-bot-permissions">添加作用域和机器人权限</a></h3>
 <p>应用需要获得安装用户的授权才能在 Discord 中执行操作（例如创建斜杠命令或获取服务器成员列表）。在安装应用之前，让我们先添加作用域和权限。</p>
-<p>什么是作用域和权限？</p>
-<blockquote>
-<p>创建应用程序时，作用域和权限决定了你的应用程序在 Discord 中能够执行的操作和能够访问的内容。<br />
-OAuth2 作用域 (SCOPES) 决定了您的应用在 Discord 中可以执行的操作和访问的内容。这是由安装应用到服务器的用户授予的。<br />
-权限 (Bot Permissions) 是针对你的机器人的细粒度权限，与 Discord 中其他用户所拥有的权限相同。它们可以由安装用户批准，或稍后在服务器设置中或通过权限覆盖进行更新。这些权限仅适用于安装到服务器的应用，因为安装到用户上下文的应用程序只能响应命令。</p>
-</blockquote>
+<p>!!! Info 什么是作用域和权限？
+  创建应用程序时，作用域和权限决定了你的应用程序在 Discord 中能够执行的操作和能够访问的内容。<br />
+  OAuth2 作用域 (SCOPES) 决定了您的应用在 Discord 中可以执行的操作和访问的内容。这是由安装应用到服务器的用户授予的。<br />
+  权限 (Bot Permissions) 是针对你的机器人的细粒度权限，与 Discord 中其他用户所拥有的权限相同。它们可以由安装用户批准，或稍后在服务器设置中或通过权限覆盖进行更新。这些权限仅适用于安装到服务器的应用，因为安装到用户上下文的应用程序只能响应命令。</p>
 <p>在安装页面的“默认安装设置”部分：</p>
 <ul>
 <li>对于用户安装，添加 <code>applications.commands</code> 权限范围。</li>
@@ -1399,15 +1379,17 @@ OAuth2 作用域 (SCOPES) 决定了您的应用在 Discord 中可以执行的操
 <p>按照安装提示将应用安装到您的用户账户。安装完成后，您可以与其开启私信对话。</p>
 <hr />
 <h2 id="_7"><a href="https://discord.com/developers/docs/quick-start/getting-started#step-2-running-your-app">第二步：运行您的应用</a></h2>
-<p><strong>(译注: 下面的基本不用看。直接用社区库来写就行)</strong></p>
+<details class="note">
+<summary>示例项目代码，可无视</summary>
+</details>
 <p>将您的应用程序配置并安装到测试服务器和账户后，接下来我们一同探索代码部分。</p>
 <p>为简化开发流程，本应用使用了<a href="https://github.com/discord/discord-interactions-js">discord-interactions</a>，它提供了类型定义和一系列辅助函数。若您倾向于使用其他语言或库，可参考<a href="https://discord.com/developers/docs/developer-tools/community-resources">社区资源</a>文档。</p>
-<h3 id="_8"><a href="https://discord.com/developers/docs/quick-start/getting-started#installing-slash-commands">安装斜杠命令</a></h3>
+<p>### <a href="https://discord.com/developers/docs/quick-start/getting-started#installing-slash-commands">安装斜杠命令</a></p>
 <p>安装斜杠命令时，应用采用了<a href="https://github.com/node-fetch/node-fetch"><code>node-fetch</code></a>。具体实现可在<code>utils.js</code>文件内的<code>DiscordRequest()</code>函数中查看。</p>
 <p>项目中包含一个<code>register</code>脚本，用于安装<code>commands.js</code>底部定义的<code>ALL_COMMANDS</code>命令集。该脚本通过调用HTTP API的<a href="https://discord.com/developers/docs/interactions/application-commands#bulk-overwrite-global-application-commands"><code>PUT /applications/&lt;APP_ID&gt;/commands</code></a>端点，将这些命令注册为全局命令。</p>
 <p>如需自定义命令或添加新命令，可参考<a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-structure">命令文档</a>中的命令结构说明。</p>
 <p>请在项目文件夹内的终端中运行以下命令：</p>
-<pre><code>├── examples    -&gt; 简短且功能特定的示例应用
+<div class="highlight"><pre><span></span><code>├── examples    -&gt; 简短且功能特定的示例应用
 │   ├── app.js  -&gt; 完整的app.js代码
 │   ├── button.js
 │   ├── command.js
@@ -1421,25 +1403,25 @@ OAuth2 作用域 (SCOPES) 决定了您的应用在 Discord 中可以执行的操
 ├── package.json
 ├── README.md
 └── .gitignore
-</code></pre>
+</code></pre></div>
 <p>返回您的服务器后，应能看到斜杠命令已显示。但若尝试运行，目前不会有任何反应，因为应用尚未接收或处理来自Discord的请求。</p>
 <hr />
 <h2 id="3"><a href="https://discord.com/developers/docs/quick-start/getting-started#step-3-handling-interactivity">步骤3：处理交互</a></h2>
 <p>为使应用能够接收斜杠命令及其他交互请求，Discord需要一个可公开访问的URL来发送这些请求。该URL可在应用的设置中配置为“交互端点URL”。</p>
-<h3 id="_9"><a href="https://discord.com/developers/docs/quick-start/getting-started#set-up-a-public-endpoint">设置公共端点</a></h3>
+<h3 id="_8"><a href="https://discord.com/developers/docs/quick-start/getting-started#set-up-a-public-endpoint">设置公共端点</a></h3>
 <p>要设置公共端点，我们将启动基于<a href="https://expressjs.com/">Express</a>框架的应用服务器，并借助<a href="https://ngrok.com/">ngrok</a>将其公开至互联网。</p>
 <p>首先，进入项目文件夹并运行以下命令以启动应用：</p>
-<pre><code>npm run register
-</code></pre>
+<div class="highlight"><pre><span></span><code>npm run register
+</code></pre></div>
 <p>此时应有输出提示应用正运行在端口<code>3000</code>。实际上，应用已在后台准备好处理来自Discord的交互请求，包括验证安全请求头及响应<code>PING</code>请求。本教程略过了许多实现细节，完整内容可参阅<a href="https://discord.com/developers/docs/interactions/overview#preparing-for-interactions">交互概述</a>文档。</p>
 <p>默认情况下，服务器监听3000端口的请求，如需更改端口，可在<code>.env</code>文件中设置<code>PORT</code>变量。</p>
 <p>接下来启动ngrok隧道。若本地尚未安装ngrok，请按<a href="https://ngrok.com/download">ngrok下载页</a>的指引完成安装。</p>
 <p>安装完成后，打开新终端并创建公共端点，将请求转发至Express服务器：</p>
-<pre><code>npm run start
-</code></pre>
+<div class="highlight"><pre><span></span><code>npm run start
+</code></pre></div>
 <p>连接建立后，您将看到类似如下的输出：</p>
-<pre><code>ngrok http 3000
-</code></pre>
+<div class="highlight"><pre><span></span><code>ngrok http 3000
+</code></pre></div>
 <p>下一步中，我们将使用此转发URL作为公共可访问地址，供Discord发送交互请求。</p>
 <h3 id="url"><a href="https://discord.com/developers/docs/quick-start/getting-started#adding-an-interaction-endpoint-url">添加交互端点URL</a></h3>
 <p>进入您的<a href="https://discord.com/developers/applications">应用设置</a>，在“常规信息”页的“交互端点URL”栏中，粘贴新的ngrok转发URL并追加<code>/interactions</code>。</p>
@@ -1452,10 +1434,10 @@ OAuth2 作用域 (SCOPES) 决定了您的应用在 Discord 中可以执行的操
 <li>它能够响应传入的 <code>PING</code> 请求。</li>
 </ul>
 <p>关于如何配置应用以接收交互的更多信息，可查阅 <a href="https://discord.com/developers/docs/interactions/overview#preparing-for-interactions">交互相关文档</a>。</p>
-<h3 id="_10"><a href="https://discord.com/developers/docs/quick-start/getting-started#handling-slash-command-requests">处理斜杠命令请求</a></h3>
+<h3 id="_9"><a href="https://discord.com/developers/docs/quick-start/getting-started#handling-slash-command-requests">处理斜杠命令请求</a></h3>
 <p>在端点验证通过后，请导航至项目中的 <code>app.js</code> 文件，并找到处理 <code>/test</code> 命令的代码块：</p>
-<pre><code>// &quot;test&quot; command
-if (name === 'test') {
+<div class="highlight"><pre><span></span><code>// &quot;test&quot; command
+if (name === &#39;test&#39;) {
   // Send a message into the channel where command was triggered from
   return res.send({
     type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
@@ -1471,25 +1453,25 @@ if (name === 'test') {
     },
   });
 }
-</code></pre>
+</code></pre></div>
 <p>上述代码会在发起交互的频道、私信或群组私信中返回一条消息作为响应。所有可用的响应类型（例如使用模态框进行响应）均可在 <a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object-interaction-callback-type">官方文档</a> 中查阅。</p>
 <p>请前往您的服务器，确保应用的 <code>/test</code> 斜杠命令正常工作。触发该命令时，应用应当发送一条包含“hello world”并附带随机表情符号的消息。</p>
 <p>在接下来的部分，我们将添加一个额外命令，该命令会使用斜杠命令选项、按钮和选择菜单，来构建一个石头剪刀布游戏。</p>
 <hr />
 <h2 id="4"><a href="https://discord.com/developers/docs/quick-start/getting-started#step-4-adding-message-components">步骤 4：添加消息组件</a></h2>
 <p><code>/challenge</code> 命令用于启动我们设计的石头剪刀布风格游戏。一旦该命令被触发，应用就会向频道发送消息组件，引导用户完成游戏流程。</p>
-<h3 id="_11"><a href="https://discord.com/developers/docs/quick-start/getting-started#adding-a-command-with-options">添加带选项的命令</a></h3>
+<h3 id="_10"><a href="https://discord.com/developers/docs/quick-start/getting-started#adding-a-command-with-options">添加带选项的命令</a></h3>
 <p><code>/challenge</code> 命令（在 <code>commands.js</code> 中命名为 <code>CHALLENGE_COMMAND</code>）带有一个 <code>options</code> 数组。在我们的应用中，这些选项是对象，代表用户在玩石头剪刀布时可选择的不同内容，它们由 <code>game.js</code> 中的 <code>RPSChoices</code> 键生成。</p>
 <p>有关命令选项及其结构的更多信息，请参见 <a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-option-structure">相关文档</a>。</p>
 <p>虽然本指南不会深入讲解 <code>game.js</code> 文件，但欢迎您自行探索并修改命令或其选项。</p>
 <p>用于处理挑战命令并通过带按钮的消息进行响应的代码</p>
-<pre><code>// &quot;challenge&quot; command
-if (name === 'challenge' &amp;&amp; id) {
+<div class="highlight"><pre><span></span><code>// &quot;challenge&quot; command
+if (name === &#39;challenge&#39; &amp;&amp; id) {
   // Interaction context
   const context = req.body.context;
   // User ID is in user field for (G)DMs, and member for servers
   const userId = context === 0 ? req.body.member.user.id : req.body.user.id;
-  // User's object choice
+  // User&#39;s object choice
   const objectName = req.body.data.options[0].value;
 
   // Create active game using message ID as the game ID
@@ -1515,7 +1497,7 @@ if (name === 'challenge' &amp;&amp; id) {
               type: MessageComponentTypes.BUTTON,
               // Append the game ID to use later on
               custom_id: `accept_button_${req.body.id}`,
-              label: 'Accept',
+              label: &#39;Accept&#39;,
               style: ButtonStyleTypes.PRIMARY,
             },
           ],
@@ -1524,27 +1506,27 @@ if (name === 'challenge' &amp;&amp; id) {
     },
   });
 }
-</code></pre>
+</code></pre></div>
 <p>用于处理按钮点击并以短暂消息响应的代码</p>
-<pre><code>if (type === InteractionType.MESSAGE_COMPONENT) {
+<div class="highlight"><pre><span></span><code>if (type === InteractionType.MESSAGE_COMPONENT) {
   // custom_id set in payload when sending message component
   const componentId = data.custom_id;
 
-  if (componentId.startsWith('accept_button_')) {
+  if (componentId.startsWith(&#39;accept_button_&#39;)) {
     // get the associated game ID
-    const gameId = componentId.replace('accept_button_', '');
+    const gameId = componentId.replace(&#39;accept_button_&#39;, &#39;&#39;);
     // Delete message with token in request body
     const endpoint = `webhooks/${process.env.APP_ID}/${req.body.token}/messages/${req.body.message.id}`;
     try {
       await res.send({
         type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
         data: {
-          // Indicates it'll be an ephemeral message
+          // Indicates it&#39;ll be an ephemeral message
           flags: InteractionResponseFlags.EPHEMERAL | InteractionResponseFlags.IS_COMPONENTS_V2,
           components: [
             {
               type: MessageComponentTypes.TEXT_DISPLAY,
-              content: 'What is your object of choice?',
+              content: &#39;What is your object of choice?&#39;,
             },
             {
               type: MessageComponentTypes.ACTION_ROW,
@@ -1561,35 +1543,34 @@ if (name === 'challenge' &amp;&amp; id) {
         },
       });
       // Delete previous message
-      await DiscordRequest(endpoint, { method: 'DELETE' });
+      await DiscordRequest(endpoint, { method: &#39;DELETE&#39; });
     } catch (err) {
-      console.error('Error sending message:', err);
+      console.error(&#39;Error sending message:&#39;, err);
     }
   }
   return;
 }
-
-</code></pre>
+</code></pre></div>
 <p>响应选择菜单交互和更新游戏状态的代码</p>
-<pre><code>if (type === InteractionType.MESSAGE_COMPONENT) {
+<div class="highlight"><pre><span></span><code>if (type === InteractionType.MESSAGE_COMPONENT) {
   // custom_id set in payload when sending message component
   const componentId = data.custom_id;
 
-  if (componentId.startsWith('accept_button_')) {
+  if (componentId.startsWith(&#39;accept_button_&#39;)) {
     // get the associated game ID
-    const gameId = componentId.replace('accept_button_', '');
+    const gameId = componentId.replace(&#39;accept_button_&#39;, &#39;&#39;);
     // Delete message with token in request body
     const endpoint = `webhooks/${process.env.APP_ID}/${req.body.token}/messages/${req.body.message.id}`;
     try {
       await res.send({
         type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
         data: {
-          // Indicates it'll be an ephemeral message
+          // Indicates it&#39;ll be an ephemeral message
           flags: InteractionResponseFlags.EPHEMERAL | InteractionResponseFlags.IS_COMPONENTS_V2,
           components: [
             {
               type: MessageComponentTypes.TEXT_DISPLAY,
-              content: 'What is your object of choice?',
+              content: &#39;What is your object of choice?&#39;,
             },
             {
               type: MessageComponentTypes.ACTION_ROW,
@@ -1606,13 +1587,13 @@ if (name === 'challenge' &amp;&amp; id) {
         },
       });
       // Delete previous message
-      await DiscordRequest(endpoint, { method: 'DELETE' });
+      await DiscordRequest(endpoint, { method: &#39;DELETE&#39; });
     } catch (err) {
-      console.error('Error sending message:', err);
+      console.error(&#39;Error sending message:&#39;, err);
     }
-  } else if (componentId.startsWith('select_choice_')) {
+  } else if (componentId.startsWith(&#39;select_choice_&#39;)) {
     // get the associated game ID
-    const gameId = componentId.replace('select_choice_', '');
+    const gameId = componentId.replace(&#39;select_choice_&#39;, &#39;&#39;);
 
     if (activeGames[gameId]) {
       // Interaction context
@@ -1648,28 +1629,28 @@ if (name === 'challenge' &amp;&amp; id) {
         });
         // Update ephemeral message
         await DiscordRequest(endpoint, {
-          method: 'PATCH',
+          method: &#39;PATCH&#39;,
           body: {
             components: [
               {
                 type: MessageComponentTypes.TEXT_DISPLAY,
-                content: 'Nice choice ' + getRandomEmoji()
+                content: &#39;Nice choice &#39; + getRandomEmoji()
               }
             ],
           },
         });
       } catch (err) {
-        console.error('Error sending message:', err);
+        console.error(&#39;Error sending message:&#39;, err);
       }
     }
   }
 
   return;
 }
-</code></pre>
+</code></pre></div>
 <p>……大功告成！🎊 现在就去测试您的应用，确保一切运转如常。</p>
 <hr />
-<h2 id="_12"><a href="https://discord.com/developers/docs/quick-start/getting-started#next-steps">后续步骤</a></h2>
+<h2 id="_11"><a href="https://discord.com/developers/docs/quick-start/getting-started#next-steps">后续步骤</a></h2>
 <p>恭喜！您已成功构建第一个 Discord 应用！🤖</p>
 <p>希望您从中了解了 Discord 应用的基本配置与交互实现。接下来，您可以继续扩展应用功能，或探索更多可能性。</p>
 

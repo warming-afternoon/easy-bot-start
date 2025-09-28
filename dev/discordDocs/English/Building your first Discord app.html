@@ -1065,14 +1065,14 @@
 <p>We'll be developing our app locally with a little help from <a href="https://ngrok.com/">ngrok</a>, but you can use your preferred development environment.</p>
 <p>If you don't have <a href="https://nodejs.org/en/download/">NodeJS</a> installed, install that first.</p>
 <p>After NodeJS is installed, open your command line and clone the project code:</p>
-<pre><code>git clone https://github.com/discord/discord-example-app.git
-</code></pre>
+<div class="highlight"><pre><span></span><code>git clone https://github.com/discord/discord-example-app.git
+</code></pre></div>
 <p>Then navigate to the directory and install the project's dependencies:</p>
-<pre><code># navigate to directory
+<div class="highlight"><pre><span></span><code># navigate to directory
 cd discord-example-app
  # install dependencies
 npm install
-</code></pre>
+</code></pre></div>
 <p>Overview of the project structure for the sample app used in this tutorial</p>
 <p>With that out of the way, open your new project in the code editor of your choice, and we'll move ahead to setting up your Discord app.</p>
 <h2 id="step-1-creating-an-app">Step 1: Creating an app<a href="https://discord.com/developers/docs/quick-start/getting-started#step-1-creating-an-app"></a></h2>
@@ -1137,7 +1137,7 @@ npm install
 <p>The project contains a <code>register</code> script you can use to install the commands in <code>ALL_COMMANDS</code>, which is defined at the bottom of <code>commands.js</code>. It installs the commands as global commands by calling the HTTP API's <a href="https://discord.com/developers/docs/interactions/application-commands#bulk-overwrite-global-application-commands"><code>PUT /applications/&lt;APP_ID&gt;/commands</code></a> endpoint.</p>
 <p>If you want to customize your commands or add additional ones, you can reference the command structure in the <a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-structure">commands documentation</a>.</p>
 <p>In your terminal within the project folder, run the following command:</p>
-<pre><code>├── examples    -&gt; short, feature-specific sample apps
+<div class="highlight"><pre><span></span><code>├── examples    -&gt; short, feature-specific sample apps
 │   ├── app.js  -&gt; finished app.js code
 │   ├── button.js
 │   ├── command.js
@@ -1151,7 +1151,7 @@ npm install
 ├── package.json
 ├── README.md
 └── .gitignore
-</code></pre>
+</code></pre></div>
 <p>If you navigate back to your server, you should see the slash commands appear. But if you try to run them, nothing will happen since your app isn't receiving or handling any requests from Discord.</p>
 <p>Overview of Discord's HTTP and Gateway APIs</p>
 <hr />
@@ -1160,17 +1160,17 @@ npm install
 <h3 id="set-up-a-public-endpoint">Set up a public endpoint<a href="https://discord.com/developers/docs/quick-start/getting-started#set-up-a-public-endpoint"></a></h3>
 <p>To set up a public endpoint, we'll start our app which runs an <a href="https://expressjs.com/">Express</a> server, then use <a href="https://ngrok.com/">ngrok</a> to expose our server publicly.</p>
 <p>First, go to your project's folder and run the following to start your app:</p>
-<pre><code>npm run register
-</code></pre>
+<div class="highlight"><pre><span></span><code>npm run register
+</code></pre></div>
 <p>There should be output indicating your app is running on port <code>3000</code>. Behind the scenes, our app is ready to handle interactions from Discord, which includes verifying security request headers and responding to <code>PING</code> requests. We're skipping over a lot of the details in this tutorial, but details about preparing apps for interactions is in the <a href="https://discord.com/developers/docs/interactions/overview#preparing-for-interactions">Interactions Overview</a> documentation.</p>
 <p>By default, the server will listen to requests sent to port 3000, but if you want to change the port, you can specify a <code>PORT</code> variable in your <code>.env</code> file.</p>
 <p>Next, we'll start our ngrok tunnel. If you don't have ngrok installed locally, you can install it by following the instructions on the <a href="https://ngrok.com/download">ngrok download page</a>.</p>
 <p>After ngrok is installed, open a new terminal and create a public endpoint that will forward requests to your Express server:</p>
-<pre><code>npm run start
-</code></pre>
+<div class="highlight"><pre><span></span><code>npm run start
+</code></pre></div>
 <p>You should see your connection open with output similar to the following:</p>
-<pre><code>ngrok http 3000
-</code></pre>
+<div class="highlight"><pre><span></span><code>ngrok http 3000
+</code></pre></div>
 <p>We'll use Forwarding URL as the publicly-accessible URL where Discord will send interactions requests in the next step.</p>
 <h3 id="adding-an-interaction-endpoint-url">Adding an interaction endpoint URL<a href="https://discord.com/developers/docs/quick-start/getting-started#adding-an-interaction-endpoint-url"></a></h3>
 <p>Go to your <a href="https://discord.com/developers/applications">app's settings</a> and on the General Information page under Interaction Endpoint URL, paste your new ngrok forwarding URL and append <code>/interactions</code>.</p>
@@ -1185,14 +1185,14 @@ npm install
 <p>You can learn more about preparing your app to receive interactions in <a href="https://discord.com/developers/docs/interactions/overview#preparing-for-interactions">the interactions documentation</a>.</p>
 <h3 id="handling-slash-command-requests">Handling slash command requests<a href="https://discord.com/developers/docs/quick-start/getting-started#handling-slash-command-requests"></a></h3>
 <p>With the endpoint verified, navigate to your project's <code>app.js</code> file and find the code block that handles the <code>/test</code> command:</p>
-<pre><code>Tunnel Status                 online
+<div class="highlight"><pre><span></span><code>Tunnel Status                 online
 Version                       2.0/2.0
 Web Interface                 http://127.0.0.1:4040
 Forwarding                    https://1234-someurl.ngrok.io -&gt; localhost:3000
 
 Connections                  ttl     opn     rt1     rt5     p50     p90
                               0       0       0.00    0.00    0.00    0.00
-</code></pre>
+</code></pre></div>
 <p>The code above is responding to the interaction with a message in the channel, DM, or Group DM it originated from. You can see all available response types, like responding with a modal, <a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-response-object-interaction-callback-type">in the documentation</a>.</p>
 <p>Go to your server and make sure your app's <code>/test</code> slash command works. When you trigger it, your app should send a message that contains “hello world” followed by a random emoji.</p>
 <p>In the following section, we'll add an additional command that uses slash command options, buttons, and select menus to build the rock-paper-scissors game.</p>

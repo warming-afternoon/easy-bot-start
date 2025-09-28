@@ -1216,13 +1216,13 @@
 <p>响应PING请求</p>
 <p>确认PING交互的代码示例</p>
 <p>要正确确认<code>PING</code>负载，请返回带有<code>type: 1</code>负载的<code>200</code>响应：</p>
-<pre><code>@app.route('/', methods=['POST'])
+<div class="highlight"><pre><span></span><code>@app.route(&#39;/&#39;, methods=[&#39;POST&#39;])
 def my_command():
 　　　　if request.json[&quot;type&quot;] == 1:
 　　　　　　　　return jsonify({
 　　　　　　　　　　　　&quot;type&quot;: 1
 　　　　　　　　})
-</code></pre>
+</code></pre></div>
 <h6 id="_8"><a href="https://discord.com/developers/docs/interactions/overview#setting-up-an-endpoint-validating-security-request-headers">验证安全请求头</a></h6>
 <p>互联网是一个危险的地方，特别是对于托管公共、未经身份验证的端点的人来说。要通过HTTP接收交互，在您的应用程序有资格接收请求之前，必须采取一些安全步骤。</p>
 <p>每个交互都附带以下标头：</p>
@@ -1235,7 +1235,7 @@ def my_command():
 <p>验证安全相关请求头的代码示例</p>
 <p>以下是一些代码示例，展示了如何验证交互请求中发送的标头。</p>
 <p>JavaScript</p>
-<pre><code>const nacl = require(&quot;tweetnacl&quot;);
+<div class="highlight"><pre><span></span><code>const nacl = require(&quot;tweetnacl&quot;);
 
 // 您的公钥可以在开发者门户中的应用程序上找到
 const PUBLIC_KEY = &quot;APPLICATION_PUBLIC_KEY&quot;;
@@ -1253,13 +1253,13 @@ const isVerified = nacl.sign.detached.verify(
 if (!isVerified) {
 　　　　return res.status(401).end(&quot;invalid request signature&quot;);
 }
-</code></pre>
+</code></pre></div>
 <p>Python</p>
-<pre><code>from nacl.signing import VerifyKey
+<div class="highlight"><pre><span></span><code>from nacl.signing import VerifyKey
 from nacl.exceptions import BadSignatureError
 
 # 您的公钥可以在开发者门户中的应用程序上找到
-PUBLIC_KEY = 'APPLICATION_PUBLIC_KEY'
+PUBLIC_KEY = &#39;APPLICATION_PUBLIC_KEY&#39;
 
 verify_key = VerifyKey(bytes.fromhex(PUBLIC_KEY))
 
@@ -1268,10 +1268,10 @@ timestamp = request.headers[&quot;X-Signature-Timestamp&quot;]
 body = request.data.decode(&quot;utf-8&quot;)
 
 try:
-　　　　verify_key.verify(f'{timestamp}{body}'.encode(), bytes.fromhex(signature))
+　　　　verify_key.verify(f&#39;{timestamp}{body}&#39;.encode(), bytes.fromhex(signature))
 except BadSignatureError:
-　　　　abort(401, 'invalid request signature')
-</code></pre>
+　　　　abort(401, &#39;invalid request signature&#39;)
+</code></pre></div>
 <p>除了确保您的应用在保存终端点时验证与安全相关的请求头外，Discord 还会对您的终端点执行自动化的例行安全检查，包括故意向您发送无效签名。如果验证失败，我们将移除您的交互 URL，并通过电子邮件和系统 DM 提醒您。</p>
 <p>我们强烈建议查看我们的 <a href="https://discord.com/developers/docs/developer-tools/community-resources#interactions">社区资源</a> 以及其中提供的库。它们不仅为交互数据模型提供类型支持，还包括适用于 Flask 和 Express 等 API 框架的装饰器，使验证变得简单。</p>
 <h4 id="url_1"><a href="https://discord.com/developers/docs/interactions/overview#adding-an-interactions-endpoint-url">添加交互终端点 URL</a></h4>

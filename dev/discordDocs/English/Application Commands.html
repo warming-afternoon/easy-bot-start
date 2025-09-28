@@ -1683,7 +1683,7 @@
 <p>Global commands are available on all your app's guilds.</p>
 <p>Global commands have inherent read-repair functionality. That means that if you make an update to a global command, and a user tries to use that command before it has updated for them, Discord will do an internal version check and reject the command, and trigger a reload for that command.</p>
 <p>To make a global command, make an HTTP POST call like this:</p>
-<pre><code>import requests
+<div class="highlight"><pre><span></span><code>import requests
 
 
 url = &quot;https://discord.com/api/v10/applications/&lt;my_application_id&gt;/commands&quot;
@@ -1734,11 +1734,11 @@ headers = {
 }
 
 r = requests.post(url, headers=headers, json=json)
-</code></pre>
+</code></pre></div>
 <h3 id="making-a-guild-command">Making a Guild Command<a href="https://discord.com/developers/docs/interactions/application-commands#making-a-guild-command"></a></h3>
 <p>Guild commands are available only within the guild specified on creation. Guild commands update instantly. We recommend you use guild commands for quick testing, and global commands when they're ready for public use.</p>
 <p>To make a guild command, make a similar HTTP POST call, but scope it to a specific <code>guild_id</code>:</p>
-<pre><code>import requests
+<div class="highlight"><pre><span></span><code>import requests
 
 
 url = &quot;https://discord.com/api/v10/applications/&lt;my_application_id&gt;/guilds/&lt;guild_id&gt;/commands&quot;
@@ -1760,7 +1760,7 @@ headers = {
 }
 
 r = requests.post(url, headers=headers, json=json)
-</code></pre>
+</code></pre></div>
 <h2 id="updating-and-deleting-a-command">Updating and Deleting a Command<a href="https://discord.com/developers/docs/interactions/application-commands#updating-and-deleting-a-command"></a></h2>
 <p>Commands can be deleted and updated by making <code>DELETE</code> and <code>PATCH</code> calls to the command endpoint. Those endpoints are</p>
 <ul>
@@ -1823,15 +1823,15 @@ r = requests.post(url, headers=headers, json=json)
 <p>You can also include <code>BOT_DM</code> (<code>1</code>) in <code>contexts</code> when setting a global command's <a href="https://discord.com/developers/docs/interactions/application-commands#interaction-contexts">interaction contexts</a> to control whether it can be run in DMs with your app. Guild commands don't support the <code>BOT_DM</code> interaction context.</p>
 <h6 id="example-of-editing-permissions">Example of editing permissions<a href="https://discord.com/developers/docs/interactions/application-commands#application-command-permissions-object-example-of-editing-permissions"></a></h6>
 <p>As an example, the following command would not be usable by anyone except admins in any guilds by default:</p>
-<pre><code>{
+<div class="highlight"><pre><span></span><code>{
     &quot;name&quot;: &quot;permissions_test&quot;,
     &quot;description&quot;: &quot;A test of default permissions&quot;,
     &quot;type&quot;: 1,
     &quot;default_member_permissions&quot;: &quot;0&quot;
 }
-</code></pre>
+</code></pre></div>
 <p>Or this would enable it just for users that have the <code>MANAGE_GUILD</code> permission:</p>
-<pre><code>permissions = str(1 &lt;&lt; 5)
+<div class="highlight"><pre><span></span><code>permissions = str(1 &lt;&lt; 5)
 
 command = {
     &quot;name&quot;: &quot;permissions_test&quot;,
@@ -1839,9 +1839,9 @@ command = {
     &quot;type&quot;: 1,
     &quot;default_member_permissions&quot;: permissions
 }
-</code></pre>
+</code></pre></div>
 <p>And the following would disable a command for a specific channel:</p>
-<pre><code>A_SPECIFIC_CHANNEL = &quot;&lt;channel_id&gt;&quot;
+<div class="highlight"><pre><span></span><code>A_SPECIFIC_CHANNEL = &quot;&lt;channel_id&gt;&quot;
 url = &quot;https://discord.com/api/v10/applications/&lt;application_id&gt;/guilds/&lt;my_guild_id&gt;/commands/&lt;my_command_id&gt;/permissions&quot;
 
 json = {
@@ -1859,13 +1859,13 @@ headers = {
 }
 
 r = requests.put(url, headers=headers, json=json)
-</code></pre>
+</code></pre></div>
 <h2 id="slash-commands">Slash Commands<a href="https://discord.com/developers/docs/interactions/application-commands#slash-commands"></a></h2>
 <p>Slash commands—the <code>CHAT_INPUT</code> type—are a type of application command. They're made up of a name, description, and a block of <code>options</code>, which you can think of like arguments to a function. The name and description help users find your command among many others, and the <code>options</code> validate user input as they fill out your command.</p>
 <p>Slash commands can also have groups and subcommands to further organize commands. More on those later.</p>
 <p>Slash commands can have a maximum of 8000 characters for combined name, description, and value properties for each command, its options (including subcommands and groups), and choices. When <a href="https://discord.com/developers/docs/interactions/application-commands#localization">localization fields</a> are present, only the longest localization for each field (including the default value) is counted towards the size limit.</p>
 <h6 id="example-slash-command">Example Slash Command<a href="https://discord.com/developers/docs/interactions/application-commands#slash-commands-example-slash-command"></a></h6>
-<pre><code>{
+<div class="highlight"><pre><span></span><code>{
     &quot;name&quot;: &quot;blep&quot;,
     &quot;type&quot;: 1,
     &quot;description&quot;: &quot;Send a random adorable animal photo&quot;,
@@ -1898,11 +1898,11 @@ r = requests.put(url, headers=headers, json=json)
         }
     ]
 }
-</code></pre>
+</code></pre></div>
 <p>When someone uses a slash command, your application will receive an interaction:</p>
 <h6 id="example-interaction">Example Interaction<a href="https://discord.com/developers/docs/interactions/application-commands#slash-commands-example-interaction"></a></h6>
 <p>Slash Command InteractionView sample payload for Slash Command interactions</p>
-<pre><code>{
+<div class="highlight"><pre><span></span><code>{
     &quot;type&quot;: 2,
     &quot;token&quot;: &quot;A_UNIQUE_TOKEN&quot;,
     &quot;member&quot;: {
@@ -1940,7 +1940,7 @@ r = requests.put(url, headers=headers, json=json)
     },
     &quot;channel_id&quot;: &quot;645027906669510667&quot;
 }
-</code></pre>
+</code></pre></div>
 <h2 id="subcommands-and-subcommand-groups">Subcommands and Subcommand Groups<a href="https://discord.com/developers/docs/interactions/application-commands#subcommands-and-subcommand-groups"></a></h2>
 <p>Currently, subcommands and subcommand groups all appear at the top level in the command explorer. This may change in the future to include them as nested autocomplete options.</p>
 <p>For those developers looking to make more organized and complex groups of commands, look no further than subcommands and groups.</p>
@@ -1949,7 +1949,7 @@ r = requests.put(url, headers=headers, json=json)
 <p>These are not enforced rules. You are free to use subcommands and groups however you'd like; it's just how we think about them.</p>
 <p>Using subcommands or subcommand groups will make your base command unusable. You can't send the base <code>/permissions</code> command as a valid command if you also have <code>/permissions add | remove</code> as subcommands or subcommand groups</p>
 <p>We support nesting one level deep within a group, meaning your top level command can contain subcommand groups, and those groups can contain subcommands. That is the only kind of nesting supported. Here's some visual examples:</p>
-<pre><code>VALID
+<div class="highlight"><pre><span></span><code>VALID
 
 command
 |
@@ -2010,7 +2010,7 @@ command
 |__ subcommand
     |
     |__ subcommand-group
-</code></pre>
+</code></pre></div>
 <h3 id="example-walkthrough">Example Walkthrough<a href="https://discord.com/developers/docs/interactions/application-commands#example-walkthrough"></a></h3>
 <p>Let's look at an example. Let's imagine you run a moderation bot. You want to make a <code>/permissions</code> command that can do the following:</p>
 <ul>
@@ -2020,15 +2020,15 @@ command
 <li>Change the permissions for a user or a role on a specific channel</li>
 </ul>
 <p>We'll start by defining the top-level information for <code>/permissions</code>:</p>
-<pre><code>{
+<div class="highlight"><pre><span></span><code>{
     &quot;name&quot;: &quot;permissions&quot;,
     &quot;description&quot;: &quot;Get or edit permissions for a user or a role&quot;,
     &quot;options&quot;: []
 }
-</code></pre>
+</code></pre></div>
 <p><img alt="" src="../img/permissions_command.webp" /></p>
 <p>Now we have a command named <code>permissions</code>. We want this command to be able to affect users and roles. Rather than making two separate commands, we can use subcommand groups. We want to use subcommand groups here because we are grouping commands on a similar resource: <code>user</code> or <code>role</code>.</p>
-<pre><code>{
+<div class="highlight"><pre><span></span><code>{
     &quot;name&quot;: &quot;permissions&quot;,
     &quot;description&quot;: &quot;Get or edit permissions for a user or a role&quot;,
     &quot;options&quot;: [
@@ -2044,10 +2044,10 @@ command
         }
     ]
 }
-</code></pre>
+</code></pre></div>
 <p>You'll notice that a command like this will not show up in the command explorer. That's because groups are effectively"folders"for commands, and we've made two empty folders. So let's continue.</p>
 <p>Now that we've effectively made <code>user</code> and <code>role</code> "folders", we want to be able to either <code>get</code> and <code>edit</code> permissions. Within the subcommand groups, we can make subcommands for <code>get</code> and <code>edit</code>:</p>
-<pre><code>{
+<div class="highlight"><pre><span></span><code>{
     &quot;name&quot;: &quot;permissions&quot;,
     &quot;description&quot;: &quot;Get or edit permissions for a user or a role&quot;,
     &quot;options&quot;: [
@@ -2087,10 +2087,10 @@ command
         }
     ]
 }
-</code></pre>
+</code></pre></div>
 <p><img alt="" src="../img/command_introduce_group.webp" /></p>
 <p>Now, we need some arguments! If we chose <code>user</code>, we need to be able to pick a user; if we chose <code>role</code>, we need to be able to pick a role. We also want to be able to pick between guild-level permissions and channel-specific permissions. For that, we can use optional arguments:</p>
-<pre><code>{
+<div class="highlight"><pre><span></span><code>{
     &quot;name&quot;: &quot;permissions&quot;,
     &quot;description&quot;: &quot;Get or edit permissions for a user or a role&quot;,
     &quot;options&quot;: [
@@ -2186,23 +2186,23 @@ command
         }
     ]
 }
-</code></pre>
+</code></pre></div>
 <p>And, done! The JSON looks a bit complicated, but what we've ended up with is a single command that can be scoped to multiple actions, and then further scoped to a particular resource, and then even further scope with optional arguments. Here's what it looks like all put together.</p>
 <p><img alt="" src="../img/command_introduce_action.webp" /></p>
 <h2 id="user-commands">User Commands<a href="https://discord.com/developers/docs/interactions/application-commands#user-commands"></a></h2>
 <p>User commands are application commands that appear on the context menu (right click or tap) of users. They're a great way to surface quick actions for your app that target users. They don't take any arguments, and will return the user on whom you clicked or tapped in the interaction response.</p>
 <p>A user must have permission to send text messages in the channel they invoke a user command in. If they don't have this permission, they will receive a'Permission Denied' error from the interaction. The <code>description</code> field is not allowed when creating user commands. However, to avoid breaking changes to data models, <code>description</code> will be an empty string (instead of <code>null</code>) when fetching commands.</p>
 <h6 id="example-user-command">Example User Command<a href="https://discord.com/developers/docs/interactions/application-commands#user-commands-example-user-command"></a></h6>
-<pre><code>{
+<div class="highlight"><pre><span></span><code>{
     &quot;name&quot;: &quot;High Five&quot;,
     &quot;type&quot;: 2
 }
-</code></pre>
+</code></pre></div>
 <p><img alt="" src="../img/user_command.webp" /></p>
 <p>When someone uses a user command, your application will receive an interaction:</p>
 <h6 id="example-interaction_1">Example Interaction<a href="https://discord.com/developers/docs/interactions/application-commands#user-commands-example-interaction"></a></h6>
 <p>User Command InteractionView sample payload for User Command interactions</p>
-<pre><code>{
+<div class="highlight"><pre><span></span><code>{
     &quot;application_id&quot;: &quot;775799577604522054&quot;,
     &quot;channel_id&quot;: &quot;772908445358620702&quot;,
     &quot;data&quot;: {
@@ -2263,21 +2263,21 @@ command
     &quot;type&quot;: 2,
     &quot;version&quot;: 1
 }
-</code></pre>
+</code></pre></div>
 <h2 id="message-commands">Message Commands<a href="https://discord.com/developers/docs/interactions/application-commands#message-commands"></a></h2>
 <p>Message commands are application commands that appear on the context menu (right click or tap) of messages. They're a great way to surface quick actions for your app that target messages. They don't take any arguments, and will return the message on whom you clicked or tapped in the interaction response.</p>
 <p>The <code>description</code> field is not allowed when creating message commands. However, to avoid breaking changes to data models, <code>description</code> will be an empty string (instead of <code>null</code>) when fetching commands.</p>
 <h6 id="example-message-command">Example Message Command<a href="https://discord.com/developers/docs/interactions/application-commands#message-commands-example-message-command"></a></h6>
-<pre><code>{
+<div class="highlight"><pre><span></span><code>{
     &quot;name&quot;: &quot;Bookmark&quot;,
     &quot;type&quot;: 3
 }
-</code></pre>
+</code></pre></div>
 <p><img alt="" src="../img/message_command.webp" /></p>
 <p>When someone uses a message command, your application will receive an interaction:</p>
 <h6 id="example-interaction_2">Example Interaction<a href="https://discord.com/developers/docs/interactions/application-commands#message-commands-example-interaction"></a></h6>
 <p>Message Command InteractionView sample payload for Message Command interactions</p>
-<pre><code>{
+<div class="highlight"><pre><span></span><code>{
     &quot;application_id&quot;: &quot;775799577604522054&quot;,
     &quot;channel_id&quot;: &quot;772908445358620702&quot;,
     &quot;data&quot;: {
@@ -2342,19 +2342,19 @@ command
     &quot;type&quot;: 2,
     &quot;version&quot;: 1
 }
-</code></pre>
+</code></pre></div>
 <h2 id="entry-point-commands">Entry Point Commands<a href="https://discord.com/developers/docs/interactions/application-commands#entry-point-commands"></a></h2>
 <p>An Entry Point command serves as the primary way for users to open an app's <a href="https://discord.com/developers/docs/activities/overview">Activity</a> from the <a href="https://support.discord.com/hc/articles/21334461140375-Using-Apps-on-Discord#h_01HRQSA6C8TRHS722P1H3HW1TV">App Launcher</a>.</p>
 <p>For the Entry Point command to be visible to users, an app must have <a href="https://discord.com/developers/docs/activities/overview">Activities</a> enabled.</p>
 <p><img alt="" src="../img/entry_point_command.webp" /></p>
 <h6 id="example-entry-point-command">Example Entry Point Command<a href="https://discord.com/developers/docs/interactions/application-commands#entry-point-commands-example-entry-point-command"></a></h6>
-<pre><code>{
+<div class="highlight"><pre><span></span><code>{
     &quot;name&quot;: &quot;launch&quot;,
     &quot;description&quot;: &quot;Launch Racing with Friends&quot;,
     &quot;type&quot;: 4,
     &quot;handler&quot;: 2
 }
-</code></pre>
+</code></pre></div>
 <h3 id="entry-point-handlers">Entry Point handlers<a href="https://discord.com/developers/docs/interactions/application-commands#entry-point-handlers"></a></h3>
 <p>When a user invokes an app's Entry Point command, the value of <a href="https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-structure"><code>handler</code></a> will determine how the interaction is handled:</p>
 <ul>
@@ -2368,7 +2368,7 @@ command
 <p>Autocomplete interactions allow your application to dynamically return option suggestions to a user as they type.</p>
 <p>An autocomplete interaction can return partial data for option values. Your application will receive partial data for any existing user input, as long as that input passes client-side validation. For example, you may receive partial strings, but not invalid numbers. The option the user is currently typing will be sent with a <code>focused: true</code> boolean field and options the user has already filled will also be sent but without the <code>focused</code> field. This is a special case where options that are otherwise required might not be present, due to the user not having filled them yet.</p>
 <p>This validation is client-side only.</p>
-<pre><code>{
+<div class="highlight"><pre><span></span><code>{
   &quot;type&quot;: 4,
   &quot;data&quot;: {
     &quot;id&quot;: &quot;816437322781949972&quot;,
@@ -2385,14 +2385,14 @@ command
     ]
   }
 }
-</code></pre>
+</code></pre></div>
 <h2 id="localization">Localization<a href="https://discord.com/developers/docs/interactions/application-commands#localization"></a></h2>
 <p>Application commands can be localized, which will cause them to use localized names and descriptions depending on the client's selected language. This is entirely optional. Localization is available for names and descriptions of commands, subcommands, and options, as well as the names of choices, by submitting the appropriate <code>name_localizations</code> and <code>description_localizations</code> fields when creating or updating the application command.</p>
 <p>Application commands may be partially localized - not all <a href="https://discord.com/developers/docs/reference#locales">available locales</a> are required, nor do different fields within a command need to support the same set of locales. If a locale is not present in a localizations dictionary for a field, users in that locale will see the default value for that field. It's not necessary to fill out all locales with the default value. Any localized values that are identical to the default will be ignored.</p>
 <p>Localized option names are subject to an additional constraint, which is that they must be distinct from all other default option names of that command, as well as all other option names within that locale on that command.</p>
 <p>When taking advantage of command localization, the interaction payload received by your client will still use default command, subcommand, and option names. To localize your interaction response, you can determine the client's selected language by using the <code>locale</code> key in the interaction payload.</p>
 <p>An application command furnished with localizations might look like this:</p>
-<pre><code>{
+<div class="highlight"><pre><span></span><code>{
   &quot;name&quot;: &quot;birthday&quot;,
   &quot;type&quot;: 1,
   &quot;description&quot;: &quot;Wish a friend a happy birthday&quot;,
@@ -2407,7 +2407,7 @@ command
     {
       &quot;name&quot;: &quot;age&quot;,
       &quot;type&quot;: 4,
-      &quot;description&quot;: &quot;Your friend's age&quot;,
+      &quot;description&quot;: &quot;Your friend&#39;s age&quot;,
       &quot;name_localizations&quot;: {
         &quot;zh-CN&quot;: &quot;岁数&quot;
       },
@@ -2417,14 +2417,14 @@ command
     }
   ]
 }
-</code></pre>
+</code></pre></div>
 <h3 id="locale-fallbacks">Locale fallbacks<a href="https://discord.com/developers/docs/interactions/application-commands#locale-fallbacks"></a></h3>
 <p>For application commands, there are built-in fallbacks in case a user's locale isn't present in the localizations. If the fallback locale is also missing, it will use the default.</p>
 <p>You should make sure to include your default value in its proper locale key, otherwise it may use a fallback value unexpectedly. For example, if your default value is <code>en-US</code>, but you don't specify the <code>en-US</code> value in your localizations, users with <code>en-US</code> selected will see the <code>en-GB</code> value if it's specified. For example, if you have a command with the default name"color", and your localizations specify only the <code>en-GB</code> value as "colour", users in the <code>en-US</code> locale will see "colour" because the <code>en-US</code> key is missing.<table><thead><tr><th>Locale</th><th>Fallback</th></tr></thead><tbody><tr><td>en-US</td><td>en-GB</td></tr><tr><td>en-GB</td><td>en-US</td></tr><tr><td>es-419</td><td>es-ES</td></tr></tbody></table></p>
 <h3 id="retrieving-localized-commands">Retrieving localized commands<a href="https://discord.com/developers/docs/interactions/application-commands#retrieving-localized-commands"></a></h3>
 <p>While most endpoints that return application command objects will return the <code>name_localizations</code> and <code>description_localizations</code> fields, some will not by default. This includes <code>GET</code> endpoints that return all of an application's guild or global commands. Instead, those endpoints will supply additional <code>name_localized</code> or <code>description_localized</code> fields, which only contain the localization relevant to the requester's locale. (The full dictionaries can still be obtained by supplying the appropriate query argument).</p>
 <p>For example, if a batch <code>GET</code> request were made with locale <code>zh-CN</code>, including the above command, the returned object would look as follows:</p>
-<pre><code>{
+<div class="highlight"><pre><span></span><code>{
   &quot;name&quot;: &quot;birthday&quot;,
   &quot;type&quot;: 1,
   &quot;description&quot;: &quot;Wish a friend a happy birthday&quot;,
@@ -2434,13 +2434,13 @@ command
     {
       &quot;name&quot;: &quot;age&quot;,
       &quot;type&quot;: 4,
-      &quot;description&quot;: &quot;Your friend's age&quot;,
+      &quot;description&quot;: &quot;Your friend&#39;s age&quot;,
       &quot;name_localized&quot;: &quot;岁数&quot;,
       &quot;description_localized&quot;: &quot;你朋友的岁数&quot;,
     }
   ]
 }
-</code></pre>
+</code></pre></div>
 <p>If the requester's locale is not found in a localizations dictionary, then the corresponding <code>name_localization</code> or <code>description_localization</code> for that field will also not be present.</p>
 <p>Locale is determined by looking at the <code>X-Discord-Locale</code> header, then the <code>Accept-Language</code> header if not present, then lastly the user settings locale.</p>
 <h2 id="age-restricted-commands">Age-Restricted Commands<a href="https://discord.com/developers/docs/interactions/application-commands#agerestricted-commands"></a></h2>

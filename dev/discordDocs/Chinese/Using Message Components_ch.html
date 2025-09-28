@@ -1043,7 +1043,7 @@
 <p>设置 <code>IS_COMPONENTS_V2</code> 消息标志不可逆转：一旦消息发送，编辑消息时无法从消息中移除该标志。</p>
 <p>此标志表示消息包含组件，并禁用传统内容和嵌入。</p>
 <p>所有内容必须作为组件发送，而不是使用标准消息格式。</p>
-<pre><code>{
+<div class="highlight"><pre><span></span><code>{
 　　&quot;flags&quot;: 32768,
 　　&quot;components&quot;: [
 　　　　{
@@ -1052,10 +1052,10 @@
 　　　　}
 　　]
 }
-</code></pre>
+</code></pre></div>
 <h2 id="_4"><a href="https://discord.com/developers/docs/components/using-message-components#sending-a-message-with-multiple-components">发送带有多个组件的消息</a></h2>
 <p>要发送带有多个组件的消息，您可以在消息的 <code>components</code> 字段中包含多个组件对象。此字段允许您指定将包含在消息中的组件数组。</p>
-<pre><code>{
+<div class="highlight"><pre><span></span><code>{
 　　&quot;flags&quot;: 32768,
 　　&quot;components&quot;: [
 　　　　{
@@ -1068,11 +1068,11 @@
 　　　　}
 　　]
 }
-</code></pre>
+</code></pre></div>
 <h2 id="_5"><a href="https://discord.com/developers/docs/components/using-message-components#nesting-components-with-layout-components">使用布局组件嵌套组件</a></h2>
 <p>您还可以在布局组件内嵌套组件。这为您在向用户显示信息、图像和交互式组件方面提供了更大的灵活性。查看<a href="https://discord.com/developers/docs/components/reference#component-object-component-types">组件列表</a>以获取可用的布局组件的完整列表。</p>
 <p>例如，您可以创建一个包含多个按钮组件的操作行组件的消息。</p>
-<pre><code>{
+<div class="highlight"><pre><span></span><code>{
 　　&quot;flags&quot;: 32768,
 　　&quot;components&quot;: [
 　　　　{
@@ -1098,7 +1098,7 @@
 　　　　}
 　　]
 }
-</code></pre>
+</code></pre></div>
 <h2 id="_6"><a href="https://discord.com/developers/docs/components/using-message-components#using-message-components-with-interactions">将消息组件与交互结合使用</a></h2>
 <p>当用户与交互式消息组件交互时，您的应用程序将<a href="https://discord.com/developers/docs/interactions/overview">收到交互事件</a>。此事件包含有关交互的信息，包括交互类型和所交互的组件。</p>
 <p>查看<a href="https://discord.com/developers/docs/components/reference#component-object-component-types">支持的组件类型列表</a>以获取交互式消息组件及其交互事件负载的列表。</p>

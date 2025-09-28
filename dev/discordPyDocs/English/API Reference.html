@@ -1240,10 +1240,10 @@
 <p>Similar to a command <a href="https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.ext.commands.check" title="discord.ext.commands.check"><code>check()</code></a>, this takes a single parameter of type <a href="https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.ext.commands.Context" title="discord.ext.commands.Context"><code>Context</code></a> and can only raise exceptions inherited from <a href="https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.ext.commands.CommandError" title="discord.ext.commands.CommandError"><code>CommandError</code></a>.</p>
 <p>Example</p>
 <p>content_copy</p>
-<pre><code>@bot.check
+<div class="highlight"><pre><span></span><code>@bot.check
 def check_commands(ctx):
     return ctx.command.qualified_name in allowed_commands
-</code></pre>
+</code></pre></div>
 <p>Changed in version 2.0: <code>func</code> parameter is now positional-only.</p>
 <p>@check_once<a href="https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.ext.commands.Bot.check_once" title="Permalink to this definition">¶</a></p>
 <p>A decorator that adds a “call once” global check to the bot.</p>
@@ -1256,10 +1256,10 @@ def check_commands(ctx):
 <p>Similar to a command <a href="https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.ext.commands.check" title="discord.ext.commands.check"><code>check()</code></a>, this takes a single parameter of type <a href="https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.ext.commands.Context" title="discord.ext.commands.Context"><code>Context</code></a> and can only raise exceptions inherited from <a href="https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.ext.commands.CommandError" title="discord.ext.commands.CommandError"><code>CommandError</code></a>.</p>
 <p>Example</p>
 <p>content_copy</p>
-<pre><code>@bot.check_once
+<div class="highlight"><pre><span></span><code>@bot.check_once
 def whitelist(ctx):
     return ctx.message.author.id in my_whitelist
-</code></pre>
+</code></pre></div>
 <p>Changed in version 2.0: <code>func</code> parameter is now positional-only.</p>
 <p>@command(<em><em>args_, _</em>*kwargs</em>)<a href="https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.ext.commands.Bot.command" title="Permalink to this definition">¶</a></p>
 <p>A shortcut decorator that invokes <a href="https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.ext.commands.command" title="discord.ext.commands.command"><code>command()</code></a> and adds it to the internal command list via <a href="https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.ext.commands.GroupMixin.add_command" title="discord.ext.commands.GroupMixin.add_command"><code>add_command()</code></a>.</p>
@@ -1273,10 +1273,10 @@ def whitelist(ctx):
 <p>The events must be a <a href="https://docs.python.org/3/library/asyncio-task.html#coroutine" title="(in Python v3.13)">coroutine</a>, if not, <a href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.13)"><code>TypeError</code></a> is raised.</p>
 <p>Example</p>
 <p>content_copy</p>
-<pre><code>@client.event
+<div class="highlight"><pre><span></span><code>@client.event
 async def on_ready():
-    print('Ready!')
-</code></pre>
+    print(&#39;Ready!&#39;)
+</code></pre></div>
 <p>Changed in version 2.0: <code>coro</code> parameter is now positional-only.</p>
 <p>Raises</p>
 <p><a href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.13)"><strong>TypeError</strong></a> – The coroutine passed is not actually a coroutine.</p>
@@ -1303,16 +1303,16 @@ async def on_ready():
 <p>The functions being listened to must be a <a href="https://docs.python.org/3/library/asyncio-task.html#coroutine" title="(in Python v3.13)">coroutine</a>.</p>
 <p>Example</p>
 <p>content_copy</p>
-<pre><code>@bot.listen()
+<div class="highlight"><pre><span></span><code>@bot.listen()
 async def on_message(message):
-    print('one')
+    print(&#39;one&#39;)
 
 # in some other file...
 
-@bot.listen('on_message')
+@bot.listen(&#39;on_message&#39;)
 async def my_message(message):
-    print('two')
-</code></pre>
+    print(&#39;two&#39;)
+</code></pre></div>
 <p>Would print one and two in an unspecified order.</p>
 <p>Raises</p>
 <p><a href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.13)"><strong>TypeError</strong></a> – The function being listened to is not a coroutine.</p>
@@ -1413,12 +1413,12 @@ async def my_message(message):
 </ul>
 <p>Example</p>
 <p>content_copy</p>
-<pre><code>async def on_ready(): pass
+<div class="highlight"><pre><span></span><code>async def on_ready(): pass
 async def my_message(message): pass
 
 bot.add_listener(on_ready)
-bot.add_listener(my_message, 'on_message')
-</code></pre>
+bot.add_listener(my_message, &#39;on_message&#39;)
+</code></pre></div>
 <p>add_view(<em>view</em>, <em>*</em>, <em>message_id=None</em>)<a href="https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.ext.commands.Bot.add_view" title="Permalink to this definition">¶</a></p>
 <p>Registers a <a href="https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.ui.View" title="discord.ui.View"><code>View</code></a> for persistent listening.</p>
 <p>This method should be used for when a view is comprised of components that last longer than the lifecycle of the program.</p>
@@ -1497,9 +1497,9 @@ bot.add_listener(my_message, 'on_message')
 <p>Changes the client’s presence.</p>
 <p>Example</p>
 <p>content_copy</p>
-<pre><code>game = discord.Game(&quot;with the API&quot;)
+<div class="highlight"><pre><span></span><code>game = discord.Game(&quot;with the API&quot;)
 await client.change_presence(status=discord.Status.idle, activity=game)
-</code></pre>
+</code></pre></div>
 <p>Changed in version 2.0: Removed the <code>afk</code> keyword-only parameter.</p>
 <p>Changed in version 2.0: This function will now raise <a href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.13)"><code>TypeError</code></a> instead of <code>InvalidArgument</code>.</p>
 <p>Parameters</p>
@@ -1669,14 +1669,14 @@ await client.change_presence(status=discord.Status.idle, activity=game)
 <p>Examples</p>
 <p>Usage</p>
 <p>content_copy</p>
-<pre><code>async for entitlement in client.entitlements(limit=100):
+<div class="highlight"><pre><span></span><code>async for entitlement in client.entitlements(limit=100):
     print(entitlement.user_id, entitlement.ends_at)
-</code></pre>
+</code></pre></div>
 <p>Flattening into a list</p>
 <p>content_copy</p>
-<pre><code>entitlements = [entitlement async for entitlement in client.entitlements(limit=100)]
+<div class="highlight"><pre><span></span><code>entitlements = [entitlement async for entitlement in client.entitlements(limit=100)]
 # entitlements is now a list of Entitlement...
-</code></pre>
+</code></pre></div>
 <p>All parameters are optional.</p>
 <p>Parameters</p>
 <ul>
@@ -1863,14 +1863,14 @@ await client.change_presence(status=discord.Status.idle, activity=game)
 <p>Examples</p>
 <p>Usage</p>
 <p>content_copy</p>
-<pre><code>async for guild in client.fetch_guilds(limit=150):
+<div class="highlight"><pre><span></span><code>async for guild in client.fetch_guilds(limit=150):
     print(guild.name)
-</code></pre>
+</code></pre></div>
 <p>Flattening into a list</p>
 <p>content_copy</p>
-<pre><code>guilds = [guild async for guild in client.fetch_guilds(limit=150)]
+<div class="highlight"><pre><span></span><code>guilds = [guild async for guild in client.fetch_guilds(limit=150)]
 # guilds is now a list of Guild...
-</code></pre>
+</code></pre></div>
 <p>All parameters are optional.</p>
 <p>Parameters</p>
 <ul>
@@ -2110,20 +2110,20 @@ await client.change_presence(status=discord.Status.idle, activity=game)
 <p>A generator that retrieves every <a href="https://discordpy.readthedocs.io/en/stable/api.html#discord.abc.GuildChannel" title="discord.abc.GuildChannel"><code>abc.GuildChannel</code></a> the client can ‘access’.</p>
 <p>This is equivalent to:</p>
 <p>content_copy</p>
-<pre><code>for guild in client.guilds:
+<div class="highlight"><pre><span></span><code>for guild in client.guilds:
     for channel in guild.channels:
         yield channel
-</code></pre>
+</code></pre></div>
 <p>Yields</p>
 <p><a href="https://discordpy.readthedocs.io/en/stable/api.html#discord.abc.GuildChannel" title="discord.abc.GuildChannel"><code>abc.GuildChannel</code></a> – A channel the client can ‘access’.</p>
 <p><em>for ... in</em> get_all_members()<a href="https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.ext.commands.Bot.get_all_members" title="Permalink to this definition">¶</a></p>
 <p>Returns a generator with every <a href="https://discordpy.readthedocs.io/en/stable/api.html#discord.Member" title="discord.Member"><code>Member</code></a> the client can see.</p>
 <p>This is equivalent to:</p>
 <p>content_copy</p>
-<pre><code>for guild in client.guilds:
+<div class="highlight"><pre><span></span><code>for guild in client.guilds:
     for member in guild.members:
         yield member
-</code></pre>
+</code></pre></div>
 <p>Yields</p>
 <p><a href="https://discordpy.readthedocs.io/en/stable/api.html#discord.Member" title="discord.Member"><code>Member</code></a> – A member the client can see.</p>
 <p>get_channel(<em>id</em>, <em>/</em>)<a href="https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.ext.commands.Bot.get_channel" title="Permalink to this definition">¶</a></p>
@@ -2604,36 +2604,36 @@ await client.change_presence(status=discord.Status.idle, activity=game)
 <p>Examples</p>
 <p>Waiting for a user reply:</p>
 <p>content_copy</p>
-<pre><code>@client.event
+<div class="highlight"><pre><span></span><code>@client.event
 async def on_message(message):
-    if message.content.startswith('$greet'):
+    if message.content.startswith(&#39;$greet&#39;):
         channel = message.channel
-        await channel.send('Say hello!')
+        await channel.send(&#39;Say hello!&#39;)
 
         def check(m):
-            return m.content == 'hello' and m.channel == channel
+            return m.content == &#39;hello&#39; and m.channel == channel
 
-        msg = await client.wait_for('message', check=check)
-        await channel.send(f'Hello {msg.author}!')
-</code></pre>
+        msg = await client.wait_for(&#39;message&#39;, check=check)
+        await channel.send(f&#39;Hello {msg.author}!&#39;)
+</code></pre></div>
 <p>Waiting for a thumbs up reaction from the message author:</p>
 <p>content_copy</p>
-<pre><code>@client.event
+<div class="highlight"><pre><span></span><code>@client.event
 async def on_message(message):
-    if message.content.startswith('$thumb'):
+    if message.content.startswith(&#39;$thumb&#39;):
         channel = message.channel
-        await channel.send('Send me that 👍 reaction, mate')
+        await channel.send(&#39;Send me that 👍 reaction, mate&#39;)
 
         def check(reaction, user):
-            return user == message.author and str(reaction.emoji) == '👍'
+            return user == message.author and str(reaction.emoji) == &#39;👍&#39;
 
         try:
-            reaction, user = await client.wait_for('reaction_add', timeout=60.0, check=check)
+            reaction, user = await client.wait_for(&#39;reaction_add&#39;, timeout=60.0, check=check)
         except asyncio.TimeoutError:
-            await channel.send('👎')
+            await channel.send(&#39;👎&#39;)
         else:
-            await channel.send('👍')
-</code></pre>
+            await channel.send(&#39;👍&#39;)
+</code></pre></div>
 <p>Changed in version 2.0: <code>event</code> parameter is now positional-only.</p>
 <p>Parameters</p>
 <ul>
@@ -2679,15 +2679,15 @@ async def on_message(message):
 <p>These are meant to be passed into the <a href="https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.ext.commands.Bot.command_prefix" title="discord.ext.commands.Bot.command_prefix"><code>Bot.command_prefix</code></a> attribute.</p>
 <p>Example</p>
 <p>content_copy</p>
-<pre><code>bot = commands.Bot(command_prefix=commands.when_mentioned_or('!'))
-</code></pre>
+<div class="highlight"><pre><span></span><code>bot = commands.Bot(command_prefix=commands.when_mentioned_or(&#39;!&#39;))
+</code></pre></div>
 <p>Note</p>
 <p>This callable returns another callable, so if this is done inside a custom callable, you must call the returned callable, for example:</p>
 <p>content_copy</p>
-<pre><code>async def get_prefix(bot, message):
+<div class="highlight"><pre><span></span><code>async def get_prefix(bot, message):
     extras = await prefixes_for(message.guild) # returns a list
     return commands.when_mentioned_or(*extras)(bot, message)
-</code></pre>
+</code></pre></div>
 <h2 id="event-reference">Event Reference<a href="https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#event-reference" title="Permalink to this headline">¶</a></h2>
 <p>These events function similar to <a href="https://discordpy.readthedocs.io/en/stable/api.html#discord-api-events">the regular events</a>, except they are custom to the command extension module.</p>
 <p>discord.ext.commands.on_command_error(<em>ctx</em>, <em>error</em>)<a href="https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.discord.ext.commands.on_command_error" title="Permalink to this definition">¶</a></p>
@@ -3666,13 +3666,13 @@ async def on_message(message):
 <p>Hybrid commands will also be added to the Group, giving the ability to categorize slash commands into groups, while keeping the prefix-style command as a root-level command.</p>
 <p>For example:</p>
 <p>content_copy</p>
-<pre><code>from discord import app_commands
+<div class="highlight"><pre><span></span><code>from discord import app_commands
 from discord.ext import commands
 
 @app_commands.guild_only()
-class MyCog(commands.GroupCog, group_name='my-cog'):
+class MyCog(commands.GroupCog, group_name=&#39;my-cog&#39;):
     pass
-</code></pre>
+</code></pre></div>
 <p>New in version 2.0.</p>
 <p>interaction_check(<em>interaction</em>, <em>/</em>)<a href="https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.ext.commands.GroupCog.interaction_check" title="Permalink to this definition">¶</a></p>
 <p>A special method that registers as a <a href="https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.check" title="discord.app_commands.check"><code>discord.app_commands.check()</code></a> for every app command and subcommand in this cog.</p>
@@ -3684,7 +3684,7 @@ class MyCog(commands.GroupCog, group_name='my-cog'):
 <p>Note that you should probably not use this directly. It is exposed purely for documentation purposes along with making custom metaclasses to intermix with other metaclasses such as the <a href="https://docs.python.org/3/library/abc.html#abc.ABCMeta" title="(in Python v3.13)"><code>abc.ABCMeta</code></a> metaclass.</p>
 <p>For example, to create an abstract cog mixin class, the following would be done.</p>
 <p>content_copy</p>
-<pre><code>import abc
+<div class="highlight"><pre><span></span><code>import abc
 
 class CogABCMeta(commands.CogMeta, abc.ABCMeta):
     pass
@@ -3694,13 +3694,13 @@ class SomeMixin(metaclass=abc.ABCMeta):
 
 class SomeCogMixin(SomeMixin, commands.Cog, metaclass=CogABCMeta):
     pass
-</code></pre>
+</code></pre></div>
 <p>Note</p>
 <p>When passing an attribute of a metaclass that is documented below, note that you must pass it as a keyword-only argument to the class creation like the following example:</p>
 <p>content_copy</p>
-<pre><code>class MyCog(commands.Cog, name='My Cog'):
+<div class="highlight"><pre><span></span><code>class MyCog(commands.Cog, name=&#39;My Cog&#39;):
     pass
-</code></pre>
+</code></pre></div>
 <p>name<a href="https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.ext.commands.CogMeta.name" title="Permalink to this definition">¶</a></p>
 <p>The cog name. By default, it is the name of the class with no modification.</p>
 <p>Type</p>
@@ -3713,7 +3713,7 @@ class SomeCogMixin(SomeMixin, commands.Cog, metaclass=CogABCMeta):
 <p>command_attrs<a href="https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.ext.commands.CogMeta.command_attrs" title="Permalink to this definition">¶</a></p>
 <p>A list of attributes to apply to every command inside this cog. The dictionary is passed into the <a href="https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.ext.commands.Command" title="discord.ext.commands.Command"><code>Command</code></a> options at <code>__init__</code>. If you specify attributes inside the command attribute in the class, it will override the one specified inside this attribute. For example:</p>
 <p>content_copy</p>
-<pre><code>class MyCog(commands.Cog, command_attrs=dict(hidden=True)):
+<div class="highlight"><pre><span></span><code>class MyCog(commands.Cog, command_attrs=dict(hidden=True)):
  @commands.command()
     async def foo(self, ctx):
         pass # hidden -&gt; True
@@ -3721,7 +3721,7 @@ class SomeCogMixin(SomeMixin, commands.Cog, metaclass=CogABCMeta):
  @commands.command(hidden=False)
     async def bar(self, ctx):
         pass # hidden -&gt; False
-</code></pre>
+</code></pre></div>
 <p>Type</p>
 <p><a href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><code>dict</code></a></p>
 <p>group_name<a href="https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.ext.commands.CogMeta.group_name" title="Permalink to this definition">¶</a></p>
@@ -4160,9 +4160,9 @@ class SomeCogMixin(SomeMixin, commands.Cog, metaclass=CogABCMeta):
 <p>Returns help command’s opening note. This is mainly useful to override for i18n purposes.</p>
 <p>The default implementation returns</p>
 <p>content_copy</p>
-<pre><code>Use `{prefix}{command_name} [command]` for more info on a command.
+<div class="highlight"><pre><span></span><code>Use `{prefix}{command_name} [command]` for more info on a command.
 You can also use `{prefix}{command_name} [category]` for more info on a category.
-</code></pre>
+</code></pre></div>
 <p>Returns</p>
 <p>The help command opening note.</p>
 <p>Return type</p>
@@ -4294,31 +4294,31 @@ You can also use `{prefix}{command_name} [category]` for more info on a category
 <p>If an exception should be thrown in the predicate then it should be a subclass of <a href="https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.ext.commands.CommandError" title="discord.ext.commands.CommandError"><code>CommandError</code></a>. Any exception not subclassed from it will be propagated while those subclassed will be sent to <a href="https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.discord.ext.commands.on_command_error" title="discord.discord.ext.commands.on_command_error"><code>on_command_error()</code></a>.</p>
 <p>A special attribute named <code>predicate</code> is bound to the value returned by this decorator to retrieve the predicate passed to the decorator. This allows the following introspection and chaining to be done:</p>
 <p>content_copy</p>
-<pre><code>def owner_or_permissions(**perms):
+<div class="highlight"><pre><span></span><code>def owner_or_permissions(**perms):
     original = commands.has_permissions(**perms).predicate
     async def extended_check(ctx):
         if ctx.guild is None:
             return False
         return ctx.guild.owner_id == ctx.author.id or await original(ctx)
     return commands.check(extended_check)
-</code></pre>
+</code></pre></div>
 <p>Note</p>
 <p>The function returned by <code>predicate</code> is <strong>always</strong> a coroutine, even if the original function was not a coroutine.</p>
 <p>Changed in version 1.3: The <code>predicate</code> attribute was added.</p>
 <p>Examples</p>
 <p>Creating a basic check to see if the command invoker is you.</p>
 <p>content_copy</p>
-<pre><code>def check_if_it_is_me(ctx):
+<div class="highlight"><pre><span></span><code>def check_if_it_is_me(ctx):
     return ctx.message.author.id == 85309593344815104
 
 @bot.command()
 @commands.check(check_if_it_is_me)
 async def only_for_me(ctx):
-    await ctx.send('I know you!')
-</code></pre>
+    await ctx.send(&#39;I know you!&#39;)
+</code></pre></div>
 <p>Transforming common checks into its own decorator:</p>
 <p>content_copy</p>
-<pre><code>def is_me():
+<div class="highlight"><pre><span></span><code>def is_me():
     def predicate(ctx):
         return ctx.message.author.id == 85309593344815104
     return commands.check(predicate)
@@ -4326,8 +4326,8 @@ async def only_for_me(ctx):
 @bot.command()
 @is_me()
 async def only_me(ctx):
-    await ctx.send('Only you!')
-</code></pre>
+    await ctx.send(&#39;Only you!&#39;)
+</code></pre></div>
 <p>Changed in version 2.0: <code>predicate</code> parameter is now positional-only.</p>
 <p>Parameters</p>
 <p><strong>predicate</strong> (Callable[[<a href="https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.ext.commands.Context" title="discord.ext.commands.Context"><code>Context</code></a>], <a href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code>bool</code></a>]) – The predicate to check if the command should be invoked.</p>
@@ -4344,7 +4344,7 @@ async def only_me(ctx):
 <p>Examples</p>
 <p>Creating a basic check to see if it’s the bot owner or the server owner:</p>
 <p>content_copy</p>
-<pre><code>def is_guild_owner():
+<div class="highlight"><pre><span></span><code>def is_guild_owner():
     def predicate(ctx):
         return ctx.guild is not None and ctx.guild.owner_id == ctx.author.id
     return commands.check(predicate)
@@ -4352,8 +4352,8 @@ async def only_me(ctx):
 @bot.command()
 @commands.check_any(commands.is_owner(), is_guild_owner())
 async def only_for_owners(ctx):
-    await ctx.send('Hello mister owner!')
-</code></pre>
+    await ctx.send(&#39;Hello mister owner!&#39;)
+</code></pre></div>
 <p>@discord.ext.commands.has_role(<em>item</em>)<a href="https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.ext.commands.has_role" title="Permalink to this definition">¶</a></p>
 <p>A <a href="https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.ext.commands.check" title="discord.ext.commands.check"><code>check()</code></a> that is added that checks if the member invoking the command has the role specified via the name or ID specified.</p>
 <p>If a string is specified, you must give the exact name of the role, including caps and spelling.</p>
@@ -4372,11 +4372,11 @@ async def only_for_owners(ctx):
 <p><strong>perms</strong> – An argument list of permissions to check for.</p>
 <p>Example</p>
 <p>content_copy</p>
-<pre><code>@bot.command()
+<div class="highlight"><pre><span></span><code>@bot.command()
 @commands.has_permissions(manage_messages=True)
 async def test(ctx):
-    await ctx.send('You can manage messages.')
-</code></pre>
+    await ctx.send(&#39;You can manage messages.&#39;)
+</code></pre></div>
 <p>@discord.ext.commands.has_guild_permissions(<em>**perms</em>)<a href="https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.ext.commands.has_guild_permissions" title="Permalink to this definition">¶</a></p>
 <p>Similar to <a href="https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.ext.commands.has_permissions" title="discord.ext.commands.has_permissions"><code>has_permissions()</code></a>, but operates on guild wide permissions instead of the current channel permissions.</p>
 <p>If this check is called in a DM context, it will raise an exception, <a href="https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.ext.commands.NoPrivateMessage" title="discord.ext.commands.NoPrivateMessage"><code>NoPrivateMessage</code></a>.</p>
@@ -4389,11 +4389,11 @@ async def test(ctx):
 <p><strong>items</strong> (List[Union[<a href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code>str</code></a>, <a href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code>int</code></a>]]) – An argument list of names or IDs to check that the member has roles wise.</p>
 <p>Example</p>
 <p>content_copy</p>
-<pre><code>@bot.command()
-@commands.has_any_role('Library Devs', 'Moderators', 492212595072434186)
+<div class="highlight"><pre><span></span><code>@bot.command()
+@commands.has_any_role(&#39;Library Devs&#39;, &#39;Moderators&#39;, 492212595072434186)
 async def cool(ctx):
-    await ctx.send('You are cool indeed')
-</code></pre>
+    await ctx.send(&#39;You are cool indeed&#39;)
+</code></pre></div>
 <p>@discord.ext.commands.bot_has_role(<em>item</em>)<a href="https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.ext.commands.bot_has_role" title="Permalink to this definition">¶</a></p>
 <p>Similar to <a href="https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.ext.commands.has_role" title="discord.ext.commands.has_role"><code>has_role()</code></a> except checks if the bot itself has the role.</p>
 <p>This check raises one of two special exceptions, <a href="https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.ext.commands.BotMissingRole" title="discord.ext.commands.BotMissingRole"><code>BotMissingRole</code></a> if the bot is missing the role, or <a href="https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.ext.commands.NoPrivateMessage" title="discord.ext.commands.NoPrivateMessage"><code>NoPrivateMessage</code></a> if it is used in a private message. Both inherit from <a href="https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.ext.commands.CheckFailure" title="discord.ext.commands.CheckFailure"><code>CheckFailure</code></a>.</p>
@@ -4466,29 +4466,29 @@ async def cool(ctx):
 <p>Changed in version 2.0: <code>coro</code> parameter is now positional-only.</p>
 <p>Example</p>
 <p>content_copy</p>
-<pre><code>async def record_usage(ctx):
-    print(ctx.author, 'used', ctx.command, 'at', ctx.message.created_at)
+<div class="highlight"><pre><span></span><code>async def record_usage(ctx):
+    print(ctx.author, &#39;used&#39;, ctx.command, &#39;at&#39;, ctx.message.created_at)
 
 @bot.command()
 @commands.before_invoke(record_usage)
 async def who(ctx): # Output: &lt;User&gt; used who at &lt;Time&gt;
-    await ctx.send('i am a bot')
+    await ctx.send(&#39;i am a bot&#39;)
 
 class What(commands.Cog):
 
  @commands.before_invoke(record_usage)
  @commands.command()
     async def when(self, ctx): # Output: &lt;User&gt; used when at &lt;Time&gt;
-        await ctx.send(f'and i have existed since {ctx.bot.user.created_at}')
+        await ctx.send(f&#39;and i have existed since {ctx.bot.user.created_at}&#39;)
 
  @commands.command()
     async def where(self, ctx): # Output: &lt;Nothing&gt;
-        await ctx.send('on Discord')
+        await ctx.send(&#39;on Discord&#39;)
 
  @commands.command()
     async def why(self, ctx): # Output: &lt;Nothing&gt;
-        await ctx.send('because someone made me')
-</code></pre>
+        await ctx.send(&#39;because someone made me&#39;)
+</code></pre></div>
 <p>@discord.ext.commands.after_invoke(<em>coro</em>)<a href="https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.ext.commands.after_invoke" title="Permalink to this definition">¶</a></p>
 <p>A decorator that registers a coroutine as a post-invoke hook.</p>
 <p>This allows you to refer to one after invoke hook for several commands that do not have to be within the same cog.</p>
@@ -4584,18 +4584,18 @@ class What(commands.Cog):
 <p>In an interaction based context, this is equivalent to a <a href="https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.ext.commands.Context.defer" title="discord.ext.commands.Context.defer"><code>defer()</code></a> call and does not do any typing calls.</p>
 <p>Example Usage:</p>
 <p>content_copy</p>
-<pre><code>async with channel.typing():
+<div class="highlight"><pre><span></span><code>async with channel.typing():
     # simulate something heavy
     await asyncio.sleep(20)
 
-await channel.send('Done!')
-</code></pre>
+await channel.send(&#39;Done!&#39;)
+</code></pre></div>
 <p>Example Usage:</p>
 <p>content_copy</p>
-<pre><code>await channel.typing()
+<div class="highlight"><pre><span></span><code>await channel.typing()
 # Do some computational magic for about 10 seconds
-await channel.send('Done!')
-</code></pre>
+await channel.send(&#39;Done!&#39;)
+</code></pre></div>
 <p>Changed in version 2.0: This no longer works with the <code>with</code> syntax, <code>async with</code> must be used instead.</p>
 <p>Changed in version 2.0: Added functionality to <code>await</code> the context manager to send a typing indicator for 10 seconds.</p>
 <p>Parameters</p>
@@ -4743,16 +4743,16 @@ await channel.send('Done!')
 <p>Examples</p>
 <p>Usage</p>
 <p>content_copy</p>
-<pre><code>counter = 0
+<div class="highlight"><pre><span></span><code>counter = 0
 async for message in channel.history(limit=200):
     if message.author == client.user:
         counter += 1
-</code></pre>
+</code></pre></div>
 <p>Flattening into a list:</p>
 <p>content_copy</p>
-<pre><code>messages = [message async for message in channel.history(limit=123)]
+<div class="highlight"><pre><span></span><code>messages = [message async for message in channel.history(limit=123)]
 # messages is now a list of Message...
-</code></pre>
+</code></pre></div>
 <p>All parameters are optional.</p>
 <p>Parameters</p>
 <ul>
@@ -4793,15 +4793,15 @@ async for message in channel.history(limit=200):
 <p>Examples</p>
 <p>Usage</p>
 <p>content_copy</p>
-<pre><code>counter = 0
+<div class="highlight"><pre><span></span><code>counter = 0
 async for message in channel.pins(limit=250):
     counter += 1
-</code></pre>
+</code></pre></div>
 <p>Flattening into a list:</p>
 <p>content_copy</p>
-<pre><code>messages = [message async for message in channel.pins(limit=50)]
+<div class="highlight"><pre><span></span><code>messages = [message async for message in channel.pins(limit=50)]
 # messages is now a list of Message...
-</code></pre>
+</code></pre></div>
 <p>All parameters are optional.</p>
 <p>Parameters</p>
 <ul>
@@ -5919,10 +5919,10 @@ async for message in channel.pins(limit=250):
 <p>When a parser error is met the greedy converter stops converting, undoes the internal string parsing routine, and continues parsing regularly.</p>
 <p>For example, in the following code:</p>
 <p>content_copy</p>
-<pre><code>@commands.command()
+<div class="highlight"><pre><span></span><code>@commands.command()
 async def test(ctx, numbers: Greedy[int], reason: str):
     await ctx.send(&quot;numbers: {}, reason: {}&quot;.format(numbers, reason))
-</code></pre>
+</code></pre></div>
 <p>An invocation of <code>[p]test 1 2 3 4 5 6 hello</code> would pass <code>numbers</code> with <code>[1, 2, 3, 4, 5, 6]</code> and <code>reason</code> with <code>hello</code>.</p>
 <p>For more information, check <a href="https://discordpy.readthedocs.io/en/stable/ext/commands/commands.html#ext-commands-special-converters">Special Converters</a>.</p>
 <p>Note</p>
@@ -5953,10 +5953,10 @@ async def test(ctx, numbers: Greedy[int], reason: str):
 <p>New in version 2.0.</p>
 <p>Examples</p>
 <p>content_copy</p>
-<pre><code>@bot.command()
+<div class="highlight"><pre><span></span><code>@bot.command()
 async def range(ctx: commands.Context, value: commands.Range[int, 10, 12]):
-    await ctx.send(f'Your value is {value}')
-</code></pre>
+    await ctx.send(f&#39;Your value is {value}&#39;)
+</code></pre></div>
 <p><em>await</em> discord.ext.commands.run_converters(<em>ctx</em>, <em>converter</em>, <em>argument</em>, <em>param</em>)<a href="https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.ext.commands.run_converters" title="Permalink to this definition">¶</a></p>
 <p>This function is a <a href="https://docs.python.org/3/library/asyncio-task.html#coroutine"><em>coroutine</em></a>.</p>
 <p>Runs converters for a given converter, argument, and parameter.</p>
@@ -6143,10 +6143,10 @@ async def range(ctx: commands.Context, value: commands.Range[int, 10, 12]):
 <p>Examples</p>
 <p>A custom default can be used to have late binding behaviour.</p>
 <p>content_copy</p>
-<pre><code>@bot.command()
+<div class="highlight"><pre><span></span><code>@bot.command()
 async def wave(ctx, to: discord.User = commands.parameter(default=lambda ctx: ctx.author)):
-    await ctx.send(f'Hello {to.mention} :wave:')
-</code></pre>
+    await ctx.send(f&#39;Hello {to.mention} :wave:&#39;)
+</code></pre></div>
 <p>Parameters</p>
 <ul>
 <li>

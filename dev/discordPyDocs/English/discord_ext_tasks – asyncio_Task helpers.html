@@ -888,7 +888,7 @@
 <h2 id="recipes">Recipes<a href="https://discordpy.readthedocs.io/en/stable/ext/tasks/index.html#recipes" title="Permalink to this headline">¶</a></h2>
 <p>A simple background task in a <a href="https://discordpy.readthedocs.io/en/stable/ext/commands/api.html#discord.ext.commands.Cog" title="discord.ext.commands.Cog"><code>Cog</code></a>:</p>
 <p>content_copy</p>
-<pre><code>from discord.ext import tasks, commands
+<div class="highlight"><pre><span></span><code>from discord.ext import tasks, commands
 
 class MyCog(commands.Cog):
     def __init__(self):
@@ -902,10 +902,10 @@ class MyCog(commands.Cog):
     async def printer(self):
         print(self.index)
         self.index += 1
-</code></pre>
+</code></pre></div>
 <p>Adding an exception to handle during reconnect:</p>
 <p>content_copy</p>
-<pre><code>import asyncpg
+<div class="highlight"><pre><span></span><code>import asyncpg
 from discord.ext import tasks, commands
 
 class MyCog(commands.Cog):
@@ -923,10 +923,10 @@ class MyCog(commands.Cog):
         async with self.bot.pool.acquire() as con:
             # batch update here...
             pass
-</code></pre>
+</code></pre></div>
 <p>Looping a certain amount of times before exiting:</p>
 <p>content_copy</p>
-<pre><code>from discord.ext import tasks
+<div class="highlight"><pre><span></span><code>from discord.ext import tasks
 import discord
 
 @tasks.loop(seconds=5.0, count=5)
@@ -935,15 +935,15 @@ async def slow_count():
 
 @slow_count.after_loop
 async def after_slow_count():
-    print('done!')
+    print(&#39;done!&#39;)
 
 class MyClient(discord.Client):
     async def setup_hook(self):
         slow_count.start()
-</code></pre>
+</code></pre></div>
 <p>Waiting until the bot is ready before the loop starts:</p>
 <p>content_copy</p>
-<pre><code>from discord.ext import tasks, commands
+<div class="highlight"><pre><span></span><code>from discord.ext import tasks, commands
 
 class MyCog(commands.Cog):
     def __init__(self, bot):
@@ -961,12 +961,12 @@ class MyCog(commands.Cog):
 
     @printer.before_loop
     async def before_printer(self):
-        print('waiting...')
+        print(&#39;waiting...&#39;)
         await self.bot.wait_until_ready()
-</code></pre>
+</code></pre></div>
 <p>Doing something during cancellation:</p>
 <p>content_copy</p>
-<pre><code>from discord.ext import tasks, commands
+<div class="highlight"><pre><span></span><code>from discord.ext import tasks, commands
 import asyncio
 
 class MyCog(commands.Cog):
@@ -991,13 +991,13 @@ class MyCog(commands.Cog):
     @bulker.after_loop
     async def on_bulker_cancel(self):
         if self.bulker.is_being_cancelled() and len(self._batch) != 0:
-            # if we're cancelled and we have some data left...
-            # let's insert it to our database
+            # if we&#39;re cancelled and we have some data left...
+            # let&#39;s insert it to our database
             await self.do_bulk()
-</code></pre>
+</code></pre></div>
 <p>Doing something at a specific time each day:</p>
 <p>content_copy</p>
-<pre><code>import datetime
+<div class="highlight"><pre><span></span><code>import datetime
 from discord.ext import commands, tasks
 
 utc = datetime.timezone.utc
@@ -1016,10 +1016,10 @@ class MyCog(commands.Cog):
  @tasks.loop(time=time)
     async def my_task(self):
         print(&quot;My task is running!&quot;)
-</code></pre>
+</code></pre></div>
 <p>Doing something at multiple specific times each day:</p>
 <p>content_copy</p>
-<pre><code>import datetime
+<div class="highlight"><pre><span></span><code>import datetime
 from discord.ext import commands, tasks
 
 utc = datetime.timezone.utc
@@ -1042,7 +1042,7 @@ class MyCog(commands.Cog):
  @tasks.loop(time=times)
     async def my_task(self):
         print(&quot;My task is running!&quot;)
-</code></pre>
+</code></pre></div>
 <h2 id="api-reference">API Reference<a href="https://discordpy.readthedocs.io/en/stable/ext/tasks/index.html#api-reference" title="Permalink to this headline">¶</a></h2>
 <p><em>class</em> discord.ext.tasks.Loop<a href="https://discordpy.readthedocs.io/en/stable/ext/tasks/index.html#discord.ext.tasks.Loop" title="Permalink to this definition">¶</a></p>
 <p>A background task helper that abstracts the loop and reconnection logic for you.</p>

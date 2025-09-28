@@ -927,7 +927,7 @@
 <p>Setting the <code>IS_COMPONENTS_V2</code> message flag cannot be reverted: once the message has been sent, the flag cannot be removed from the message when editing the message.</p>
 <p>This flag indicates that the message contains components and disables traditional content and embeds.</p>
 <p>All content must be sent as components instead of using the standard message format.</p>
-<pre><code>{
+<div class="highlight"><pre><span></span><code>{
   &quot;flags&quot;: 32768,
   &quot;components&quot;: [
     {
@@ -936,10 +936,10 @@
     }
   ]
 }
-</code></pre>
+</code></pre></div>
 <h2 id="sending-a-message-with-multiple-components">Sending a Message with Multiple Components<a href="https://discord.com/developers/docs/components/using-message-components#sending-a-message-with-multiple-components"></a></h2>
 <p>To send a message with multiple components, you can include multiple component objects in your message's <code>components</code> field. This field allows you to specify an array of components that will be included in the message.</p>
-<pre><code>{
+<div class="highlight"><pre><span></span><code>{
   &quot;flags&quot;: 32768,
   &quot;components&quot;: [
     {
@@ -952,11 +952,11 @@
     }
   ]
 }
-</code></pre>
+</code></pre></div>
 <h2 id="nesting-components-with-layout-components">Nesting Components with Layout Components<a href="https://discord.com/developers/docs/components/using-message-components#nesting-components-with-layout-components"></a></h2>
 <p>You can also nest components within layout components. This gives you more flexibility in displaying information, images, and interactive components to your users. Check out the <a href="https://discord.com/developers/docs/components/reference#component-object-component-types">list of components</a> for a complete list of available layout components.</p>
 <p>For example, you can create a message with an Action Row component that contains multiple Button components.</p>
-<pre><code>{
+<div class="highlight"><pre><span></span><code>{
   &quot;flags&quot;: 32768,
   &quot;components&quot;: [
     {
@@ -982,7 +982,7 @@
     }
   ]
 }
-</code></pre>
+</code></pre></div>
 <h2 id="using-message-components-with-interactions">Using Message Components with Interactions<a href="https://discord.com/developers/docs/components/using-message-components#using-message-components-with-interactions"></a></h2>
 <p>When a user interacts with an interactive message component, your app will <a href="https://discord.com/developers/docs/interactions/overview">receive an interaction event</a>. This event contains information about the interaction, including the type of interaction and the component that was interacted with.</p>
 <p>See the <a href="https://discord.com/developers/docs/components/reference#component-object-component-types">list of supported component types</a> for a list of interactive message components and their interaction event payloads.</p>

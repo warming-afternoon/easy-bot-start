@@ -1384,7 +1384,7 @@
 <p>When responding to an interaction received, you can make a <code>POST</code> request to <code>/interactions/&lt;interaction_id&gt;/&lt;interaction_token&gt;/callback</code>. <code>interaction_id</code> is the unique id of that individual Interaction from the received payload. <code>interaction_token</code> is the unique token for that interaction from the received payload.</p>
 <p>If you are receiving Interactions over the gateway, you have to respond via HTTP. Responses to Interactions are not sent as commands over the gateway.</p>
 <p>If you send this request for an interaction received over HTTP, respond to the original HTTP request with a 202 and no body.</p>
-<pre><code>import requests
+<div class="highlight"><pre><span></span><code>import requests
 
 url = &quot;https://discord.com/api/v10/interactions/&lt;interaction_id&gt;/&lt;interaction_token&gt;/callback&quot;
 
@@ -1395,7 +1395,7 @@ json = {
     }
 }
 r = requests.post(url, json=json)
-</code></pre>
+</code></pre></div>
 <p>Interaction <code>tokens</code> are valid for 15 minutes and can be used to send followup messages but you must send an initial response within 3 seconds of receiving the event. If the 3 second deadline is exceeded, the token will be invalidated.</p>
 <p>Inline HTTP Response Behavior</p>
 <h6 id="interaction-callback-response-object">Interaction Callback Response Object<a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-callback-interaction-callback-response-object"></a></h6>

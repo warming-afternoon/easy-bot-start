@@ -1355,8 +1355,8 @@
 <p>On this page</p>
 <p>Discord's API is based around two core layers , a HTTPS/REST API for general operations , and persistent secure WebSocket based connection for sending and subscribing to real-time events. The most common use case of the Discord API will be providing a service , or access to a platform through the <a href="https://oauth.net/2/">OAuth2</a> API.</p>
 <h6 id="base-url"><a href="https://discord.com/developers/docs/reference#api-reference-base-url">Base URL</a></h6>
-<pre><code>https://discord.com/api
-</code></pre>
+<div class="highlight"><pre><span></span><code>https://discord.com/api
+</code></pre></div>
 <h2 id="api-versioning">API Versioning<a href="https://discord.com/developers/docs/reference#api-versioning"></a></h2>
 <p>Some API and Gateway versions are now non-functioning , and are labeled as discontinued in the table below for posterity. Trying to use these versions will fail and return 400 Bad Request.</p>
 <p>Discord exposes different versions of our API<a href="https://c.tenor.com/BuZl66EegkgAAAAC/westworld-dolores.gif"></a> You should specify which version to use by including it in the request path like <code>https://discord.com/api/v{version_number}</code></p>
@@ -1368,7 +1368,7 @@
 <h2 id="error-messages">Error Messages<a href="https://discord.com/developers/docs/reference#error-messages"></a></h2>
 <p>Starting in API v8 , we've improved error formatting in form error responses. The response will tell you which JSON key contains the error , the error code , and a human readable error message. We will be frequently adding new error messages , so a complete list of errors is not feasible and would be almost instantly out of date. Here are some examples instead:</p>
 <h6 id="array-error">Array Error<a href="https://discord.com/developers/docs/reference#error-messages-array-error"></a></h6>
-<pre><code>{
+<div class="highlight"><pre><span></span><code>{
 &quot;code&quot;: 50035 , 
 &quot;errors&quot;: {
  &quot;activities&quot;: {
@@ -1377,7 +1377,7 @@
   &quot;_errors&quot;: [
   {
   &quot;code&quot;: &quot;BASE_TYPE_CHOICES&quot; , 
-  &quot;message&quot;: &quot;Value must be one of ('desktop' , 'android' , 'ios') &quot; 
+  &quot;message&quot;: &quot;Value must be one of (&#39;desktop&#39; , &#39;android&#39; , &#39;ios&#39;) &quot; 
 
   }
   ]
@@ -1396,9 +1396,9 @@
 } , 
 &quot;message&quot;: &quot;Invalid Form Body&quot;
 }
-</code></pre>
+</code></pre></div>
 <h6 id="object-error">Object Error<a href="https://discord.com/developers/docs/reference#error-messages-object-error"></a></h6>
-<pre><code>{
+<div class="highlight"><pre><span></span><code>{
 &quot;code&quot;: 50035 , 
 &quot;errors&quot;: {
  &quot;access_token&quot;: {
@@ -1412,9 +1412,9 @@
 } , 
 &quot;message&quot;: &quot;Invalid Form Body&quot;
 }
-</code></pre>
+</code></pre></div>
 <h6 id="request-error">Request Error<a href="https://discord.com/developers/docs/reference#error-messages-request-error"></a></h6>
-<pre><code>{
+<div class="highlight"><pre><span></span><code>{
 &quot;code&quot;: 50035 , 
 &quot;message&quot;: &quot;Invalid Form Body&quot; , 
 &quot;errors&quot;: {
@@ -1426,7 +1426,7 @@
  ]
 }
 }
-</code></pre>
+</code></pre></div>
 <h2 id="authentication">Authentication<a href="https://discord.com/developers/docs/reference#authentication"></a></h2>
 <p>Authenticating with the Discord API can be done in one of two ways:</p>
 <ol>
@@ -1439,11 +1439,11 @@
 </ol>
 <p>For all authentication types , authentication is performed with the <code>Authorization</code> HTTP header in the format <code>Authorization: TOKEN_TYPE TOKEN</code></p>
 <h6 id="example-bot-token-authorization-header">Example Bot Token Authorization Header<a href="https://discord.com/developers/docs/reference#authentication-example-bot-token-authorization-header"></a></h6>
-<pre><code>Authorization: Bot MTk4NjIyNDgzNDcxOTI1MjQ4.Cl2FMQ.ZnCjm1XVW7vRze4b7Cq4se7kKWs
-</code></pre>
+<div class="highlight"><pre><span></span><code>Authorization: Bot MTk4NjIyNDgzNDcxOTI1MjQ4.Cl2FMQ.ZnCjm1XVW7vRze4b7Cq4se7kKWs
+</code></pre></div>
 <h6 id="example-bearer-token-authorization-header">Example Bearer Token Authorization Header<a href="https://discord.com/developers/docs/reference#authentication-example-bearer-token-authorization-header"></a></h6>
-<pre><code>Authorization: Bearer CZhtkLDpNYXgPH9Ml6shqh2OwykChw
-</code></pre>
+<div class="highlight"><pre><span></span><code>Authorization: Bearer CZhtkLDpNYXgPH9Ml6shqh2OwykChw
+</code></pre></div>
 <h2 id="encryption">Encryption<a href="https://discord.com/developers/docs/reference#encryption"></a></h2>
 <p>All HTTP-layer services and protocols (e.g. HTTP , WebSocket) within the Discord API are using TLS 1.2.</p>
 <h2 id="snowflakes">Snowflakes<a href="https://discord.com/developers/docs/reference#snowflakes"></a></h2>
@@ -1459,32 +1459,32 @@
 <p>We typically use snowflake IDs in many of our API routes for pagination. The standardized pagination paradigm we utilize is one in which you can specify IDs <code>before</code> and <code>after</code> in combination with <code>limit</code> to retrieve a desired page of results. You will want to refer to the specific endpoint documentation for details.</p>
 <p>It is useful to note that snowflake IDs are just numbers with a timestamp , so when dealing with pagination where you want results from the beginning of time (in Discord Epoch , but <code>0</code> works here too) or before/after a specific time you can generate a snowflake ID for that time.</p>
 <h6 id="generating-a-snowflake-id-from-a-timestamp-example">Generating a snowflake ID from a Timestamp Example<a href="https://discord.com/developers/docs/reference#snowflake-ids-in-pagination-generating-a-snowflake-id-from-a-timestamp-example"></a></h6>
-<pre><code>(timestamp_ms - DISCORD_EPOCH) &lt;&lt; 22
-</code></pre>
+<div class="highlight"><pre><span></span><code>(timestamp_ms - DISCORD_EPOCH) &lt;&lt; 22
+</code></pre></div>
 <h2 id="id-serialization">ID Serialization<a href="https://discord.com/developers/docs/reference#id-serialization"></a></h2>
 <p>There are some cases in which our API and Gateway may return IDs in an unexpected format. Internally , Discord stores IDs as integer snowflakes. When we serialize IDs to JSON , we transform <code>bigints</code> into strings. Given that all Discord IDs are snowflakes , you should always expect a string.</p>
 <p>However , there are cases in which passing something to our API will instead return IDs serialized as an integer ; this is the case when you send our API or Gateway a value in an <code>id</code> field that is not <code>bigint</code> size. For example , when requesting <code>GUILD_MEMBERS_CHUNK</code> from our gateway:</p>
-<pre><code>// Send
+<div class="highlight"><pre><span></span><code>// Send
 {
 op: 8 , 
 d: {
- guild_id: '308994132968210433' , 
- user_ids: [ '123123' ]
+ guild_id: &#39;308994132968210433&#39; , 
+ user_ids: [ &#39;123123&#39; ]
 }
 }
 
 // Receive
 {
-t: 'GUILD_MEMBERS_CHUNK' , 
+t: &#39;GUILD_MEMBERS_CHUNK&#39; , 
 s: 3 , 
 op: 0 , 
 d: {
  not_found: [ 123123 ] , 
  members: [] , 
- guild_id: '308994132968210433'
+ guild_id: &#39;308994132968210433&#39;
 }
 }
-</code></pre>
+</code></pre></div>
 <p>You can see in this case that the sent <code>user_id</code> is not a <code>bigint</code> ; therefore , when it is serialized back to JSON by Discord , it is not transformed into a string. This will never happen with IDs that come from Discord. But , this can happen if you send malformed data in your requests.</p>
 <h2 id="iso8601-datetime">ISO8601 Date/Time<a href="https://discord.com/developers/docs/reference#iso8601-datetime"></a></h2>
 <p>Discord utilizes the <a href="https://www.loc.gov/standards/datetime/iso-tc154-wg5_n0038_iso_wd_8601-1_2016-02-16.pdf">ISO8601 format</a> for most Date/Times returned in our models. This format is referred to as type <code>ISO8601</code> within tables in this documentation.</p>
@@ -1511,8 +1511,8 @@ d: {
 <h3 id="user-agent">User Agent<a href="https://discord.com/developers/docs/reference#user-agent"></a></h3>
 <p>Clients using the HTTP API must provide a valid <a href="https://www.rfc-editor.org/rfc/rfc9110.html#section-10.1.5">User Agent</a> which specifies information about the client library and version in the following format:</p>
 <h6 id="user-agent-example">User Agent Example<a href="https://discord.com/developers/docs/reference#user-agent-user-agent-example"></a></h6>
-<pre><code>User-Agent: DiscordBot ($url , $versionNumber) 
-</code></pre>
+<div class="highlight"><pre><span></span><code>User-Agent: DiscordBot ($url , $versionNumber) 
+</code></pre></div>
 <p>Clients may append more information and metadata to the end of this string as they wish.</p>
 <p>Client requests that do not have a valid User Agent specified may be blocked and return a <a href="https://support.cloudflare.com/hc/en-us/articles/360029779472-Troubleshooting-Cloudflare-1XXX-errors">Cloudflare error</a> </p>
 <h3 id="content-type">Content Type<a href="https://discord.com/developers/docs/reference#content-type"></a></h3>
@@ -1551,8 +1551,8 @@ d: {
 
 <h2 id="image-formatting">Image Formatting<a href="https://discord.com/developers/docs/reference#image-formatting"></a></h2>
 <h6 id="image-base-url">Image Base Url<a href="https://discord.com/developers/docs/reference#image-formatting-image-base-url"></a></h6>
-<pre><code>https://cdn.discordapp.com/
-</code></pre>
+<div class="highlight"><pre><span></span><code>https://cdn.discordapp.com/
+</code></pre></div>
 <p>Discord uses ids and hashes to render images in the client. These hashes can be retrieved through various API requests , like <a href="https://discord.com/developers/docs/resources/user#get-user">Get User</a> </p>
 <p>Below are the formats , size limitations , and CDN endpoints for images in Discord. The returned format can be changed by changing the <a href="https://discord.com/developers/docs/reference#image-formatting-image-formats">extension name</a> at the end of the URL. The returned size can be changed by appending a querystring of <code>?size=desired_size</code> to the URL. Image size can be any power of two between 16 and 4096.</p>
 <h6 id="image-formats">Image Formats<a href="https://discord.com/developers/docs/reference#image-formatting-image-formats"></a></h6>
@@ -1573,16 +1573,16 @@ d: {
 <p>Sticker GIFs do not use the CDN base url , and can be accessed at <code>https://media.discordapp.net/stickers/&lt;sticker_id&gt;.gif</code></p>
 <h2 id="image-data">Image Data<a href="https://discord.com/developers/docs/reference#image-data"></a></h2>
 <p>Image data is a <a href="https://en.wikipedia.org/wiki/Data_URI_scheme">Data URI scheme</a> that supports JPG , GIF , and PNG formats. An example Data URI format is:</p>
-<pre><code>data:image/jpeg ; base64 , BASE64_ENCODED_JPEG_IMAGE_DATA
-</code></pre>
+<div class="highlight"><pre><span></span><code>data:image/jpeg ; base64 , BASE64_ENCODED_JPEG_IMAGE_DATA
+</code></pre></div>
 <p>Ensure you use the proper content type (<code>image/jpeg</code> , <code>image/png</code> , <code>image/gif</code>) that matches the image data being provided.</p>
 <h3 id="signed-attachment-cdn-urls">Signed Attachment CDN URLs<a href="https://discord.com/developers/docs/reference#signed-attachment-cdn-urls"></a></h3>
 <p>Attachments uploaded to Discord's CDN (like user and bot-uploaded images) have signed URLs with a preset expiry time. Discord automatically refreshes attachment CDN URLs that appear within the client , so when your app receives a payload with a signed URL (like when you <a href="https://discord.com/developers/docs/resources/message#get-channel-message">fetch a message</a> ) , it will be valid.</p>
 <p>When passing CDN URLs into API fields , like <a href="https://discord.com/developers/docs/resources/message#embed-object-embed-image-structure"><code>url</code> in an embed image object</a> and <a href="https://discord.com/developers/docs/resources/webhook#execute-webhook-jsonform-params"><code>avatar_url</code> for webhooks</a> , your app can pass the CDN URL without any parameters as the value and Discord will automatically render and refresh the URL.</p>
 <p>The <a href="https://discord.com/developers/docs/reference#image-formatting-cdn-endpoints">standard CDN endpoints</a> listed above are not signed , so they will not expire.</p>
 <h6 id="example-attachment-cdn-url">Example Attachment CDN URL<a href="https://discord.com/developers/docs/reference#signed-attachment-cdn-urls-example-attachment-cdn-url"></a></h6>
-<pre><code>https://cdn.discordapp.com/attachments/1012345678900020080/1234567891233211234/my_image.png?ex=65d903de&amp;is=65c68ede&amp;hm=2481f30dd67f503f54d020ae3b5533b9987fae4e55f2b4e3926e08a3fa3ee24f&amp;
-</code></pre>
+<div class="highlight"><pre><span></span><code>https://cdn.discordapp.com/attachments/1012345678900020080/1234567891233211234/my_image.png?ex=65d903de&amp;is=65c68ede&amp;hm=2481f30dd67f503f54d020ae3b5533b9987fae4e55f2b4e3926e08a3fa3ee24f&amp;
+</code></pre></div>
 <h6 id="attachment-cdn-url-parameters">Attachment CDN URL Parameters<a href="https://discord.com/developers/docs/reference#signed-attachment-cdn-urls-attachment-cdn-url-parameters"></a></h6>
 <table><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>ex</td><td>Hex timestamp indicating when an attachment CDN URL will expire</td></tr><tr><td>is</td><td>Hex timestamp indicating when the URL was issued</td></tr><tr><td>hm</td><td>Unique signature that remains valid until the URL's expiration</td></tr></tbody></table>
 
@@ -1600,7 +1600,7 @@ d: {
 <p>Note that these examples are small sections of an HTTP request to demonstrate behavior of this endpoint - client libraries will set their own form boundaries (<code>boundary</code> is just an example) </p>
 <p>For more information , refer to the <a href="https://tools.ietf.org/html/rfc7578#section-4">multipart/form-data spec</a> </p>
 <p>This example demonstrates usage of the endpoint without <code>payload_json</code></p>
-<pre><code>--boundary
+<div class="highlight"><pre><span></span><code>--boundary
 Content-Disposition: form-data ; name=&quot;content&quot;
 
 Hello , World ! 
@@ -1609,9 +1609,9 @@ Content-Disposition: form-data ; name=&quot;tts&quot;
 
 true
 --boundary--
-</code></pre>
+</code></pre></div>
 <p>This example demonstrates usage of the endpoint with <code>payload_json</code> and all content fields (<code>content</code> , <code>embeds</code> , <code>files[n]</code>) set.</p>
-<pre><code>--boundary
+<div class="highlight"><pre><span></span><code>--boundary
 Content-Disposition: form-data ; name=&quot;payload_json&quot;
 Content-Type: application/json
 
@@ -1653,20 +1653,20 @@ Content-Type: image/gif
 
 [image bytes]
 --boundary--
-</code></pre>
+</code></pre></div>
 <h6 id="using-attachments-within-embeds">Using Attachments within Embeds<a href="https://discord.com/developers/docs/reference#editing-message-attachments-using-attachments-within-embeds"></a></h6>
 <p>You can upload attachments when creating a message and use those attachments within your embed. To do this , you will want to upload files as part of your <code>multipart/form-data</code> body. Make sure that you're uploading files which contain a filename , as you will need to reference it in your payload.</p>
 <p>Only <code>.jpg</code> , <code>.jpeg</code> , <code>.png</code> , <code>.webp</code> , and <code>.gif</code> may be used at this time. Other file types are not supported.</p>
 <p>Within an embed object , you can set an image to use an attachment as its URL with the attachment scheme syntax: <code>attachment://filename.png</code></p>
 <p>For example:</p>
-<pre><code>{
+<div class="highlight"><pre><span></span><code>{
 &quot;embeds&quot;: [{
  &quot;image&quot;: {
   &quot;url&quot;: &quot;attachment://screenshot.png&quot;
  }
 }]
 }
-</code></pre>
+</code></pre></div>
 <h2 id="locales">Locales<a href="https://discord.com/developers/docs/reference#locales"></a></h2>
 <table><thead><tr><th>Locale</th><th>Language Name</th><th>Native Name</th></tr></thead><tbody><tr><td>id</td><td>Indonesian</td><td>Bahasa Indonesia</td></tr><tr><td>da</td><td>Danish</td><td>Dansk</td></tr><tr><td>de</td><td>German</td><td>Deutsch</td></tr><tr><td>en-GB</td><td>English , UK</td><td>English , UK</td></tr><tr><td>en-US</td><td>English , US</td><td>English , US</td></tr><tr><td>es-ES</td><td>Spanish</td><td>Español</td></tr><tr><td>es-419</td><td>Spanish , LATAM</td><td>Español , LATAM</td></tr><tr><td>fr</td><td>French</td><td>Français</td></tr><tr><td>hr</td><td>Croatian</td><td>Hrvatski</td></tr><tr><td>it</td><td>Italian</td><td>Italiano</td></tr><tr><td>lt</td><td>Lithuanian</td><td>Lietuviškai</td></tr><tr><td>hu</td><td>Hungarian</td><td>Magyar</td></tr><tr><td>nl</td><td>Dutch</td><td>Nederlands</td></tr><tr><td>no</td><td>Norwegian</td><td>Norsk</td></tr><tr><td>pl</td><td>Polish</td><td>Polski</td></tr><tr><td>pt-BR</td><td>Portuguese , Brazilian</td><td>Português do Brasil</td></tr><tr><td>ro</td><td>Romanian , Romania</td><td>Română</td></tr><tr><td>fi</td><td>Finnish</td><td>Suomi</td></tr><tr><td>sv-SE</td><td>Swedish</td><td>Svenska</td></tr><tr><td>vi</td><td>Vietnamese</td><td>Tiếng Việt</td></tr><tr><td>tr</td><td>Turkish</td><td>Türkçe</td></tr><tr><td>cs</td><td>Czech</td><td>Čeština</td></tr><tr><td>el</td><td>Greek</td><td>Ελληνικά</td></tr><tr><td>bg</td><td>Bulgarian</td><td>български</td></tr><tr><td>ru</td><td>Russian</td><td>Pусский</td></tr><tr><td>uk</td><td>Ukrainian</td><td>Українська</td></tr><tr><td>hi</td><td>Hindi</td><td>हिन्दी</td></tr><tr><td>th</td><td>Thai</td><td>ไทย</td></tr><tr><td>zh-CN</td><td>Chinese , China</td><td>中文</td></tr><tr><td>ja</td><td>Japanese</td><td>日本語</td></tr><tr><td>zh-TW</td><td>Chinese , Taiwan</td><td>繁體中文</td></tr><tr><td>ko</td><td>Korean</td><td>한국어</td></tr></tbody></table>
 

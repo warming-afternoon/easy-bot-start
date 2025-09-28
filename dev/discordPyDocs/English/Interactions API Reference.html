@@ -4284,16 +4284,16 @@
 <p>New in version 2.0.</p>
 <p>Examples</p>
 <p>content_copy</p>
-<pre><code>import discord
+<div class="highlight"><pre><span></span><code>import discord
 from discord import ui
 
-class Questionnaire(ui.Modal, title='Questionnaire Response'):
-    name = ui.TextInput(label='Name')
-    answer = ui.TextInput(label='Answer', style=discord.TextStyle.paragraph)
+class Questionnaire(ui.Modal, title=&#39;Questionnaire Response&#39;):
+    name = ui.TextInput(label=&#39;Name&#39;)
+    answer = ui.TextInput(label=&#39;Answer&#39;, style=discord.TextStyle.paragraph)
 
     async def on_submit(self, interaction: discord.Interaction):
-        await interaction.response.send_message(f'Thanks for your response, {self.name}!', ephemeral=True)
-</code></pre>
+        await interaction.response.send_message(f&#39;Thanks for your response, {self.name}!&#39;, ephemeral=True)
+</code></pre></div>
 <p>Parameters</p>
 <ul>
 <li>
@@ -4814,7 +4814,7 @@ class Questionnaire(ui.Modal, title='Questionnaire Response'):
 <p>New in version 2.6.</p>
 <p>Examples</p>
 <p>content_copy</p>
-<pre><code>import discord
+<div class="highlight"><pre><span></span><code>import discord
 from discord import ui
 
 # you can subclass it and add components as you would add them
@@ -4822,16 +4822,16 @@ from discord import ui
 class MyContainer(ui.Container):
     action_row = ui.ActionRow()
 
- @action_row.button(label='A button in a container!')
+ @action_row.button(label=&#39;A button in a container!&#39;)
     async def a_button(self, interaction: discord.Interaction, button: discord.ui.Button):
-        await interaction.response.send_message('You clicked a button!')
+        await interaction.response.send_message(&#39;You clicked a button!&#39;)
 
 # or use it directly on LayoutView
 class MyView(ui.LayoutView):
-    container = ui.Container(ui.TextDisplay('I am a text display on a container!'))
+    container = ui.Container(ui.TextDisplay(&#39;I am a text display on a container!&#39;))
     # or you can use your subclass:
     # container = MyContainer()
-</code></pre>
+</code></pre></div>
 <p>Parameters</p>
 <ul>
 <li>
@@ -4932,13 +4932,13 @@ class MyView(ui.LayoutView):
 <p>New in version 2.6.</p>
 <p>Example</p>
 <p>content_copy</p>
-<pre><code>import discord
+<div class="highlight"><pre><span></span><code>import discord
 from discord import ui
 
 class MyView(ui.LayoutView):
-    file = ui.File('attachment://file.txt')
+    file = ui.File(&#39;attachment://file.txt&#39;)
     # attachment://file.txt points to an attachment uploaded alongside this view
-</code></pre>
+</code></pre></div>
 <p>Parameters</p>
 <ul>
 <li>
@@ -5309,14 +5309,14 @@ class MyView(ui.LayoutView):
 <p>New in version 2.6.</p>
 <p>Examples</p>
 <p>content_copy</p>
-<pre><code>import discord
+<div class="highlight"><pre><span></span><code>import discord
 from discord import ui
 
 # you can subclass it and add components with the decorators
 class MyActionRow(ui.ActionRow):
- @ui.button(label='Click Me!')
+ @ui.button(label=&#39;Click Me!&#39;)
     async def click_me(self, interaction: discord.Interaction, button: discord.ui.Button):
-        await interaction.response.send_message('You clicked me!')
+        await interaction.response.send_message(&#39;You clicked me!&#39;)
 
 # or use it directly on LayoutView
 class MyView(ui.LayoutView):
@@ -5325,10 +5325,10 @@ class MyView(ui.LayoutView):
     # row = MyActionRow()
 
     # you can add items with row.button and row.select
- @row.button(label='A button!')
+ @row.button(label=&#39;A button!&#39;)
     async def row_button(self, interaction: discord.Interaction, button: discord.ui.Button):
-        await interaction.response.send_message('You clicked a button!')
-</code></pre>
+        await interaction.response.send_message(&#39;You clicked a button!&#39;)
+</code></pre></div>
 <p>Parameters</p>
 <ul>
 <li>
@@ -5439,13 +5439,13 @@ class MyView(ui.LayoutView):
 <p>To obtain the selected values inside the callback, you can use the <code>values</code> attribute of the chosen class in the callback. The list of values will depend on the type of select menu used. View the table below for more information.</p>
 <p>Example</p>
 <p>content_copy</p>
-<pre><code>class MyView(discord.ui.LayoutView):
+<div class="highlight"><pre><span></span><code>class MyView(discord.ui.LayoutView):
     action_row = discord.ui.ActionRow()
 
  @action_row.select(cls=ChannelSelect, channel_types=[discord.ChannelType.text])
     async def select_channels(self, interaction: discord.Interaction, select: ChannelSelect):
-        return await interaction.response.send_message(f'You selected {select.values[0].mention}')
-</code></pre>
+        return await interaction.response.send_message(f&#39;You selected {select.values[0].mention}&#39;)
+</code></pre></div>
 <p>Parameters</p>
 <ul>
 <li>
@@ -5540,14 +5540,14 @@ class MyView(ui.LayoutView):
 <p>This function must have a signature of <a href="https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.Interaction" title="discord.Interaction"><code>Interaction</code></a> as its first parameter and taking either a <a href="https://discordpy.readthedocs.io/en/stable/api.html#discord.Member" title="discord.Member"><code>Member</code></a>, <a href="https://discordpy.readthedocs.io/en/stable/api.html#discord.User" title="discord.User"><code>User</code></a>, or <a href="https://discordpy.readthedocs.io/en/stable/api.html#discord.Message" title="discord.Message"><code>Message</code></a>, or a <a href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.13)"><code>typing.Union</code></a> of <code>Member</code> and <code>User</code> as its second parameter.</p>
 <p>Examples</p>
 <p>content_copy</p>
-<pre><code>@app_commands.context_menu()
+<div class="highlight"><pre><span></span><code>@app_commands.context_menu()
 async def react(interaction: discord.Interaction, message: discord.Message):
-    await interaction.response.send_message('Very cool message!', ephemeral=True)
+    await interaction.response.send_message(&#39;Very cool message!&#39;, ephemeral=True)
 
 @app_commands.context_menu()
 async def ban(interaction: discord.Interaction, user: discord.Member):
-    await interaction.response.send_message(f'Should I actually ban {user}...', ephemeral=True)
-</code></pre>
+    await interaction.response.send_message(f&#39;Should I actually ban {user}...&#39;, ephemeral=True)
+</code></pre></div>
 <p>Parameters</p>
 <ul>
 <li>
@@ -5905,18 +5905,18 @@ async def ban(interaction: discord.Interaction, user: discord.Member):
 <p>The choices returned from this coroutine are suggestions. The user may ignore them and input their own value.</p>
 <p>Example:</p>
 <p>content_copy</p>
-<pre><code>@app_commands.command()
+<div class="highlight"><pre><span></span><code>@app_commands.command()
 async def fruits(interaction: discord.Interaction, fruit: str):
-    await interaction.response.send_message(f'Your favourite fruit seems to be {fruit}')
+    await interaction.response.send_message(f&#39;Your favourite fruit seems to be {fruit}&#39;)
 
-@fruits.autocomplete('fruit')
+@fruits.autocomplete(&#39;fruit&#39;)
 async def fruits_autocomplete( interaction: discord.Interaction, current: str, ) -&gt; List[app_commands.Choice[str]]:
-    fruits = ['Banana', 'Pineapple', 'Apple', 'Watermelon', 'Melon', 'Cherry']
+    fruits = [&#39;Banana&#39;, &#39;Pineapple&#39;, &#39;Apple&#39;, &#39;Watermelon&#39;, &#39;Melon&#39;, &#39;Cherry&#39;]
     return [
         app_commands.Choice(name=fruit, value=fruit)
         for fruit in fruits if current.lower() in fruit.lower()
     ]
-</code></pre>
+</code></pre></div>
 <p>Parameters</p>
 <p><strong>name</strong> (<a href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code>str</code></a>) – The parameter name to register as autocomplete.</p>
 <p>Raises</p>
@@ -6034,12 +6034,12 @@ async def fruits_autocomplete( interaction: discord.Interaction, current: str, )
 <p>These are usually inherited rather than created manually.</p>
 <p>Decorators such as <a href="https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.guild_only" title="discord.app_commands.guild_only"><code>guild_only()</code></a>, <a href="https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.guilds" title="discord.app_commands.guilds"><code>guilds()</code></a>, and <a href="https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.default_permissions" title="discord.app_commands.default_permissions"><code>default_permissions()</code></a> will apply to the group if used on top of a subclass. For example:</p>
 <p>content_copy</p>
-<pre><code>from discord import app_commands
+<div class="highlight"><pre><span></span><code>from discord import app_commands
 
 @app_commands.guild_only()
 class MyGroup(app_commands.Group):
     pass
-</code></pre>
+</code></pre></div>
 <p>New in version 2.0.</p>
 <p>Parameters</p>
 <ul>
@@ -6254,14 +6254,14 @@ class MyGroup(app_commands.Group):
 <p>This function must have a signature of <a href="https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.Interaction" title="discord.Interaction"><code>Interaction</code></a> as its first parameter and taking either a <a href="https://discordpy.readthedocs.io/en/stable/api.html#discord.Member" title="discord.Member"><code>Member</code></a>, <a href="https://discordpy.readthedocs.io/en/stable/api.html#discord.User" title="discord.User"><code>User</code></a>, or <a href="https://discordpy.readthedocs.io/en/stable/api.html#discord.Message" title="discord.Message"><code>Message</code></a>, or a <a href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.13)"><code>typing.Union</code></a> of <code>Member</code> and <code>User</code> as its second parameter.</p>
 <p>Examples</p>
 <p>content_copy</p>
-<pre><code>@app_commands.context_menu()
+<div class="highlight"><pre><span></span><code>@app_commands.context_menu()
 async def react(interaction: discord.Interaction, message: discord.Message):
-    await interaction.response.send_message('Very cool message!', ephemeral=True)
+    await interaction.response.send_message(&#39;Very cool message!&#39;, ephemeral=True)
 
 @app_commands.context_menu()
 async def ban(interaction: discord.Interaction, user: discord.Member):
-    await interaction.response.send_message(f'Should I actually ban {user}...', ephemeral=True)
-</code></pre>
+    await interaction.response.send_message(f&#39;Should I actually ban {user}...&#39;, ephemeral=True)
+</code></pre></div>
 <p>Parameters</p>
 <ul>
 <li>
@@ -6283,19 +6283,19 @@ async def ban(interaction: discord.Interaction, user: discord.Member):
 <p>Describes the given parameters by their name using the key of the keyword argument as the name.</p>
 <p>Example:</p>
 <p>content_copy</p>
-<pre><code>@app_commands.command(description='Bans a member')
-@app_commands.describe(member='the member to ban')
+<div class="highlight"><pre><span></span><code>@app_commands.command(description=&#39;Bans a member&#39;)
+@app_commands.describe(member=&#39;the member to ban&#39;)
 async def ban(interaction: discord.Interaction, member: discord.Member):
-    await interaction.response.send_message(f'Banned {member}')
-</code></pre>
+    await interaction.response.send_message(f&#39;Banned {member}&#39;)
+</code></pre></div>
 <p>Alternatively, you can describe parameters using Google, Sphinx, or Numpy style docstrings.</p>
 <p>Example:</p>
 <p>content_copy</p>
-<pre><code>@app_commands.command()
+<div class="highlight"><pre><span></span><code>@app_commands.command()
 async def ban(interaction: discord.Interaction, member: discord.Member):
  &quot;&quot;&quot;Bans a member  Parameters  -----------  member: discord.Member  the member to ban  &quot;&quot;&quot;
-    await interaction.response.send_message(f'Banned {member}')
-</code></pre>
+    await interaction.response.send_message(f&#39;Banned {member}&#39;)
+</code></pre></div>
 <p>Parameters</p>
 <p><strong>**parameters</strong> (Union[<a href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code>str</code></a>, <a href="https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.locale_str" title="discord.app_commands.locale_str"><code>locale_str</code></a>]) – The description of the parameters.</p>
 <p>Raises</p>
@@ -6305,11 +6305,11 @@ async def ban(interaction: discord.Interaction, member: discord.Member):
 <p>This renames the parameter within the Discord UI. When referring to the parameter in other decorators, the parameter name used in the function is used instead of the renamed one.</p>
 <p>Example:</p>
 <p>content_copy</p>
-<pre><code>@app_commands.command()
-@app_commands.rename(the_member_to_ban='member')
+<div class="highlight"><pre><span></span><code>@app_commands.command()
+@app_commands.rename(the_member_to_ban=&#39;member&#39;)
 async def ban(interaction: discord.Interaction, the_member_to_ban: discord.Member):
-    await interaction.response.send_message(f'Banned {the_member_to_ban}')
-</code></pre>
+    await interaction.response.send_message(f&#39;Banned {the_member_to_ban}&#39;)
+</code></pre></div>
 <p>Parameters</p>
 <p><strong>**parameters</strong> (Union[<a href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code>str</code></a>, <a href="https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.locale_str" title="discord.app_commands.locale_str"><code>locale_str</code></a>]) – The name of the parameters.</p>
 <p>Raises</p>
@@ -6325,36 +6325,36 @@ async def ban(interaction: discord.Interaction, the_member_to_ban: discord.Membe
 <p>Instructs the given parameters by their name to use the given choices for their choices.</p>
 <p>Example:</p>
 <p>content_copy</p>
-<pre><code>@app_commands.command()
-@app_commands.describe(fruits='fruits to choose from')
+<div class="highlight"><pre><span></span><code>@app_commands.command()
+@app_commands.describe(fruits=&#39;fruits to choose from&#39;)
 @app_commands.choices(fruits=[
-    Choice(name='apple', value=1),
-    Choice(name='banana', value=2),
-    Choice(name='cherry', value=3),
+    Choice(name=&#39;apple&#39;, value=1),
+    Choice(name=&#39;banana&#39;, value=2),
+    Choice(name=&#39;cherry&#39;, value=3),
 ])
 async def fruit(interaction: discord.Interaction, fruits: Choice[int]):
-    await interaction.response.send_message(f'Your favourite fruit is {fruits.name}.')
-</code></pre>
+    await interaction.response.send_message(f&#39;Your favourite fruit is {fruits.name}.&#39;)
+</code></pre></div>
 <p>Note</p>
 <p>This is not the only way to provide choices to a command. There are two more ergonomic ways of doing this. The first one is to use a <a href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.13)"><code>typing.Literal</code></a> annotation:</p>
 <p>content_copy</p>
-<pre><code>@app_commands.command()
-@app_commands.describe(fruits='fruits to choose from')
-async def fruit(interaction: discord.Interaction, fruits: Literal['apple', 'banana', 'cherry']):
-    await interaction.response.send_message(f'Your favourite fruit is {fruits}.')
-</code></pre>
+<div class="highlight"><pre><span></span><code>@app_commands.command()
+@app_commands.describe(fruits=&#39;fruits to choose from&#39;)
+async def fruit(interaction: discord.Interaction, fruits: Literal[&#39;apple&#39;, &#39;banana&#39;, &#39;cherry&#39;]):
+    await interaction.response.send_message(f&#39;Your favourite fruit is {fruits}.&#39;)
+</code></pre></div>
 <p>The second way is to use an <a href="https://docs.python.org/3/library/enum.html#enum.Enum" title="(in Python v3.13)"><code>enum.Enum</code></a>:</p>
 <p>content_copy</p>
-<pre><code>class Fruits(enum.Enum):
+<div class="highlight"><pre><span></span><code>class Fruits(enum.Enum):
     apple = 1
     banana = 2
     cherry = 3
 
 @app_commands.command()
-@app_commands.describe(fruits='fruits to choose from')
+@app_commands.describe(fruits=&#39;fruits to choose from&#39;)
 async def fruit(interaction: discord.Interaction, fruits: Fruits):
-    await interaction.response.send_message(f'Your favourite fruit is {fruits}.')
-</code></pre>
+    await interaction.response.send_message(f&#39;Your favourite fruit is {fruits}.&#39;)
+</code></pre></div>
 <p>Parameters</p>
 <p><strong>**parameters</strong> – The choices of the parameters.</p>
 <p>Raises</p>
@@ -6368,8 +6368,8 @@ async def fruit(interaction: discord.Interaction, fruits: Fruits):
 <p>The choices returned from this coroutine are suggestions. The user may ignore them and input their own value.</p>
 <p>Example:</p>
 <p>content_copy</p>
-<pre><code>async def fruit_autocomplete( interaction: discord.Interaction, current: str, ) -&gt; List[app_commands.Choice[str]]:
-    fruits = ['Banana', 'Pineapple', 'Apple', 'Watermelon', 'Melon', 'Cherry']
+<div class="highlight"><pre><span></span><code>async def fruit_autocomplete( interaction: discord.Interaction, current: str, ) -&gt; List[app_commands.Choice[str]]:
+    fruits = [&#39;Banana&#39;, &#39;Pineapple&#39;, &#39;Apple&#39;, &#39;Watermelon&#39;, &#39;Melon&#39;, &#39;Cherry&#39;]
     return [
         app_commands.Choice(name=fruit, value=fruit)
         for fruit in fruits if current.lower() in fruit.lower()
@@ -6378,8 +6378,8 @@ async def fruit(interaction: discord.Interaction, fruits: Fruits):
 @app_commands.command()
 @app_commands.autocomplete(fruit=fruit_autocomplete)
 async def fruits(interaction: discord.Interaction, fruit: str):
-    await interaction.response.send_message(f'Your favourite fruit seems to be {fruit}')
-</code></pre>
+    await interaction.response.send_message(f&#39;Your favourite fruit seems to be {fruit}&#39;)
+</code></pre></div>
 <p>Parameters</p>
 <p><strong>**parameters</strong> – The parameters to mark as autocomplete.</p>
 <p>Raises</p>
@@ -6390,13 +6390,13 @@ async def fruits(interaction: discord.Interaction, fruit: str):
 <p>If no arguments are given, then the command will not be synced anywhere. This may be modified later using the <a href="https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.CommandTree.add_command" title="discord.app_commands.CommandTree.add_command"><code>CommandTree.add_command()</code></a> method.</p>
 <p>Example:</p>
 <p>content_copy</p>
-<pre><code>MY_GUILD_ID = discord.Object(...)  # Guild ID here
+<div class="highlight"><pre><span></span><code>MY_GUILD_ID = discord.Object(...)  # Guild ID here
 
 @app_commands.command()
 @app_commands.guilds(MY_GUILD_ID)
 async def bonk(interaction: discord.Interaction):
-    await interaction.response.send_message('Bonk', ephemeral=True)
-</code></pre>
+    await interaction.response.send_message(&#39;Bonk&#39;, ephemeral=True)
+</code></pre></div>
 <p>Parameters</p>
 <p><strong>*guild_ids</strong> (Union[<a href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code>int</code></a>, <a href="https://discordpy.readthedocs.io/en/stable/api.html#discord.abc.Snowflake" title="discord.abc.Snowflake"><code>Snowflake</code></a>]) – The guilds to associate this command with. The command tree will use this as the default when added rather than adding it as a global command.</p>
 <p>@discord.app_commands.guild_only(<em>func=None</em>)<a href="https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.guild_only" title="Permalink to this definition">¶</a></p>
@@ -6406,11 +6406,11 @@ async def bonk(interaction: discord.Interaction):
 <p>Due to a Discord limitation, this decorator does nothing in subcommands and is ignored.</p>
 <p>Examples</p>
 <p>content_copy</p>
-<pre><code>@app_commands.command()
+<div class="highlight"><pre><span></span><code>@app_commands.command()
 @app_commands.guild_only()
 async def my_guild_only_command(interaction: discord.Interaction) -&gt; None:
-    await interaction.response.send_message('I am only available in guilds!')
-</code></pre>
+    await interaction.response.send_message(&#39;I am only available in guilds!&#39;)
+</code></pre></div>
 <p>@discord.app_commands.dm_only(<em>func=None</em>)<a href="https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.dm_only" title="Permalink to this definition">¶</a></p>
 <p>A decorator that indicates this command can only be used in the context of bot DMs.</p>
 <p>This is <strong>not</strong> implemented as a <a href="https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.check" title="discord.app_commands.check"><code>check()</code></a>, and is instead verified by Discord server side. Therefore, there is no error handler called when a command is used within a guild or group DM.</p>
@@ -6418,11 +6418,11 @@ async def my_guild_only_command(interaction: discord.Interaction) -&gt; None:
 <p>Due to a Discord limitation, this decorator does nothing in subcommands and is ignored.</p>
 <p>Examples</p>
 <p>content_copy</p>
-<pre><code>@app_commands.command()
+<div class="highlight"><pre><span></span><code>@app_commands.command()
 @app_commands.dm_only()
 async def my_dm_only_command(interaction: discord.Interaction) -&gt; None:
-    await interaction.response.send_message('I am only available in DMs!')
-</code></pre>
+    await interaction.response.send_message(&#39;I am only available in DMs!&#39;)
+</code></pre></div>
 <p>@discord.app_commands.private_channel_only(<em>func=None</em>)<a href="https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.private_channel_only" title="Permalink to this definition">¶</a></p>
 <p>A decorator that indicates this command can only be used in the context of DMs and group DMs.</p>
 <p>This is <strong>not</strong> implemented as a <a href="https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.check" title="discord.app_commands.check"><code>check()</code></a>, and is instead verified by Discord server side. Therefore, there is no error handler called when a command is used within a guild.</p>
@@ -6431,11 +6431,11 @@ async def my_dm_only_command(interaction: discord.Interaction) -&gt; None:
 <p>New in version 2.4.</p>
 <p>Examples</p>
 <p>content_copy</p>
-<pre><code>@app_commands.command()
+<div class="highlight"><pre><span></span><code>@app_commands.command()
 @app_commands.private_channel_only()
 async def my_private_channel_only_command(interaction: discord.Interaction) -&gt; None:
-    await interaction.response.send_message('I am only available in DMs and GDMs!')
-</code></pre>
+    await interaction.response.send_message(&#39;I am only available in DMs and GDMs!&#39;)
+</code></pre></div>
 <p>@discord.app_commands.allowed_contexts(<em>guilds=...</em>, <em>dms=...</em>, <em>private_channels=...</em>)<a href="https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.allowed_contexts" title="Permalink to this definition">¶</a></p>
 <p>A decorator that indicates this command can only be used in certain contexts. Valid contexts are guilds, DMs and private channels.</p>
 <p>This is <strong>not</strong> implemented as a <a href="https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.check" title="discord.app_commands.check"><code>check()</code></a>, and is instead verified by Discord server side.</p>
@@ -6443,11 +6443,11 @@ async def my_private_channel_only_command(interaction: discord.Interaction) -&gt
 <p>New in version 2.4.</p>
 <p>Examples</p>
 <p>content_copy</p>
-<pre><code>@app_commands.command()
+<div class="highlight"><pre><span></span><code>@app_commands.command()
 @app_commands.allowed_contexts(guilds=True, dms=False, private_channels=True)
 async def my_command(interaction: discord.Interaction) -&gt; None:
-    await interaction.response.send_message('I am only available in guilds and private channels!')
-</code></pre>
+    await interaction.response.send_message(&#39;I am only available in guilds and private channels!&#39;)
+</code></pre></div>
 <p>@discord.app_commands.user_install(<em>func=None</em>)<a href="https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.user_install" title="Permalink to this definition">¶</a></p>
 <p>A decorator that indicates this command should be installed for users.</p>
 <p>This is <strong>not</strong> implemented as a <a href="https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.check" title="discord.app_commands.check"><code>check()</code></a>, and is instead verified by Discord server side.</p>
@@ -6455,11 +6455,11 @@ async def my_command(interaction: discord.Interaction) -&gt; None:
 <p>New in version 2.4.</p>
 <p>Examples</p>
 <p>content_copy</p>
-<pre><code>@app_commands.command()
+<div class="highlight"><pre><span></span><code>@app_commands.command()
 @app_commands.user_install()
 async def my_user_install_command(interaction: discord.Interaction) -&gt; None:
-    await interaction.response.send_message('I am installed in users by default!')
-</code></pre>
+    await interaction.response.send_message(&#39;I am installed in users by default!&#39;)
+</code></pre></div>
 <p>@discord.app_commands.guild_install(<em>func=None</em>)<a href="https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.guild_install" title="Permalink to this definition">¶</a></p>
 <p>A decorator that indicates this command should be installed in guilds.</p>
 <p>This is <strong>not</strong> implemented as a <a href="https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.check" title="discord.app_commands.check"><code>check()</code></a>, and is instead verified by Discord server side.</p>
@@ -6467,11 +6467,11 @@ async def my_user_install_command(interaction: discord.Interaction) -&gt; None:
 <p>New in version 2.4.</p>
 <p>Examples</p>
 <p>content_copy</p>
-<pre><code>@app_commands.command()
+<div class="highlight"><pre><span></span><code>@app_commands.command()
 @app_commands.guild_install()
 async def my_guild_install_command(interaction: discord.Interaction) -&gt; None:
-    await interaction.response.send_message('I am installed in guilds by default!')
-</code></pre>
+    await interaction.response.send_message(&#39;I am installed in guilds by default!&#39;)
+</code></pre></div>
 <p>@discord.app_commands.allowed_installs(<em>guilds=...</em>, <em>users=...</em>)<a href="https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.allowed_installs" title="Permalink to this definition">¶</a></p>
 <p>A decorator that indicates this command should be installed in certain contexts. Valid contexts are guilds and users.</p>
 <p>This is <strong>not</strong> implemented as a <a href="https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.check" title="discord.app_commands.check"><code>check()</code></a>, and is instead verified by Discord server side.</p>
@@ -6479,11 +6479,11 @@ async def my_guild_install_command(interaction: discord.Interaction) -&gt; None:
 <p>New in version 2.4.</p>
 <p>Examples</p>
 <p>content_copy</p>
-<pre><code>@app_commands.command()
+<div class="highlight"><pre><span></span><code>@app_commands.command()
 @app_commands.allowed_installs(guilds=False, users=True)
 async def my_command(interaction: discord.Interaction) -&gt; None:
-    await interaction.response.send_message('I am installed in users by default!')
-</code></pre>
+    await interaction.response.send_message(&#39;I am installed in users by default!&#39;)
+</code></pre></div>
 <p>@discord.app_commands.default_permissions(<em>perms_obj=None</em>, <em>/</em>, <em>**perms</em>)<a href="https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.default_permissions" title="Permalink to this definition">¶</a></p>
 <p>A decorator that sets the default permissions needed to execute this command.</p>
 <p>When this decorator is used, by default users must have these permissions to execute the command. However, an administrator can change the permissions needed to execute this command using the official client. Therefore, this only serves as a hint.</p>
@@ -6505,19 +6505,19 @@ async def my_command(interaction: discord.Interaction) -&gt; None:
 </ul>
 <p>Examples</p>
 <p>content_copy</p>
-<pre><code>@app_commands.command()
+<div class="highlight"><pre><span></span><code>@app_commands.command()
 @app_commands.default_permissions(manage_messages=True)
 async def test(interaction: discord.Interaction):
-    await interaction.response.send_message('You may or may not have manage messages.')
-</code></pre>
+    await interaction.response.send_message(&#39;You may or may not have manage messages.&#39;)
+</code></pre></div>
 <p>content_copy</p>
-<pre><code>ADMIN_PERMS = discord.Permissions(administrator=True)
+<div class="highlight"><pre><span></span><code>ADMIN_PERMS = discord.Permissions(administrator=True)
 
 @app_commands.command()
 @app_commands.default_permissions(ADMIN_PERMS, manage_messages=True)
 async def test(interaction: discord.Interaction):
-    await interaction.response.send_message('You may or may not have manage messages.')
-</code></pre>
+    await interaction.response.send_message(&#39;You may or may not have manage messages.&#39;)
+</code></pre></div>
 <h3 id="checks">Checks<a href="https://discordpy.readthedocs.io/en/stable/interactions/api.html#checks" title="Permalink to this headline">¶</a></h3>
 <p>@discord.app_commands.check(<em>predicate</em>)<a href="https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.check" title="Permalink to this definition">¶</a></p>
 <p>A decorator that adds a check to an application command.</p>
@@ -6526,17 +6526,17 @@ async def test(interaction: discord.Interaction):
 <p>Examples</p>
 <p>Creating a basic check to see if the command invoker is you.</p>
 <p>content_copy</p>
-<pre><code>def check_if_it_is_me(interaction: discord.Interaction) -&gt; bool:
+<div class="highlight"><pre><span></span><code>def check_if_it_is_me(interaction: discord.Interaction) -&gt; bool:
     return interaction.user.id == 85309593344815104
 
 @tree.command()
 @app_commands.check(check_if_it_is_me)
 async def only_for_me(interaction: discord.Interaction):
-    await interaction.response.send_message('I know you!', ephemeral=True)
-</code></pre>
+    await interaction.response.send_message(&#39;I know you!&#39;, ephemeral=True)
+</code></pre></div>
 <p>Transforming common checks into its own decorator:</p>
 <p>content_copy</p>
-<pre><code>def is_me():
+<div class="highlight"><pre><span></span><code>def is_me():
     def predicate(interaction: discord.Interaction) -&gt; bool:
         return interaction.user.id == 85309593344815104
     return app_commands.check(predicate)
@@ -6544,8 +6544,8 @@ async def only_for_me(interaction: discord.Interaction):
 @tree.command()
 @is_me()
 async def only_me(interaction: discord.Interaction):
-    await interaction.response.send_message('Only you!')
-</code></pre>
+    await interaction.response.send_message(&#39;Only you!&#39;)
+</code></pre></div>
 <p>Parameters</p>
 <p><strong>predicate</strong> (Callable[[<a href="https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.Interaction" title="discord.Interaction"><code>Interaction</code></a>], <a href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code>bool</code></a>]) – The predicate to check if the command should be invoked.</p>
 <p>@discord.app_commands.checks.has_role(<em>item</em>, <em>/</em>)<a href="https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.checks.has_role" title="Permalink to this definition">¶</a></p>
@@ -6569,11 +6569,11 @@ async def only_me(interaction: discord.Interaction):
 <p><strong>items</strong> (List[Union[<a href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><code>str</code></a>, <a href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><code>int</code></a>]]) – An argument list of names or IDs to check that the member has roles wise.</p>
 <p>Example</p>
 <p>content_copy</p>
-<pre><code>@tree.command()
-@app_commands.checks.has_any_role('Library Devs', 'Moderators', 492212595072434186)
+<div class="highlight"><pre><span></span><code>@tree.command()
+@app_commands.checks.has_any_role(&#39;Library Devs&#39;, &#39;Moderators&#39;, 492212595072434186)
 async def cool(interaction: discord.Interaction):
-    await interaction.response.send_message('You are cool indeed')
-</code></pre>
+    await interaction.response.send_message(&#39;You are cool indeed&#39;)
+</code></pre></div>
 <p>@discord.app_commands.checks.has_permissions(<em>**perms</em>)<a href="https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.checks.has_permissions" title="Permalink to this definition">¶</a></p>
 <p>A <a href="https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.check" title="discord.app_commands.check"><code>check()</code></a> that is added that checks if the member has all of the permissions necessary.</p>
 <p>Note that this check operates on the permissions given by <a href="https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.Interaction.permissions" title="discord.Interaction.permissions"><code>discord.Interaction.permissions</code></a>.</p>
@@ -6586,11 +6586,11 @@ async def cool(interaction: discord.Interaction):
 <p><strong>**perms</strong> (<a href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><code>bool</code></a>) – Keyword arguments denoting the permissions to check for.</p>
 <p>Example</p>
 <p>content_copy</p>
-<pre><code>@tree.command()
+<div class="highlight"><pre><span></span><code>@tree.command()
 @app_commands.checks.has_permissions(manage_messages=True)
 async def test(interaction: discord.Interaction):
-    await interaction.response.send_message('You can manage messages.')
-</code></pre>
+    await interaction.response.send_message(&#39;You can manage messages.&#39;)
+</code></pre></div>
 <p>@discord.app_commands.checks.bot_has_permissions(<em>**perms</em>)<a href="https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.checks.bot_has_permissions" title="Permalink to this definition">¶</a></p>
 <p>Similar to <a href="https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.checks.has_permissions" title="discord.app_commands.checks.has_permissions"><code>has_permissions()</code></a> except checks if the bot itself has the permissions listed. This relies on <a href="https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.Interaction.app_permissions" title="discord.Interaction.app_permissions"><code>discord.Interaction.app_permissions</code></a>.</p>
 <p>This check raises a special exception, <a href="https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.BotMissingPermissions" title="discord.app_commands.BotMissingPermissions"><code>BotMissingPermissions</code></a> that is inherited from <a href="https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.CheckFailure" title="discord.app_commands.CheckFailure"><code>CheckFailure</code></a>.</p>
@@ -6603,16 +6603,16 @@ async def test(interaction: discord.Interaction):
 <p>Examples</p>
 <p>Setting a one per 5 seconds per member cooldown on a command:</p>
 <p>content_copy</p>
-<pre><code>@tree.command()
+<div class="highlight"><pre><span></span><code>@tree.command()
 @app_commands.checks.cooldown(1, 5.0, key=lambda i: (i.guild_id, i.user.id))
 async def test(interaction: discord.Interaction):
-    await interaction.response.send_message('Hello')
+    await interaction.response.send_message(&#39;Hello&#39;)
 
 @test.error
 async def on_test_error(interaction: discord.Interaction, error: app_commands.AppCommandError):
     if isinstance(error, app_commands.CommandOnCooldown):
         await interaction.response.send_message(str(error), ephemeral=True)
-</code></pre>
+</code></pre></div>
 <p>Parameters</p>
 <ul>
 <li>
@@ -6634,7 +6634,7 @@ async def on_test_error(interaction: discord.Interaction, error: app_commands.Ap
 <p>Examples</p>
 <p>Setting a cooldown for everyone but the owner.</p>
 <p>content_copy</p>
-<pre><code>def cooldown_for_everyone_but_me(interaction: discord.Interaction) -&gt; Optional[app_commands.Cooldown]:
+<div class="highlight"><pre><span></span><code>def cooldown_for_everyone_but_me(interaction: discord.Interaction) -&gt; Optional[app_commands.Cooldown]:
     if interaction.user.id == 80088516616269824:
         return None
     return app_commands.Cooldown(1, 10.0)
@@ -6642,13 +6642,13 @@ async def on_test_error(interaction: discord.Interaction, error: app_commands.Ap
 @tree.command()
 @app_commands.checks.dynamic_cooldown(cooldown_for_everyone_but_me)
 async def test(interaction: discord.Interaction):
-    await interaction.response.send_message('Hello')
+    await interaction.response.send_message(&#39;Hello&#39;)
 
 @test.error
 async def on_test_error(interaction: discord.Interaction, error: app_commands.AppCommandError):
     if isinstance(error, app_commands.CommandOnCooldown):
         await interaction.response.send_message(str(error), ephemeral=True)
-</code></pre>
+</code></pre></div>
 <p>Parameters</p>
 <ul>
 <li>
@@ -6736,19 +6736,19 @@ async def on_test_error(interaction: discord.Interaction, error: app_commands.Ap
 <p>The base class that allows a type annotation in an application command parameter to map into a <a href="https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.AppCommandOptionType" title="discord.AppCommandOptionType"><code>AppCommandOptionType</code></a> and transform the raw value into one from this type.</p>
 <p>This class is customisable through the overriding of methods and properties in the class and by using it as the second type parameter of the <a href="https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.Transform" title="discord.app_commands.Transform"><code>Transform</code></a> class. For example, to convert a string into a custom pair type:</p>
 <p>content_copy</p>
-<pre><code>class Point(typing.NamedTuple):
+<div class="highlight"><pre><span></span><code>class Point(typing.NamedTuple):
     x: int
     y: int
 
 class PointTransformer(app_commands.Transformer):
     async def transform(self, interaction: discord.Interaction, value: str) -&gt; Point:
-        (x, _, y) = value.partition(',')
+        (x, _, y) = value.partition(&#39;,&#39;)
         return Point(x=int(x.strip()), y=int(y.strip()))
 
 @app_commands.command()
 async def graph( interaction: discord.Interaction, point: app_commands.Transform[Point, PointTransformer], ):
     await interaction.response.send_message(str(point))
-</code></pre>
+</code></pre></div>
 <p>If a class is passed instead of an instance to the second type parameter, then it is constructed with no arguments passed to the <code>__init__</code> method.</p>
 <p>New in version 2.0.</p>
 <p><em>property</em> type<a href="https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.Transformer.type" title="Permalink to this definition">¶</a></p>
@@ -6845,10 +6845,10 @@ async def graph( interaction: discord.Interaction, point: app_commands.Transform
 <p>New in version 2.0.</p>
 <p>Examples</p>
 <p>content_copy</p>
-<pre><code>@app_commands.command()
+<div class="highlight"><pre><span></span><code>@app_commands.command()
 async def range(interaction: discord.Interaction, value: app_commands.Range[int, 10, 12]):
-    await interaction.response.send_message(f'Your value is {value}', ephemeral=True)
-</code></pre>
+    await interaction.response.send_message(f&#39;Your value is {value}&#39;, ephemeral=True)
+</code></pre></div>
 <h3 id="translations">Translations<a href="https://discordpy.readthedocs.io/en/stable/interactions/api.html#translations" title="Permalink to this headline">¶</a></h3>
 <h4 id="translator">Translator<a href="https://discordpy.readthedocs.io/en/stable/interactions/api.html#translator" title="Permalink to this headline">¶</a></h4>
 <p><em>class</em> discord.app_commands.Translator<a href="https://discordpy.readthedocs.io/en/stable/interactions/api.html#discord.app_commands.Translator" title="Permalink to this definition">¶</a></p>

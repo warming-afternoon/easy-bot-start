@@ -1827,7 +1827,7 @@
 <p>当响应接收到的交互时，您可以向<code>/interactions/&lt;interaction_id&gt;/&lt;interaction_token&gt;/callback</code>发起<code>POST</code>请求。<code>interaction_id</code>是接收到的有效载荷中该特定交互的唯一ID。<code>interaction_token</code>是接收到的有效载荷中该交互的唯一令牌。</p>
 <p>如果您通过网关接收交互，必须通过HTTP进行响应。对交互的响应不会作为命令通过网关发送。</p>
 <p>如果您针对通过HTTP接收的交互发送此请求，请以202状态码且无正文响应对原始HTTP请求。</p>
-<pre><code>导入请求库
+<div class="highlight"><pre><span></span><code>导入请求库
 
 网址 = &quot;https://discord.com/api/v10/interactions/&lt;交互ID&gt;/&lt;交互令牌&gt;/callback&quot;
 
@@ -1838,7 +1838,7 @@
 　　　　}
 }
 响应 = requests.post(网址, json=数据)
-</code></pre>
+</code></pre></div>
 <p>交互<code>令牌</code>有效期为15分钟，可用于发送后续消息，但必须在收到事件后3秒内发送初始响应。如果超过3秒期限，令牌将失效。</p>
 <p>内联HTTP响应行为</p>
 <h6 id="_25"><a href="https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-callback-interaction-callback-response-object">交互回调响应对象</a></h6>
