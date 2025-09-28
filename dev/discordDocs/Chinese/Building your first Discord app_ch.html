@@ -1386,13 +1386,12 @@ npm install
 <p>选择 Discord 提供链接后，将出现一个新的“默认安装设置”部分，接下来我们将对其进行配置。</p>
 <h3 id="add-scopes-permissions"><a href="https://discord.com/developers/docs/quick-start/getting-started#adding-scopes-and-bot-permissions">添加作用域和机器人权限</a></h3>
 <p>应用需要获得安装用户的授权才能在 Discord 中执行操作（例如创建斜杠命令或获取服务器成员列表）。在安装应用之前，让我们先添加作用域和权限。</p>
-<p>!!! Info 什么是作用域和权限？</p>
-<pre><code>创建应用程序时，作用域和权限决定了你的应用程序在 Discord 中能够执行的操作和能够访问的内容。
-
-OAuth2 作用域 (SCOPES) 决定了您的应用在 Discord 中可以执行的操作和访问的内容。这是由安装应用到服务器的用户授予的。
-
-权限 (Bot Permissions) 是针对你的机器人的细粒度权限，与 Discord 中其他用户所拥有的权限相同。它们可以由安装用户批准，或稍后在服务器设置中或通过权限覆盖进行更新。这些权限仅适用于安装到服务器的应用，因为安装到用户上下文的应用程序只能响应命令。
-</code></pre>
+<div class="admonition info">
+<p class="admonition-title">什么是作用域和权限？</p>
+<p>创建应用程序时，作用域和权限决定了你的应用程序在 Discord 中能够执行的操作和能够访问的内容。  </p>
+<p>OAuth2 作用域 (SCOPES) 决定了您的应用在 Discord 中可以执行的操作和访问的内容。这是由安装应用到服务器的用户授予的。  </p>
+<p>权限 (Bot Permissions) 是针对你的机器人的细粒度权限，与 Discord 中其他用户所拥有的权限相同。它们可以由安装用户批准，或稍后在服务器设置中或通过权限覆盖进行更新。这些权限仅适用于安装到服务器的应用，因为安装到用户上下文的应用程序只能响应命令。</p>
+</div>
 <p>在安装页面的“默认安装设置”部分：</p>
 <ul>
 <li>对于用户安装，添加 <code>applications.commands</code> 权限范围。</li>

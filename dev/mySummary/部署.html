@@ -937,7 +937,7 @@
   <h1>部署</h1>
 
 <h4 id="bot">关于 BOT 的初始化和配置</h4>
-<p>操作理论请看 <a href="../discordDocs/Chinese/Building%20your%20first%20Discord%20app_ch.html#set-bot">这里</a> 进行了解</p>
+<p>操作理论请看 <a href="../discordDocs/Chinese/Building%20your%20first%20Discord%20app_ch.html">这里</a> 进行了解</p>
 <p>看完后，可以看看下面这些提示</p>
 <h4 id="_1">创建一个零权限要求的邀请链接</h4>
 <p>为什么要通过零权限要求的邀请链接部署应用到服务器中？</p>
@@ -946,12 +946,13 @@
 <p>那么，有没有办法解决这个问题呢？</p>
 <p>答案是，通过零权限要求的邀请链接部署 BOT，这就不会占据身份组了。然后在服务器中通过身份组拼凑权限，或者设置 BOT 用户的特殊权限</p>
 <p>这样，即可确保 bot 正常运行并不占用额外身份组</p>
-<p>原理请查看 <a href="../discordDocs/Chinese/Building%20your%20first%20Discord%20app_ch.html#add-scopes-permissions">这里</a></p>
+<p>原理就在上面那个文档里</p>
+<p>当然，如果你忘记了，也可以点击这里的 <a href="../discordDocs/Chinese/Building%20your%20first%20Discord%20app_ch.html#add-scopes-permissions">回顾链接</a> 进行回顾</p>
 <p>具体实现方法如下：</p>
 <p>1.设置 Scope</p>
 <p><img alt="" src="img/scope.png" /></p>
 <p>如上，在 OAuth2 界面邀请链接生成器的 Scope 部分，必须勾选 applications.commands 和 bot，否则 bot 无法运行</p>
-<p>至于 Scope 部分其他选项，勾不勾看你的bot有没有特殊需求。正常来说上面两个就够了。不过多勾选几个也无所谓，不会占用身份组</p>
+<p>至于 Scope 部分其他选项，勾不勾看你的bot有没有特殊需求。正常来说上面两个就够了。</p>
 <p>2.设置权限</p>
 <p><img alt="" src="img/pemission.png" /></p>
 <p>这里，一个都不要勾选。</p>
