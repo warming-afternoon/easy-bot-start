@@ -449,6 +449,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="修改指令的可见性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1bot" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.BOT 本身的校验
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.服务器权限的配置
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -934,6 +958,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="修改指令的可见性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1bot" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.BOT 本身的校验
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.服务器权限的配置
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -954,10 +1002,10 @@
 
   <h1>部署</h1>
 
-<h4 id="bot">关于 BOT 的初始化和配置</h4>
+<h3 id="bot">关于 BOT 的初始化和配置</h3>
 <p>操作理论请看 <a href="../discordDocs/Chinese/Building%20your%20first%20Discord%20app_ch.html">这里</a> 进行了解</p>
 <p>看完后，可以看看下面这些提示</p>
-<h4 id="_1">创建一个零权限要求的邀请链接</h4>
+<h3 id="_1">创建一个零权限要求的邀请链接</h3>
 <p>为什么要通过零权限要求的邀请链接部署应用到服务器中？</p>
 <p>嗯，总所周知，discord 服务器身份组数量上限仅有 250 个。在大型服务器中有点不太够用。</p>
 <p>而通过有权限要求的邀请链接部署 BOT 到服务器中，会导致该 BOT 占据一个特殊的身份组。当 BOT 数量增多时，它们就会占用一部分的身份组数量。</p>
@@ -978,20 +1026,14 @@
 <p><img alt="" src="img/bot_invite.png" /></p>
 <p>选择服务器安装，然后复制下方的邀请链接</p>
 <p>这就是我们需要的零权限要求的邀请链接</p>
-<h4 id="_2">修改指令的可见性</h4>
+<h3 id="_2">修改指令的可见性</h3>
 <p>有时候，我们需要实现这样的功能 : 让某些指令只能被某个/某些身份组使用</p>
 <p>这个功能实现起来其实很简单, 可以分成以下两部分</p>
-<ol>
-<li>
-<p>BOT 本身的校验</p>
+<h4 id="1bot">1.BOT 本身的校验</h4>
 <p>用户与 BOT 进行交互时，BOT 能获取当前交互用户的身份信息</p>
 <p>所以，可以在响应逻辑的开头，检查交互用户是否拥有目的身份组 ID，如果没有，则直接返回错误提示，例如 "抱歉，您没有权利使用该命令" 之类的。不进行进一步的处理</p>
 <p>这样，就确保了只有目标身份组能使用命令。</p>
-</li>
-<li>
-<p>服务器权限的配置</p>
-</li>
-</ol>
+<h4 id="2">2.服务器权限的配置</h4>
 <p>通过服务器的配置，我们能让命令只能被拥有指定身份组的用户看见</p>
 <p>这是通过命令权限的覆盖实现的 </p>
 <p>(以下流程为网页版 Discord 的配置方式，其他平台应该差不多，我就懒得截了)</p>
